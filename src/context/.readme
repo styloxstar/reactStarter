@@ -1,0 +1,25 @@
+
+
+step1:- create or single or multiple context as per project structure
+tip:- create single file or multiple files for each context, make sure to create it either top of component in case of single file or in external file and export it
+
+eg:- const ExampleContext = createContext() => import from react
+
+
+step2:- create provider, again either in single file or in multiple file
+tip:- create multiple files for multiple providers according to their structure, import the context ad its very import to have provider in structure
+
+eg:- <ExampleContext.Provider value={value}>  => value is a json containing all the required data to be reused
+
+
+step3:- for consuming the context provider either you can use them directly importing the useContext or you can make hook for it
+tip:- create customHooks in order make the structure clean
+
+
+step4:- now use the importedContext or custom hook containing the context
+
+const {requiredData} = useContext(importedContext)
+or const {requiredData} = useCustomContextHook() 
+
+
+
