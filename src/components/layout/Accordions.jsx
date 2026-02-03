@@ -298,61 +298,61 @@ const Accordions = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start justify-items-center">
         
         {/* 1. Classic */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">01. Classic Border</span>
           <AccordionClassic />
         </div>
 
         {/* 2. Plus Minus */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg ">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">02. Minimalist Plus</span>
           <AccordionPlusMinus />
         </div>
 
         {/* 3. Glass */}
-        <div className="w-full flex flex-col items-center bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-2xl shadow-inner">
+        <div className="w-full flex flex-col items-center bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-2xl shadow-inner box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-white/50 uppercase tracking-widest mb-6">03. Glassmorphism</span>
           <AccordionGlass />
         </div>
 
         {/* 4. Neon */}
-        <div className="w-full flex flex-col items-center bg-gray-950 p-8 rounded-2xl">
+        <div className="w-full flex flex-col items-center bg-gray-950 p-8 rounded-2xl box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-cyan-600 uppercase tracking-widest mb-6">04. Cyberpunk</span>
           <AccordionNeon />
         </div>
 
         {/* 5. Floating */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">05. Floating Pop</span>
           <AccordionFloating />
         </div>
 
         {/* 6. Arrow Left */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">06. Sidebar Style</span>
           <AccordionArrowLeft />
         </div>
 
         {/* 7. Brutalist */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">07. Brutalist</span>
           <AccordionBrutalist />
         </div>
 
         {/* 8. Gradient */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">08. Gradient Active</span>
           <AccordionGradient />
         </div>
 
         {/* 9. Pill */}
-        <div className="w-full flex flex-col items-center bg-gray-100 p-8 rounded-2xl">
+        <div className="w-full flex flex-col items-center bg-gray-100 p-8 rounded-2xl box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">09. Separated Pills</span>
           <AccordionPill />
         </div>
 
         {/* 10. Neumorphic */}
-        <div className="w-full flex flex-col items-center bg-[#e0e5ec] p-8 rounded-2xl">
+        <div className="w-full flex flex-col items-center bg-[#e0e5ec] p-8 rounded-2xl box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">10. Neumorphic</span>
           <AccordionNeumorphic />
         </div>

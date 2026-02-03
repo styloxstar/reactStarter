@@ -41,113 +41,273 @@ export const sidebarJson = [
     },
     {
         id: 4,
+        name: "redux-toolkit",
+        title: "Redux Toolkit",
+    },
+    {
+        id: 4,
         name: "components",
         title: "Components",
         children: [
             {
                 id: 1,
-                name: "buttons",
+                name: "components/buttons",
                 title: "Buttons",
             },
             {
                 id: 2,
-                name: "cards",
+                name: "components/cards",
                 title: "Cards",
             },
             {
                 id: 3,
-                name: "switches",
+                name: "components/switches",
                 title: "Switches",
             },
             {
                 id: 4,
-                name: "inputs",
+                name: "components/inputs",
                 title: "Inputs",
             },
             {
                 id: 5,
-                name: "radio-buttons",
+                name: "components/radio-buttons",
                 title: "Radio Buttons",
             },
             {
                 id: 6,
-                name: "spinners",
+                name: "components/spinners",
                 title: "Spinners",
             },
             {
                 id: 7,
-                name: "checkboxes",
+                name: "components/checkboxes",
                 title: "Checkboxes",
             },
             {
                 id: 8,
-                name: "sliders",
+                name: "components/sliders",
                 title: "Sliders",
             },
             {
                 id: 9,
-                name: "forms",
+                name: "components/forms",
                 title: "Forms",
             },
             {
                 id: 10,
-                name: "accordions",
+                name: "components/accordions",
                 title: "Accordions",
             },
             {
                 id: 11,
-                name: "dropdowns",
+                name: "components/dropdowns",
                 title: "Dropdowns",
             },
             {
                 id: 12,
-                name: "tables",
+                name: "components/tables",
                 title: "Tables",
             },
             {
                 id: 13,
-                name: "tab-navigation",
+                name: "components/tab-navigation",
                 title: "Tab Navigation",
             }, {
                 id: 14,
-                name: "toast-notifications",
+                name: "components/toast-notifications",
                 title: "Toast Notifications",
             },
             {
                 id: 15,
-                name: "modals",
+                name: "components/modals",
                 title: "Modals",
             },
             {
                 id: 16,
-                name: "steppers",
+                name: "components/steppers",
                 title: "Steppers",
             },
             {
                 id: 17,
-                name: "carousels",
+                name: "components/carousels",
                 title: "Carousels",
             },
             {
                 id: 18,
-                name: "navbars",
+                name: "components/navbars",
                 title: "Navbars",
             },
             {
                 id: 19,
-                name: "timelines",
+                name: "components/timelines",
                 title: "Timelines",
             }, {
                 id: 20,
-                name: "sidebars",
+                name: "components/sidebars",
                 title: "Sidebars",
             },
             {
                 id: 21,
-                name: "footers",
+                name: "components/footers",
                 title: "Footers",
+            },
+            {
+                id: 22,
+                name: "components/products",
+                title: "Products",
+            },
+            {
+                id: 23,
+                name: "components/progress-bar",
+                title: "Progress Bar",
+            },
+            {
+                id: 24,
+                name: "components/image-gallery",
+                title: "Image Gallery",
+            },
+            {
+                id: 25,
+                name: "components/date-picker",
+                title: "Date Picker",
+            },
+            {
+                id: 26,
+                name: "components/dividers",
+                title: "Dividers",
+            }, {
+                id: 27,
+                name: "components/scroll-spy",
+                title: "Scroll Spy",
+            }, {
+                id: 28,
+                name: "components/filters",
+                title: "Filters",
             }
         ],
     },
+    {
+        id: 5,
+        name: "pages",
+        title: "Pages",
+        children: [
+            {
+                id: 1,
+                name: "pages/login",
+                title: "Login",
+            },
+            {
+                id: 2,
+                name: "pages/register",
+                title: "Register",
+            },
+            {
+                id: 3,
+                name: "pages/forgot-password",
+                title: "Forgot Password",
+            },
+            {
+                id: 4,
+                name: "pages/404",
+                title: "404 Not Found",
+            },
+            {
+                id: 5,
+                name: "pages/500",
+                title: "500 Server Error",
+            },
+            {
+                id: 6,
+                name: "pages/landing",
+                title: "Landing Page",
+            },
+            {
+                id: 7,
+                name: "pages/profile",
+                title: "Profile",
+            },
+            {
+                id: 8,
+                name: "pages/pricing",
+                title: "Pricing",
+            },
+            {
+                id: 11,
+                name: "pages/testimonials",
+                title: "Testimonials",
+            },
+            {
+                id: 12,
+                name: "pages/coming-soon",
+                title: "Coming Soon",
+            },
+            {
+                id: 13,
+                name: "pages/maintenance",
+                title: "Maintenance",
+            },
+            {
+                id: 14,
+                name: "pages/features",
+                title: "Features",
+            },
+            {
+                id: 16,
+                name: "pages/team",
+                title: "Team",
+            },
+            {
+                id: 18,
+                name: "pages/contact-us",
+                title: "Contact Us",
+            },
+            {
+                id: 19,
+                name: "pages/terms-of-service",
+                title: "Terms of Service",
+            },
+            {
+                id: 20, name: "pages/privacy-policy",
+                title: "Privacy Policy",
+            },
+            {
+                id: 22,
+                name: "pages/checkout",
+                title: "Checkout",
+            },
+            {
+                id: 23,
+                name: "pages/order-summary",
+                title: "Order Summary",
+            }, 
+            {
+                id: 25,
+                name: "pages/error",
+                title: "Error",
+            },
+            {
+                id: 26,
+                name: "pages/product-gallery",
+                title: "Product Gallery",
+            }, {
+                id: 27,
+                name: "pages/thank-you",
+                title: "Thank You",
+            }, {
+                id: 28,
+                name: "pages/cart",
+                title: "Cart",
+            }, {
+                id: 29,
+                name: "pages/admin-panel",
+                title: "Admin Panel",
+            }, {
+                id: 30,
+                name: "pages/services",
+                title: "Services",
+            }
+        ],
+    }
 ];
 

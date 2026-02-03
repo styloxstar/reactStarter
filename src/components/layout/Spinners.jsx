@@ -92,61 +92,61 @@ const Spinners = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 max-w-7xl mx-auto justify-items-center items-center">
 
         {/* 1. Classic */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">01. Classic</span>
           <SpinnerClassic />
         </div>
 
         {/* 2. Dual Ring */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">02. Dual Ring</span>
           <SpinnerDualRing />
         </div>
 
         {/* 3. Pulse */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">03. Pulse Ping</span>
           <SpinnerPulse />
         </div>
 
         {/* 4. Dots */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">04. Bouncing Dots</span>
           <SpinnerDots />
         </div>
 
         {/* 5. Gradient */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">05. Gradient</span>
           <SpinnerGradient />
         </div>
 
         {/* 6. Glass (Needs dark bg context usually, simulated here) */}
-        <div className="flex flex-col items-center gap-4 bg-gray-900/10 p-4 rounded-xl">
+        <div className="flex flex-col items-center gap-4 bg-gray-900/10 p-4 rounded-xl box-shadow">
           <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">06. Glass</span>
           <SpinnerGlass />
         </div>
 
         {/* 7. Wave */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">07. Audio Wave</span>
           <SpinnerWave />
         </div>
 
         {/* 8. Orbit */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">08. Orbit</span>
           <SpinnerOrbit />
         </div>
 
         {/* 9. Square Flip */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">09. Rotating Cube</span>
           <SpinnerSquareFlip />
         </div>
 
         {/* 10. Neumorphic */}
-        <div className="flex flex-col items-center gap-4 bg-gray-200 p-4 rounded-xl">
+        <div className="flex flex-col items-center gap-4 bg-gray-200 p-4 rounded-xl box-shadow">
           <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">10. Neumorphic</span>
           <SpinnerNeumorphic />
         </div>

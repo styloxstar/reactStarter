@@ -281,61 +281,61 @@ const RadioButtons = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 max-w-7xl mx-auto justify-items-center items-start">
 
         {/* 1. Classic */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">01. Ring Animation</h3>
           <RadioClassic />
         </div>
 
         {/* 2. Card Selection */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">02. Card Select</h3>
           <RadioCard />
         </div>
 
         {/* 3. Neon (Dark Bg) */}
-        <div className="w-full flex flex-col items-center bg-gray-900 p-8 rounded-xl shadow-lg">
+        <div className="w-full flex flex-col items-center bg-gray-900 p-8 rounded-xl box-shadow">
           <h3 className="mb-4 text-xs font-semibold text-gray-500 uppercase tracking-widest">03. Neon Glow</h3>
           <RadioNeon />
         </div>
 
         {/* 4. Glass (Gradient Bg) */}
-        <div className="w-full flex flex-col items-center bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-xl shadow-lg">
+        <div className="w-full flex flex-col items-center bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-xl box-shadow">
           <h3 className="mb-4 text-xs font-semibold text-white/50 uppercase tracking-widest">04. Glassmorphism</h3>
           <RadioGlass />
         </div>
 
         {/* 5. Tick Box */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">05. Pill Tick</h3>
           <RadioTick />
         </div>
 
         {/* 6. Neumorphic (Gray Bg) */}
-        <div className="w-full flex flex-col items-center bg-gray-200 p-8 rounded-xl">
+        <div className="w-full flex flex-col items-center bg-gray-200 p-8 rounded-xl box-shadow">
           <h3 className="mb-4 text-xs font-semibold text-gray-500 uppercase tracking-widest">06. Neumorphism</h3>
           <RadioNeumorphic />
         </div>
 
         {/* 7. Gradient Ring */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">07. Gradient Ring</h3>
           <RadioGradient />
         </div>
 
         {/* 8. Brutalist */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">08. Brutalist</h3>
           <RadioBrutalist />
         </div>
 
         {/* 9. Color Swatch */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">09. Color Swatch</h3>
           <RadioColor />
         </div>
 
         {/* 10. Segmented */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">10. Segmented</h3>
           <RadioSegmented />
         </div>

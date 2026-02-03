@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     // Outer container with overflow hidden to contain the blurred shapes
-    <div className="relative isolate min-h-screen overflow-hidden bg-gray-900 py-24 sm:py-32 rounded-md">
+    <div className="isolate container box-shadow overflow-hidden bg-gray-900 py-24 sm:py-32 rounded-md">
       
       {/* Background blurred shape 1 */}
       <div

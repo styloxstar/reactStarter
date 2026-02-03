@@ -17,7 +17,7 @@ const Sidebar = () => {
     };
 
     return (
-        <main className='text-left overflow-y-auto'>
+        <main className='text-left overflow-y-auto h-[100%] p-2'>
             {
                 sidebarJson.map((item) => (
                     <div key={item.id}>
@@ -32,13 +32,13 @@ const Sidebar = () => {
                                     style={{ display: 'flex', alignItems: 'center' }}
                                 >
                                     <MdOutlineKeyboardDoubleArrowRight
-                                        className='text-xl mt-[-0.4rem]'
+                                        className='text-xl mt-[-0.4rem] overflow-y-auto h-[100%]'
                                         style={{ transition: 'transform 0.45s ease-in-out', transform: visibleChildren[item.id] ? 'rotate(0deg)' : 'rotate(0deg)' }}
                                     />
                                 </div>
                             )}
                         </div>
-                        <div>
+                        <div className=''>
                             {item.children && visibleChildren[item.id] ? childrenComponent(item.children) : null}
                         </div>
                     </div>
@@ -53,7 +53,7 @@ const childrenComponent = (children) => {
     return (
         <div className='ml-5 text-gray-600 '>
             {children.map((child) => (
-                <div key={child.id} className='mb-1'>
+                <div key={child.id} className='mb-1 p-1'>
                     <NavLink className="text-gray-600 hover:text-slate-800 hover:font-weight-bolder" to={child.name}>{child.title}</NavLink>
                 </div>
             ))}

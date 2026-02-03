@@ -128,13 +128,13 @@ const Checkboxes = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto justify-items-center items-center">
 
         {/* 1. Standard */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">01. Standard</h3>
           <CheckboxStandard />
         </div>
 
         {/* 2. Circle */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">02. Rounded</h3>
           <CheckboxCircle />
         </div>
@@ -146,13 +146,13 @@ const Checkboxes = () => {
         </div>
 
         {/* 4. Gradient */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">04. Gradient</h3>
           <CheckboxGradient />
         </div>
 
         {/* 5. Brutalist */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">05. Brutalist</h3>
           <CheckboxBrutalist />
         </div>
@@ -170,19 +170,19 @@ const Checkboxes = () => {
         </div>
 
         {/* 8. Strike-Through */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">08. Task List</h3>
           <CheckboxStrikethrough />
         </div>
 
         {/* 9. Card Selection */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">09. Card Select</h3>
           <CheckboxCard />
         </div>
 
         {/* 10. Heart Toggle */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">10. Like Toggle</h3>
           <CheckboxHeart />
         </div>

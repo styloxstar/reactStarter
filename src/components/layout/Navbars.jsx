@@ -410,54 +410,54 @@ const Navbars = () => {
         <p className="text-slate-500 max-w-2xl mx-auto">Diverse navigation patterns with dropdowns and interactions.</p>
       </div>
       
-      <div className="space-y-24 max-w-7xl mx-auto px-4">
+      <div className="space-y-24 max-w-7xl mx-auto px-4 ">
         
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">01. SaaS Mega Menu</span>
           <NavMega />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">02. Floating Island</span>
           <NavFloating />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">03. Cyberpunk</span>
           <NavCyberpunk />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">04. Minimalist</span>
           <NavMinimal />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">05. E-commerce Double</span>
           <NavEcommerce />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">06. Brutalist</span>
           <NavBrutalist />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">07. Dashboard Sidebar</span>
           <NavSidebar />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">08. Neumorphic</span>
           <NavNeumorphic />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">09. macOS Dock</span>
           <NavDock />
         </section>
 
-        <section className="space-y-4">
+        <section className="space-y-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center">10. Fullscreen Overlay</span>
           <NavOverlay />
         </section>

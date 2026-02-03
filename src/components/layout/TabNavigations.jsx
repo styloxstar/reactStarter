@@ -312,52 +312,52 @@ const TabsNavigations = () => {
        
        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
           
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
             <span className="text-xs font-bold text-slate-400 uppercase">01. Classic</span>
             <TabClassic />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
             <span className="text-xs font-bold text-slate-400 uppercase">02. iOS Segmented</span>
             <TabSegmented />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
             <span className="text-xs font-bold text-slate-400 uppercase">03. Vertical Sidebar</span>
             <TabVertical />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
             <span className="text-xs font-bold text-slate-400 uppercase">04. Pill Toggle</span>
             <TabPill />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
             <span className="text-xs font-bold text-slate-400 uppercase">05. Folder Browser</span>
             <TabFolder />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
             <span className="text-xs font-bold text-slate-400 uppercase">06. Cyberpunk</span>
             <TabNeon />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
             <span className="text-xs font-bold text-slate-400 uppercase">07. Glassmorphism</span>
             <TabGlass />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
              <span className="text-xs font-bold text-slate-400 uppercase">08. Minimal Dot</span>
              <TabDot />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
              <span className="text-xs font-bold text-slate-400 uppercase">09. Brutalist</span>
              <TabBrutalist />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 box-shadow p-4 rounded-lg">
              <span className="text-xs font-bold text-slate-400 uppercase">10. Floating Material</span>
              <TabFloating />
           </div>

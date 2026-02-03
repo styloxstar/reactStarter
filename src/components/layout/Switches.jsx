@@ -202,7 +202,7 @@ const Switches = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 max-w-6xl w-full">
         {/* Helper Wrapper to Label Styles */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Standard</span>
           <SwitchStandard
             isOn={switchStates.standard}
@@ -210,7 +210,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Glow</span>
           <SwitchGlow
             isOn={switchStates.glow}
@@ -218,7 +218,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Thin Track</span>
           <SwitchThin
             isOn={switchStates.thin}
@@ -226,7 +226,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Brutalist</span>
           <SwitchSquare
             isOn={switchStates.square}
@@ -234,7 +234,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Icon Toggle</span>
           <SwitchIcon
             isOn={switchStates.icon}
@@ -242,7 +242,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">
             Skeuomorphic
           </span>
@@ -252,7 +252,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Text Labels</span>
           <SwitchText
             isOn={switchStates.text}
@@ -260,7 +260,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg  ">
           <span className="text-gray-500 text-sm font-medium">Gradient</span>
           <SwitchGradient
             isOn={switchStates.gradient}
@@ -268,7 +268,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Outline</span>
           <SwitchOutline
             isOn={switchStates.outline}
@@ -276,7 +276,7 @@ const Switches = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
           <span className="text-gray-500 text-sm font-medium">Elastic</span>
           <SwitchElastic
             isOn={switchStates.elastic}

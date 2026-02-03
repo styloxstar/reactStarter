@@ -260,55 +260,54 @@ const Forms = () => {
         </div>
 
         {/* 2. Split */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">02. Split Screen</span>
           <FormSplit />
         </div>
 
         {/* 3. Neumorphic */}
-        <div className="w-full flex flex-col items-center bg-[#e0e5ec] p-8 rounded-2xl">
+        <div className="w-full flex flex-col items-center bg-[#e0e5ec] p-8 rounded-2xl box-shadow">
            <span className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">03. Neumorphic</span>
           <FormNeumorphic />
         </div>
 
         {/* 4. Minimal */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">04. Minimalist</span>
           <FormMinimal />
         </div>
 
         {/* 5. Cyberpunk */}
-        <div className="w-full flex flex-col items-center bg-gray-950 p-8 rounded-2xl">
+        <div className="w-full flex flex-col items-center bg-gray-950 p-8 rounded-2xl box-shadow">
            <span className="text-xs font-bold text-cyan-700 uppercase tracking-widest mb-6">05. Cyberpunk</span>
           <FormCyberpunk />
         </div>
 
         {/* 6. Floating Label */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">06. Floating Label</span>
           <FormFloating />
         </div>
-
         {/* 7. Newsletter */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">07. Inline Newsletter</span>
           <FormNewsletter />
         </div>
 
         {/* 8. Brutalist */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">08. Brutalist</span>
           <FormBrutalist />
         </div>
 
         {/* 9. Payment */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">09. Payment Card</span>
           <FormPayment />
         </div>
 
         {/* 10. Search */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">10. Gradient Search</span>
           <FormSearch />
         </div>

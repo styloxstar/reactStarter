@@ -215,68 +215,66 @@ export const SliderMinimal = () => {
 // --- Main Gallery Layout ---
 const Sliders = () => {
   return (
-    <div className="container box-shadow bg-slate-50 p-10 font-sans">
+    <div className="container box-shadow overflow-y-auto bg-slate-50 p-10 font-sans">
       <h1 className="text-3xl font-bold text-center text-slate-800 mb-2">Modern Range Sliders</h1>
       <p className="text-center text-slate-500 mb-12">Custom inputs using Tailwind styling</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto justify-items-center items-center">
 
         {/* 1. Standard */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">01. Standard Accent</h3>
           <SliderStandard />
         </div>
 
         {/* 2. Gradient */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">02. Gradient Fill</h3>
           <SliderGradient />
         </div>
 
         {/* 3. Tooltip */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">03. Follow Tooltip</h3>
           <SliderTooltip />
         </div>
 
         {/* 4. Glass */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">04. Glassmorphism</h3>
           <SliderGlass />
         </div>
 
         {/* 5. Neumorphic */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">05. Neumorphic</h3>
           <SliderNeumorphic />
         </div>
-
         {/* 6. Brutalist */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">06. Brutalist</h3>
           <SliderBrutalist />
         </div>
 
         {/* 7. Neon */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">07. Neon Glow</h3>
           <SliderNeon />
         </div>
 
         {/* 8. Pill Fill */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">08. Pill Label</h3>
           <SliderPill />
         </div>
-
         {/* 9. Stepped */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">09. Stepped Labels</h3>
           <SliderStepped />
         </div>
 
         {/* 10. Minimal */}
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">10. Minimal Line</h3>
           <SliderMinimal />
         </div>

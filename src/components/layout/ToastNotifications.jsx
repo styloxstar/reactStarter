@@ -241,61 +241,60 @@ const ToastNotifications = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto items-center justify-items-center">
         
         {/* 1. Standard */}
-        <div className="flex flex-col gap-2 w-full items-center">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase">01. Standard</span>
           <ToastStandard type={activeType} message="This is a standard notification." />
         </div>
 
         {/* 2. Solid */}
-        <div className="flex flex-col gap-2 w-full items-center">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase">02. Solid Fill</span>
           <ToastSolid type={activeType} message="Operation completed successfully." />
         </div>
 
         {/* 3. Glass */}
-        <div className="flex flex-col gap-2 w-full items-center bg-gradient-to-r from-violet-400 to-fuchsia-400 p-8 rounded-xl shadow-inner">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg bg-gradient-to-r from-violet-400 to-fuchsia-400">
           <span className="text-xs font-bold text-white/60 uppercase">03. Glassmorphism</span>
           <ToastGlass type={activeType} message="Glassy backdrop effect." />
         </div>
 
         {/* 4. Minimal */}
-        <div className="flex flex-col gap-2 w-full items-center">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase">04. Minimal Floating</span>
           <ToastMinimal type={activeType} message="Minimal design language." />
         </div>
 
         {/* 5. Notification */}
-        <div className="flex flex-col gap-2 w-full items-center">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase">05. Action Notification</span>
           <ToastNotification type={activeType} message="Requires your attention." />
         </div>
-
         {/* 6. Gradient */}
-        <div className="flex flex-col gap-2 w-full items-center">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase">06. Gradient Border</span>
           <ToastGradient type={activeType} message="Beautiful gradient borders." />
         </div>
 
         {/* 7. Brutalist */}
-        <div className="flex flex-col gap-2 w-full items-center">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase">07. Brutalist</span>
           <ToastBrutalist type={activeType} message="BOLD & RETRO STYLE." />
         </div>
 
         {/* 8. Neumorphic */}
-        <div className="flex flex-col gap-2 w-full items-center bg-[#e0e5ec] p-8 rounded-xl">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg bg-[#e0e5ec]">
           <span className="text-xs font-bold text-gray-400 uppercase">08. Neumorphic</span>
           <ToastNeumorphic type={activeType} message="Soft UI elements." />
         </div>
 
         {/* 9. Dynamic */}
-        <div className="flex flex-col gap-2 w-full items-center">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase">09. Dynamic Pill</span>
           <ToastDynamic type={activeType} message="Device connected" />
         </div>
 
         {/* 10. Cyberpunk */}
-        <div className="flex flex-col gap-2 w-full items-center bg-gray-950 p-8 rounded-xl">
+        <div className="flex flex-col gap-2 w-full items-center box-shadow p-4 rounded-lg bg-gray-950">
           <span className="text-xs font-bold text-gray-600 uppercase">10. Cyberpunk</span>
           <ToastCyberpunk type={activeType} message="Protocol Initiated" />
         </div>

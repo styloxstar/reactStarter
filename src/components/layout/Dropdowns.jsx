@@ -381,37 +381,36 @@ const Dropdowns = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-24 gap-x-12 max-w-7xl mx-auto items-start justify-items-center">
         
         {/* 1. Modern */}
-        <div className="w-full flex flex-col items-center z-10">
+        <div className="w-full flex flex-col items-center z-10 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">01. SaaS Standard</span>
           <DropdownModern />
         </div>
 
         {/* 2. Glass (Requires dark context) */}
-        <div className="w-full flex flex-col items-center z-10 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-2xl shadow-inner">
+        <div className="w-full flex flex-col items-center z-10 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-2xl box-shadow">
           <span className="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">02. Glassmorphism</span>
           <DropdownGlass />
         </div>
 
         {/* 3. Command */}
-        <div className="w-full flex flex-col items-center z-10">
+        <div className="w-full flex flex-col items-center z-10 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">03. Command Menu</span>
           <DropdownCommand />
         </div>
-
         {/* 4. Mega Menu */}
-        <div className="w-full flex flex-col items-center z-20">
+        <div className="w-full flex flex-col items-center z-20 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">04. Mega Menu</span>
           <DropdownMega />
         </div>
 
         {/* 5. Brutalist */}
-        <div className="w-full flex flex-col items-center z-10">
+        <div className="w-full flex flex-col items-center z-10 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">05. Brutalist</span>
           <DropdownBrutalist />
         </div>
 
         {/* 6. Profile */}
-        <div className="w-full flex flex-col items-center z-10">
+        <div className="w-full flex flex-col items-center z-10 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">06. User Profile</span>
           <DropdownProfile />
         </div>
@@ -423,7 +422,7 @@ const Dropdowns = () => {
         </div>
 
         {/* 8. Notification */}
-        <div className="w-full flex flex-col items-center z-10">
+        <div className="w-full flex flex-col items-center z-10 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">08. Notifications</span>
           <DropdownNotification />
         </div>
@@ -435,7 +434,7 @@ const Dropdowns = () => {
         </div>
 
         {/* 10. Grouped */}
-        <div className="w-full flex flex-col items-center z-10">
+        <div className="w-full flex flex-col items-center z-10 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">10. Categorized</span>
           <DropdownGroup />
         </div>

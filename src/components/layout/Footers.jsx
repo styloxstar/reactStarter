@@ -381,54 +381,54 @@ const Footers = () => {
         <p className="text-slate-500 max-w-2xl mx-auto">Responsive footer components for every design language.</p>
       </div>
 
-      <div className="">
+      <div>
         
-        <section>
+        <section className='box-shadow p-4 rounded-lg'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">01. Enterprise Standard</div>
           <FooterStandard />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">02. Minimalist Center</div>
           <FooterMinimal />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">03. Newsletter Focus</div>
           <FooterNewsletter />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">04. Glassmorphism</div>
           <FooterGlass />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">05. Cyberpunk</div>
           <FooterCyberpunk />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">06. Big Typography</div>
           <FooterBigType />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">07. Brutalist</div>
           <FooterBrutalist />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">08. Neumorphic</div>
           <FooterNeumorphic />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">09. App / E-commerce</div>
           <FooterApp />
         </section>
 
-        <section>
+        <section className='box-shadow p-4 rounded-lg mt-12'>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">10. Curved Wave</div>
           <FooterCurved />
         </section>

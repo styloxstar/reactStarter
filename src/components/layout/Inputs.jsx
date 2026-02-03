@@ -152,61 +152,61 @@ const Inputs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto justify-items-center">
 
         {/* 1. Standard */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">01. Standard</h3>
           <InputStandard />
         </div>
 
         {/* 2. Floating Label */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">02. Floating Label</h3>
           <InputFloatingLabel />
         </div>
 
         {/* 3. Glass (Needs dark background) */}
-        <div className="w-full flex justify-center flex-col items-center bg-gray-900 p-8 rounded-xl shadow-inner">
+        <div className="w-full flex justify-center flex-col items-center bg-gray-900 p-8 rounded-xl shadow-inner box-shadow">
           <h3 className="mb-4 text-xs font-semibold text-white/50 uppercase tracking-widest">03. Frosty Glass</h3>
           <InputGlass />
         </div>
 
         {/* 4. Neumorphic (Needs specific gray) */}
-        <div className="w-full flex justify-center flex-col items-center bg-gray-200 p-8 rounded-xl">
+        <div className="w-full flex justify-center flex-col items-center bg-gray-200 p-8 rounded-xl box-shadow">
           <h3 className="mb-4 text-xs font-semibold text-gray-500 uppercase tracking-widest">04. Neumorphic</h3>
           <InputNeumorphic />
         </div>
 
         {/* 5. Underline Animated */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-8 text-xs font-semibold text-slate-400 uppercase tracking-widest">05. Animated Line</h3>
           <InputUnderline />
         </div>
 
         {/* 6. Search Pill */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">06. Search Pill</h3>
           <InputSearchPill />
         </div>
 
         {/* 7. Brutalist */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">07. Brutalist</h3>
           <InputBrutalist />
         </div>
 
         {/* 8. Gradient Border */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">08. Gradient Ring</h3>
           <InputGradientBorder />
         </div>
 
         {/* 9. Ghost */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">09. Minimalist Ghost</h3>
           <InputGhost />
         </div>
 
         {/* 10. Validated */}
-        <div className="w-full flex justify-center flex-col items-center">
+        <div className="w-full flex justify-center flex-col items-center box-shadow p-4 rounded-lg">
           <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">10. Validation State</h3>
           <InputValidated />
         </div>

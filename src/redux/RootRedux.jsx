@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../layout/Navbar'
-import Counter from './Counter'
+import Navbar from '../components/layout/Navbar'
+import Counter from '../components/reduxComponents/Counter'
 
 const RootRedux = () => {
   return (

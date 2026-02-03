@@ -266,12 +266,12 @@ const Cards = () => {
                 </div>
 
                 {/* 9. Profile */}
-                <div className="w-full flex justify-center items-center bg-gray-50 p-4 rounded-xl">
+                <div className="w-full flex justify-center items-center bg-gray-50 p-4 rounded-xl box-shadow">
                     <CardProfile />
                 </div>
 
                 {/* 10. Stack */}
-                <div className="w-full flex justify-center items-center bg-white p-4 rounded-xl">
+                <div className="w-full flex justify-center items-center bg-white p-4 rounded-xl box-shadow">
                     <CardStack />
                 </div>
 

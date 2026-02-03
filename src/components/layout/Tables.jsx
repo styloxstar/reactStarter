@@ -297,61 +297,60 @@ const Tables = () => {
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 max-w-7xl mx-auto items-start">
         
         {/* 1. Standard */}
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">01. Standard Stripe</span>
           <TableStandard />
         </div>
 
         {/* 2. Minimal */}
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">02. Minimalist Clean</span>
           <TableMinimal />
         </div>
 
         {/* 3. Glass */}
-        <div className="w-full flex flex-col gap-4 bg-gradient-to-br from-indigo-600 to-purple-700 p-8 rounded-2xl shadow-inner">
+        <div className="w-full flex flex-col gap-4 bg-gradient-to-br from-indigo-600 to-purple-700 p-8 rounded-2xl box-shadow">
           <span className="text-xs font-bold text-white/50 uppercase tracking-widest">03. Glassmorphism</span>
           <TableGlass />
         </div>
 
         {/* 4. Cards */}
-        <div className="w-full flex flex-col gap-4 bg-gray-50 p-4 rounded-xl">
+        <div className="w-full flex flex-col gap-4 bg-gray-50 p-4 rounded-xl box-shadow">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">04. Floating Cards</span>
           <TableCards />
         </div>
-
         {/* 5. Cyberpunk */}
-        <div className="w-full flex flex-col gap-4 bg-black p-4 rounded-xl">
+        <div className="w-full flex flex-col gap-4 bg-black p-4 rounded-xl box-shadow">
           <span className="text-xs font-bold text-cyan-600 uppercase tracking-widest">05. Cyberpunk</span>
           <TableCyberpunk />
         </div>
 
         {/* 6. Avatar */}
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">06. Social / Avatar</span>
           <TableAvatar />
         </div>
 
         {/* 7. Brutalist */}
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">07. Brutalist</span>
           <TableBrutalist />
         </div>
 
         {/* 8. Sticky */}
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">08. Sticky Header</span>
           <TableSticky />
         </div>
 
         {/* 9. Neumorphic */}
-        <div className="w-full flex flex-col gap-4 bg-[#e0e5ec] p-8 rounded-2xl">
+        <div className="w-full flex flex-col gap-4 bg-[#e0e5ec] p-8 rounded-2xl box-shadow">
           <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">09. Neumorphic</span>
           <TableNeumorphic />
         </div>
 
         {/* 10. Compact */}
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">10. High Density</span>
           <TableCompact />
         </div>

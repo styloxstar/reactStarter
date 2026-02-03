@@ -299,40 +299,40 @@ const Modals = () => {
   const closeModal = () => setActiveModal(null);
 
   return (
-    <div className="container box-shadow  overflow-y-none bg-slate-50 p-8 font-sans pb-32">
+    <div className="container box-shadow  overflow-y-auto bg-slate-50 p-8 font-sans pb-32">
       <h1 className="text-4xl font-bold text-center text-slate-800 mb-4">Modern Modals</h1>
       <p className="text-center text-slate-500 mb-16">Click a button to trigger the specific modal style.</p>
       
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
         
-        <button onClick={() => setActiveModal('standard')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
+        <button onClick={() => setActiveModal('standard')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm box-shadow p-4">
           01. Standard
         </button>
-        <button onClick={() => setActiveModal('sheet')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
+        <button onClick={() => setActiveModal('sheet')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm box-shadow p-4">
           02. Bottom Sheet
         </button>
-        <button onClick={() => setActiveModal('glass')} className="px-4 py-3 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-lg shadow-md hover:opacity-90 transition-opacity font-medium text-sm">
+        <button onClick={() => setActiveModal('glass')} className="px-4 py-3 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-lg hover:opacity-90 transition-opacity font-medium text-sm box-shadow p-4">
           03. Glassmorphism
         </button>
-        <button onClick={() => setActiveModal('cyber')} className="px-4 py-3 bg-gray-900 text-cyan-400 border border-cyan-900 rounded-lg shadow-sm hover:border-cyan-500 transition-colors font-medium text-sm">
+        <button onClick={() => setActiveModal('cyber')} className="px-4 py-3 bg-gray-900 text-cyan-400 border border-cyan-900 rounded-lg hover:border-cyan-500 transition-colors font-medium text-sm box-shadow p-4 ">
           04. Cyberpunk
         </button>
-        <button onClick={() => setActiveModal('minimal')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-gray-900 hover:text-gray-900 transition-colors font-medium text-sm">
+        <button onClick={() => setActiveModal('minimal')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-gray-900 hover:text-gray-900 transition-colors font-medium text-sm box-shadow p-4 ">
           05. Minimalist
         </button>
-        <button onClick={() => setActiveModal('brutalist')} className="px-4 py-3 bg-yellow-400 border-2 border-black rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] font-bold text-sm">
+        <button onClick={() => setActiveModal('brutalist')} className="px-4 py-3 bg-yellow-400 border-2 border-black rounded-none hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] font-bold text-sm box-shadow p-4">
           06. Brutalist
         </button>
-        <button onClick={() => setActiveModal('image')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
+        <button onClick={() => setActiveModal('image')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm box-shadow p-4">
           07. Image Spotlight
         </button>
-        <button onClick={() => setActiveModal('neumorphic')} className="px-4 py-3 bg-[#e0e5ec] text-gray-600 rounded-lg shadow-[3px_3px_6px_#bebebe,-3px_-3px_6px_#ffffff] hover:shadow-[inset_2px_2px_5px_#bebebe,inset_-2px_-2px_5px_#ffffff] font-medium text-sm">
+        <button onClick={() => setActiveModal('neumorphic')} className="px-4 py-3 bg-[#e0e5ec] text-gray-600 rounded-lg hover:shadow-[inset_2px_2px_5px_#bebebe,inset_-2px_-2px_5px_#ffffff] font-medium text-sm box-shadow p-4 ">
           08. Neumorphic
         </button>
-        <button onClick={() => setActiveModal('drawer')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm">
+        <button onClick={() => setActiveModal('drawer')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors font-medium text-sm box-shadow p-4 ">
           09. Side Drawer
         </button>
-        <button onClick={() => setActiveModal('gradient')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-fuchsia-500 hover:text-fuchsia-600 transition-colors font-medium text-sm">
+        <button onClick={() => setActiveModal('gradient')} className="px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-fuchsia-500 hover:text-fuchsia-600 transition-colors font-medium text-sm box-shadow p-4">
           10. Gradient Glow
         </button>
 

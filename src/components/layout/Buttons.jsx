@@ -136,81 +136,81 @@ const Buttons = () => {
   return (
     <div className="container box-shadow bg-slate-50 p-6 md:p-12 font-sans pb-40 overflow-y-auto">
       <h1 className="text-4xl font-bold text-center text-slate-800 mb-4">
-        Modern Switches
+        Modern Buttons
           </h1>
       <p className="text-center text-slate-500 mb-16 max-w-2xl mx-auto">
         Responsive data grids with varying densities and styles.
           </p>
                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 max-w-7xl mx-auto items-start">
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           01. Standard Stripe
         </span>
         <OutlineButton />
       </div>
 
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           02. Soft Pill
         </span>
         <SoftPillButton />
       </div>
 
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           03. Gradient
         </span>
         <GradientButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           04. Retro
         </span>
         <RetroButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           05. Glass Blue
         </span>
         <GlassBlueButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           06. Glass Purple
         </span>
         <GlassPurpleButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           07. Explore
         </span>
         <ExploreButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           08. Soft UI
         </span>
         <SoftUIButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           09. Sunset
         </span>
         <SunsetButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           10. Ocean
         </span>
         <OceanButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           11. Start
         </span>
         <StartButton />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 box-shadow p-4 rounded-lg">
         <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           12. Blob
         </span>

@@ -284,52 +284,52 @@ const Sidebars = () => {
       {/* Grid for demos - fixing height to show sidebars properly */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-[1600px] mx-auto">
         
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-white relative box-shadow p-4 ">
           <SidebarStandard />
           <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-300">01. Standard</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-white relative box-shadow p-4 ">
           <SidebarSlim />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-300">02. Slim</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gradient-to-br from-indigo-500 to-purple-600 relative ox-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-gradient-to-br from-indigo-500 to-purple-600 relative ox-shadow p-4 ">
           <SidebarGlass />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-white/50">03. Glass</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-100 relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-gray-100 relative box-shadow p-4 ">
           <SidebarFloating />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-300">04. Floating</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-white relative box-shadow p-4 ">
           <SidebarDouble />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-300">05. Double Rail</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-white relative box-shadow p-4 ">
           <SidebarGradient />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-300">06. Brand Gradient</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-900 relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-gray-900 relative box-shadow p-4 ">
           <SidebarCyberpunk />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-600">07. Cyberpunk</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50 relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-gray-50 relative box-shadow p-4 ">
           <SidebarCollapsible />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-300">08. Collapsible</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-white relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-white relative box-shadow p-4 ">
           <SidebarBrutalist />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-300">09. Brutalist</span>
         </div>
 
-        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-[#e0e5ec] relative box-shadow p-4 ">
+        <div className="h-[600px] rounded-xl overflow-hidden border border-gray-200 bg-[#e0e5ec] relative box-shadow p-4 ">
           <SidebarNeumorphic />
            <span className="absolute bottom-2 right-2 text-xs font-bold text-gray-400">10. Neumorphic</span>
         </div>
