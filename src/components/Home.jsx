@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from './layout/Navbar'
+import { MaintenanceCyber } from './common/pages/MaintenanceGallery'
 
 const Home = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <main className='container box-shadow'>
-              Home  Page
+      <main className=''>
+              <MaintenanceCyber/>
       </main>
 
     </>

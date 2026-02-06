@@ -49,10 +49,10 @@ import LoginGallery from "../components/common/pages/LoginGallery";
 import RegisterGallery from "../components/common/pages/RegisterGallery";
 import ForgotPasswordGallery from "../components/common/pages/ForgotPasswordGallery";
 import LandingPageGallery from "../components/common/pages/LandingPageGallery";
-import ContactGallery from "../components/common/pages/ContactGallery";
+import ContactGallery, { ContactNeumorphic } from "../components/common/pages/ContactGallery";
 import PricingGallery from "../components/common/pages/PricingGallery";
 import ComingSoonGallery from "../components/common/pages/ComingSoonGallery";
-import MaintenanceGallery from "../components/common/pages/MaintenanceGallery";
+import MaintenanceGallery, { MaintenanceBrutalist, MaintenanceCountdown, MaintenanceDashboard, MaintenanceGlass, MaintenanceTerminal } from "../components/common/pages/MaintenanceGallery";
 import FeatureGallery from "../components/common/pages/FeatureGallery";
 import TeamGallery from "../components/common/pages/TeamGallery";
 import TestimonialGallery from "../components/common/pages/TestimonialsGallery";
@@ -69,16 +69,20 @@ import AdminPanelGallery from "../components/common/pages/AdminPanelGallery";
 import ServicesGallery from "../components/common/pages/ServicesGallery.jsx";
 import RTKStore from "../redux-toolkit/store.jsx";
 import RootReduxToolkit from "../redux-toolkit/RootReduxToolkit.jsx";
+import ZComponent1 from "../components/zustandComponent/ZComponent1.jsx";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "../ReactQuery/queryClient.js";
+import RQComponent1 from "../components/reactQueryComponents/RQComponent1.jsx";
 
 
 // Route groups
 const mainRoutes = [
   { path: "/", element: <Home /> },
   { path: "/context", element: <Context /> },
-  { path: "/about", element: <div><h1>About Page</h1></div> },
-  { path: "/services", element: <div><h1>Services Page</h1></div> },
-  { path: "/contact", element: <div><h1>Contact Page</h1></div> },
-  { path: "/dashboard", element: <div><h1>Dashboard Page</h1></div> },
+  { path: "/about", element: <MaintenanceGlass/> },
+  { path: "/services", element: <MaintenanceTerminal/> },
+  { path: "/contact", element: <MaintenanceCountdown/> },
+  { path: "/dashboard", element:<MaintenanceBrutalist /> },  
 ];
 
 const layoutRoutes = [
@@ -161,7 +165,29 @@ const reduxToolKitRoutes = [
       </Provider>
     ),
   }
-]
+];
+
+
+const zustandRoutes = [
+  {
+    path: "/zustand",
+    element: (
+      <ZComponent1/>
+    ),
+  }
+];
+
+
+const reactQueryRoutes = [
+  {
+    path: "/react-query",
+    element: (
+      <QueryClientProvider client={queryClient}>
+        <RQComponent1/>
+      </QueryClientProvider>
+    ),
+  }
+];  
 
 const catchAllRoutes = [
   { path: "*", element: <NotFound /> },
@@ -191,6 +217,16 @@ const AppRoutes = () => (
 
     {/* Redux Toolkit Example */}
     {reduxToolKitRoutes.map(({ path, element }) => (
+      <Route key={path} path={path} element={element} />
+    ))}
+
+    {/* Zustand Example */}
+    {zustandRoutes.map(({ path, element }) => (
+      <Route key={path} path={path} element={element} />
+    ))}
+
+    {/* React Query Example */}
+    {reactQueryRoutes.map(({ path, element }) => (
       <Route key={path} path={path} element={element} />
     ))}
 

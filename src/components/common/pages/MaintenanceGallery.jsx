@@ -7,7 +7,7 @@ const GearIcon = ({ className }) => (
 
 // --- 1. The SaaS Standard (Friendly) ---
 export const MaintenanceStandard = () => (
-  <div className="flex flex-col items-center justify-center h-[600px] w-full bg-white border border-gray-100 rounded-3xl p-8 text-center">
+  <div className="flex flex-col items-center justify-center container w-full bg-white border border-gray-100 rounded-3xl p-8 text-center">
     <div className="relative mb-8">
       <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center">
         <GearIcon className="w-12 h-12 text-blue-600 animate-[spin_4s_linear_infinite]" />
@@ -35,7 +35,7 @@ export const MaintenanceStandard = () => (
 
 // --- 2. The Minimalist (Typography) ---
 export const MaintenanceMinimal = () => (
-  <div className="flex flex-col justify-center h-[600px] w-full bg-[#f8f8f8] rounded-3xl p-12 border border-gray-200">
+  <div className="flex flex-col justify-center container w-full bg-[#f8f8f8] rounded-3xl p-12 border border-gray-200">
     <div className="max-w-2xl">
       <div className="h-1 w-16 bg-black mb-8"></div>
       <h1 className="text-6xl font-serif text-black leading-tight mb-8">
@@ -82,7 +82,7 @@ export const MaintenanceTerminal = () => {
   }, []);
 
   return (
-    <div className="h-[600px] w-full bg-slate-900 rounded-3xl p-8 flex flex-col items-center justify-center font-mono">
+    <div className="container w-full bg-slate-900 rounded-3xl p-8 flex flex-col items-center justify-center font-mono">
       <div className="w-full max-w-lg bg-black border border-gray-700 rounded-lg shadow-2xl overflow-hidden">
         <div className="bg-gray-800 px-4 py-2 flex items-center justify-between">
           <span className="text-xs text-gray-400">system_update.sh</span>
@@ -111,7 +111,7 @@ export const MaintenanceTerminal = () => {
 
 // --- 4. The Glassmorphism (Vibrant) ---
 export const MaintenanceGlass = () => (
-  <div className="relative flex items-center justify-center h-[600px] w-full rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+  <div className="relative flex items-center justify-center container w-full rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
     <div className="absolute top-20 left-20 w-64 h-64 bg-yellow-300 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-blob"></div>
     <div className="absolute bottom-20 right-20 w-64 h-64 bg-cyan-300 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
 
@@ -145,7 +145,7 @@ export const MaintenanceProgress = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-[600px] w-full bg-white border border-gray-100 rounded-3xl p-8">
+    <div className="flex flex-col items-center justify-center container w-full bg-white border border-gray-100 rounded-3xl p-8">
       <div className="w-full max-w-md text-center">
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Updating Database</h1>
         <p className="text-gray-500 mb-10">We are pushing a critical security update.</p>
@@ -178,7 +178,7 @@ export const MaintenanceProgress = () => {
 
 // --- 6. The Brutalist (Bold/Alert) ---
 export const MaintenanceBrutalist = () => (
-  <div className="flex flex-col items-center justify-center h-[600px] w-full bg-yellow-400 rounded-3xl border-4 border-black relative overflow-hidden">
+  <div className="flex flex-col items-center justify-center container w-full bg-slate-800 rounded-3xl border-4 border-black relative overflow-hidden">
     {/* Construction Tape Background */}
     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 10px, transparent 10px, transparent 20px)' }}></div>
 
@@ -197,7 +197,7 @@ export const MaintenanceBrutalist = () => (
 
 // --- 7. The Neumorphic (Soft UI) ---
 export const MaintenanceNeumorphic = () => (
-  <div className="flex items-center justify-center h-[600px] w-full bg-[#e0e5ec] rounded-3xl">
+  <div className="flex items-center justify-center container w-full bg-[#e0e5ec] rounded-3xl">
     <div className="w-full max-w-md p-10 rounded-[40px] bg-[#e0e5ec] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] text-center">
       <div className="w-24 h-24 rounded-full bg-[#e0e5ec] shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] flex items-center justify-center text-4xl mb-8 mx-auto text-gray-400">
         💤
@@ -218,7 +218,7 @@ export const MaintenanceNeumorphic = () => (
 
 // --- 8. The Cyberpunk (Glitch) ---
 export const MaintenanceCyber = () => (
-  <div className="h-[600px] bg-black relative rounded-3xl overflow-hidden flex flex-col items-center justify-center border-2 border-red-600 p-8">
+  <div className=" bg-black container relative rounded-3xl overflow-hidden flex flex-col items-center justify-center border-2 border-red-600 p-8">
     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,0,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
     
     <div className="relative z-10 text-center">
@@ -247,7 +247,7 @@ export const MaintenanceCyber = () => (
 
 // --- 9. The Status Dashboard (Detailed) ---
 export const MaintenanceDashboard = () => (
-  <div className="flex flex-col items-center justify-center h-[600px] w-full bg-slate-50 border border-gray-200 rounded-3xl p-8">
+  <div className="flex flex-col items-center justify-center container w-full bg-slate-50 border border-gray-200 rounded-3xl p-8">
     <div className="w-full max-w-lg bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
       <div className="p-6 border-b border-gray-100 flex justify-between items-center">
         <h2 className="font-bold text-slate-800">System Status</h2>
@@ -282,7 +282,7 @@ export const MaintenanceDashboard = () => (
 
 // --- 10. The Countdown (Specific Time) ---
 export const MaintenanceCountdown = () => (
-  <div className="flex flex-col items-center justify-center h-[600px] w-full bg-slate-900 text-white rounded-3xl border border-slate-800">
+  <div className="flex flex-col items-center justify-center container w-full bg-slate-900 text-white rounded-3xl border border-slate-800">
     <div className="text-center">
       <div className="text-indigo-400 font-bold uppercase tracking-[0.2em] mb-6">Scheduled Maintenance</div>
       <h1 className="text-4xl font-bold mb-12">We'll be back in</h1>
@@ -364,7 +364,7 @@ const MaintenanceGallery = () => {
           <MaintenanceDashboard />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg'>
+        <section className='box-shadow container p-4 rounded-lg'>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">10. Dark Countdown</span>
           <MaintenanceCountdown />
         </section>

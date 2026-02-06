@@ -45,6 +45,16 @@ export const sidebarJson = [
         title: "Redux Toolkit",
     },
     {
+        id: 5,
+        name: "zustand",
+        title: "Zustand",
+    },
+    {
+        id: 6,
+        name: "react-query",
+        title: "React Query",
+    },
+    {
         id: 4,
         name: "components",
         title: "Components",
