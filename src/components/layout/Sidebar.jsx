@@ -1,11 +1,12 @@
 import React from 'react'
 import { sidebarJson } from '../../configurations/uiJson'
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+import { HiChevronRight, HiChevronDown, HiXMark } from "react-icons/hi2";
 import { NavLink } from 'react-router-dom';
+import { useSidebar } from '../../context/SidebarContext';
 
 
-const Sidebar = () => {
+const Sidebar = ({ isMobile }) => {
+    const { closeSidebar } = useSidebar();
     // Track visibility for each item by id
     const [visibleChildren, setVisibleChildren] = React.useState({});
 
@@ -17,47 +18,79 @@ const Sidebar = () => {
     };
 
     return (
-        <main className='text-left overflow-y-auto h-[100%] p-2'>
-            {
-                sidebarJson.map((item) => (
-                    <div key={item.id}>
-                        <div className='flex flex-row items-center p-1 hover:bg-gray-100 rounded-lg'>
-                            <div>
-                                <h2 className='text-lg font-semibold mb-2'><NavLink to={item.name}>{item.title}</NavLink></h2>
-                            </div>
+        <main className='text-left h-full flex flex-col'>
+            {isMobile && (
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-[hsl(var(--border))]">
+                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--foreground))]">
+                        Menu
+                    </span>
+                    <button 
+                        onClick={closeSidebar}
+                        className="p-2 rounded-xl hover:bg-[hsl(var(--accent))] transition-colors"
+                    >
+                        <HiXMark className="w-6 h-6 text-[hsl(var(--foreground))]" />
+                    </button>
+                </div>
+            )}
+
+            <div className='overflow-y-auto flex-1 custom-scrollbar space-y-2'>
+                {sidebarJson.map((item) => (
+                    <div key={item.id} className="group">
+                        <div className="flex items-center justify-between p-2 rounded-xl hover:bg-[hsl(var(--accent))] transition-all duration-200">
+                            <NavLink 
+                                to={item.name}
+                                onClick={() => isMobile && closeSidebar()}
+                                className={({ isActive }) => `
+                                    flex-1 text-sm font-semibold transition-colors
+                                    ${isActive ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--foreground))] hover:text-[hsl(var(--primary))]'}
+                                `}
+                            >
+                                {item.title}
+                            </NavLink>
+                            
                             {item.children && (
-                                <div
+                                <button
                                     onClick={() => toggleChildren(item.id)}
-                                    className={`transition-all ease-in-out cursor-pointer ml-2 hover:text-gray-600 ${visibleChildren[item.id] ? 'rotate-90' : ''}`}
-                                    style={{ display: 'flex', alignItems: 'center' }}
+                                    className={`p-1 rounded-lg hover:bg-[hsl(var(--muted))] transition-transform duration-300 ${visibleChildren[item.id] ? 'rotate-180' : ''}`}
                                 >
-                                    <MdOutlineKeyboardDoubleArrowRight
-                                        className='text-xl mt-[-0.4rem] overflow-y-auto h-[100%]'
-                                        style={{ transition: 'transform 0.45s ease-in-out', transform: visibleChildren[item.id] ? 'rotate(0deg)' : 'rotate(0deg)' }}
-                                    />
-                                </div>
+                                    <HiChevronDown className="w-4 h-4 text-[hsl(var(--muted-foreground))]" />
+                                </button>
                             )}
                         </div>
-                        <div className=''>
-                            {item.children && visibleChildren[item.id] ? childrenComponent(item.children) : null}
+                        
+                        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${visibleChildren[item.id] ? 'max-h-96 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                            {item.children && childrenComponent(item.children, isMobile, closeSidebar)}
                         </div>
                     </div>
-                ))
-            }
+                ))}
+            </div>
         </main>
     );
 }
 
 
-const childrenComponent = (children) => {
+const childrenComponent = (children, isMobile, closeSidebar) => {
     return (
-        <div className='ml-5 text-gray-600 '>
+        <div className='ml-4 pl-4 border-l border-[hsl(var(--border))] space-y-1'>
             {children.map((child) => (
-                <div key={child.id} className='mb-1 p-1'>
-                    <NavLink className="text-gray-600 hover:text-slate-800 hover:font-weight-bolder" to={child.name}>{child.title}</NavLink>
-                </div>
+                <NavLink 
+                    key={child.id} 
+                    to={child.name}
+                    onClick={() => isMobile && closeSidebar()}
+                    className={({ isActive }) => `
+                        block p-2 text-xs font-medium rounded-lg transition-all
+                        ${isActive 
+                            ? 'bg-[hsl(var(--primary))] text-white shadow-md shadow-blue-500/10' 
+                            : 'text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--accent))]'}
+                    `}
+                >
+                    {child.title}
+                </NavLink>
             ))}
         </div>
     )
 }
+
 export default Sidebar
+
+
