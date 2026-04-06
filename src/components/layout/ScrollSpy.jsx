@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import CopyButton from '../common/CopyButton';
 
 // --- SHARED LOGIC: The ScrollSpy Hook ---
 // This hook tracks scroll position within a specific container (rootRef)
@@ -505,52 +506,100 @@ const ScrollSpy = () => {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start justify-items-center">
         
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Standard scrollspy with left border sidebar navigation`} htmlCode={`<div class="scrollspy"><nav class="sidebar"><a class="active">Intro</a><a>Features</a></nav><div class="content"><section id="intro">...</section></div></div>`} cssCode={`.scrollspy { display: flex; gap: 1.5rem; height: 20rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; }
+.sidebar { width: 12rem; background: #f9fafb; padding: 1.5rem; border-right: 1px solid #f3f4f6; }
+.sidebar a { display: block; padding: 0.25rem 0 0.25rem 1rem; font-size: 0.875rem; font-weight: 500; border-left: 2px solid transparent; color: #6b7280; cursor: pointer; }
+.sidebar a.active { border-color: #2563eb; color: #2563eb; }
+.content { flex: 1; overflow-y: auto; padding: 1.5rem; scroll-behavior: smooth; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">01. Standard Sidebar</span>
           <SpyStandard />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Sticky header scrollspy with underline active indicator`} htmlCode={`<div class="spy-sticky"><header><span>Brand</span><nav><a class="active">Home</a><a>About</a></nav></header><div class="content">...</div></div>`} cssCode={`.spy-sticky { height: 20rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; display: flex; flex-direction: column; }
+.spy-sticky header { height: 3.5rem; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: #fff; }
+.spy-sticky nav a { position: relative; height: 100%; display: inline-flex; align-items: center; padding: 0 1rem; font-size: 0.875rem; font-weight: 500; color: #6b7280; }
+.spy-sticky nav a.active { color: #4f46e5; }
+.spy-sticky nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #4f46e5; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">02. Sticky Header</span>
           <SpySticky />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Floating dots scrollspy on the right side with tooltips`} htmlCode={`<div class="spy-dots"><div class="content">...</div><div class="dots"><button class="active"></button><button></button></div></div>`} cssCode={`.spy-dots { height: 20rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; position: relative; }
+.dots { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.75rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(4px); padding: 0.5rem; border-radius: 9999px; border: 1px solid #f3f4f6; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+.dots button { width: 0.375rem; height: 0.375rem; border-radius: 50%; background: #d1d5db; border: none; cursor: pointer; transition: all 0.3s; }
+.dots button.active { width: 0.75rem; height: 0.75rem; background: #000; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">03. Minimal Dots</span>
           <SpyDots />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Glassmorphism floating table of contents scrollspy`} htmlCode={`<div class="spy-glass"><div class="content">...</div><div class="toc"><span>On Page</span><a class="active">Intro</a></div></div>`} cssCode={`.spy-glass { height: 20rem; position: relative; border-radius: 0.75rem; overflow: hidden; background: linear-gradient(135deg, #10b981, #0d9488); }
+.toc { position: absolute; top: 1.5rem; right: 1.5rem; width: 8rem; background: rgba(255,255,255,0.2); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); padding: 0.75rem; border-radius: 0.75rem; box-shadow: 0 20px 25px rgba(0,0,0,0.15); }
+.toc span { font-size: 0.75rem; font-weight: 700; color: #fff; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.1em; }
+.toc a { display: block; font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 0.5rem; color: #fff; cursor: pointer; margin-top: 0.25rem; }
+.toc a.active { background: #fff; color: #0d9488; font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">04. Glass TOC</span>
           <SpyGlass />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Progress bar reading indicator scrollspy`} htmlCode={`<div class="spy-progress"><header><span>Reader.</span><div class="bar"><div class="fill" style="width:50%"></div></div></header><div class="content">...</div></div>`} cssCode={`.spy-progress { height: 20rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; display: flex; flex-direction: column; }
+.spy-progress header { height: 3.5rem; border-bottom: 1px solid #f3f4f6; display: flex; align-items: center; padding: 0 1.5rem; justify-content: space-between; position: relative; }
+.bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #f3f4f6; }
+.fill { height: 100%; background: #ef4444; transition: width 0.5s ease-out; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">05. Progress Reader</span>
           <SpyProgress />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Cyberpunk neon terminal scrollspy`} htmlCode={`<div class="spy-cyber"><nav><span>SYSTEM_READY</span><a class="active">> sys</a></nav><div class="content">...</div></div>`} cssCode={`.spy-cyber { height: 20rem; background: #000; border: 2px solid #22c55e; display: flex; overflow: hidden; }
+.spy-cyber nav { width: 10rem; border-right: 2px solid rgba(34,197,94,0.5); padding: 1rem; font-family: monospace; }
+.spy-cyber nav a { display: block; font-size: 0.75rem; text-transform: uppercase; padding: 0.5rem; border: 1px dashed #14532d; color: #15803d; cursor: pointer; margin-bottom: 1rem; }
+.spy-cyber nav a.active { border-color: #4ade80; color: #000; background: #22c55e; font-weight: 700; box-shadow: 0 0 10px rgba(34,197,94,0.6); }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">06. Cyberpunk</span>
           <SpyCyberpunk />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Neumorphic soft UI scrollspy with numbered circles`} htmlCode={`<div class="spy-neu"><div class="nav"><button class="active">1</button><button>2</button></div><div class="content">...</div></div>`} cssCode={`.spy-neu { height: 20rem; background: #e0e5ec; border-radius: 1rem; display: flex; padding: 1rem; gap: 1rem; box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff; }
+.spy-neu .nav { width: 4rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding-top: 1rem; }
+.spy-neu button { width: 2.5rem; height: 2.5rem; border-radius: 50%; border: none; font-weight: 700; font-size: 0.875rem; background: #e0e5ec; color: #9ca3af; cursor: pointer; box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; }
+.spy-neu button.active { color: #3b82f6; box-shadow: inset 3px 3px 6px #bebebe, inset -3px -3px 6px #ffffff; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">07. Neumorphic</span>
           <SpyNeumorphic />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Floating pill (iOS segmented control) scrollspy`} htmlCode={`<div class="spy-pill"><div class="pill-bar"><div class="pill-bg"></div><button class="active">Opt 1</button><button>Opt 2</button></div><div class="content">...</div></div>`} cssCode={`.spy-pill { height: 20rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+.pill-bar { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 20; background: rgba(243,244,246,0.9); backdrop-filter: blur(4px); padding: 0.25rem; border-radius: 9999px; border: 1px solid #e5e7eb; box-shadow: 0 20px 25px rgba(0,0,0,0.15); display: flex; }
+.pill-bg { position: absolute; top: 0.25rem; bottom: 0.25rem; background: #fff; border-radius: 9999px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.3s ease-out; }
+.pill-bar button { position: relative; width: 5rem; padding: 0.5rem; font-size: 0.75rem; font-weight: 700; z-index: 1; background: transparent; border: none; cursor: pointer; color: #6b7280; }
+.pill-bar button.active { color: #000; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">08. Floating Pill</span>
           <SpyPill />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Brutalist bold scrollspy with thick borders`} htmlCode={`<div class="spy-brutal"><nav><button class="active">A</button><button>B</button></nav><div class="content">...</div></div>`} cssCode={`.spy-brutal { height: 20rem; border: 4px solid #000; background: #facc15; display: flex; }
+.spy-brutal nav { width: 4rem; border-right: 4px solid #000; display: flex; flex-direction: column; }
+.spy-brutal nav button { flex: 1; font-weight: 900; font-size: 1.25rem; border-bottom: 4px solid #000; border: none; cursor: pointer; background: #facc15; color: #000; }
+.spy-brutal nav button:last-child { border-bottom: none; }
+.spy-brutal nav button.active { background: #000; color: #fff; }
+.spy-brutal nav button:hover { background: #fff; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">09. Brutalist</span>
           <SpyBrutalist />
         </div>
 
-        <div className="w-full box-shadow p-4 rounded-lg">
+        <div className="w-full box-shadow p-4 rounded-lg relative group/spy">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/spy:opacity-100 transition-opacity"><CopyButton jsxCode={`// Stepper process scrollspy with connecting line and checkmarks`} htmlCode={`<div class="spy-stepper"><div class="steps"><div class="line"></div><button class="completed">✓</button><button class="active">2</button><button>3</button></div><div class="content">...</div></div>`} cssCode={`.spy-stepper { height: 20rem; border: 1px solid #e5e7eb; border-radius: 0.75rem; overflow: hidden; display: flex; }
+.steps { width: 33%; background: #f9fafb; border-right: 1px solid #f3f4f6; padding: 1.5rem; position: relative; }
+.line { position: absolute; left: 2rem; top: 1rem; bottom: 1rem; width: 2px; background: #e5e7eb; }
+.steps button { display: flex; align-items: center; gap: 0.75rem; width: 2rem; height: 2rem; border-radius: 50%; border: 2px solid #d1d5db; background: #fff; color: #9ca3af; z-index: 1; position: relative; cursor: pointer; }
+.steps button.active { background: #2563eb; border-color: #2563eb; color: #fff; }
+.steps button.completed { background: #22c55e; border-color: #22c55e; color: #fff; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 block">10. Stepper</span>
           <SpyStepper />
         </div>

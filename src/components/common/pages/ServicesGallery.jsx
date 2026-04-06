@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CopyButton from '../CopyButton';
 
 // --- SHARED ICONS ---
 const Icons = {
@@ -467,7 +468,78 @@ const ServicesGallery = () => {
       </div>
 
       {/* RENDERED PAGE */}
-      <div className="pb-32 bg-white shadow-xl max-w-[1600px] mx-auto min-h-screen">
+      <div className="pb-32 bg-white shadow-xl max-w-[1600px] mx-auto min-h-screen relative group/svc">
+        <div className="absolute top-2 right-2 z-50 opacity-0 group-hover/svc:opacity-100 transition-opacity"><CopyButton jsxCode={`import React from 'react';
+/* 
+  Representative Services Page Composition 
+  This snippet shows how to combine Hero, Features, Process, and Pricing sections.
+*/
+const ServicesPage = () => {
+  return (
+    <div className="bg-white min-h-screen font-sans">
+      {/* Hero Section */}
+      <section className="py-24 px-8 text-center bg-slate-50">
+        <h1 className="text-5xl font-extrabold text-slate-900 mb-6">Expert Solutions for Your Business</h1>
+        <p className="text-xl text-slate-600 max-w-2xl mx-auto">We provide the tools and services you need to scale your operations and reach more customers.</p>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 px-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[1, 2, 3].map(i => (
+          <div key={i} className="p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">★</div>
+            <h3 className="text-xl font-bold mb-3">Service Module {i}</h3>
+            <p className="text-gray-500">Comprehensive description of the service and the value it brings to your company.</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Process Steps */}
+      <section className="py-20 bg-slate-900 text-white px-8">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h2 className="text-3xl font-bold">Our Process</h2>
+        </div>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          {['Discover', 'Design', 'Develop', 'Deploy'].map((step, idx) => (
+            <div key={step}>
+              <div className="text-4xl font-bold text-blue-500 mb-4">0{idx + 1}</div>
+              <h4 className="text-lg font-bold mb-2">{step}</h4>
+              <p className="text-slate-400 text-sm">Actionable step description.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing / CTA */}
+      <section className="py-24 px-8 text-center">
+        <h2 className="text-3xl font-bold mb-8">Ready to get started?</h2>
+        <button className="px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors">Contact Us Today</button>
+      </section>
+    </div>
+  );
+};
+
+export default ServicesPage;`} htmlCode={`<!-- Static HTML Services Layout -->
+<div class="bg-white min-h-screen font-sans">
+  <section class="py-24 px-8 text-center bg-slate-50">
+    <h1 class="text-5xl font-extrabold text-slate-900 mb-6">Expert Solutions</h1>
+    <p class="text-xl text-slate-600 max-w-2xl mx-auto">We provide the tools you need to scale.</p>
+  </section>
+
+  <section class="py-20 px-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="p-8 border border-gray-100 rounded-2xl shadow-sm">
+      <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">★</div>
+      <h3 class="text-xl font-bold mb-3">Service 01</h3>
+      <p class="text-gray-500">Value proposition description.</p>
+    </div>
+    <!-- ... more cards -->
+  </section>
+
+  <section class="py-24 px-8 text-center">
+    <h2 class="text-3xl font-bold mb-8">Ready to get started?</h2>
+    <a href="#" class="inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-full">Contact Us</a>
+  </section>
+</div>`} cssCode={`/* Services Page Styles */\n/* This layout depends on Tailwind CSS utility classes. */\n\n.services-page-wrapper {\n  padding-bottom: 2rem;\n}`} /></div>
         {/* 1. Hero Section */}
         {React.createElement(Heroes[hero])}
         

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import CopyButton from '../CopyButton';
 
 // --- Shared Data ---
 const products = [
@@ -372,16 +373,209 @@ const ProductGalleryAnimation = () => (
       </div>
       
       <div className="space-y-32 max-w-6xl mx-auto">
-        <section className="box-shadow p-4 rounded-lg"><GalleryCylinder /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryInertia /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryFlip /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryFan /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryCoverflow /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryTilt /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryCube /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryStacked /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryMarquee /></section>
-        <section className="box-shadow p-4 rounded-lg"><GalleryCoin /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-slate-900 h-[500px] flex flex-col items-center justify-center overflow-hidden perspective-1000">
+    <div className="text-white/30 text-xs font-bold uppercase tracking-widest mb-10">01. Infinite Cylinder</div>
+    <div className="relative w-64 h-48 preserve-3d cylinder-anim">
+      {products.map((p, i) => {
+        const angle = (360 / products.length) * i;
+        return (
+          <div key={p.id} className="absolute inset-0 backface-visible border-2 border-cyan-500/20 bg-black/80 rounded-xl overflow-hidden"
+            style={{ transform: \`rotateX(\${angle}deg) translateZ(250px)\` }}>
+            <img src={p.img} className="w-full h-32 object-cover" alt="" />
+            <div className="p-3"><div className="text-white font-bold text-sm">{p.name}</div><div className="text-cyan-400 text-xs">{p.price}</div></div>
+          </div>
+        );
+      })}
+    </div>
+  </div>`} htmlCode={`<div class="bg-slate-900 h-[500px] flex flex-col items-center justify-center overflow-hidden perspective-1000">
+    <div class="text-white/30 text-xs font-bold uppercase tracking-widest mb-10">01. Infinite Cylinder</div>
+    <div class="relative w-64 h-48 preserve-3d cylinder-anim">
+      ... class="absolute inset-0 backface-visible border-2 border-cyan-500/20 bg-black/80 rounded-xl overflow-hidden"
+            style=...deg) translateZ(250px)\` }}>
+            <img src=... class="w-full h-32 object-cover" alt="" />
+            <div class="p-3"><div class="text-white font-bold text-sm">...</div><div class="text-cyan-400 text-xs">...</div></div>
+          </div>
+        );
+      })}
+    </div>
+  </div>`} cssCode={`/* GalleryCylinder Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryCylinder /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-black h-[500px] flex flex-col items-center justify-center overflow-hidden perspective-1000 cursor-grab active:cursor-grabbing select-none"
+      onMouseDown={start} onMouseUp={end} onMouseMove={move} onMouseLeave={end} onTouchStart={start} onTouchEnd={end} onTouchMove={move}>
+      <div className="text-white/30 text-xs font-bold uppercase tracking-widest mb-10">02. Drag to Spin</div>
+      <div ref={containerRef} className="relative w-48 h-64 preserve-3d">
+        {products.map((p, i) => (
+          <div key={p.id} className="absolute inset-0 bg-white rounded-lg shadow-2xl overflow-hidden backface-hidden"
+            style={{ transform: \`rotateY(\${i * (360 / products.length)}deg) translateZ(200px)\` }}>
+            <img src={p.img} className="w-full h-full object-cover pointer-events-none" alt="" />
+          </div>
+        )`} htmlCode={`<div class="bg-black h-[500px] flex flex-col items-center justify-center overflow-hidden perspective-1000 cursor-grab active:cursor-grabbing select-none"
+      onMouseDown=... onMouseUp=... onMouseMove=... onMouseLeave=... onTouchStart=... onTouchEnd=... onTouchMove=...>
+      <div class="text-white/30 text-xs font-bold uppercase tracking-widest mb-10">02. Drag to Spin</div>
+      <div ref=... class="relative w-48 h-64 preserve-3d">
+        <!-- Mapping Start -->
+(
+          <div key=... class="absolute inset-0 bg-white rounded-lg shadow-2xl overflow-hidden backface-hidden"
+            style=...deg) translateZ(200px)\` }}>
+            <img src=... class="w-full h-full object-cover pointer-events-none" alt="" />
+          </div>
+        )`} cssCode={`/* GalleryInertia Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryInertia /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-gray-100 p-12 h-[500px] flex flex-col justify-center items-center">
+    <div className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-12 text-center">03. 3D Flip Cards (Hover Me)</div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
+      {products.slice(0, 3).map((p) => (
+        <div key={p.id} className="flip-card h-80 w-full cursor-pointer">
+          <div className="flip-card-inner">
+            {/* Front */}
+            <div className="flip-card-front bg-white shadow-xl">
+              <img src={p.img} alt="" className="w-full h-full object-cover" />
+              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm">{p.price}</div>
+            </div>
+            {/* Back */}
+            <div className="flip-card-back bg-slate-900 flex flex-col items-center justify-center p-6 text-center border-2 border-slate-700">
+              <h3 className="text-2xl font-bold text-white mb-2">{p.name}</h3>
+              <p className="text-slate-400 text-sm mb-6">High-performance gear.</p>
+              <button className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-cyan-400 transition-colors">View</button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>`} htmlCode={`<div class="bg-gray-100 p-12 h-[500px] flex flex-col justify-center items-center">
+    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-12 text-center">03. 3D Flip Cards (Hover Me)</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full">
+      <!-- Mapping Start -->
+(
+        <div key=... class="flip-card h-80 w-full cursor-pointer">
+          <div class="flip-card-inner">
+            ...
+            <div class="flip-card-front bg-white shadow-xl">
+              <img src=... alt="" class="w-full h-full object-cover" />
+              <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm">...</div>
+            </div>
+            ...
+            <div class="flip-card-back bg-slate-900 flex flex-col items-center justify-center p-6 text-center border-2 border-slate-700">
+              <h3 class="text-2xl font-bold text-white mb-2">...</h3>
+              <p class="text-slate-400 text-sm mb-6">High-performance gear.</p>
+              <button class="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-cyan-400 transition-colors">View</button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>`} cssCode={`/* GalleryFlip Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryFlip /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-indigo-900 h-[500px] flex flex-col items-center justify-end pb-12 overflow-hidden">
+      <div className="text-indigo-300 text-xs font-bold uppercase tracking-widest mb-24">04. The Fan Deck</div>
+      <div className="relative w-full max-w-lg h-40 flex justify-center">
+        {products.slice(0, 5`} htmlCode={`<div class="bg-indigo-900 h-[500px] flex flex-col items-center justify-end pb-12 overflow-hidden">
+      <div class="text-indigo-300 text-xs font-bold uppercase tracking-widest mb-24">04. The Fan Deck</div>
+      <div class="relative w-full max-w-lg h-40 flex justify-center">
+        {products.slice(0, 5`} cssCode={`/* GalleryFan Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryFan /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-white h-[500px] flex flex-col items-center justify-center overflow-hidden">
+      <div className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-10 text-center">
+        05. Smooth Cover Flow (Click Cards`} htmlCode={`<div class="bg-white h-[500px] flex flex-col items-center justify-center overflow-hidden">
+      <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-10 text-center">
+        05. Smooth Cover Flow (Click Cards`} cssCode={`/* GalleryCoverflow Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryCoverflow /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-slate-50 p-12 h-[500px] flex flex-col justify-center">
+    <div className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-8 text-center">06. Mouse Parallax</div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto w-full">
+      {products.slice(0, 3).map(p => <TiltCard key={p.id} data={p} />)}
+    </div>
+  </div>`} htmlCode={`<div class="bg-slate-50 p-12 h-[500px] flex flex-col justify-center">
+    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-8 text-center">06. Mouse Parallax</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto w-full">
+      ... data=... />)}
+    </div>
+  </div>`} cssCode={`/* GalleryTilt Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryTilt /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-gray-900 h-[500px] flex flex-col items-center justify-center overflow-hidden perspective-1000">
+      <div className="text-white/30 text-xs font-bold uppercase tracking-widest mb-16">07. The Product Cube</div>
+      <div className="relative w-64 h-64 transition-transform duration-700 ease-in-out preserve-3d" style={{ transform: \`rotateY(\${side * -90}deg`} htmlCode={`<div class="bg-gray-900 h-[500px] flex flex-col items-center justify-center overflow-hidden perspective-1000">
+      <div class="text-white/30 text-xs font-bold uppercase tracking-widest mb-16">07. The Product Cube</div>
+      <div class="relative w-64 h-64 transition-transform duration-700 ease-in-out preserve-3d" style=...deg`} cssCode={`/* GalleryCube Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryCube /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-white h-[500px] overflow-y-auto relative p-8 scroll-smooth border border-gray-100 rounded-3xl">
+    <div className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-8 text-center sticky top-0 z-50">08. Sticky Stack (Scroll Down)</div>
+    <div className="max-w-md mx-auto space-y-8 pb-20">
+      {products.map((p, i) => (
+        <div key={p.id} className="sticky top-20 bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden flex" style={{ top: \`\${80 + (i * 10)}px\` }}>
+          <img src={p.img} className="w-32 h-32 object-cover" alt="" />
+          <div className="p-6 flex flex-col justify-center"><h3 className="font-bold text-xl">{p.name}</h3><p className="text-blue-600 font-medium">{p.price}</p></div>
+        </div>
+      ))}
+    </div>
+  </div>`} htmlCode={`<div class="bg-white h-[500px] overflow-y-auto relative p-8 scroll-smooth border border-gray-100 rounded-3xl">
+    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-8 text-center sticky top-0 z-50">08. Sticky Stack (Scroll Down)</div>
+    <div class="max-w-md mx-auto space-y-8 pb-20">
+      <!-- Mapping Start -->
+(
+        <div key=... class="sticky top-20 bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden flex" style=...px\` }}>
+          <img src=... class="w-32 h-32 object-cover" alt="" />
+          <div class="p-6 flex flex-col justify-center"><h3 class="font-bold text-xl">...</h3><p class="text-blue-600 font-medium">...</p></div>
+        </div>
+      ))}
+    </div>
+  </div>`} cssCode={`/* GalleryStacked Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryStacked /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-black h-[500px] flex flex-col justify-center overflow-hidden">
+    <div className="text-white/30 text-xs font-bold uppercase tracking-widest mb-12 text-center">09. Skew Marquee</div>
+    <div className="flex gap-8 marquee-anim w-max">
+      {[...products, ...products].map((p, i) => (
+        <div key={i} className="w-72 h-96 bg-gray-800 rounded-xl overflow-hidden transform -skew-x-6 hover:skew-x-0 transition-transform duration-300 border border-gray-700">
+          <img src={p.img} className="w-full h-3/4 object-cover opacity-80 hover:opacity-100 transition-opacity" alt="" />
+          <div className="h-1/4 p-6 bg-gray-900 text-white"><h3 className="font-bold text-xl">{p.name}</h3><p className="text-gray-400">{p.price}</p></div>
+        </div>
+      ))}
+    </div>
+  </div>`} htmlCode={`<div class="bg-black h-[500px] flex flex-col justify-center overflow-hidden">
+    <div class="text-white/30 text-xs font-bold uppercase tracking-widest mb-12 text-center">09. Skew Marquee</div>
+    <div class="flex gap-8 marquee-anim w-max">
+      <!-- Mapping Start -->
+(
+        <div key=... class="w-72 h-96 bg-gray-800 rounded-xl overflow-hidden transform -skew-x-6 hover:skew-x-0 transition-transform duration-300 border border-gray-700">
+          <img src=... class="w-full h-3/4 object-cover opacity-80 hover:opacity-100 transition-opacity" alt="" />
+          <div class="h-1/4 p-6 bg-gray-900 text-white"><h3 class="font-bold text-xl">...</h3><p class="text-gray-400">...</p></div>
+        </div>
+      ))}
+    </div>
+  </div>`} cssCode={`/* GalleryMarquee Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryMarquee /></section>
+        <section className="box-shadow p-4 rounded-lg relative group/anim"><div className="absolute top-2 right-2 z-40 opacity-0 group-hover/anim:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-orange-50 h-[500px] flex flex-col items-center justify-center">
+    <div className="text-orange-300 text-xs font-bold uppercase tracking-widest mb-16">10. 3D Coin Spin (Hover Me)</div>
+    
+    <div className="coin-scene w-64 h-64 cursor-pointer">
+      <div className="coin-inner">
+        {/* Front */}
+        <div className="coin-face overflow-hidden shadow-2xl bg-white border-[12px] border-orange-200">
+          <img src={products[0].img} className="w-full h-full object-cover" alt="" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent pointer-events-none"></div>
+        </div>
+        {/* Back */}
+        <div className="coin-face coin-back bg-white flex flex-col items-center justify-center p-6 text-center shadow-2xl border-[12px] border-orange-200">
+          <h3 className="text-xl font-black text-slate-900 uppercase leading-none mb-2">{products[0].name}</h3>
+          <p className="text-orange-500 font-bold text-2xl">{products[0].price}</p>
+          <button className="mt-4 text-xs bg-black text-white px-6 py-2 rounded-full shadow-lg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    
+    <div className="mt-12 text-gray-400 text-sm animate-bounce font-medium">Hover to Flip</div>
+  </div>`} htmlCode={`<div class="bg-orange-50 h-[500px] flex flex-col items-center justify-center">
+    <div class="text-orange-300 text-xs font-bold uppercase tracking-widest mb-16">10. 3D Coin Spin (Hover Me)</div>
+    
+    <div class="coin-scene w-64 h-64 cursor-pointer">
+      <div class="coin-inner">
+        ...
+        <div class="coin-face overflow-hidden shadow-2xl bg-white border-[12px] border-orange-200">
+          <img src=... class="w-full h-full object-cover" alt="" />
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent pointer-events-none"></div>
+        </div>
+        ...
+        <div class="coin-face coin-back bg-white flex flex-col items-center justify-center p-6 text-center shadow-2xl border-[12px] border-orange-200">
+          <h3 class="text-xl font-black text-slate-900 uppercase leading-none mb-2">...</h3>
+          <p class="text-orange-500 font-bold text-2xl">...</p>
+          <button class="mt-4 text-xs bg-black text-white px-6 py-2 rounded-full shadow-lg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-12 text-gray-400 text-sm animate-bounce font-medium">Hover to Flip</div>
+  </div>`} cssCode={`/* GalleryCoin Component Styles */\n\n/* \n   This component is built using Tailwind CSS utility classes.\n   To use it as Vanilla CSS, you will need to: \n   1. Add tailwind.css to your project, OR\n   2. Convert these classes to standard CSS rules.\n*/\n\n.component-wrapper {\n  /* Add your custom styles here */\n}`} /></div><GalleryCoin /></section>
       </div>
     </div>
   );

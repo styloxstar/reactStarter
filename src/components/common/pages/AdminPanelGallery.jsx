@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CopyButton from '../CopyButton';
 
 // --- ICONS (Shared) ---
 const Icons = {
@@ -461,7 +462,93 @@ const AdminPanelGallery = () => {
       </div>
 
       {/* --- PREVIEW AREA --- */}
-      <div className={`h-[800px] w-full rounded-2xl overflow-hidden shadow-2xl flex border border-gray-300/50 ${getWrapperStyle()}`}>
+      <div className={`h-[800px] w-full rounded-2xl overflow-hidden shadow-2xl flex border border-gray-300/50 ${getWrapperStyle()} relative group/adm`}>
+        <div className="absolute top-2 right-2 z-50 opacity-0 group-hover/adm:opacity-100 transition-opacity"><CopyButton jsxCode={`import React from 'react';
+/* 
+  Representative Admin Panel Composition 
+  This snippet shows how to combine the Sidebar, Header, and Dashboard components.
+*/
+const AdminLayout = () => {
+  return (
+    <div className="flex h-screen bg-gray-50 overflow-hidden font-sans">
+      {/* Sidebar - Component from common/layout/Sidebars.jsx */}
+      <aside className="w-64 bg-slate-900 text-white flex flex-col h-full">
+        <div className="p-6 border-b border-slate-800 font-bold text-xl">AdminPro</div>
+        <nav className="flex-1 p-4 space-y-2">
+          {['Dashboard', 'Analytics', 'Team', 'Projects', 'Settings'].map(item => (
+            <a key={item} href="#" className="block px-4 py-2 rounded hover:bg-slate-800 transition-colors">{item}</a>
+          ))}
+        </nav>
+      </aside>
+
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* Header - Component from common/layout/Navbars.jsx */}
+        <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
+          <h2 className="text-lg font-bold text-gray-800">Overview</h2>
+          <div className="flex items-center gap-4">
+             <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">JD</div>
+          </div>
+        </header>
+
+        {/* Content Area - Component from common/layout/Stats.jsx or Dashboards.jsx */}
+        <main className="flex-1 overflow-y-auto p-8">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              {[1,2,3].map(i => (
+                <div key={i} className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                   <div className="text-sm font-medium text-gray-500">Metric {i}</div>
+                   <div className="text-2xl font-bold mt-1">$45,231.00</div>
+                </div>
+              ))}
+           </div>
+           <div className="bg-white rounded-xl shadow-sm border border-gray-100 h-96 flex items-center justify-center text-gray-400">
+              [ Main Visual Content Area ]
+           </div>
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default AdminLayout;`} htmlCode={`<!-- Static HTML Admin Layout -->
+<div class="flex h-screen bg-gray-50 overflow-hidden font-sans">
+  <aside class="w-64 bg-slate-900 text-white flex flex-col h-full">
+    <div class="p-6 border-b border-slate-800 font-bold text-xl">AdminPro</div>
+    <nav class="flex-1 p-4 space-y-2">
+      <a href="#" class="block px-4 py-2 rounded bg-slate-800 text-white">Dashboard</a>
+      <a href="#" class="block px-4 py-2 rounded text-slate-400 hover:bg-slate-800 transition-colors">Analytics</a>
+      <a href="#" class="block px-4 py-2 rounded text-slate-400 hover:bg-slate-800 transition-colors">Setting</a>
+    </nav>
+  </aside>
+
+  <div class="flex-1 flex flex-col min-w-0">
+    <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
+      <h2 class="text-lg font-bold text-gray-800">Overview</h2>
+      <div class="flex items-center gap-4">
+         <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">JD</div>
+      </div>
+    </header>
+
+    <main class="flex-1 overflow-y-auto p-8">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+             <div class="text-sm font-medium text-gray-500">Revenue</div>
+             <div class="text-2xl font-bold mt-1">$45,231.00</div>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+             <div class="text-sm font-medium text-gray-500">Users</div>
+             <div class="text-2xl font-bold mt-1">2,420</div>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+             <div class="text-sm font-medium text-gray-500">Uptime</div>
+             <div class="text-2xl font-bold mt-1">99.9%</div>
+          </div>
+       </div>
+       <div class="bg-white rounded-xl shadow-sm border border-gray-100 h-96 flex items-center justify-center text-gray-400">
+          [ Dashboard Content Area ]
+       </div>
+    </main>
+  </div>
+</div>`} cssCode={`/* Admin Layout Styles */\n/* This layout depends on Tailwind CSS utility classes. */\n\n.admin-layout-container {\n  display: flex;\n  height: 100vh;\n  overflow: hidden;\n}`} /></div>
         
         {/* Sidebar Render */}
         {activeSidebar !== 4 && ( // Hide sidebar for "Mobile Bottom" layout

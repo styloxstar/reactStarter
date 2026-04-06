@@ -1,4 +1,5 @@
 import React from 'react';
+import CopyButton from '../common/CopyButton';
 
 // --- Shared Components ---
 export const SocialIcons = ({ color = "text-gray-400 hover:text-white" }) => (
@@ -164,16 +165,16 @@ export const FooterCyberpunk = () => (
           <div>
             <h4 className="text-pink-500 mb-4 border-b border-pink-500/50 inline-block pb-1">PROTOCOL</h4>
             <ul className="space-y-2 text-gray-500">
-              <li><a href="#" className="hover:text-cyan-400 hover:shadow-[0_0_8px_rgba(6,182,212,0.6)] transition-all">>> Manifest</a></li>
-              <li><a href="#" className="hover:text-cyan-400 hover:shadow-[0_0_8px_rgba(6,182,212,0.6)] transition-all">>> Nodes</a></li>
-              <li><a href="#" className="hover:text-cyan-400 hover:shadow-[0_0_8px_rgba(6,182,212,0.6)] transition-all">>> Ledger</a></li>
+              <li><a href="#" className="hover:text-cyan-400 hover:shadow-[0_0_8px_rgba(6,182,212,0.6)] transition-all">{">> "} Manifest</a></li>
+              <li><a href="#" className="hover:text-cyan-400 hover:shadow-[0_0_8px_rgba(6,182,212,0.6)] transition-all">{">> "} Nodes</a></li>
+              <li><a href="#" className="hover:text-cyan-400 hover:shadow-[0_0_8px_rgba(6,182,212,0.6)] transition-all">{">> "} Ledger</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-cyan-500 mb-4 border-b border-cyan-500/50 inline-block pb-1">ACCESS</h4>
             <ul className="space-y-2 text-gray-500">
-              <li><a href="#" className="hover:text-pink-400 hover:shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all">>> Login</a></li>
-              <li><a href="#" className="hover:text-pink-400 hover:shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all">>> Register</a></li>
+              <li><a href="#" className="hover:text-pink-400 hover:shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all">{">> "} Login</a></li>
+              <li><a href="#" className="hover:text-pink-400 hover:shadow-[0_0_8px_rgba(236,72,153,0.6)] transition-all">{">> "} Register</a></li>
             </ul>
           </div>
         </div>
@@ -383,53 +384,241 @@ const Footers = () => {
 
       <div>
         
-        <section className='box-shadow p-4 rounded-lg'>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-white'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const FooterStandard = () => (\n  <footer className="bg-gray-900 text-white pt-12 pb-8">\n    <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">...</div>\n  </footer>\n);`}
+              htmlCode={`<footer class="footer-standard">
+  <div class="footer-grid">
+    <div class="brand">
+      <h2>Acme Corp</h2>
+      <p>Making the world a better place through constructing elegant hierarchies.</p>
+      <div class="social-icons"><a href="#"><svg>...</svg></a></div>
+    </div>
+    <div class="col">
+      <h3>Solutions</h3>
+      <ul><li><a href="#">Link 1</a></li><li><a href="#">Link 2</a></li></ul>
+    </div>
+    <div class="col">
+      <h3>Support</h3>
+      <ul><li><a href="#">Link 1</a></li><li><a href="#">Link 2</a></li></ul>
+    </div>
+    <div class="col">
+      <h3>Company</h3>
+      <ul><li><a href="#">Link 1</a></li><li><a href="#">Link 2</a></li></ul>
+    </div>
+  </div>
+  <div class="copyright">&copy; 2024 Acme Corp, Inc. All rights reserved.</div>
+</footer>`}
+              cssCode={`.footer { background: #111827; color: #fff; padding-top: 3rem; padding-bottom: 2rem; }\n.footer-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 2rem; }`}
+            />
+          </div>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">01. Enterprise Standard</div>
           <FooterStandard />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-white mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const FooterMinimal = () => (\n  <footer className="bg-white border-t border-gray-200 py-12">\n    <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">...</div>\n  </footer>\n);`}
+              htmlCode={`<footer class="footer-minimal">
+  <div class="brand">minimal.</div>
+  <nav class="links">
+    <a href="#">About</a><a href="#">Blog</a><a href="#">Jobs</a>
+    <a href="#">Press</a><a href="#">Accessibility</a><a href="#">Partners</a>
+  </nav>
+  <div class="social-icons"><a href="#"><svg>...</svg></a></div>
+  <p class="copyright">&copy; 2024 Minimal UI. Crafted with care.</p>
+</footer>`}
+              cssCode={`.footer-min { background: #fff; border-top: 1px solid #e5e7eb; padding: 3rem 0; text-align: center; }`}
+            />
+          </div>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">02. Minimalist Center</div>
           <FooterMinimal />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
-          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">03. Newsletter Focus</div>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-indigo-700 mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity text-white">
+            <CopyButton 
+              jsxCode={`export const FooterNewsletter = () => (\n  <footer className="bg-indigo-700 text-white">\n    <div className="max-w-7xl mx-auto px-6 py-16">...</div>\n  </footer>\n);`}
+              htmlCode={`<footer class="footer-newsletter">
+  <div class="newsletter-grid">
+    <div class="cta">
+      <h2>Stay in the loop</h2>
+      <p>Join 20,000+ others and get our latest articles delivered straight to your inbox.</p>
+      <div class="input-group">
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <div class="links-grid">
+      <div><h4>Product</h4><ul><li><a href="#">Features</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="#">Documentation</a></li></ul></div>
+    </div>
+  </div>
+</footer>`}
+              cssCode={`.news-footer { background: #4338ca; color: #fff; padding: 4rem 0; }\n.news-input { padding: 0.75rem 1rem; border-radius: 0.5rem; width: 100%; color: #111827; }`}
+            />
+          </div>
+          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest text-indigo-200">03. Newsletter Focus</div>
           <FooterNewsletter />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
-          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">04. Glassmorphism</div>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-gradient-to-br from-purple-600 to-blue-600 mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity text-white">
+            <CopyButton 
+              jsxCode={`export const FooterGlass = () => (\n  <footer className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-10 text-white">...</footer>\n);`}
+              htmlCode={`<div class="glass-wrapper">
+  <footer class="footer-glass">
+    <div class="footer-row">
+      <div class="brand">GLASS</div>
+      <nav><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></nav>
+      <div class="social"><a href="#" class="circle"><svg>...</svg></a></div>
+    </div>
+    <hr />
+    <p class="copyright">Designed with &hearts; in the cloud.</p>
+  </footer>
+</div>`}
+              cssCode={`.glass-footer { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); border-radius: 1rem; }`}
+            />
+          </div>
+          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest text-white/50">04. Glassmorphism</div>
           <FooterGlass />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
-          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">05. Cyberpunk</div>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-black mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity text-white">
+            <CopyButton 
+              jsxCode={`export const FooterCyberpunk = () => (\n  <footer className="bg-black border-t-2 border-cyan-500 pt-12 pb-6 relative overflow-hidden">...</footer>\n);`}
+              htmlCode={`<footer class="footer-cyber">
+  <div class="grid-bg"></div>
+  <div class="cyber-content">
+    <div class="brand">
+      <h2>CYBER_SYSTEMS</h2>
+      <p>DECENTRALIZED SOLUTIONS. STATUS: <span class="online">ONLINE</span></p>
+    </div>
+    <div class="link-cols">
+      <div><h4>PROTOCOL</h4><ul><li><a href="#">&gt;&gt; Manifest</a></li></ul></div>
+      <div><h4>ACCESS</h4><ul><li><a href="#">&gt;&gt; Login</a></li></ul></div>
+    </div>
+  </div>
+  <div class="cyber-bottom">
+    <p>COPYRIGHT_2077. ALL RIGHTS RESERVED.</p>
+    <span>SYS_VER_2.0</span>
+  </div>
+</footer>`}
+              cssCode={`.cyber-footer { background: #000; border-top: 2px solid #06b6d4; font-family: monospace; position: relative; }`}
+            />
+          </div>
+          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest text-cyan-500">05. Cyberpunk</div>
           <FooterCyberpunk />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-white mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const FooterBigType = () => (\n  <footer className="bg-white text-black py-20 px-6 border-t border-gray-100">...</footer>\n);`}
+              htmlCode={`<footer class="footer-bigtype">
+  <a href="#" class="cta">
+    <h2>LET'S TALK <span>&rarr;</span></h2>
+  </a>
+  <div class="footer-bottom">
+    <div class="info"><span>Location</span><p>123 Design St, New York, NY 10001</p></div>
+    <div class="info"><span>Socials</span><div><a href="#">Instagram</a><a href="#">Twitter</a></div></div>
+    <p class="copyright">&copy; 2024 Design Studio.</p>
+  </div>
+</footer>`}
+              cssCode={`.big-text { font-size: 10vw; line-height: 0.8; font-weight: 700; letter-spacing: -0.05em; transition: color 0.5s; }`}
+            />
+          </div>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">06. Big Typography</div>
           <FooterBigType />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-yellow-400 mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const FooterBrutalist = () => (\n  <footer className="bg-yellow-400 border-t-4 border-black">\n    <div className="grid grid-cols-1 md:grid-cols-4 divide-y-4 md:divide-x-4 divide-black">...</div>\n  </footer>\n);`}
+              htmlCode={`<footer class="footer-brutalist">
+  <div class="brut-grid">
+    <div class="brut-box"><h2>Brutal.</h2><p>Raw styling for bold brands.</p></div>
+    <div class="brut-box"><h4>Navigation</h4><nav><a href="#">Shop</a><a href="#">About</a></nav></div>
+    <div class="brut-box"><h4>Social</h4><a href="#">Instagram</a><a href="#">Twitter</a></div>
+    <div class="brut-box dark"><h3>Newsletter</h3><input type="email" placeholder="EMAIL" /><button>SUBMIT</button></div>
+  </div>
+  <div class="brut-copyright">&copy; 2024 Brutalist Inc. No Rights Reserved.</div>
+</footer>`}
+              cssCode={`.brut-foot { background: #facc15; border-top: 4px solid #000; }\n.brut-box { padding: 2rem; border-right: 4px solid #000; }`}
+            />
+          </div>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">07. Brutalist</div>
           <FooterBrutalist />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-[#e0e5ec] mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity text-gray-500">
+            <CopyButton 
+              jsxCode={`export const FooterNeumorphic = () => (\n  <footer className="bg-[#e0e5ec] text-gray-600 py-12 px-4">...</footer>\n);`}
+              htmlCode={`<footer class="footer-neumorphic">
+  <div class="neu-icon"><svg>...</svg></div>
+  <nav class="neu-links">
+    <a href="#">Terms</a><a href="#">Privacy</a><a href="#">Security</a><a href="#">Support</a>
+  </nav>
+  <div class="neu-social"><button><svg>...</svg></button></div>
+  <p class="copyright">&copy; 2024 Soft UI. Built with shadows.</p>
+</footer>`}
+              cssCode={`.soft-footer { background: #e0e5ec; padding: 3rem 1rem; }\n.soft-item { box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; border-radius: 0.75rem; }`}
+            />
+          </div>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">08. Neumorphic</div>
           <FooterNeumorphic />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-gray-50 mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const FooterApp = () => (\n  <footer className="bg-gray-50 pt-16 pb-8">...</footer>\n);`}
+              htmlCode={`<footer class="footer-app">
+  <div class="app-grid">
+    <div><h3>About Us</h3><ul><li><a href="#">Our Story</a></li><li><a href="#">Careers</a></li></ul></div>
+    <div><h3>Customer Care</h3><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+    <div class="download">
+      <h3>Download Our App</h3>
+      <p>Shop on the go and get exclusive app-only offers.</p>
+      <div class="store-btns">
+        <button class="store-btn"><svg>...</svg><div><small>GET IT ON</small><strong>Google Play</strong></div></button>
+        <button class="store-btn"><svg>...</svg><div><small>Download on the</small><strong>App Store</strong></div></button>
+      </div>
+    </div>
+  </div>
+  <div class="app-bottom"><p>&copy; 2024 ShopApp.</p><div>Visa &middot; Mastercard &middot; PayPal</div></div>
+</footer>`}
+              cssCode={`.app-btn { background: #000; color: #fff; padding: 0.5rem 1rem; border-radius: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }`}
+            />
+          </div>
           <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">09. App / E-commerce</div>
           <FooterApp />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg mt-12'>
-          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest">10. Curved Wave</div>
+        <section className='box-shadow p-6 rounded-xl relative group/foot bg-gray-900 mt-12'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/foot:opacity-100 transition-opacity text-white">
+            <CopyButton 
+              jsxCode={`export const FooterCurved = () => (\n  <footer className="bg-gray-900 text-white pb-12 pt-4 px-6">...</footer>\n);`}
+              htmlCode={`<div class="curved-wrapper">
+  <svg class="wave" preserveAspectRatio="none" viewBox="0 0 1440 54">
+    <path fill="currentColor" d="M0 22L120 16.7C240 11 480 1 720 .3C960 0 1200 8 1320 12L1440 16V54H0V22Z"></path>
+  </svg>
+  <footer class="footer-curved">
+    <div class="logo-circle">W</div>
+    <h2>Wavy Footer</h2>
+    <nav><a href="#">Home</a><a href="#">Services</a><a href="#">Pricing</a><a href="#">Contact</a></nav>
+    <p class="copyright">&copy; 2024 Wave Designs. Flow with the current.</p>
+  </footer>
+</div>`}
+              cssCode={`.wave-svg { position: absolute; top: 0; width: 100%; height: 4rem; margin-top: -4rem; fill: #111827; }`}
+            />
+          </div>
+          <div className="text-center mb-4 text-xs font-bold text-slate-400 uppercase tracking-widest text-gray-500">10. Curved Wave</div>
           <FooterCurved />
         </section>
 
