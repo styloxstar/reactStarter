@@ -17,7 +17,7 @@ function App() {
               <Sidebar/>
             </div>
         </div>
-        <div className="mainBody basis-5/6">
+        <div className="mainBody basis-5/6 h-[calc(100vh-120px)] overflow-y-auto box-shadow rounded-xl bg-white">
           <AppRoutes />
         </div>
 

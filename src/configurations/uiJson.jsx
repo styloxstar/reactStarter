@@ -55,7 +55,7 @@ export const sidebarJson = [
         title: "React Query",
     },
     {
-        id: 4,
+        id: 7,
         name: "components",
         title: "Components",
         children: [
@@ -198,7 +198,7 @@ export const sidebarJson = [
         ],
     },
     {
-        id: 5,
+        id: 8,
         name: "pages",
         title: "Pages",
         children: [
