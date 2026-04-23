@@ -1,984 +1,1080 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CopyButton from '../CopyButton';
 
-// --- Shared Components ---
-const InputGroup = ({ label, type = "text", placeholder }) => (
-  <div className="flex flex-col">
-    <label className="text-sm font-medium text-gray-700 mb-1">{label}</label>
-    <input 
-      type={type} 
-      placeholder={placeholder}
-      className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white"
-    />
-  </div>
+// --- Shared Assets ---
+const SocialIcon = ({ className }) => (
+  <svg className={className || "w-5 h-5"} fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
 );
 
-const TextAreaGroup = ({ label, placeholder }) => (
-  <div className="flex flex-col">
-    <label className="text-sm font-medium text-gray-700 mb-1">{label}</label>
-    <textarea 
-      rows="4" 
-      placeholder={placeholder}
-      className="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all bg-white resize-none"
-    ></textarea>
-  </div>
-);
-
-// --- 1. The Standard Split (SaaS) ---
-export const ContactStandard = () => (
-  <div className="bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto h-auto md:h-[600px]">
-    {/* Info Side */}
-    <div className="w-full md:w-5/12 bg-slate-900 p-12 text-white flex flex-col justify-between relative overflow-hidden">
-      <div className="relative z-10">
-        <h2 className="text-3xl font-bold mb-4">Contact Information</h2>
-        <p className="text-slate-400 mb-12">Fill up the form and our Team will get back to you within 24 hours.</p>
-        
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📞</div>
-            <span>+1 (555) 123-4567</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📧</div>
-            <span>hello@brand.com</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📍</div>
-            <span>102 Street, San Francisco</span>
-          </div>
-        </div>
-      </div>
-      
-      {/* Decorative Circles */}
-      <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-slate-800 rounded-full opacity-50"></div>
-      <div className="absolute top-10 right-10 w-24 h-24 bg-blue-600 rounded-full opacity-20 blur-2xl"></div>
-    </div>
-
-    {/* Form Side */}
-    <div className="w-full md:w-7/12 p-12 bg-white flex flex-col justify-center">
-      <form className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <InputGroup label="First Name" placeholder="John" />
-          <InputGroup label="Last Name" placeholder="Doe" />
-        </div>
-        <InputGroup label="Email" type="email" placeholder="john@example.com" />
-        <TextAreaGroup label="Message" placeholder="Write your message..." />
-        <button className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors self-end w-full md:w-auto">
-          Send Message
-        </button>
-      </form>
-    </div>
-  </div>
-);
-
-// --- 2. The Minimalist (Typography) ---
-export const ContactMinimal = () => (
-  <div className="max-w-3xl mx-auto p-8 bg-white text-center">
-    <h2 className="text-5xl font-serif text-slate-900 mb-4">Let's Talk.</h2>
-    <p className="text-slate-500 mb-12">We are open for new collaborations.</p>
-    
-    <form className="space-y-12 text-left">
-      <div className="group relative">
-        <input type="text" placeholder="What's your name?" className="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent" />
-      </div>
-      <div className="group relative">
-        <input type="email" placeholder="Your email address" className="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent" />
-      </div>
-      <div className="group relative">
-        <textarea rows="2" placeholder="Tell us about your project" className="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent resize-none"></textarea>
-      </div>
-      <div className="flex justify-center">
-        <button className="px-12 py-4 bg-black text-white text-sm uppercase tracking-widest font-bold hover:bg-gray-800 transition-colors rounded-full">
-          Submit Inquiry
-        </button>
-      </div>
-    </form>
-  </div>
-);
-
-// --- 3. The Map Overlay (Local Biz) ---
-export const ContactMap = () => (
-  <div className="relative w-full h-[600px] bg-gray-200 rounded-xl overflow-hidden">
-    {/* Background Image simulating Map */}
-    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover grayscale opacity-60" alt="Map" />
-    
-    <div className="absolute inset-0 flex items-center justify-end p-4 md:p-12">
-      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md relative z-10">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Store</h3>
-        <div className="space-y-4 mb-8">
-          <div className="flex gap-4">
-            <div className="bg-orange-100 p-2 rounded-lg text-orange-600">📍</div>
-            <div>
-              <p className="font-bold text-gray-900">Headquarters</p>
-              <p className="text-gray-500 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
-            </div>
-          </div>
-          <div className="flex gap-4">
-            <div className="bg-orange-100 p-2 rounded-lg text-orange-600">🕒</div>
-            <div>
-              <p className="font-bold text-gray-900">Opening Hours</p>
-              <p className="text-gray-500 text-sm">Mon-Fri: 9am - 5pm</p>
-            </div>
-          </div>
-        </div>
-        <form className="space-y-4">
-          <input type="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 outline-none" />
-          <textarea rows="3" placeholder="Message" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 outline-none resize-none"></textarea>
-          <button className="w-full py-3 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors">
-            Get Directions
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-);
-
-// --- 4. The Glassmorphism (Vibrant) ---
-export const ContactGlass = () => (
-  <div className="relative flex items-center justify-center min-h-[600px] w-full rounded-xl overflow-hidden bg-gradient-to-tr from-purple-500 via-pink-500 to-red-500 p-4">
-    {/* Blobs */}
-    <div className="absolute top-20 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-pulse"></div>
-    <div className="absolute bottom-20 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-pulse"></div>
-
-    <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-12 rounded-3xl shadow-2xl w-full max-w-2xl">
-      <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-white mb-2 drop-shadow-md">Get in Touch</h2>
-        <p className="text-white/80">We'd love to hear from you.</p>
-      </div>
-      
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <input type="text" placeholder="Name" className="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors" />
-        <input type="email" placeholder="Email" className="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors" />
-        <textarea rows="4" placeholder="Message" className="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors col-span-1 md:col-span-2 resize-none"></textarea>
-        
-        <div className="col-span-1 md:col-span-2 flex justify-center">
-          <button className="px-10 py-3 bg-white text-purple-600 font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-            Send Message
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-);
-
-// --- 5. The Support Center (Help Desk) ---
-export const ContactSupport = () => (
-  <div className="bg-slate-50 p-12 rounded-3xl text-center">
-    <h2 className="text-3xl font-bold text-slate-900 mb-4">How can we help?</h2>
-    <p className="text-slate-500 mb-12 max-w-xl mx-auto">Please select a topic below so we can route your request to the right team.</p>
-    
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-      {['Sales Inquiry', 'Technical Support', 'Billing Issue'].map((topic) => (
-        <button key={topic} className="p-6 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg transition-all group">
-          <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-4 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-colors">
-            ?
-          </div>
-          <h3 className="font-bold text-slate-700">{topic}</h3>
-        </button>
-      ))}
-    </div>
-
-    <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl border border-slate-200 shadow-sm text-left">
-      <h3 className="font-bold text-lg mb-6">Or send us a direct message</h3>
-      <form className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-           <InputGroup label="Name" placeholder="Name" />
-           <InputGroup label="Email" placeholder="Email" />
-        </div>
-        <TextAreaGroup label="Details" placeholder="Describe your issue..." />
-        <button className="w-full py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800">Submit Ticket</button>
-      </form>
-    </div>
-  </div>
-);
-
-// --- 6. The Cyberpunk (Terminal) ---
-export const ContactCyber = () => (
-  <div className="bg-black p-1 border-2 border-green-500 rounded-xl max-w-4xl mx-auto shadow-[0_0_20px_rgba(34,197,94,0.2)]">
-    <div className="bg-gray-900 p-8 md:p-12 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-1 bg-green-500 opacity-20"></div>
-      
-      <div className="grid md:grid-cols-2 gap-12 font-mono">
-        <div>
-          <h2 className="text-green-500 text-4xl font-bold mb-6 tracking-tighter">
-            &lt;CONTACT /&gt;
-          </h2>
-          <p className="text-gray-400 mb-8 text-sm">
-            ESTABLISHING SECURE CONNECTION...<br/>
-            TRANSMITTING DATA PACKETS TO SERVER.<br/>
-            PLEASE INPUT PARAMETERS.
-          </p>
-          <div className="space-y-4 text-green-400 text-sm">
-             <p>> STATUS: ONLINE</p>
-             <p>> LATENCY: 24ms</p>
-             <p>> ENCRYPTION: 256-BIT</p>
-          </div>
-        </div>
-
-        <form className="space-y-6">
-          <div className="relative group">
-            <span className="absolute left-4 top-3 text-green-700">></span>
-            <input type="text" placeholder="USER_ID" className="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase" />
-          </div>
-          <div className="relative group">
-            <span className="absolute left-4 top-3 text-green-700">></span>
-            <input type="email" placeholder="COMM_LINK (EMAIL)" className="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase" />
-          </div>
-          <div className="relative group">
-            <span className="absolute left-4 top-3 text-green-700">></span>
-            <textarea rows="4" placeholder="DATA_PAYLOAD" className="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase resize-none"></textarea>
-          </div>
-          <button className="w-full py-4 bg-green-900/30 border border-green-500 text-green-500 font-bold uppercase hover:bg-green-500 hover:text-black transition-all tracking-widest">
-            [ INITIALIZE_SEND ]
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-);
-
-// --- 7. The Neumorphic (Soft UI) ---
-export const ContactNeumorphic = () => (
-  <div className="bg-[#e0e5ec] p-12 rounded-3xl max-w-3xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-    <div className="flex-1">
-      <div className="w-24 h-24 rounded-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] flex items-center justify-center text-4xl mb-6">
-        👋
-      </div>
-      <h2 className="text-3xl font-bold text-gray-700 mb-4">Say Hello!</h2>
-      <p className="text-gray-500">We're always looking for new friends. Drop us a line and let's start a conversation.</p>
-    </div>
-
-    <form className="flex-1 w-full space-y-6">
-      <div className="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <input type="text" placeholder="Name" className="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2" />
-      </div>
-      <div className="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <input type="email" placeholder="Email" className="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2" />
-      </div>
-      <div className="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <textarea rows="3" placeholder="Message" className="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2 resize-none"></textarea>
-      </div>
-      <button className="w-full py-3 rounded-xl bg-[#e0e5ec] text-blue-500 font-bold shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] active:scale-95 transition-all">
-        Send
-      </button>
-    </form>
-  </div>
-);
-
-// --- 8. The Brutalist (Bold) ---
+// --- 1. Bold Brutalist (The Shout) ---
 export const ContactBrutalist = () => (
-  <div className="bg-yellow-400 p-8 border-4 border-black max-w-4xl mx-auto shadow-[12px_12px_0_0_#000]">
-    <div className="grid md:grid-cols-2 gap-8">
-      <div className="bg-white border-4 border-black p-8">
-        <h2 className="text-6xl font-black uppercase leading-none mb-6">Call<br/>Us<br/>Now</h2>
-        <div className="space-y-4 font-bold text-xl">
-          <p>📧 contact@bold.com</p>
-          <p>📱 +1-800-BOLD-UI</p>
-          <p>🏢 123 Design District</p>
-        </div>
-      </div>
-      
-      <form className="space-y-4">
-        <input type="text" placeholder="YOUR NAME" className="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50" />
-        <input type="email" placeholder="YOUR EMAIL" className="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50" />
-        <textarea rows="4" placeholder="WHAT'S UP?" className="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50 resize-none"></textarea>
-        
-        <button className="w-full py-4 bg-black text-white font-black text-2xl uppercase hover:bg-white hover:text-black border-4 border-transparent hover:border-black transition-colors">
-          SHOUT IT
-        </button>
-      </form>
-    </div>
-  </div>
-);
-
-// --- 9. The Image Overlay (Agency) ---
-export const ContactOverlay = () => (
-  <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-xl">
-    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
-    <div className="absolute inset-0 bg-slate-900/60"></div>
-    
-    <div className="absolute inset-0 flex items-center justify-end p-4 md:p-16">
-      <div className="bg-white p-8 md:p-10 max-w-lg w-full shadow-2xl">
-        <h2 className="text-3xl font-serif font-bold text-slate-900 mb-6">Start a Project</h2>
-        <form className="space-y-6">
-          <div className="border-b border-gray-300 py-2">
-            <input type="text" placeholder="Your Name" className="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" />
+  <div className="bg-yellow-400 p-12 rounded-[3rem] border-[8px] border-slate-950 font-sans italic font-black uppercase overflow-hidden shadow-[20px_20px_0_0_#000]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+       <div className="text-left">
+          <h2 className="text-7xl md:text-9xl font-black text-slate-950 tracking-tighter leading-[0.8] mb-12 italic">GET_ <br/> IN_ <br/> TOUCH.</h2>
+          <div className="space-y-6 text-2xl font-black italic text-slate-950 underline decoration-8 decoration-slate-950/20 underline-offset-8">
+             <p className="hover:text-blue-600 transition-colors cursor-pointer">HELLO@BOLD.COM</p>
+             <p className="hover:text-blue-600 transition-colors cursor-pointer">+1-800-SHOUT</p>
           </div>
-          <div className="border-b border-gray-300 py-2">
-            <input type="email" placeholder="Email Address" className="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" />
+       </div>
+       <form className="bg-white border-[6px] border-slate-950 p-10 shadow-[16px_16px_0_0_#000] space-y-6">
+          <div className="space-y-2">
+             <label className="text-xs font-black tracking-widest italic">User_Identifier</label>
+             <input type="text" placeholder="NAME_HERE" className="w-full p-4 border-[4px] border-slate-950 font-black italic focus:bg-yellow-200 outline-none transition-colors" />
           </div>
-          <div className="border-b border-gray-300 py-2">
-            <textarea rows="2" placeholder="Tell us about your needs" className="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none resize-none"></textarea>
+          <div className="space-y-2">
+             <label className="text-xs font-black tracking-widest italic">Secure_Link</label>
+             <input type="email" placeholder="EMAIL_HERE" className="w-full p-4 border-[4px] border-slate-950 font-black italic focus:bg-yellow-200 outline-none transition-colors" />
           </div>
-          <button className="bg-slate-900 text-white font-bold py-4 px-8 w-full hover:bg-slate-800 transition-colors">
-            Get Consultation
+          <div className="space-y-2">
+             <label className="text-xs font-black tracking-widest italic">Data_Payload</label>
+             <textarea rows="4" placeholder="MESSAGE_HERE" className="w-full p-4 border-[4px] border-slate-950 font-black italic focus:bg-yellow-200 outline-none transition-colors resize-none"></textarea>
+          </div>
+          <button className="w-full py-6 bg-slate-950 text-white text-3xl font-black uppercase italic hover:bg-blue-600 hover:text-white transition-all shadow-[8px_8px_0_0_#2563eb]">
+             SEND_SHOUT →
           </button>
-        </form>
-      </div>
+       </form>
     </div>
   </div>
 );
 
-// --- 10. The Floating Action (Compact) ---
+// --- 2. Modern Glass Hub (Refraction) ---
+export const ContactGlass = () => (
+  <div className="relative bg-slate-950 p-16 rounded-[3rem] overflow-hidden min-h-[700px] flex items-center font-sans italic font-bold">
+    <div className="absolute top-0 left-[-10%] w-[40rem] h-[40rem] bg-indigo-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse"></div>
+    <div className="absolute bottom-[-10%] right-[-10%] w-[40rem] h-[40rem] bg-blue-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse delay-1000"></div>
+    <div className="relative z-10 w-full max-w-5xl mx-auto">
+       <div className="text-center mb-20">
+          <h2 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter uppercase leading-none italic">Secure_Link</h2>
+          <p className="text-blue-400 text-xl lowercase font-medium italic tracking-widest opacity-60">Establishing high-fidelity communication nodes.</p>
+       </div>
+       <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-12 rounded-[2.5rem] shadow-2xl">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <div className="space-y-8">
+                <div className="space-y-2">
+                   <label className="text-[10px] uppercase font-black tracking-[0.4em] text-white/40 italic">Full_Legal_Name</label>
+                   <input type="text" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-blue-500 transition-colors" placeholder="ENTER_NAME" />
+                </div>
+                <div className="space-y-2">
+                   <label className="text-[10px] uppercase font-black tracking-[0.4em] text-white/40 italic">Global_Protocol_Email</label>
+                   <input type="email" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-blue-500 transition-colors" placeholder="ENTER_EMAIL" />
+                </div>
+             </div>
+             <div className="space-y-8 flex flex-col">
+                <div className="space-y-2 flex-1 flex flex-col">
+                   <label className="text-[10px] uppercase font-black tracking-[0.4em] text-white/40 italic">Communication_Payload</label>
+                   <textarea className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-blue-500 transition-colors resize-none flex-1" placeholder="DESCRIBE_PROJECT_LOGIC"></textarea>
+                </div>
+                <button className="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:bg-white hover:text-slate-950 transition-all shadow-2xl shadow-blue-900/40 italic">
+                   INITIALIZE_TRANSMISSION_
+                </button>
+             </div>
+          </form>
+       </div>
+    </div>
+  </div>
+);
+
+// --- 3. Cyberpunk Matrix (Nodes) ---
+export const ContactCyber = () => (
+  <div className="bg-black p-12 rounded-[3rem] border border-white/5 font-mono italic font-bold relative overflow-hidden">
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-20"></div>
+    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl mx-auto">
+       <div className="flex flex-col justify-center text-left">
+          <div className="text-[10px] text-emerald-500 font-black uppercase tracking-[0.5em] mb-4 italic">>> System_Inquiry_Port_8080</div>
+          <h2 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-none italic">UPLINK_</h2>
+       </div>
+       <div className="bg-white/[0.02] border border-white/5 p-10 relative group">
+          <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-emerald-500 opacity-20 group-hover:opacity-100 transition-opacity"></div>
+          <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-emerald-500 opacity-20 group-hover:opacity-100 transition-opacity"></div>
+          <form className="space-y-8">
+             <div className="relative">
+                <span className="absolute left-0 top-4 text-emerald-500 text-xs font-black">>></span>
+                <input type="text" className="w-full bg-transparent border-b border-white/10 p-4 pl-8 text-white outline-none focus:border-emerald-500 transition-colors uppercase placeholder-white/20" placeholder="USER_NAME" />
+             </div>
+             <div className="relative">
+                <span className="absolute left-0 top-4 text-emerald-500 text-xs font-black">>></span>
+                <input type="email" className="w-full bg-transparent border-b border-white/10 p-4 pl-8 text-white outline-none focus:border-emerald-500 transition-colors uppercase placeholder-white/20" placeholder="PROTO_EMAIL" />
+             </div>
+             <div className="relative">
+                <span className="absolute left-0 top-4 text-emerald-500 text-xs font-black">>></span>
+                <textarea rows="4" className="w-full bg-transparent border-b border-white/10 p-4 pl-8 text-white outline-none focus:border-emerald-500 transition-colors uppercase placeholder-white/20 resize-none" placeholder="LOG_PAYLOAD"></textarea>
+             </div>
+             <button className="w-full py-5 bg-emerald-500/10 border border-emerald-500/50 text-emerald-500 rounded-lg font-black text-[10px] uppercase tracking-[0.5em] hover:bg-emerald-500 hover:text-black transition-all italic">
+                [ EXECUTE_SEND ]
+             </button>
+          </form>
+       </div>
+    </div>
+  </div>
+);
+
+// --- 4. Neumorphic Tactile (Embossed) ---
+export const ContactNeumorphic = () => (
+  <div className="bg-[#e0e5ec] p-16 rounded-[3rem] font-sans italic font-bold">
+    <div className="max-w-4xl mx-auto bg-[#e0e5ec] p-12 rounded-[3.5rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border border-white/20">
+       <div className="text-center mb-16">
+          <h2 className="text-6xl font-black text-slate-700 uppercase tracking-tighter italic leading-none mb-4">Soft_Link</h2>
+          <p className="text-slate-500 lowercase font-medium italic">Tactile architecture for modern inquiry.</p>
+       </div>
+       <form className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="space-y-8">
+             <div className="bg-[#e0e5ec] rounded-2xl p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
+                <input type="text" className="w-full bg-transparent p-4 outline-none text-slate-600 placeholder-slate-400 italic font-black" placeholder="Identifier_" />
+             </div>
+             <div className="bg-[#e0e5ec] rounded-2xl p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
+                <input type="email" className="w-full bg-transparent p-4 outline-none text-slate-600 placeholder-slate-400 italic font-black" placeholder="Secure_Mail_" />
+             </div>
+          </div>
+          <div className="flex flex-col gap-8">
+             <div className="bg-[#e0e5ec] rounded-2xl p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] flex-1">
+                <textarea className="w-full bg-transparent p-4 outline-none text-slate-600 placeholder-slate-400 italic font-black resize-none h-full" placeholder="Describe_Logic_"></textarea>
+             </div>
+             <button className="w-full py-5 rounded-2xl bg-[#e0e5ec] text-blue-600 font-black uppercase tracking-widest shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] hover:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] transition-all italic active:scale-95">
+                SUBMIT_PAYLOAD_
+             </button>
+          </div>
+       </form>
+    </div>
+  </div>
+);
+
+// --- 5. Magazine Editorial (The Lead) ---
+export const ContactEditorial = () => (
+  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
+    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+       <div className="flex-1 flex flex-col justify-between py-10 text-left">
+          <div className="space-y-12">
+             <h2 className="text-8xl md:text-[10rem] font-black text-slate-950 tracking-tighter uppercase leading-[0.8] mb-10 italic">WORK_ <br/> WITH_ <br/> US.</h2>
+             <p className="text-slate-500 text-2xl lowercase font-medium max-w-sm italic">Defining the next generation of creative architecture through structural logic.</p>
+          </div>
+       </div>
+       <div className="flex-1 bg-slate-50 p-12 rounded-[3.5rem] border border-slate-100 shadow-2xl text-left">
+          <form className="space-y-12">
+             <div className="space-y-2 group">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Full_Name</label>
+                <input type="text" className="w-full bg-transparent border-b-2 border-slate-200 p-4 text-2xl font-black text-slate-950 outline-none focus:border-slate-950 transition-colors placeholder-slate-200" placeholder="WHO_ARE_YOU?" />
+             </div>
+             <div className="space-y-2 group">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Email_Protocol</label>
+                <input type="email" className="w-full bg-transparent border-b-2 border-slate-200 p-4 text-2xl font-black text-slate-950 outline-none focus:border-slate-950 transition-colors placeholder-slate-200" placeholder="SECURE_LINK" />
+             </div>
+             <div className="space-y-2 group">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Vision_Brief</label>
+                <textarea rows="3" className="w-full bg-transparent border-b-2 border-slate-200 p-4 text-2xl font-black text-slate-950 outline-none focus:border-slate-950 transition-colors placeholder-slate-200 resize-none" placeholder="TELL_US_EVERYTHING"></textarea>
+             </div>
+             <button className="px-12 py-6 bg-slate-950 text-white rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-blue-600 transition-all italic shadow-2xl">
+                START_INQUIRY_ →
+             </button>
+          </form>
+       </div>
+    </div>
+  </div>
+);
+
+// --- 6. Bento Support Center (Modules) ---
+export const ContactBento = () => (
+  <div className="bg-slate-50 p-12 rounded-[3rem] font-sans italic font-bold">
+    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
+       <div className="md:col-span-2 bg-white rounded-[2.5rem] p-12 border border-slate-100 shadow-xl flex flex-col justify-center">
+          <div className="text-[10px] text-blue-600 font-black uppercase tracking-[0.5em] mb-4 italic">// Protocol_Help_Desk</div>
+          <h2 className="text-6xl font-black text-slate-950 uppercase tracking-tighter leading-none mb-8">Support_ <br/> Modules</h2>
+          <div className="space-y-4">
+             {['Sales_Node', 'Technical_Logic', 'Billing_Matrix'].map((topic) => (
+                <div key={topic} className="p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-slate-950 hover:text-white transition-all cursor-pointer flex justify-between items-center group">
+                   <span className="text-sm font-black uppercase italic tracking-widest">{topic}</span>
+                   <span className="text-blue-600 font-black group-hover:translate-x-2 transition-transform">→</span>
+                </div>
+             ))}
+          </div>
+       </div>
+       <div className="md:col-span-2 bg-blue-600 rounded-[2.5rem] p-12 text-white shadow-2xl relative overflow-hidden group text-left">
+          <h3 className="text-3xl font-black uppercase mb-8 italic">Quick_Dispatch_</h3>
+          <form className="space-y-6">
+             <input type="text" className="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-white outline-none focus:bg-white/20 transition-all placeholder-white/40 italic font-bold" placeholder="IDENTIFIER" />
+             <input type="email" className="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-white outline-none focus:bg-white/20 transition-all placeholder-white/40 italic font-bold" placeholder="PROTOCOL_MAIL" />
+             <textarea rows="4" className="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-white outline-none focus:bg-white/20 transition-all placeholder-white/40 italic font-bold resize-none" placeholder="DESCRIBE_LOGIC"></textarea>
+             <button className="w-full py-4 bg-white text-blue-600 rounded-xl font-black text-[10px] uppercase tracking-widest italic hover:bg-slate-950 hover:text-white transition-all">DISPATCH_TICKET_</button>
+          </form>
+       </div>
+    </div>
+  </div>
+);
+
+// --- 7. Floating Action Hub (Compact) ---
 export const ContactFloating = () => (
-  <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-    <div className="bg-indigo-600 p-6 text-white text-center">
-      <h2 className="text-xl font-bold">Quick Message</h2>
-      <p className="text-indigo-100 text-sm">We usually reply within an hour.</p>
-    </div>
-    <div className="p-6">
-      <form className="space-y-4">
-        <div>
-          <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Topic</label>
-          <select className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500 text-sm">
-            <option>General Question</option>
-            <option>Support</option>
-            <option>Feedback</option>
-          </select>
-        </div>
-        <div>
-          <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Email</label>
-          <input type="email" className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500" />
-        </div>
-        <div>
-          <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Message</label>
-          <textarea rows="3" className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500 resize-none"></textarea>
-        </div>
-        <button className="w-full py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2">
-          <span>🚀</span> Send Now
-        </button>
-      </form>
+  <div className="relative min-h-[600px] bg-slate-50 p-12 rounded-[3rem] font-sans italic font-bold flex items-center justify-center">
+    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+    <div className="relative bg-white w-full max-w-md rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-hidden text-left">
+       <div className="bg-slate-950 p-8 text-white flex justify-between items-center">
+          <div className="space-y-1">
+             <h3 className="text-xl font-black uppercase italic tracking-tight">Direct_Link</h3>
+             <p className="text-[10px] text-blue-400 font-black uppercase tracking-widest">Uptime: 24/7_</p>
+          </div>
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center animate-bounce">💬</div>
+       </div>
+       <div className="p-8 space-y-6">
+          <input type="text" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-blue-600 transition-colors font-black italic text-sm placeholder-slate-300" placeholder="NAME_" />
+          <input type="email" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-blue-600 transition-colors font-black italic text-sm placeholder-slate-300" placeholder="MAIL_" />
+          <textarea rows="4" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-blue-600 transition-colors font-black italic text-sm placeholder-slate-300 resize-none" placeholder="PAYLOAD_"></textarea>
+          <button className="w-full py-4 bg-blue-600 text-white rounded-xl font-black text-xs uppercase tracking-[0.2em] italic hover:bg-slate-950 transition-all shadow-xl shadow-blue-900/20">SEND_LOG_</button>
+       </div>
     </div>
   </div>
 );
 
+// --- 8. Minimalist Lineage (Structural) ---
+export const ContactMinimal = () => (
+  <div className="bg-white p-20 rounded-[3rem] font-sans italic font-bold border border-slate-100">
+    <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-20 text-left">
+       <div className="w-full md:w-1/3">
+          <h2 className="text-6xl font-black text-slate-950 tracking-tighter uppercase leading-none mb-10 italic underline decoration-slate-950/10 decoration-8">Talk.</h2>
+       </div>
+       <form className="flex-1 space-y-10">
+          <div className="group relative">
+             <input type="text" className="w-full bg-transparent border-b-2 border-slate-100 p-4 text-xl font-black text-slate-950 outline-none focus:border-blue-600 transition-all placeholder-slate-200" placeholder="NAME_IDENTIFIER" />
+             <div className="absolute bottom-0 left-0 h-0.5 bg-blue-600 w-0 group-focus-within:w-full transition-all duration-700"></div>
+          </div>
+          <div className="group relative">
+             <input type="email" className="w-full bg-transparent border-b-2 border-slate-100 p-4 text-xl font-black text-slate-950 outline-none focus:border-blue-600 transition-all placeholder-slate-200" placeholder="MAIL_PROTOCOL" />
+             <div className="absolute bottom-0 left-0 h-0.5 bg-blue-600 w-0 group-focus-within:w-full transition-all duration-700"></div>
+          </div>
+          <div className="group relative">
+             <textarea rows="3" className="w-full bg-transparent border-b-2 border-slate-100 p-4 text-xl font-black text-slate-950 outline-none focus:border-blue-600 transition-all placeholder-slate-200 resize-none" placeholder="DESCRIBE_LOGIC"></textarea>
+             <div className="absolute bottom-0 left-0 h-0.5 bg-blue-600 w-0 group-focus-within:w-full transition-all duration-700"></div>
+          </div>
+          <button className="px-10 py-5 bg-slate-950 text-white rounded-full font-black text-[10px] uppercase tracking-[0.5em] italic hover:bg-blue-600 transition-all shadow-2xl">
+             START_COLLAB_ →
+          </button>
+       </form>
+    </div>
+  </div>
+);
+
+// --- 9. Interactive Map Node (Fidelity) ---
+export const ContactMap = () => (
+  <div className="relative h-[700px] w-full rounded-[3rem] overflow-hidden group font-sans italic font-bold">
+    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200" alt="Map Node" className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 transition-transform duration-[2s] group-hover:scale-110" />
+    <div className="absolute inset-0 bg-slate-950/40 mix-blend-multiply"></div>
+    <div className="absolute inset-0 flex items-center justify-end p-8 md:p-20 text-left">
+       <div className="bg-white/80 backdrop-blur-2xl border border-white/20 p-12 rounded-[2.5rem] shadow-2xl w-full max-w-lg">
+          <div className="mb-10">
+             <div className="text-[10px] text-blue-600 font-black uppercase tracking-[0.4em] mb-2 italic">Node_Coordinate_04</div>
+             <h2 className="text-4xl font-black text-slate-950 uppercase italic tracking-tighter leading-none">Visit_Matrix</h2>
+          </div>
+          <form className="space-y-6">
+             <input type="text" className="w-full bg-white/50 border border-slate-200 p-4 rounded-xl outline-none focus:bg-white transition-all font-black italic text-sm" placeholder="NAME_" />
+             <input type="email" className="w-full bg-white/50 border border-slate-200 p-4 rounded-xl outline-none focus:bg-white transition-all font-black italic text-sm" placeholder="MAIL_" />
+             <button className="w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-xs uppercase tracking-widest italic hover:bg-blue-600 transition-all">GET_DIRECTIONS_</button>
+          </form>
+       </div>
+    </div>
+  </div>
+);
+
+// --- 10. Professional SaaS (The Hub) ---
+export const ContactStandard = () => (
+  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold shadow-xl">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl mx-auto text-left">
+       <div className="flex flex-col justify-center bg-slate-950 p-12 rounded-[2.5rem] text-white relative overflow-hidden">
+          <h2 className="text-6xl font-black tracking-tighter uppercase italic leading-none mb-8">Contact_ <br/> Protocol.</h2>
+          <p className="text-slate-400 text-lg lowercase font-medium italic mb-12">Synchronizing global inquiries for structural deployment.</p>
+       </div>
+       <div className="flex flex-col justify-center">
+          <form className="space-y-8">
+             <div className="grid grid-cols-2 gap-8">
+                <div className="space-y-2">
+                   <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">First_Identifier</label>
+                   <input type="text" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm" placeholder="NAME_01" />
+                </div>
+                <div className="space-y-2">
+                   <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Last_Identifier</label>
+                   <input type="text" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm" placeholder="NAME_02" />
+                </div>
+             </div>
+             <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Global_Email_Protocol</label>
+                <input type="email" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm" placeholder="SECURE_LINK" />
+             </div>
+             <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Data_Brief</label>
+                <textarea rows="4" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm resize-none" placeholder="DESCRIBE_LOGIC_AND_TIMELINES"></textarea>
+             </div>
+             <button className="w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-xs uppercase tracking-[0.4em] italic hover:bg-blue-600 transition-all shadow-2xl">
+                INITIALIZE_PROJECT_NODES →
+             </button>
+          </form>
+       </div>
+    </div>
+  </div>
+);
 
 // --- Main Gallery Wrapper ---
 const ContactGallery = () => {
   return (
-    <div className="container box-shadow overflow-y-auto bg-slate-100 p-6 md:p-12 font-sans pb-40">
-      <div className="max-w-4xl mx-auto text-center mb-16">
-        <h1 className="text-4xl font-bold text-slate-800 mb-4">Contact Pages</h1>
-        <p className="text-slate-500">Design patterns for user inquiries and lead generation.</p>
+    <div className="container overflow-y-auto bg-slate-50 p-6 md:p-12 font-sans pb-64">
+      <div className="max-w-4xl mx-auto text-center mb-24">
+        <h1 className="text-6xl font-black text-slate-950 mb-6 tracking-tighter uppercase italic leading-none">Contact_Matrix</h1>
+        <p className="text-slate-500 font-bold text-xl italic lowercase">High-fidelity communication nodes for structural inquiries.</p>
       </div>
       
-      <div className="space-y-16">
+      <div className="space-y-32 max-w-7xl mx-auto">
         
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto h-auto md:h-[600px]">
-    {/* Info Side */}
-    <div className="w-full md:w-5/12 bg-slate-900 p-12 text-white flex flex-col justify-between relative overflow-hidden">
-      <div className="relative z-10">
-        <h2 className="text-3xl font-bold mb-4">Contact Information</h2>
-        <p className="text-slate-400 mb-12">Fill up the form and our Team will get back to you within 24 hours.</p>
-        
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📞</div>
-            <span>+1 (555) 123-4567</span>
+        {/* 01. Bold Brutalist */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactBrutalist = () => (
+  <div className="bg-yellow-400 p-12 rounded-[3rem] border-[8px] border-slate-950 font-sans italic font-black uppercase overflow-hidden shadow-[20px_20px_0_0_#000]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+       <div className="text-left">
+          <h2 className="text-7xl md:text-9xl font-black text-slate-950 tracking-tighter leading-[0.8] mb-12 italic">GET_ <br/> IN_ <br/> TOUCH.</h2>
+          <div className="space-y-6 text-2xl font-black italic text-slate-950 underline decoration-8 decoration-slate-950/20 underline-offset-8">
+             <p className="hover:text-blue-600 transition-colors cursor-pointer">HELLO@BOLD.COM</p>
+             <p className="hover:text-blue-600 transition-colors cursor-pointer">+1-800-SHOUT</p>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📧</div>
-            <span>hello@brand.com</span>
+       </div>
+       <form className="bg-white border-[6px] border-slate-950 p-10 shadow-[16px_16px_0_0_#000] space-y-6">
+          <div className="space-y-2">
+             <label className="text-xs font-black tracking-widest italic">User_Identifier</label>
+             <input type="text" placeholder="NAME_HERE" className="w-full p-4 border-[4px] border-slate-950 font-black italic focus:bg-yellow-200 outline-none transition-colors" />
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📍</div>
-            <span>102 Street, San Francisco</span>
+          <div className="space-y-2">
+             <label className="text-xs font-black tracking-widest italic">Secure_Link</label>
+             <input type="email" placeholder="EMAIL_HERE" className="w-full p-4 border-[4px] border-slate-950 font-black italic focus:bg-yellow-200 outline-none transition-colors" />
           </div>
-        </div>
-      </div>
-      
-      {/* Decorative Circles */}
-      <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-slate-800 rounded-full opacity-50"></div>
-      <div className="absolute top-10 right-10 w-24 h-24 bg-blue-600 rounded-full opacity-20 blur-2xl"></div>
-    </div>
-
-    {/* Form Side */}
-    <div className="w-full md:w-7/12 p-12 bg-white flex flex-col justify-center">
-      <form className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <InputGroup label="First Name" placeholder="John" />
-          <InputGroup label="Last Name" placeholder="Doe" />
-        </div>
-        <InputGroup label="Email" type="email" placeholder="john@example.com" />
-        <TextAreaGroup label="Message" placeholder="Write your message..." />
-        <button className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors self-end w-full md:w-auto">
-          Send Message
-        </button>
-      </form>
-    </div>
-  </div>`} htmlCode={`<div class="bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto h-auto md:h-[600px]">
-    ...
-    <div class="w-full md:w-5/12 bg-slate-900 p-12 text-white flex flex-col justify-between relative overflow-hidden">
-      <div class="relative z-10">
-        <h2 class="text-3xl font-bold mb-4">Contact Information</h2>
-        <p class="text-slate-400 mb-12">Fill up the form and our Team will get back to you within 24 hours.</p>
-        
-        <div class="space-y-6">
-          <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📞</div>
-            <span>+1 (555) 123-4567</span>
+          <div className="space-y-2">
+             <label className="text-xs font-black tracking-widest italic">Data_Payload</label>
+             <textarea rows="4" placeholder="MESSAGE_HERE" className="w-full p-4 border-[4px] border-slate-950 font-black italic focus:bg-yellow-200 outline-none transition-colors resize-none"></textarea>
           </div>
-          <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📧</div>
-            <span>hello@brand.com</span>
-          </div>
-          <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-blue-400">📍</div>
-            <span>102 Street, San Francisco</span>
-          </div>
-        </div>
-      </div>
-      
-      ...
-      <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-slate-800 rounded-full opacity-50"></div>
-      <div class="absolute top-10 right-10 w-24 h-24 bg-blue-600 rounded-full opacity-20 blur-2xl"></div>
-    </div>
-
-    ...
-    <div class="w-full md:w-7/12 p-12 bg-white flex flex-col justify-center">
-      <form class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <inputgroup label="First Name" placeholder="John" ></inputgroup>
-          <inputgroup label="Last Name" placeholder="Doe" ></inputgroup>
-        </div>
-        <inputgroup label="Email" type="email" placeholder="john@example.com" ></inputgroup>
-        <textareagroup label="Message" placeholder="Write your message..." ></textareagroup>
-        <button class="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors self-end w-full md:w-auto">
-          Send Message
-        </button>
-      </form>
-    </div>
-  </div>`} cssCode={`/* ContactStandard Styles (Generated from Tailwind) */\n.component-root {\n  align-items: center;\n  backdrop-filter: blur(12px);\n  background-color: #0f172a;\n  background-color: #1e293b;\n  background-color: #2563eb;\n  background-color: #ffffff;\n  border-color: #f3f4f6;\n  border-radius: 0.5rem;\n  border-radius: 1rem;\n  border-radius: 9999px;\n  border-width: 1px; border-style: solid;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #60a5fa;\n  color: #94a3b8;\n  color: #ffffff;\n  display: flex;\n  flex-direction: column;\n  font-weight: 700;\n  justify-content: center;\n  justify-content: space-between;\n  padding-left: 2rem; padding-right: 2rem;\n  padding-top: 0.75rem; padding-bottom: 0.75rem;\n  padding: 3rem;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 01. Standard SaaS Split </span>
-          <ContactStandard />
-        </section>
-
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="max-w-3xl mx-auto p-8 bg-white text-center">
-    <h2 className="text-5xl font-serif text-slate-900 mb-4">Let's Talk.</h2>
-    <p className="text-slate-500 mb-12">We are open for new collaborations.</p>
-    
-    <form className="space-y-12 text-left">
-      <div className="group relative">
-        <input type="text" placeholder="What's your name?" className="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent" />
-      </div>
-      <div className="group relative">
-        <input type="email" placeholder="Your email address" className="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent" />
-      </div>
-      <div className="group relative">
-        <textarea rows="2" placeholder="Tell us about your project" className="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent resize-none"></textarea>
-      </div>
-      <div className="flex justify-center">
-        <button className="px-12 py-4 bg-black text-white text-sm uppercase tracking-widest font-bold hover:bg-gray-800 transition-colors rounded-full">
-          Submit Inquiry
-        </button>
-      </div>
-    </form>
-  </div>`} htmlCode={`<div class="max-w-3xl mx-auto p-8 bg-white text-center">
-    <h2 class="text-5xl font-serif text-slate-900 mb-4">Let's Talk.</h2>
-    <p class="text-slate-500 mb-12">We are open for new collaborations.</p>
-    
-    <form class="space-y-12 text-left">
-      <div class="group relative">
-        <input type="text" placeholder="What's your name?" class="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent" />
-      </div>
-      <div class="group relative">
-        <input type="email" placeholder="Your email address" class="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent" />
-      </div>
-      <div class="group relative">
-        <textarea rows="2" placeholder="Tell us about your project" class="w-full py-4 border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors bg-transparent resize-none"></textarea>
-      </div>
-      <div class="flex justify-center">
-        <button class="px-12 py-4 bg-black text-white text-sm uppercase tracking-widest font-bold hover:bg-gray-800 transition-colors rounded-full">
-          Submit Inquiry
-        </button>
-      </div>
-    </form>
-  </div>`} cssCode={`/* ContactMinimal Styles (Generated from Tailwind) */\n.component-root {\n  background-color: #000000;\n  background-color: #ffffff;\n  background-color: transparent;\n  border-radius: 9999px;\n  color: #0f172a;\n  color: #64748b;\n  color: #ffffff;\n  display: flex;\n  font-weight: 700;\n  justify-content: center;\n  padding-left: 3rem; padding-right: 3rem;\n  padding-top: 1rem; padding-bottom: 1rem;\n  padding: 2rem;\n  text-align: center;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 02. Minimalist Typography </span>
-          <ContactMinimal />
-        </section>
-
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="relative w-full h-[600px] bg-gray-200 rounded-xl overflow-hidden">
-    {/* Background Image simulating Map */}
-    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover grayscale opacity-60" alt="Map" />
-    
-    <div className="absolute inset-0 flex items-center justify-end p-4 md:p-12">
-      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md relative z-10">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Store</h3>
-        <div className="space-y-4 mb-8">
-          <div className="flex gap-4">
-            <div className="bg-orange-100 p-2 rounded-lg text-orange-600">📍</div>
-            <div>
-              <p className="font-bold text-gray-900">Headquarters</p>
-              <p className="text-gray-500 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
-            </div>
-          </div>
-          <div className="flex gap-4">
-            <div className="bg-orange-100 p-2 rounded-lg text-orange-600">🕒</div>
-            <div>
-              <p className="font-bold text-gray-900">Opening Hours</p>
-              <p className="text-gray-500 text-sm">Mon-Fri: 9am - 5pm</p>
-            </div>
-          </div>
-        </div>
-        <form className="space-y-4">
-          <input type="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 outline-none" />
-          <textarea rows="3" placeholder="Message" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 outline-none resize-none"></textarea>
-          <button className="w-full py-3 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors">
-            Get Directions
+          <button className="w-full py-6 bg-slate-950 text-white text-3xl font-black uppercase italic hover:bg-blue-600 transition-all shadow-[8px_8px_0_0_#2563eb]">
+             SEND_SHOUT →
           </button>
-        </form>
-      </div>
+       </form>
     </div>
-  </div>`} htmlCode={`<div class="relative w-full h-[600px] bg-gray-200 rounded-xl overflow-hidden">
-    ...
-    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover grayscale opacity-60" alt="Map" />
-    
-    <div class="absolute inset-0 flex items-center justify-end p-4 md:p-12">
-      <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md relative z-10">
-        <h3 class="text-2xl font-bold text-gray-900 mb-6">Visit Our Store</h3>
-        <div class="space-y-4 mb-8">
-          <div class="flex gap-4">
-            <div class="bg-orange-100 p-2 rounded-lg text-orange-600">📍</div>
-            <div>
-              <p class="font-bold text-gray-900">Headquarters</p>
-              <p class="text-gray-500 text-sm">4517 Washington Ave. Manchester, Kentucky 39495</p>
-            </div>
-          </div>
-          <div class="flex gap-4">
-            <div class="bg-orange-100 p-2 rounded-lg text-orange-600">🕒</div>
-            <div>
-              <p class="font-bold text-gray-900">Opening Hours</p>
-              <p class="text-gray-500 text-sm">Mon-Fri: 9am - 5pm</p>
-            </div>
-          </div>
+  </div>
+);`} 
+              htmlCode={`<!-- Brutalist Contact Shout -->
+<div class="contact-brutal-root">
+  <div class="brutal-grid">
+     <div class="brutal-info">
+        <h2 class="brutal-title">GET_ <br/> IN_ <br/> TOUCH.</h2>
+        <div class="brutal-links">
+           <p>HELLO@BOLD.COM</p>
+           <p>+1-800-SHOUT</p>
         </div>
-        <form class="space-y-4">
-          <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 outline-none" />
-          <textarea rows="3" placeholder="Message" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 outline-none resize-none"></textarea>
-          <button class="w-full py-3 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition-colors">
-            Get Directions
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>`} cssCode={`/* ContactMap Styles (Generated from Tailwind) */\n.component-root {\n  align-items: center;\n  background-color: #e5e7eb;\n  background-color: #ffffff;\n  border-color: #e5e7eb;\n  border-radius: 0.5rem;\n  border-radius: 0.75rem;\n  border-radius: 1rem;\n  border-width: 1px; border-style: solid;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #111827;\n  color: #6b7280;\n  color: #ffffff;\n  display: flex;\n  font-weight: 700;\n  height: 100%;\n  padding-left: 1rem; padding-right: 1rem;\n  padding-top: 0.75rem; padding-bottom: 0.75rem;\n  padding: 0.5rem;\n  padding: 1rem;\n  padding: 2rem;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 03. Map Overlay </span>
-          <ContactMap />
-        </section>
-
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="relative flex items-center justify-center min-h-[600px] w-full rounded-xl overflow-hidden bg-gradient-to-tr from-purple-500 via-pink-500 to-red-500 p-4">
-    {/* Blobs */}
-    <div className="absolute top-20 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-pulse"></div>
-    <div className="absolute bottom-20 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-pulse"></div>
-
-    <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-12 rounded-3xl shadow-2xl w-full max-w-2xl">
-      <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-white mb-2 drop-shadow-md">Get in Touch</h2>
-        <p className="text-white/80">We'd love to hear from you.</p>
-      </div>
-      
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <input type="text" placeholder="Name" className="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors" />
-        <input type="email" placeholder="Email" className="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors" />
-        <textarea rows="4" placeholder="Message" className="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors col-span-1 md:col-span-2 resize-none"></textarea>
-        
-        <div className="col-span-1 md:col-span-2 flex justify-center">
-          <button className="px-10 py-3 bg-white text-purple-600 font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-            Send Message
-          </button>
+     </div>
+     <form class="brutal-form">
+        <div class="form-group">
+           <label>User_Identifier</label>
+           <input type="text" placeholder="NAME_HERE">
         </div>
-      </form>
-    </div>
-  </div>`} htmlCode={`<div class="relative flex items-center justify-center min-h-[600px] w-full rounded-xl overflow-hidden bg-gradient-to-tr from-purple-500 via-pink-500 to-red-500 p-4">
-    ...
-    <div class="absolute top-20 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-pulse"></div>
-    <div class="absolute bottom-20 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-overlay filter blur-3xl opacity-60 animate-pulse"></div>
-
-    <div class="relative bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-12 rounded-3xl shadow-2xl w-full max-w-2xl">
-      <div class="text-center mb-10">
-        <h2 class="text-4xl font-bold text-white mb-2 drop-shadow-md">Get in Touch</h2>
-        <p class="text-white/80">We'd love to hear from you.</p>
-      </div>
-      
-      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <input type="text" placeholder="Name" class="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors" />
-        <input type="email" placeholder="Email" class="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors" />
-        <textarea rows="4" placeholder="Message" class="w-full px-5 py-3 rounded-xl bg-white/20 border border-white/10 text-white placeholder-white/70 focus:bg-white/30 focus:border-white outline-none transition-colors col-span-1 md:col-span-2 resize-none"></textarea>
-        
-        <div class="col-span-1 md:col-span-2 flex justify-center">
-          <button class="px-10 py-3 bg-white text-purple-600 font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-            Send Message
-          </button>
+        <div class="form-group">
+           <label>Secure_Link</label>
+           <input type="email" placeholder="EMAIL_HERE">
         </div>
-      </form>
-    </div>
-  </div>`} cssCode={`/* ContactGlass Styles (Generated from Tailwind) */\n.component-root {\n  align-items: center;\n  backdrop-filter: blur(12px);\n  background-color: #60a5fa;\n  background-color: #fde047;\n  background-color: #ffffff;\n  border-radius: 0.75rem;\n  border-radius: 1.5rem;\n  border-radius: 9999px;\n  border-width: 1px; border-style: solid;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #9333ea;\n  color: #ffffff;\n  display: flex;\n  font-weight: 700;\n  justify-content: center;\n  padding-left: 1.25rem; padding-right: 1.25rem;\n  padding-left: 2.5rem; padding-right: 2.5rem;\n  padding-top: 0.75rem; padding-bottom: 0.75rem;\n  padding: 1rem;\n  padding: 2rem;\n  text-align: center;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 04. Glassmorphism </span>
-          <ContactGlass />
-        </section>
-
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-slate-50 p-12 rounded-3xl text-center">
-    <h2 className="text-3xl font-bold text-slate-900 mb-4">How can we help?</h2>
-    <p className="text-slate-500 mb-12 max-w-xl mx-auto">Please select a topic below so we can route your request to the right team.</p>
-    
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-      {['Sales Inquiry', 'Technical Support', 'Billing Issue'].map((topic) => (
-        <button key={topic} className="p-6 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg transition-all group">
-          <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-4 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-colors">
-            ?
-          </div>
-          <h3 className="font-bold text-slate-700">{topic}</h3>
-        </button>
-      ))}
-    </div>
-
-    <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl border border-slate-200 shadow-sm text-left">
-      <h3 className="font-bold text-lg mb-6">Or send us a direct message</h3>
-      <form className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-           <InputGroup label="Name" placeholder="Name" />
-           <InputGroup label="Email" placeholder="Email" />
+        <div class="form-group">
+           <label>Data_Payload</label>
+           <textarea rows="4" placeholder="MESSAGE_HERE"></textarea>
         </div>
-        <TextAreaGroup label="Details" placeholder="Describe your issue..." />
-        <button className="w-full py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800">Submit Ticket</button>
-      </form>
-    </div>
-  </div>`} htmlCode={`<div class="bg-slate-50 p-12 rounded-3xl text-center">
-    <h2 class="text-3xl font-bold text-slate-900 mb-4">How can we help?</h2>
-    <p class="text-slate-500 mb-12 max-w-xl mx-auto">Please select a topic below so we can route your request to the right team.</p>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-      <!-- Mapping Start -->
-(
-        <button key=... class="p-6 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:shadow-lg transition-all group">
-          <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-4 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-colors">
-            ?
+        <button class="brutal-btn">SEND_SHOUT →</button>
+     </form>
+  </div>
+</div>`} 
+              cssCode={`.contact-brutal-root { background: #facc15; padding: 48px; border-radius: 48px; border: 8px solid #020617; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; text-transform: uppercase; box-sizing: border-box; box-shadow: 20px 20px 0 0 #000; overflow: hidden; }
+.brutal-grid { display: grid; grid-template-columns: 1fr; gap: 48px; max-width: 1280px; margin: 0 auto; }
+@media (min-width: 1024px) { .brutal-grid { grid-template-columns: repeat(2, 1fr); } }
+.brutal-info { text-align: left; }
+.brutal-title { font-size: 72px; font-weight: 900; color: #020617; line-height: 0.8; letter-spacing: -0.05em; margin-bottom: 48px; }
+@media (min-width: 768px) { .brutal-title { font-size: 120px; } }
+.brutal-links { display: flex; flex-direction: column; gap: 24px; font-size: 24px; text-decoration: underline; text-decoration-thickness: 8px; text-decoration-color: rgba(2,6,23,0.1); text-underline-offset: 8px; }
+.brutal-form { background: white; border: 6px solid #020617; padding: 40px; box-shadow: 16px 16px 0 0 #000; display: flex; flex-direction: column; gap: 24px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-size: 10px; letter-spacing: 0.1em; color: #020617; }
+.form-group input, .form-group textarea { width: 100%; padding: 16px; border: 4px solid #020617; font-weight: 900; font-style: italic; background: white; outline: none; transition: background 0.3s ease; }
+.form-group input:focus, .form-group textarea:focus { background: #fef08a; }
+.brutal-btn { width: 100%; padding: 24px; background: #020617; color: white; font-size: 24px; font-weight: 900; font-style: italic; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 8px 8px 0 0 #2563eb; }
+.brutal-btn:hover { background: #2563eb; transform: translate(4px, 4px); box-shadow: none; }`} 
+            />
           </div>
-          <h3 class="font-bold text-slate-700">...</h3>
-        </button>
-      ))}
-    </div>
-
-    <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl border border-slate-200 shadow-sm text-left">
-      <h3 class="font-bold text-lg mb-6">Or send us a direct message</h3>
-      <form class="space-y-4">
-        <div class="grid grid-cols-2 gap-4">
-           <inputgroup label="Name" placeholder="Name" ></inputgroup>
-           <inputgroup label="Email" placeholder="Email" ></inputgroup>
-        </div>
-        <textareagroup label="Details" placeholder="Describe your issue..." ></textareagroup>
-        <button class="w-full py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-800">Submit Ticket</button>
-      </form>
-    </div>
-  </div>`} cssCode={`/* ContactSupport Styles (Generated from Tailwind) */\n.component-root {\n  align-items: center;\n  background-color: #0f172a;\n  background-color: #eff6ff;\n  background-color: #f8fafc;\n  background-color: #ffffff;\n  border-radius: 0.5rem;\n  border-radius: 0.75rem;\n  border-radius: 1.5rem;\n  border-width: 1px; border-style: solid;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #0f172a;\n  color: #2563eb;\n  color: #334155;\n  color: #64748b;\n  color: #ffffff;\n  display: flex;\n  font-weight: 700;\n  justify-content: center;\n  padding-top: 0.75rem; padding-bottom: 0.75rem;\n  padding: 1.5rem;\n  padding: 2rem;\n  padding: 3rem;\n  text-align: center;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 05. Support Center </span>
-          <ContactSupport />
-        </section>
-
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-black p-1 border-2 border-green-500 rounded-xl max-w-4xl mx-auto shadow-[0_0_20px_rgba(34,197,94,0.2)]">
-    <div className="bg-gray-900 p-8 md:p-12 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-1 bg-green-500 opacity-20"></div>
-      
-      <div className="grid md:grid-cols-2 gap-12 font-mono">
-        <div>
-          <h2 className="text-green-500 text-4xl font-bold mb-6 tracking-tighter">
-            &lt;CONTACT /&gt;
-          </h2>
-          <p className="text-gray-400 mb-8 text-sm">
-            ESTABLISHING SECURE CONNECTION...<br/>
-            TRANSMITTING DATA PACKETS TO SERVER.<br/>
-            PLEASE INPUT PARAMETERS.
-          </p>
-          <div className="space-y-4 text-green-400 text-sm">
-             <p>> STATUS: ONLINE</p>
-             <p>> LATENCY: 24ms</p>
-             <p>> ENCRYPTION: 256-BIT</p>
-          </div>
-        </div>
-
-        <form className="space-y-6">
-          <div className="relative group">
-            <span className="absolute left-4 top-3 text-green-700">></span>
-            <input type="text" placeholder="USER_ID" className="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase" />
-          </div>
-          <div className="relative group">
-            <span className="absolute left-4 top-3 text-green-700">></span>
-            <input type="email" placeholder="COMM_LINK (EMAIL)" className="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase" />
-          </div>
-          <div className="relative group">
-            <span className="absolute left-4 top-3 text-green-700">></span>
-            <textarea rows="4" placeholder="DATA_PAYLOAD" className="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase resize-none"></textarea>
-          </div>
-          <button className="w-full py-4 bg-green-900/30 border border-green-500 text-green-500 font-bold uppercase hover:bg-green-500 hover:text-black transition-all tracking-widest">
-            [ INITIALIZE_SEND ]
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>`} htmlCode={`<div class="bg-black p-1 border-2 border-green-500 rounded-xl max-w-4xl mx-auto shadow-[0_0_20px_rgba(34,197,94,0.2)]">
-    <div class="bg-gray-900 p-8 md:p-12 relative overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-1 bg-green-500 opacity-20"></div>
-      
-      <div class="grid md:grid-cols-2 gap-12 font-mono">
-        <div>
-          <h2 class="text-green-500 text-4xl font-bold mb-6 tracking-tighter">
-            &lt;CONTACT /&gt;
-          </h2>
-          <p class="text-gray-400 mb-8 text-sm">
-            ESTABLISHING SECURE CONNECTION...<br/>
-            TRANSMITTING DATA PACKETS TO SERVER.<br/>
-            PLEASE INPUT PARAMETERS.
-          </p>
-          <div class="space-y-4 text-green-400 text-sm">
-             <p>> STATUS: ONLINE</p>
-             <p>> LATENCY: 24ms</p>
-             <p>> ENCRYPTION: 256-BIT</p>
-          </div>
-        </div>
-
-        <form class="space-y-6">
-          <div class="relative group">
-            <span class="absolute left-4 top-3 text-green-700">></span>
-            <input type="text" placeholder="USER_ID" class="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase" />
-          </div>
-          <div class="relative group">
-            <span class="absolute left-4 top-3 text-green-700">></span>
-            <input type="email" placeholder="COMM_LINK (EMAIL)" class="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase" />
-          </div>
-          <div class="relative group">
-            <span class="absolute left-4 top-3 text-green-700">></span>
-            <textarea rows="4" placeholder="DATA_PAYLOAD" class="w-full bg-black border border-gray-700 text-green-400 pl-8 pr-4 py-3 focus:border-green-500 focus:outline-none placeholder-gray-800 uppercase resize-none"></textarea>
-          </div>
-          <button class="w-full py-4 bg-green-900/30 border border-green-500 text-green-500 font-bold uppercase hover:bg-green-500 hover:text-black transition-all tracking-widest">
-            [ INITIALIZE_SEND ]
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>`} cssCode={`/* ContactCyber Styles (Generated from Tailwind) */\n.component-root {\n  background-color: #000000;\n  background-color: #111827;\n  background-color: #22c55e;\n  border-color: #22c55e;\n  border-color: #374151;\n  border-radius: 0.75rem;\n  border-width: 1px; border-style: solid;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #22c55e;\n  color: #9ca3af;\n  font-weight: 700;\n  padding-top: 0.75rem; padding-bottom: 0.75rem;\n  padding-top: 1rem; padding-bottom: 1rem;\n  padding: 0.25rem;\n  padding: 2rem;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 06. Cyberpunk Terminal </span>
-          <ContactCyber />
-        </section>
-
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-[#e0e5ec] p-12 rounded-3xl max-w-3xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-    <div className="flex-1">
-      <div className="w-24 h-24 rounded-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] flex items-center justify-center text-4xl mb-6">
-        👋
-      </div>
-      <h2 className="text-3xl font-bold text-gray-700 mb-4">Say Hello!</h2>
-      <p className="text-gray-500">We're always looking for new friends. Drop us a line and let's start a conversation.</p>
-    </div>
-
-    <form className="flex-1 w-full space-y-6">
-      <div className="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <input type="text" placeholder="Name" className="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2" />
-      </div>
-      <div className="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <input type="email" placeholder="Email" className="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2" />
-      </div>
-      <div className="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <textarea rows="3" placeholder="Message" className="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2 resize-none"></textarea>
-      </div>
-      <button className="w-full py-3 rounded-xl bg-[#e0e5ec] text-blue-500 font-bold shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] active:scale-95 transition-all">
-        Send
-      </button>
-    </form>
-  </div>`} htmlCode={`<div class="bg-[#e0e5ec] p-12 rounded-3xl max-w-3xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-    <div class="flex-1">
-      <div class="w-24 h-24 rounded-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] flex items-center justify-center text-4xl mb-6">
-        👋
-      </div>
-      <h2 class="text-3xl font-bold text-gray-700 mb-4">Say Hello!</h2>
-      <p class="text-gray-500">We're always looking for new friends. Drop us a line and let's start a conversation.</p>
-    </div>
-
-    <form class="flex-1 w-full space-y-6">
-      <div class="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <input type="text" placeholder="Name" class="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2" />
-      </div>
-      <div class="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <input type="email" placeholder="Email" class="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2" />
-      </div>
-      <div class="rounded-xl bg-[#e0e5ec] p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
-        <textarea rows="3" placeholder="Message" class="w-full bg-transparent border-none outline-none text-gray-600 placeholder-gray-400 px-4 py-2 resize-none"></textarea>
-      </div>
-      <button class="w-full py-3 rounded-xl bg-[#e0e5ec] text-blue-500 font-bold shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] active:scale-95 transition-all">
-        Send
-      </button>
-    </form>
-  </div>`} cssCode={`/* ContactNeumorphic Styles (Generated from Tailwind) */\n.component-root {\n  align-items: center;\n  background-color: transparent;\n  border-radius: 0.75rem;\n  border-radius: 1.5rem;\n  border-radius: 9999px;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #374151;\n  color: #3b82f6;\n  color: #4b5563;\n  color: #6b7280;\n  display: flex;\n  flex-direction: column;\n  font-weight: 700;\n  justify-content: center;\n  padding-left: 1rem; padding-right: 1rem;\n  padding-top: 0.5rem; padding-bottom: 0.5rem;\n  padding-top: 0.75rem; padding-bottom: 0.75rem;\n  padding: 0.25rem;\n  padding: 3rem;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 07. Neumorphic </span>
-          <ContactNeumorphic />
-        </section>
-
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="bg-yellow-400 p-8 border-4 border-black max-w-4xl mx-auto shadow-[12px_12px_0_0_#000]">
-    <div className="grid md:grid-cols-2 gap-8">
-      <div className="bg-white border-4 border-black p-8">
-        <h2 className="text-6xl font-black uppercase leading-none mb-6">Call<br/>Us<br/>Now</h2>
-        <div className="space-y-4 font-bold text-xl">
-          <p>📧 contact@bold.com</p>
-          <p>📱 +1-800-BOLD-UI</p>
-          <p>🏢 123 Design District</p>
-        </div>
-      </div>
-      
-      <form className="space-y-4">
-        <input type="text" placeholder="YOUR NAME" className="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50" />
-        <input type="email" placeholder="YOUR EMAIL" className="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50" />
-        <textarea rows="4" placeholder="WHAT'S UP?" className="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50 resize-none"></textarea>
-        
-        <button className="w-full py-4 bg-black text-white font-black text-2xl uppercase hover:bg-white hover:text-black border-4 border-transparent hover:border-black transition-colors">
-          SHOUT IT
-        </button>
-      </form>
-    </div>
-  </div>`} htmlCode={`<div class="bg-yellow-400 p-8 border-4 border-black max-w-4xl mx-auto shadow-[12px_12px_0_0_#000]">
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white border-4 border-black p-8">
-        <h2 class="text-6xl font-black uppercase leading-none mb-6">Call<br/>Us<br/>Now</h2>
-        <div class="space-y-4 font-bold text-xl">
-          <p>📧 contact@bold.com</p>
-          <p>📱 +1-800-BOLD-UI</p>
-          <p>🏢 123 Design District</p>
-        </div>
-      </div>
-      
-      <form class="space-y-4">
-        <input type="text" placeholder="YOUR NAME" class="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50" />
-        <input type="email" placeholder="YOUR EMAIL" class="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50" />
-        <textarea rows="4" placeholder="WHAT'S UP?" class="w-full p-4 border-4 border-black font-bold focus:outline-none focus:bg-pink-300 transition-colors uppercase placeholder-black/50 resize-none"></textarea>
-        
-        <button class="w-full py-4 bg-black text-white font-black text-2xl uppercase hover:bg-white hover:text-black border-4 border-transparent hover:border-black transition-colors">
-          SHOUT IT
-        </button>
-      </form>
-    </div>
-  </div>`} cssCode={`/* ContactBrutalist Styles (Generated from Tailwind) */\n.component-root {\n  background-color: #000000;\n  background-color: #facc15;\n  background-color: #ffffff;\n  border-color: #000000;\n  border-color: transparent;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #ffffff;\n  font-weight: 700;\n  padding-top: 1rem; padding-bottom: 1rem;\n  padding: 1rem;\n  padding: 2rem;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 08. Brutalist </span>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 01. Bold Brutalist THE_SHOUT </span>
           <ContactBrutalist />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-xl">
-    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
-    <div className="absolute inset-0 bg-slate-900/60"></div>
-    
-    <div className="absolute inset-0 flex items-center justify-end p-4 md:p-16">
-      <div className="bg-white p-8 md:p-10 max-w-lg w-full shadow-2xl">
-        <h2 className="text-3xl font-serif font-bold text-slate-900 mb-6">Start a Project</h2>
-        <form className="space-y-6">
-          <div className="border-b border-gray-300 py-2">
-            <input type="text" placeholder="Your Name" className="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" />
-          </div>
-          <div className="border-b border-gray-300 py-2">
-            <input type="email" placeholder="Email Address" className="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" />
-          </div>
-          <div className="border-b border-gray-300 py-2">
-            <textarea rows="2" placeholder="Tell us about your needs" className="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none resize-none"></textarea>
-          </div>
-          <button className="bg-slate-900 text-white font-bold py-4 px-8 w-full hover:bg-slate-800 transition-colors">
-            Get Consultation
-          </button>
-        </form>
-      </div>
+        {/* 02. Modern Glass Hub */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactGlass = () => (
+  <div className="relative bg-slate-950 p-16 rounded-[3rem] overflow-hidden min-h-[700px] flex items-center font-sans italic font-bold">
+    <div className="absolute top-0 left-[-10%] w-[40rem] h-[40rem] bg-indigo-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse"></div>
+    <div className="absolute bottom-[-10%] right-[-10%] w-[40rem] h-[40rem] bg-blue-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse delay-1000"></div>
+    <div className="relative z-10 w-full max-w-5xl mx-auto">
+       <div className="text-center mb-20">
+          <h2 className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter uppercase leading-none italic">Secure_Link</h2>
+          <p className="text-blue-400 text-xl lowercase font-medium italic tracking-widest opacity-60">Establishing high-fidelity communication nodes.</p>
+       </div>
+       <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-12 rounded-[2.5rem] shadow-2xl text-left">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <div className="space-y-8">
+                <div className="space-y-2">
+                   <label className="text-[10px] uppercase font-black tracking-[0.4em] text-white/40 italic">Full_Legal_Name</label>
+                   <input type="text" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-blue-500 transition-colors" placeholder="ENTER_NAME" />
+                </div>
+                <div className="space-y-2">
+                   <label className="text-[10px] uppercase font-black tracking-[0.4em] text-white/40 italic">Global_Protocol_Email</label>
+                   <input type="email" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-blue-500 transition-colors" placeholder="ENTER_EMAIL" />
+                </div>
+             </div>
+             <div className="space-y-8 flex flex-col">
+                <div className="space-y-2 flex-1 flex flex-col">
+                   <label className="text-[10px] uppercase font-black tracking-[0.4em] text-white/40 italic">Communication_Payload</label>
+                   <textarea className="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-blue-500 transition-colors resize-none flex-1" placeholder="DESCRIBE_PROJECT_LOGIC"></textarea>
+                </div>
+                <button className="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:bg-white hover:text-slate-950 transition-all shadow-2xl shadow-blue-900/40 italic">
+                   INITIALIZE_TRANSMISSION_
+                </button>
+             </div>
+          </form>
+       </div>
     </div>
-  </div>`} htmlCode={`<div class="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-xl">
-    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Background" />
-    <div class="absolute inset-0 bg-slate-900/60"></div>
-    
-    <div class="absolute inset-0 flex items-center justify-end p-4 md:p-16">
-      <div class="bg-white p-8 md:p-10 max-w-lg w-full shadow-2xl">
-        <h2 class="text-3xl font-serif font-bold text-slate-900 mb-6">Start a Project</h2>
-        <form class="space-y-6">
-          <div class="border-b border-gray-300 py-2">
-            <input type="text" placeholder="Your Name" class="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" />
-          </div>
-          <div class="border-b border-gray-300 py-2">
-            <input type="email" placeholder="Email Address" class="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" />
-          </div>
-          <div class="border-b border-gray-300 py-2">
-            <textarea rows="2" placeholder="Tell us about your needs" class="w-full appearance-none bg-transparent border-none text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none resize-none"></textarea>
-          </div>
-          <button class="bg-slate-900 text-white font-bold py-4 px-8 w-full hover:bg-slate-800 transition-colors">
-            Get Consultation
-          </button>
-        </form>
-      </div>
+  </div>
+);`} 
+              htmlCode={`<!-- Glassmorphic Contact Hub -->
+<div class="contact-glass-root">
+  <div class="glass-container">
+    <div class="glass-header">
+       <h2 class="glass-title">Secure_Link</h2>
+       <p class="glass-subtitle">Establishing high-fidelity communication nodes.</p>
     </div>
-  </div>`} cssCode={`/* ContactOverlay Styles (Generated from Tailwind) */\n.component-root {\n  align-items: center;\n  background-color: #0f172a;\n  background-color: #ffffff;\n  background-color: transparent;\n  border-radius: 1rem;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #0f172a;\n  color: #374151;\n  color: #ffffff;\n  display: flex;\n  font-weight: 700;\n  height: 100%;\n  padding-left: 0.5rem; padding-right: 0.5rem;\n  padding-left: 2rem; padding-right: 2rem;\n  padding-top: 0.25rem; padding-bottom: 0.25rem;\n  padding-top: 0.5rem; padding-bottom: 0.5rem;\n  padding-top: 1rem; padding-bottom: 1rem;\n  padding: 1rem;\n  padding: 2rem;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 09. Agency Overlay </span>
-          <ContactOverlay />
+    <div class="glass-form-box">
+       <form class="glass-grid">
+          <div class="glass-col">
+             <div class="input-set">
+                <label>Full_Legal_Name</label>
+                <input type="text" placeholder="ENTER_NAME">
+             </div>
+             <div class="input-set">
+                <label>Global_Protocol_Email</label>
+                <input type="email" placeholder="ENTER_EMAIL">
+             </div>
+          </div>
+          <div class="glass-col">
+             <div class="input-set grow">
+                <label>Communication_Payload</label>
+                <textarea placeholder="DESCRIBE_PROJECT_LOGIC"></textarea>
+             </div>
+             <button class="glass-btn">INITIALIZE_TRANSMISSION_</button>
+          </div>
+       </form>
+    </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-glass-root { position: relative; background: #020617; padding: 64px; border-radius: 48px; overflow: hidden; min-height: 700px; display: flex; align-items: center; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-sizing: border-box; }
+.glass-container { position: relative; z-index: 10; width: 100%; max-width: 1024px; margin: 0 auto; }
+.glass-header { text-align: center; margin-bottom: 80px; }
+.glass-title { font-size: 64px; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1; margin-bottom: 24px; }
+@media (min-width: 768px) { .glass-title { font-size: 80px; } }
+.glass-subtitle { color: #3b82f6; font-size: 20px; font-weight: 500; opacity: 0.6; letter-spacing: 0.1em; }
+.glass-form-box { background: rgba(255,255,255,0.05); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.1); padding: 48px; border-radius: 40px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.glass-grid { display: grid; grid-template-columns: 1fr; gap: 32px; text-align: left; }
+@media (min-width: 768px) { .glass-grid { grid-template-columns: repeat(2, 1fr); } }
+.glass-col { display: flex; flex-direction: column; gap: 32px; }
+.input-set { display: flex; flex-direction: column; gap: 8px; }
+.input-set.grow { flex: 1; }
+.input-set label { font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 900; letter-spacing: 0.4em; }
+.input-set input, .input-set textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 12px; color: white; outline: none; transition: border-color 0.3s ease; }
+.input-set textarea { flex: 1; resize: none; }
+.input-set input:focus, .input-set textarea:focus { border-color: #3b82f6; }
+.glass-btn { width: 100%; padding: 20px; background: #2563eb; color: white; border-radius: 16px; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3em; border: none; cursor: pointer; transition: all 0.5s ease; box-shadow: 0 20px 25px -5px rgba(37,99,235,0.3); }
+.glass-btn:hover { background: white; color: #020617; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 02. Modern Glass Refraction Hub </span>
+          <ContactGlass />
         </section>
 
-        <section className='box-shadow p-4 rounded-lg relative group/cont'>
-          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity"><CopyButton jsxCode={`<div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-    <div className="bg-indigo-600 p-6 text-white text-center">
-      <h2 className="text-xl font-bold">Quick Message</h2>
-      <p className="text-indigo-100 text-sm">We usually reply within an hour.</p>
+        {/* 03. Cyberpunk Matrix */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactCyber = () => (
+  <div className="bg-black p-12 rounded-[3rem] border border-white/5 font-mono italic font-bold relative overflow-hidden">
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-20"></div>
+    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl mx-auto">
+       <div className="flex flex-col justify-center text-left">
+          <div className="text-[10px] text-emerald-500 font-black uppercase tracking-[0.5em] mb-4 italic">>> System_Inquiry_Port_8080</div>
+          <h2 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-none italic">UPLINK_</h2>
+       </div>
+       <div className="bg-white/[0.02] border border-white/5 p-10 relative group text-left">
+          <form className="space-y-8">
+             <div className="relative">
+                <span className="absolute left-0 top-4 text-emerald-500 text-xs font-black">>></span>
+                <input type="text" className="w-full bg-transparent border-b border-white/10 p-4 pl-8 text-white outline-none focus:border-emerald-500 transition-colors uppercase placeholder-white/20" placeholder="USER_NAME" />
+             </div>
+             <div className="relative">
+                <span className="absolute left-0 top-4 text-emerald-500 text-xs font-black">>></span>
+                <input type="email" className="w-full bg-transparent border-b border-white/10 p-4 pl-8 text-white outline-none focus:border-emerald-500 transition-colors uppercase placeholder-white/20" placeholder="PROTO_EMAIL" />
+             </div>
+             <div className="relative">
+                <span className="absolute left-0 top-4 text-emerald-500 text-xs font-black">>></span>
+                <textarea rows="4" className="w-full bg-transparent border-b border-white/10 p-4 pl-8 text-white outline-none focus:border-emerald-500 transition-colors uppercase placeholder-white/20 resize-none" placeholder="LOG_PAYLOAD"></textarea>
+             </div>
+             <button className="w-full py-5 bg-emerald-500/10 border border-emerald-500/50 text-emerald-500 rounded-lg font-black text-[10px] uppercase tracking-[0.5em] hover:bg-emerald-500 hover:text-black transition-all italic">
+                [ EXECUTE_SEND ]
+             </button>
+          </form>
+       </div>
     </div>
-    <div className="p-6">
-      <form className="space-y-4">
-        <div>
-          <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Topic</label>
-          <select className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500 text-sm">
-            <option>General Question</option>
-            <option>Support</option>
-            <option>Feedback</option>
-          </select>
-        </div>
-        <div>
-          <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Email</label>
-          <input type="email" className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500" />
-        </div>
-        <div>
-          <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Message</label>
-          <textarea rows="3" className="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500 resize-none"></textarea>
-        </div>
-        <button className="w-full py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2">
-          <span>🚀</span> Send Now
-        </button>
-      </form>
+  </div>
+);`} 
+              htmlCode={`<!-- Cyberpunk Contact Uplink -->
+<div class="contact-cyber-root">
+  <div class="cyber-container">
+     <div class="cyber-info">
+        <div class="port-label">>> System_Inquiry_Port_8080</div>
+        <h2 class="cyber-title">UPLINK_</h2>
+     </div>
+     <div class="cyber-form-box">
+        <form class="cyber-form">
+           <div class="cyber-field">
+              <span>>></span>
+              <input type="text" placeholder="USER_NAME">
+           </div>
+           <div class="cyber-field">
+              <span>>></span>
+              <input type="email" placeholder="PROTO_EMAIL">
+           </div>
+           <div class="cyber-field">
+              <span>>></span>
+              <textarea rows="4" placeholder="LOG_PAYLOAD"></textarea>
+           </div>
+           <button class="cyber-btn">[ EXECUTE_SEND ]</button>
+        </form>
+     </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-cyber-root { background: #000; padding: 48px; border-radius: 48px; border: 1px solid rgba(255,255,255,0.05); font-family: 'JetBrains Mono', monospace; font-style: italic; font-weight: 700; position: relative; overflow: hidden; }
+.cyber-container { position: relative; z-index: 10; display: grid; grid-template-columns: 1fr; gap: 80px; max-width: 1280px; margin: 0 auto; }
+@media (min-width: 1024px) { .cyber-container { grid-template-columns: repeat(2, 1fr); align-items: center; } }
+.cyber-info { text-align: left; }
+.port-label { font-size: 10px; color: #10b981; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; margin-bottom: 16px; }
+.cyber-title { font-size: 64px; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1; }
+@media (min-width: 768px) { .cyber-title { font-size: 80px; } }
+.cyber-form-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 40px; text-align: left; }
+.cyber-form { display: flex; flex-direction: column; gap: 32px; }
+.cyber-field { position: relative; }
+.cyber-field span { position: absolute; left: 0; top: 16px; color: #10b981; font-size: 12px; font-weight: 900; }
+.cyber-field input, .cyber-field textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 16px 16px 16px 32px; color: white; outline: none; transition: border-color 0.3s ease; text-transform: uppercase; }
+.cyber-field textarea { resize: none; }
+.cyber-btn { width: 100%; padding: 20px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.5); color: #10b981; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; cursor: pointer; transition: all 0.3s ease; font-style: italic; }
+.cyber-btn:hover { background: #10b981; color: black; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 03. Cyberpunk Matrix Port Uplink </span>
+          <ContactCyber />
+        </section>
+
+        {/* 04. Neumorphic Tactile */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactNeumorphic = () => (
+  <div className="bg-[#e0e5ec] p-16 rounded-[3rem] font-sans italic font-bold text-center">
+    <div className="max-w-4xl mx-auto bg-[#e0e5ec] p-12 rounded-[3.5rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border border-white/20">
+       <div className="text-center mb-16">
+          <h2 className="text-6xl font-black text-slate-700 uppercase tracking-tighter italic leading-none mb-4">Soft_Link</h2>
+          <p className="text-slate-500 lowercase font-medium italic">Tactile architecture for modern inquiry.</p>
+       </div>
+       <form className="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+          <div className="space-y-8">
+             <div className="bg-[#e0e5ec] rounded-2xl p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
+                <input type="text" className="w-full bg-transparent p-4 outline-none text-slate-600 placeholder-slate-400 italic font-black" placeholder="Identifier_" />
+             </div>
+             <div className="bg-[#e0e5ec] rounded-2xl p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff]">
+                <input type="email" className="w-full bg-transparent p-4 outline-none text-slate-600 placeholder-slate-400 italic font-black" placeholder="Secure_Mail_" />
+             </div>
+          </div>
+          <div className="flex flex-col gap-8">
+             <div className="bg-[#e0e5ec] rounded-2xl p-1 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] flex-1">
+                <textarea className="w-full bg-transparent p-4 outline-none text-slate-600 placeholder-slate-400 italic font-black resize-none h-full" placeholder="Describe_Logic_"></textarea>
+             </div>
+             <button className="w-full py-5 rounded-2xl bg-[#e0e5ec] text-blue-600 font-black uppercase tracking-widest shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] hover:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] transition-all italic active:scale-95">
+                SUBMIT_PAYLOAD_
+             </button>
+          </div>
+       </form>
     </div>
-  </div>`} htmlCode={`<div class="max-w-md mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-    <div class="bg-indigo-600 p-6 text-white text-center">
-      <h2 class="text-xl font-bold">Quick Message</h2>
-      <p class="text-indigo-100 text-sm">We usually reply within an hour.</p>
+  </div>
+);`} 
+              htmlCode={`<!-- Neumorphic Contact Form -->
+<div class="contact-neu-root">
+  <div class="neu-box">
+     <div class="neu-header">
+        <h2 class="neu-title">Soft_Link</h2>
+        <p class="neu-desc">Tactile architecture for modern inquiry.</p>
+     </div>
+     <form class="neu-grid">
+        <div class="neu-col">
+           <div class="neu-input-inset">
+              <input type="text" placeholder="Identifier_">
+           </div>
+           <div class="neu-input-inset">
+              <input type="email" placeholder="Secure_Mail_">
+           </div>
+        </div>
+        <div class="neu-col">
+           <div class="neu-input-inset grow">
+              <textarea placeholder="Describe_Logic_"></textarea>
+           </div>
+           <button class="neu-btn">SUBMIT_PAYLOAD_</button>
+        </div>
+     </form>
+  </div>
+</div>`} 
+              cssCode={`.contact-neu-root { background: #e0e5ec; padding: 64px; border-radius: 48px; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; text-align: center; }
+.neu-box { max-width: 896px; margin: 0 auto; background: #e0e5ec; padding: 48px; border-radius: 56px; box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; border: 1px solid rgba(255,255,255,0.2); }
+.neu-header { margin-bottom: 64px; }
+.neu-title { font-size: 64px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1; margin-bottom: 16px; }
+.neu-desc { color: #64748b; font-size: 18px; text-transform: lowercase; font-weight: 500; }
+.neu-grid { display: grid; grid-template-columns: 1fr; gap: 40px; text-align: left; }
+@media (min-width: 768px) { .neu-grid { grid-template-columns: repeat(2, 1fr); } }
+.neu-col { display: flex; flex-direction: column; gap: 32px; }
+.neu-input-inset { background: #e0e5ec; padding: 4px; border-radius: 16px; box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff; }
+.neu-input-inset.grow { flex: 1; }
+.neu-input-inset input, .neu-input-inset textarea { width: 100%; background: transparent; border: none; outline: none; padding: 16px; color: #475569; font-weight: 900; font-style: italic; }
+.neu-input-inset textarea { height: 100%; resize: none; min-height: 160px; }
+.neu-btn { width: 100%; padding: 20px; background: #e0e5ec; border: none; border-radius: 16px; color: #2563eb; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff; cursor: pointer; transition: all 0.3s ease; font-style: italic; }
+.neu-btn:hover { box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 04. Neumorphic Tactile Soft Link </span>
+          <ContactNeumorphic />
+        </section>
+
+        {/* 05. Magazine Editorial */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactEditorial = () => (
+  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
+    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+       <div className="flex-1 flex flex-col justify-between py-10 text-left">
+          <div className="space-y-12">
+             <h2 className="text-8xl md:text-[10rem] font-black text-slate-950 tracking-tighter uppercase leading-[0.8] mb-10 italic">WORK_ <br/> WITH_ <br/> US.</h2>
+             <p className="text-slate-500 text-2xl lowercase font-medium max-w-sm italic">Defining the next generation of creative architecture through structural logic.</p>
+          </div>
+       </div>
+       <div className="flex-1 bg-slate-50 p-12 rounded-[3.5rem] border border-slate-100 shadow-2xl text-left">
+          <form className="space-y-12">
+             <div className="space-y-2 group">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Full_Name</label>
+                <input type="text" className="w-full bg-transparent border-b-2 border-slate-200 p-4 text-2xl font-black text-slate-950 outline-none focus:border-slate-950 transition-colors placeholder-slate-200" placeholder="WHO_ARE_YOU?" />
+             </div>
+             <div className="space-y-2 group">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Email_Protocol</label>
+                <input type="email" className="w-full bg-transparent border-b-2 border-slate-200 p-4 text-2xl font-black text-slate-950 outline-none focus:border-slate-950 transition-colors placeholder-slate-200" placeholder="SECURE_LINK" />
+             </div>
+             <div className="space-y-2 group">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Vision_Brief</label>
+                <textarea rows="3" className="w-full bg-transparent border-b-2 border-slate-200 p-4 text-2xl font-black text-slate-950 outline-none focus:border-slate-950 transition-colors placeholder-slate-200 resize-none" placeholder="TELL_US_EVERYTHING"></textarea>
+             </div>
+             <button className="px-12 py-6 bg-slate-950 text-white rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-blue-600 transition-all italic shadow-2xl">
+                START_INQUIRY_ →
+             </button>
+          </form>
+       </div>
     </div>
-    <div class="p-6">
-      <form class="space-y-4">
-        <div>
-          <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Topic</label>
-          <select class="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500 text-sm">
-            <option>General Question</option>
-            <option>Support</option>
-            <option>Feedback</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Email</label>
-          <input type="email" class="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500" />
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Message</label>
-          <textarea rows="3" class="w-full p-2 bg-gray-50 border border-gray-200 rounded-lg outline-none focus:border-indigo-500 resize-none"></textarea>
-        </div>
-        <button class="w-full py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2">
-          <span>🚀</span> Send Now
-        </button>
-      </form>
+  </div>
+);`} 
+              htmlCode={`<!-- Editorial Contact Section -->
+<div class="contact-editorial-root">
+  <div class="editorial-container">
+     <div class="editorial-sidebar">
+        <h2 class="editorial-title">WORK_ <br/> WITH_ <br/> US.</h2>
+        <p class="editorial-desc">Defining the next generation of creative architecture through structural logic.</p>
+     </div>
+     <div class="editorial-form-box">
+        <form class="editorial-form">
+           <div class="field-wrap">
+              <label>Full_Name</label>
+              <input type="text" placeholder="WHO_ARE_YOU?">
+           </div>
+           <div class="field-wrap">
+              <label>Email_Protocol</label>
+              <input type="email" placeholder="SECURE_LINK">
+           </div>
+           <div class="field-wrap">
+              <label>Vision_Brief</label>
+              <textarea rows="3" placeholder="TELL_US_EVERYTHING"></textarea>
+           </div>
+           <button class="editorial-btn">START_INQUIRY_ →</button>
+        </form>
+     </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-editorial-root { background: white; padding: 48px; border-radius: 48px; border: 1px solid #f1f5f9; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; }
+.editorial-container { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 80px; }
+@media (min-width: 1024px) { .editorial-container { flex-direction: row; } }
+.editorial-sidebar { flex: 1; text-align: left; padding: 40px 0; }
+.editorial-title { font-size: 80px; font-weight: 900; color: #020617; text-transform: uppercase; line-height: 0.8; margin-bottom: 40px; }
+@media (min-width: 768px) { .editorial-title { font-size: 160px; } }
+.editorial-desc { color: #64748b; font-size: 24px; text-transform: lowercase; font-weight: 500; max-width: 384px; }
+.editorial-form-box { flex: 1; background: #f8fafc; padding: 48px; border-radius: 56px; border: 1px solid #f1f5f9; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); text-align: left; }
+.editorial-form { display: flex; flex-direction: column; gap: 48px; }
+.field-wrap { display: flex; flex-direction: column; gap: 8px; }
+.field-wrap label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; opacity: 0.4; }
+.field-wrap input, .field-wrap textarea { width: 100%; background: transparent; border: none; border-bottom: 2px solid #e2e8f0; padding: 16px; font-size: 24px; font-weight: 900; color: #020617; outline: none; transition: border-color 0.3s ease; }
+.field-wrap textarea { resize: none; }
+.editorial-btn { align-self: flex-start; padding: 24px 48px; background: #020617; color: white; border-radius: 9999px; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4em; border: none; cursor: pointer; transition: all 0.3s ease; font-style: italic; }
+.editorial-btn:hover { background: #2563eb; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 05. Editorial Magazine Lead Generation </span>
+          <ContactEditorial />
+        </section>
+
+        {/* 06. Bento Support Center */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactBento = () => (
+  <div className="bg-slate-50 p-12 rounded-[3rem] font-sans italic font-bold">
+    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
+       <div className="md:col-span-2 bg-white rounded-[2.5rem] p-12 border border-slate-100 shadow-xl flex flex-col justify-center">
+          <div className="text-[10px] text-blue-600 font-black uppercase tracking-[0.5em] mb-4 italic">// Protocol_Help_Desk</div>
+          <h2 className="text-6xl font-black text-slate-950 uppercase tracking-tighter leading-none mb-8">Support_ <br/> Modules</h2>
+          <div className="space-y-4">
+             {['Sales_Node', 'Technical_Logic', 'Billing_Matrix'].map((topic) => (
+                <div key={topic} className="p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-slate-950 hover:text-white transition-all cursor-pointer flex justify-between items-center group">
+                   <span className="text-sm font-black uppercase italic tracking-widest">{topic}</span>
+                   <span className="text-blue-600 font-black group-hover:translate-x-2 transition-transform">→</span>
+                </div>
+             ))}
+          </div>
+       </div>
+       <div className="md:col-span-2 bg-blue-600 rounded-[2.5rem] p-12 text-white shadow-2xl relative overflow-hidden group text-left">
+          <h3 className="text-3xl font-black uppercase mb-8 italic">Quick_Dispatch_</h3>
+          <form className="space-y-6">
+             <input type="text" className="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-white outline-none focus:bg-white/20 transition-all placeholder-white/40 italic font-bold" placeholder="IDENTIFIER" />
+             <input type="email" className="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-white outline-none focus:bg-white/20 transition-all placeholder-white/40 italic font-bold" placeholder="PROTOCOL_MAIL" />
+             <textarea rows="4" className="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-white outline-none focus:bg-white/20 transition-all placeholder-white/40 italic font-bold resize-none" placeholder="DESCRIBE_LOGIC"></textarea>
+             <button className="w-full py-4 bg-white text-blue-600 rounded-xl font-black text-[10px] uppercase tracking-widest italic hover:bg-slate-950 hover:text-white transition-all">DISPATCH_TICKET_</button>
+          </form>
+       </div>
     </div>
-  </div>`} cssCode={`/* ContactFloating Styles (Generated from Tailwind) */\n.component-root {\n  align-items: center;\n  background-color: #4f46e5;\n  background-color: #f9fafb;\n  background-color: #ffffff;\n  border-color: #e5e7eb;\n  border-color: #f3f4f6;\n  border-radius: 0.5rem;\n  border-radius: 1rem;\n  border-width: 1px; border-style: solid;\n  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);\n  color: #6b7280;\n  color: #e0e7ff;\n  color: #ffffff;\n  display: flex;\n  font-weight: 700;\n  justify-content: center;\n  padding-top: 0.75rem; padding-bottom: 0.75rem;\n  padding: 0.5rem;\n  padding: 1.5rem;\n  text-align: center;\n  width: 100%;\n}\n\n/* Note: This conversion covers core layout and colors. \n   Check HTML/JSX tabs for full structural details. */`} /></div>
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6"> 10. Compact Card </span>
+  </div>
+);`} 
+              htmlCode={`<!-- Bento Support Modules -->
+<div class="contact-bento-root">
+  <div class="bento-container">
+     <div class="bento-card white">
+        <div class="card-label">// Protocol_Help_Desk</div>
+        <h2 class="card-title">Support_ <br/> Modules</h2>
+        <div class="topics">
+           <div class="topic">Sales_Node →</div>
+           <div class="topic">Technical_Logic →</div>
+           <div class="topic">Billing_Matrix →</div>
+        </div>
+     </div>
+     <div class="bento-card blue">
+        <h3 class="form-title">Quick_Dispatch_</h3>
+        <form class="bento-form">
+           <input type="text" placeholder="IDENTIFIER">
+           <input type="email" placeholder="PROTOCOL_MAIL">
+           <textarea rows="4" placeholder="DESCRIBE_LOGIC"></textarea>
+           <button class="form-btn">DISPATCH_TICKET_</button>
+        </form>
+     </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-bento-root { background: #f8fafc; padding: 48px; border-radius: 48px; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; }
+.bento-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 768px) { .bento-container { grid-template-columns: repeat(4, 1fr); } }
+.bento-card { border-radius: 40px; padding: 48px; text-align: left; }
+.bento-card.white { grid-column: span 2; background: white; border: 1px solid #f1f5f9; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+.bento-card.blue { grid-column: span 2; background: #2563eb; color: white; box-shadow: 0 25px 50px -12px rgba(37,99,235,0.4); }
+.card-label { font-size: 10px; color: #2563eb; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; margin-bottom: 16px; }
+.card-title { font-size: 60px; font-weight: 900; color: #020617; text-transform: uppercase; line-height: 1; margin-bottom: 32px; }
+.topics { display: flex; flex-direction: column; gap: 16px; }
+.topic { background: #f8fafc; padding: 16px; border-radius: 16px; font-size: 14px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; }
+.topic:hover { background: #020617; color: white; }
+.form-title { font-size: 32px; font-weight: 900; text-transform: uppercase; margin-bottom: 32px; }
+.bento-form { display: flex; flex-direction: column; gap: 24px; }
+.bento-form input, .bento-form textarea { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 16px; border-radius: 12px; color: white; outline: none; }
+.form-btn { width: 100%; padding: 16px; background: white; color: #2563eb; border-radius: 12px; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 06. Bento Support Matrix Hub </span>
+          <ContactBento />
+        </section>
+
+        {/* 07. Floating Action Hub */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactFloating = () => (
+  <div className="relative min-h-[600px] bg-slate-50 p-12 rounded-[3rem] font-sans italic font-bold flex items-center justify-center">
+    <div className="relative bg-white w-full max-w-md rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-hidden text-left">
+       <div className="bg-slate-950 p-8 text-white flex justify-between items-center">
+          <div className="space-y-1">
+             <h3 className="text-xl font-black uppercase italic tracking-tight">Direct_Link</h3>
+             <p className="text-[10px] text-blue-400 font-black uppercase tracking-widest">Uptime: 24/7_</p>
+          </div>
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">💬</div>
+       </div>
+       <div className="p-8 space-y-6">
+          <input type="text" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-blue-600 transition-colors font-black italic text-sm placeholder-slate-300" placeholder="NAME_" />
+          <input type="email" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-blue-600 transition-colors font-black italic text-sm placeholder-slate-300" placeholder="MAIL_" />
+          <textarea rows="4" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-blue-600 transition-colors font-black italic text-sm placeholder-slate-300 resize-none" placeholder="PAYLOAD_"></textarea>
+          <button className="w-full py-4 bg-blue-600 text-white rounded-xl font-black text-xs uppercase tracking-[0.2em] italic hover:bg-slate-950 transition-all shadow-xl shadow-blue-900/20">SEND_LOG_</button>
+       </div>
+    </div>
+  </div>
+);`} 
+              htmlCode={`<!-- Floating Compact Contact Hub -->
+<div class="contact-floating-root">
+  <div class="floating-box">
+     <div class="floating-header">
+        <h3 class="header-title">Direct_Link</h3>
+        <div class="header-icon">💬</div>
+     </div>
+     <div class="floating-body">
+        <form class="floating-form">
+           <input type="text" placeholder="NAME_">
+           <input type="email" placeholder="MAIL_">
+           <textarea rows="4" placeholder="PAYLOAD_"></textarea>
+           <button class="floating-btn">SEND_LOG_</button>
+        </form>
+     </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-floating-root { position: relative; min-height: 600px; background: #f8fafc; padding: 48px; border-radius: 48px; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; }
+.floating-box { background: white; width: 100%; max-width: 448px; border-radius: 40px; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.15); border: 1px solid #f1f5f9; overflow: hidden; }
+.floating-header { background: #020617; padding: 32px; display: flex; justify-content: space-between; align-items: center; color: white; }
+.header-title { font-size: 20px; font-weight: 900; text-transform: uppercase; }
+.floating-body { padding: 32px; text-align: left; }
+.floating-form { display: flex; flex-direction: column; gap: 24px; }
+.floating-form input, .floating-form textarea { width: 100%; background: #f8fafc; border: 1px solid #f1f5f9; padding: 16px; border-radius: 12px; outline: none; transition: border-color 0.3s ease; font-weight: 900; font-style: italic; font-size: 14px; }
+.floating-btn { width: 100%; padding: 16px; background: #2563eb; color: white; border-radius: 12px; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; border: none; cursor: pointer; transition: all 0.3s ease; font-style: italic; }
+.floating-btn:hover { background: #020617; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 07. Floating Action Compact Hub </span>
           <ContactFloating />
+        </section>
+
+        {/* 08. Minimalist Lineage */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactMinimal = () => (
+  <div className="bg-white p-20 rounded-[3rem] font-sans italic font-bold border border-slate-100">
+    <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-20 text-left">
+       <div className="w-full md:w-1/3">
+          <h2 className="text-6xl font-black text-slate-950 tracking-tighter uppercase leading-none mb-10 italic underline decoration-slate-950/10 decoration-8">Talk.</h2>
+       </div>
+       <form className="flex-1 space-y-10">
+          <div className="group relative">
+             <input type="text" className="w-full bg-transparent border-b-2 border-slate-100 p-4 text-xl font-black text-slate-950 outline-none focus:border-blue-600 transition-all placeholder-slate-200" placeholder="NAME_IDENTIFIER" />
+          </div>
+          <div className="group relative">
+             <input type="email" className="w-full bg-transparent border-b-2 border-slate-100 p-4 text-xl font-black text-slate-950 outline-none focus:border-blue-600 transition-all placeholder-slate-200" placeholder="MAIL_PROTOCOL" />
+          </div>
+          <div className="group relative">
+             <textarea rows="3" className="w-full bg-transparent border-b-2 border-slate-100 p-4 text-xl font-black text-slate-950 outline-none focus:border-blue-600 transition-all placeholder-slate-200 resize-none" placeholder="DESCRIBE_LOGIC"></textarea>
+          </div>
+          <button className="px-10 py-5 bg-slate-950 text-white rounded-full font-black text-[10px] uppercase tracking-[0.5em] italic hover:bg-blue-600 transition-all shadow-2xl">
+             START_COLLAB_ →
+          </button>
+       </form>
+    </div>
+  </div>
+);`} 
+              htmlCode={`<!-- Minimalist Contact Lineage -->
+<div class="contact-min-root">
+  <div class="min-container">
+     <div class="min-sidebar">
+        <h2 class="min-title">Talk.</h2>
+     </div>
+     <div class="min-form-box">
+        <form class="min-form">
+           <div class="min-field">
+              <input type="text" placeholder="NAME_IDENTIFIER">
+              <div class="field-bar"></div>
+           </div>
+           <div class="min-field">
+              <input type="email" placeholder="MAIL_PROTOCOL">
+              <div class="field-bar"></div>
+           </div>
+           <div class="min-field">
+              <textarea rows="3" placeholder="DESCRIBE_LOGIC"></textarea>
+              <div class="field-bar"></div>
+           </div>
+           <button class="min-btn">START_COLLAB_ →</button>
+        </form>
+     </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-min-root { background: white; padding: 80px; border-radius: 48px; border: 1px solid #f1f5f9; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; }
+.min-container { max-width: 896px; margin: 0 auto; display: flex; flex-direction: column; gap: 80px; }
+@media (min-width: 768px) { .min-container { flex-direction: row; text-align: left; } }
+.min-title { font-size: 60px; font-weight: 900; color: #020617; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1; text-decoration: underline; text-decoration-color: rgba(2,6,23,0.1); text-decoration-thickness: 8px; }
+.min-form { display: flex; flex-direction: column; gap: 40px; }
+.min-field { position: relative; }
+.min-field input, .min-field textarea { width: 100%; background: transparent; border: none; border-bottom: 2px solid #f1f5f9; padding: 16px; font-size: 20px; font-weight: 900; color: #020617; outline: none; transition: all 0.3s ease; }
+.min-btn { align-self: flex-start; padding: 20px 40px; background: #020617; color: white; border-radius: 9999px; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5em; border: none; cursor: pointer; font-style: italic; }
+.min-btn:hover { background: #2563eb; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 08. Minimalist Team Collab Protocol </span>
+          <ContactMinimal />
+        </section>
+
+        {/* 09. Interactive Map Node */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactMap = () => (
+  <div className="relative h-[700px] w-full rounded-[3rem] overflow-hidden group font-sans italic font-bold">
+    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200" className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125" />
+    <div className="absolute inset-0 bg-slate-950/40"></div>
+    <div className="absolute inset-0 flex items-center justify-end p-8 md:p-20 text-left">
+       <div className="bg-white/80 backdrop-blur-2xl border border-white/20 p-12 rounded-[2.5rem] shadow-2xl w-full max-w-lg">
+          <div className="mb-10">
+             <div className="text-[10px] text-blue-600 font-black uppercase tracking-[0.4em] mb-2 italic">Node_Coordinate_04</div>
+             <h2 className="text-4xl font-black text-slate-950 uppercase italic tracking-tighter leading-none">Visit_Matrix</h2>
+          </div>
+          <form className="space-y-6">
+             <input type="text" className="w-full bg-white/50 border border-slate-200 p-4 rounded-xl outline-none focus:bg-white transition-all font-black italic text-sm" placeholder="NAME_" />
+             <input type="email" className="w-full bg-white/50 border border-slate-200 p-4 rounded-xl outline-none focus:bg-white transition-all font-black italic text-sm" placeholder="MAIL_" />
+             <button className="w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-xs uppercase tracking-widest italic hover:bg-blue-600 transition-all">GET_DIRECTIONS_</button>
+          </form>
+       </div>
+    </div>
+  </div>
+);`} 
+              htmlCode={`<!-- Interactive Map Contact Node -->
+<div class="contact-map-root">
+  <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200" alt="Map Node" class="map-img">
+  <div class="map-overlay"></div>
+  <div class="map-content">
+     <div class="map-card">
+        <h2 class="card-title">Visit_Matrix</h2>
+        <form class="card-form">
+           <input type="text" placeholder="NAME_">
+           <input type="email" placeholder="MAIL_">
+           <button class="card-btn">GET_DIRECTIONS_</button>
+        </form>
+     </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-map-root { position: relative; height: 700px; width: 100%; border-radius: 48px; overflow: hidden; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; }
+.map-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(125%); }
+.map-overlay { position: absolute; inset: 0; background: rgba(2,6,23,0.4); }
+.map-content { position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-end; padding: 80px; }
+.map-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.2); padding: 48px; border-radius: 40px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); width: 100%; max-width: 512px; text-align: left; }
+.card-title { font-size: 36px; font-weight: 900; color: #020617; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1; margin-bottom: 40px; }
+.card-form { display: flex; flex-direction: column; gap: 24px; }
+.card-form input { width: 100%; background: rgba(255,255,255,0.5); border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; outline: none; font-weight: 900; font-style: italic; font-size: 14px; }
+.card-btn { width: 100%; padding: 20px; background: #020617; color: white; border-radius: 16px; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; font-style: italic; }
+.card-btn:hover { background: #2563eb; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 09. Interactive Map Node Discovery </span>
+          <ContactMap />
+        </section>
+
+        {/* 10. Professional SaaS */}
+        <section className='bg-white p-4 rounded-xl shadow-lg relative group/cont border border-slate-200'>
+          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/cont:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const ContactStandard = () => (
+  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold shadow-xl text-left">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl mx-auto">
+       <div className="flex flex-col justify-center bg-slate-950 p-12 rounded-[2.5rem] text-white relative overflow-hidden">
+          <h2 className="text-6xl font-black tracking-tighter uppercase italic leading-none mb-8">Contact_ <br/> Protocol.</h2>
+          <p className="text-slate-400 text-lg lowercase font-medium italic mb-12">Synchronizing global inquiries for structural deployment.</p>
+       </div>
+       <div className="flex flex-col justify-center">
+          <form className="space-y-8">
+             <div className="grid grid-cols-2 gap-8">
+                <div className="space-y-2">
+                   <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">First_Identifier</label>
+                   <input type="text" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm" placeholder="NAME_01" />
+                </div>
+                <div className="space-y-2">
+                   <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Last_Identifier</label>
+                   <input type="text" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm" placeholder="NAME_02" />
+                </div>
+             </div>
+             <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Global_Email_Protocol</label>
+                <input type="email" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm" placeholder="SECURE_LINK" />
+             </div>
+             <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest opacity-40 italic">Data_Brief</label>
+                <textarea rows="4" className="w-full bg-slate-50 border border-slate-100 p-4 rounded-xl outline-none focus:border-slate-950 transition-colors font-black italic text-sm resize-none" placeholder="DESCRIBE_LOGIC_AND_TIMELINES"></textarea>
+             </div>
+             <button className="w-full py-5 bg-slate-950 text-white rounded-2xl font-black text-xs uppercase tracking-[0.4em] italic hover:bg-blue-600 transition-all shadow-2xl">
+                INITIALIZE_PROJECT_NODES →
+             </button>
+          </form>
+       </div>
+    </div>
+  </div>
+);`} 
+              htmlCode={`<!-- Professional SaaS Contact Hub -->
+<div class="contact-saas-root">
+  <div class="saas-container">
+     <div class="saas-sidebar">
+        <h2 class="saas-title">Contact_ <br/> Protocol.</h2>
+        <p class="saas-desc">Synchronizing global inquiries for structural deployment.</p>
+     </div>
+     <div class="saas-form-box">
+        <form class="saas-form">
+           <div class="saas-grid-2">
+              <div class="saas-field">
+                 <label>First_Identifier</label>
+                 <input type="text" placeholder="NAME_01">
+              </div>
+              <div class="saas-field">
+                 <label>Last_Identifier</label>
+                 <input type="text" placeholder="NAME_02">
+              </div>
+           </div>
+           <div class="saas-field">
+              <label>Global_Email_Protocol</label>
+              <input type="email" placeholder="SECURE_LINK">
+           </div>
+           <div class="saas-field">
+              <label>Data_Brief</label>
+              <textarea rows="4" placeholder="DESCRIBE_LOGIC_AND_TIMELINES"></textarea>
+           </div>
+           <button class="saas-btn">INITIALIZE_PROJECT_NODES →</button>
+        </form>
+     </div>
+  </div>
+</div>`} 
+              cssCode={`.contact-saas-root { background: white; padding: 48px; border-radius: 48px; border: 1px solid #f1f5f9; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+.saas-container { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 80px; }
+@media (min-width: 1024px) { .saas-container { grid-template-columns: repeat(2, 1fr); align-items: center; } }
+.saas-sidebar { background: #020617; padding: 48px; border-radius: 40px; color: white; text-align: left; }
+.saas-title { font-size: 60px; font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 32px; }
+.saas-desc { color: #94a3b8; font-size: 18px; text-transform: lowercase; font-weight: 500; }
+.saas-form-box { text-align: left; }
+.saas-form { display: flex; flex-direction: column; gap: 32px; }
+.saas-grid-2 { display: grid; grid-template-columns: 1fr; gap: 32px; }
+@media (min-width: 768px) { .saas-grid-2 { grid-template-columns: repeat(2, 1fr); } }
+.saas-field { display: flex; flex-direction: column; gap: 8px; }
+.saas-field label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; }
+.saas-field input, .saas-field textarea { width: 100%; background: #f8fafc; border: 1px solid #f1f5f9; padding: 16px; border-radius: 12px; outline: none; font-weight: 900; font-style: italic; font-size: 14px; }
+.saas-btn { width: 100%; padding: 20px; background: #020617; color: white; border-radius: 16px; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4em; border: none; cursor: pointer; font-style: italic; }
+.saas-btn:hover { background: #2563eb; }`} 
+            />
+          </div>
+          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 10. Professional SaaS Protocol Hub </span>
+          <ContactStandard />
         </section>
 
       </div>
