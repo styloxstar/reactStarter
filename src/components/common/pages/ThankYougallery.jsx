@@ -1,774 +1,715 @@
 import React from 'react';
 import CopyButton from '../CopyButton';
 
-// --- SHARED DATA ---
-const orderMeta = {
-  id: "ORD-88291_ALPHA",
-  date: "2024.10.24",
-  email: "ALEX@MESH.NETWORK",
-  total: "$240",
-  points: 150
-};
+// --- Icons ---
+const SuccessIcon = () => (
+  <svg className="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+);
 
-// --- ACTUAL UI COMPONENTS ---
-
-export const ThankYouAlpha = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[10px] border-black p-6 md:p-12 shadow-[24px_24px_0_0_#000] text-center min-w-0">
-      <div className="w-24 h-24 bg-black text-white border-[6px] border-black flex items-center justify-center mx-auto mb-10 rotate-3 shadow-[8px_8px_0_0_#22c55e] shrink-0">
-        <span className="text-5xl italic font-black">✓</span>
+// --- 01. Standard SaaS ---
+export const ThankYouStandard = () => (
+  <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 text-center max-w-2xl mx-auto font-sans shadow-xl">
+    <div className="flex justify-center mb-8">
+      <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center shadow-lg shadow-green-100">
+        <SuccessIcon />
       </div>
-      <h2 className="text-4xl md:text-8xl font-black uppercase mb-4 tracking-tighter leading-none italic text-center break-words italic">THANK_YOU.</h2>
-      <p className="text-lg md:text-2xl uppercase mb-12 border-b-4 border-black pb-6 inline-block text-center truncate max-w-full italic">MANIFEST_ID: {orderMeta.id}</p>
-      <div className="bg-green-400 border-[6px] border-black p-8 shadow-[12px_12px_0_0_#000] mb-12 min-w-0 text-left italic">
-        <h3 className="text-2xl font-black uppercase mb-2">SYNC_SUCCESSFUL</h3>
-        <p className="text-lg uppercase">A CONFIRMATION PACKET HAS BEEN TRANSMITTED TO {orderMeta.email}</p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 italic">
-        <button className="bg-black text-white py-6 text-2xl font-black uppercase border-4 border-black hover:bg-white hover:text-black transition-all shadow-[8px_8px_0_0_#000]">TRACK_SIGNAL</button>
-        <button className="bg-white text-black py-6 text-2xl font-black uppercase border-4 border-black hover:bg-black hover:text-white transition-all shadow-[8px_8px_0_0_#000]">CONTINUE_MESH</button>
-      </div>
+    </div>
+    <h1 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Thanks for your order!</h1>
+    <p className="text-gray-500 mb-10 text-lg leading-relaxed">Your order <span className="font-bold text-gray-900">#88291</span> has been confirmed. We'll send a confirmation email to <span className="font-bold text-gray-900">sarah.j@techflow.io</span> shortly.</p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <button className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-100">Track Order</button>
+      <button className="bg-white text-gray-600 px-8 py-4 rounded-2xl font-bold border border-gray-100 hover:bg-gray-50 transition-all">Continue Shopping</button>
     </div>
   </div>
 );
 
+// --- 02. Account Split ---
 export const ThankYouSplit = () => (
-  <div className="w-full max-w-6xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="flex flex-col lg:grid lg:grid-cols-12 border-[10px] border-black bg-white shadow-[32px_32px_0_0_#000] overflow-hidden min-w-0 italic text-left">
-      <div className="lg:col-span-5 bg-black text-white p-8 md:p-12 flex flex-col justify-between border-b-[10px] lg:border-b-0 lg:border-r-[10px] border-black min-w-0">
-        <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 leading-none tracking-tighter break-words italic">MANIFEST_<br/>LOCKED.</h2>
-        <div className="space-y-4 border-t-4 border-white/20 pt-8 italic">
-          <div className="flex justify-between text-sm uppercase gap-4"><span className="text-gray-500">Node_ID</span><span className="truncate">#ORD-88291</span></div>
-          <div className="flex justify-between text-sm uppercase gap-4"><span className="text-gray-500">Sync_Date</span><span className="shrink-0">2024.10.24</span></div>
+  <div className="flex flex-col md:flex-row bg-white rounded-[3rem] overflow-hidden border border-gray-100 shadow-2xl max-w-5xl mx-auto font-sans text-left">
+    <div className="md:w-1/2 p-12 lg:p-16 flex flex-col justify-center bg-gray-50 border-r border-gray-100">
+      <div className="mb-10 text-left">
+        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white mb-6">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
         </div>
+        <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase italic">Success.</h2>
+        <p className="text-gray-500 text-lg italic">Order #9921_Node is being processed by the logistics cluster.</p>
       </div>
-      <div className="lg:col-span-7 p-8 md:p-12 bg-white min-w-0 italic text-left">
-        <h3 className="text-4xl font-black uppercase mb-10 border-b-4 border-black pb-4 italic">CARGO_CONFIRMED</h3>
-        <div className="bg-slate-50 border-4 border-black p-8 shadow-[12px_12px_0_0_#000] mb-12">
-          <p className="text-2xl font-black uppercase mb-4 italic">ESTIMATED_DELIVERY</p>
-          <p className="text-5xl font-black italic text-cyan-600">2-3 CYCLES</p>
+      <div className="space-y-4">
+        <div className="flex justify-between font-bold text-gray-400 text-sm uppercase tracking-widest"><span>Est. Delivery</span><span className="text-gray-900">Oct 28 - 30</span></div>
+        <div className="flex justify-between font-bold text-gray-400 text-sm uppercase tracking-widest"><span>Service Tier</span><span className="text-blue-600">Priority_Node</span></div>
+      </div>
+    </div>
+    <div className="md:w-1/2 p-12 lg:p-16 flex flex-col justify-center bg-white">
+      <h3 className="text-2xl font-bold text-gray-900 mb-4">Track your shipment</h3>
+      <p className="text-gray-500 mb-8 leading-relaxed">Create a password to save your order history and monitor your node clusters in real-time.</p>
+      <form className="space-y-6">
+        <div>
+          <label className="block text-xs font-black uppercase text-gray-400 mb-2 tracking-widest">Set Access Key</label>
+          <input type="password" placeholder="••••••••" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-blue-500/10 outline-none transition-all" />
         </div>
-        <button className="w-full bg-black text-white py-6 text-2xl font-black uppercase border-4 border-black hover:bg-white hover:text-black transition-all shadow-[8px_8px_0_0_#000] italic">VIEW_MANIFEST</button>
+        <button className="w-full py-5 bg-black text-white font-black rounded-2xl hover:bg-gray-800 transition-all shadow-xl shadow-gray-200 uppercase tracking-widest text-xs italic text-center">Complete Profile</button>
+      </form>
+    </div>
+  </div>
+);
+
+// --- 03. Glassmorphic High-Fidelity ---
+export const ThankYouGlass = () => (
+  <div className="min-h-[500px] bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 p-8 md:p-16 rounded-[4rem] flex items-center justify-center font-sans text-center overflow-hidden relative shadow-2xl">
+    <div className="absolute top-0 left-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -ml-32 -mt-32"></div>
+    <div className="bg-white/10 backdrop-blur-3xl border border-white/20 p-12 md:p-20 rounded-[4rem] shadow-2xl w-full max-w-2xl text-white relative z-10">
+      <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl">
+         <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+      </div>
+      <h2 className="text-5xl font-black uppercase mb-6 tracking-tighter italic">Payment_Synced</h2>
+      <p className="text-white/70 text-xl font-medium mb-12 italic">Your order has been injected into our node network. Check your digital coordinate for updates.</p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button className="bg-white text-purple-600 px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-purple-50 transition-all shadow-xl">Dashboard_Link</button>
+        <button className="bg-white/10 text-white border border-white/20 px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-white/20 transition-all">Support_Node</button>
       </div>
     </div>
   </div>
 );
 
-export const ThankYouLoyalty = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[10px] border-black p-8 md:p-16 shadow-[24px_24px_0_0_#facc15] min-w-0 italic text-left">
-      <div className="flex flex-wrap md:flex-nowrap justify-between items-center mb-12 gap-8">
-        <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter italic text-black">REWARDS_GEN.</h2>
-        <div className="w-24 h-24 bg-black text-white border-4 border-white flex items-center justify-center text-5xl rotate-6 shadow-[8px_8px_0_0_#facc15] shrink-0 italic">★</div>
-      </div>
-      <div className="bg-black text-white p-10 border-4 border-black shadow-[16px_16px_0_0_#facc15] mb-12">
-        <div className="text-xs uppercase text-yellow-400 mb-2 tracking-[0.4em]">Injected_Balance</div>
-        <div className="text-5xl md:text-7xl font-black italic mb-8">+{orderMeta.points} PTS</div>
-        <div className="w-full h-8 bg-white/20 border-4 border-white relative overflow-hidden">
-          <div className="w-3/4 h-full bg-yellow-400 border-r-4 border-white"></div>
-        </div>
-        <div className="flex justify-between text-xs mt-4 uppercase"><span>Silver_Node</span><span>50 PTS TO GOLD_NODE</span></div>
-      </div>
-      <button className="w-full bg-black text-white py-8 text-3xl font-black uppercase border-4 border-black hover:bg-yellow-400 hover:text-black transition-all shadow-[12px_12px_0_0_#000] italic">SPEND_CREDITS</button>
+// --- 04. Cyberpunk Digital Receipt ---
+export const ThankYouCyber = () => (
+  <div className="bg-black p-12 rounded-3xl border-4 border-cyan-500/30 max-w-2xl mx-auto font-mono text-left relative overflow-hidden italic font-bold">
+    <div className="absolute top-0 left-0 w-full h-1 bg-cyan-500/50 animate-pulse"></div>
+    <div className="mb-12 border-b-2 border-cyan-500/20 pb-8 text-left">
+      <h2 className="text-4xl text-cyan-400 uppercase tracking-tighter mb-2">SIGNAL_RECEIVED_001</h2>
+      <p className="text-cyan-100/40 text-xs uppercase tracking-widest">TRANSACTION_HASH: 0x98A_21B_NODE_77</p>
+    </div>
+    <div className="space-y-6 mb-12 text-left">
+      <div className="flex justify-between text-white uppercase text-left"><span>Order_ID</span><span className="text-cyan-400">#88291-C</span></div>
+      <div className="flex justify-between text-white uppercase text-left"><span>Node_Target</span><span className="text-cyan-400">sarah_jensen_04</span></div>
+      <div className="flex justify-between text-white uppercase text-left"><span>Status</span><span className="text-green-500 animate-pulse">[VALIDATED]</span></div>
+    </div>
+    <div className="bg-cyan-500/5 p-8 border border-cyan-500/20 rounded-2xl mb-12">
+      <p className="text-cyan-100/60 leading-relaxed uppercase text-sm">Your order is currently being synchronized with our global distribution nodes. Expect a physical pulse within 48-72 hours.</p>
+    </div>
+    <div className="flex gap-4">
+      <button className="flex-1 py-4 bg-cyan-500 text-black font-black uppercase tracking-widest text-xs hover:bg-cyan-400 transition-all">VIEW_LOGS</button>
+      <button className="flex-1 py-4 border-2 border-cyan-500 text-cyan-500 font-black uppercase tracking-widest text-xs hover:bg-cyan-500/10 transition-all">TERMINATE_SES</button>
     </div>
   </div>
 );
 
-export const ThankYouDownload = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-mono italic font-bold text-left text-green-500">
-    <div className="bg-black border-4 border-green-500 p-8 md:p-12 shadow-[0_0_30px_rgba(34,197,94,0.2)] relative overflow-hidden min-w-0 text-left italic">
-      <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-16 italic text-white">ACCESS_GRANTED</h2>
-      <div className="border-2 border-green-900 p-8 bg-green-950/20 text-left min-w-0 italic mb-12">
-        <div className="flex flex-wrap justify-between items-center gap-4">
-          <div className="flex items-center gap-6">
-            <div className="w-16 h-16 bg-green-500 text-black flex items-center justify-center text-2xl font-black italic">ZIP</div>
-            <div>
-              <h4 className="text-xl font-black text-white italic">MESH_ASSETS_V2.ZIP</h4>
-              <p className="text-xs opacity-60 italic">145MB // SCAN_OK</p>
-            </div>
-          </div>
-          <button className="bg-green-500 text-black px-8 py-4 font-black uppercase hover:bg-white transition-all shadow-[8px_8px_0_0_#fff] italic">DOWNLOAD_NOW</button>
-        </div>
-      </div>
-      <p className="text-xs uppercase opacity-40 italic">EXPIRATION: 24_HOURS // ONE_TIME_LINK</p>
-    </div>
-  </div>
-);
-
-export const ThankYouCalendar = () => (
-  <div className="w-full max-w-xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[8px] border-black p-10 shadow-[20px_20px_0_0_#6366f1] min-w-0 text-left italic">
-      <div className="w-20 h-20 bg-indigo-600 text-white border-4 border-black flex items-center justify-center text-4xl mb-10 rotate-[-5deg] shadow-[8px_8px_0_0_#000] shrink-0 italic">📅</div>
-      <h2 className="text-4xl md:text-5xl font-black uppercase mb-8 leading-none italic">SYNC_SCHEDULED.</h2>
-      <div className="bg-indigo-50 border-4 border-black p-6 mb-10">
-        <div className="flex justify-between items-center text-xl font-black uppercase mb-4 italic"><span>Mon, Oct 24</span><span>10:00 AM</span></div>
-        <p className="text-sm opacity-60 italic">MESH_CONSULTATION_ST_7</p>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <button className="bg-black text-white py-4 font-black uppercase border-4 border-black hover:bg-white hover:text-black transition-all italic">ADD_G_CAL</button>
-        <button className="bg-white text-black py-4 font-black uppercase border-4 border-black hover:bg-black hover:text-white transition-all italic">ADD_OUTLOOK</button>
-      </div>
-    </div>
-  </div>
-);
-
-export const ThankYouReferral = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[10px] border-black p-8 md:p-16 shadow-[24px_24px_0_0_#000] text-center min-w-0 italic">
-      <h2 className="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter leading-none italic text-center italic">GROWTH_HACK.</h2>
-      <div className="bg-cyan-400 border-[6px] border-black p-10 shadow-[16px_16px_0_0_#000] mb-12 text-left italic">
-        <h3 className="text-3xl font-black uppercase mb-4">GIVE $20 // GET $20</h3>
-        <p className="text-xl uppercase mb-8 italic">PROPAGATE THE MESH TO YOUR NODES AND EARN CREDITS FOR EVERY SUCCESSFUL LINK.</p>
-        <div className="flex bg-white border-4 border-black p-2 shadow-[8px_8px_0_0_#000]">
-          <input type="text" readOnly value="MESH.NET/R/ALEX20" className="flex-1 bg-transparent px-4 font-black outline-none italic" />
-          <button className="bg-black text-white px-8 py-4 font-black uppercase hover:bg-cyan-600 transition-all italic">COPY_LINK</button>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-export const ThankYouOnboarding = () => (
-  <div className="w-full max-w-5xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[10px] border-black p-8 md:p-16 shadow-[32px_32px_0_0_#000] min-w-0 text-left italic">
-      <h2 className="text-5xl md:text-7xl font-black uppercase mb-16 border-b-[10px] border-black pb-8 italic">NEXT_PHASE.</h2>
-      <div className="grid md:grid-cols-3 gap-8 italic">
-        {[
-          { t: "SYNC_PROFILE", i: "👤", b: "OPEN_EDITOR" },
-          { t: "JOIN_MESH", i: "💬", b: "CONNECT_DISCORD" },
-          { t: "START_TRAINING", i: "🎓", b: "LOAD_MODULE" }
-        ].map((step, idx) => (
-          <div key={idx} className="bg-slate-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] hover:translate-y-[-8px] transition-transform cursor-pointer group italic">
-            <div className="text-5xl mb-6 group-hover:rotate-12 transition-transform italic">{step.i}</div>
-            <h3 className="text-xl font-black uppercase mb-8 italic">{step.t}</h3>
-            <button className="w-full bg-black text-white py-3 text-xs font-black uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic">{step.b}</button>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-export const ThankYouMinimal = () => (
-  <div className="w-full max-w-2xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-8 border-black p-10 md:p-16 text-center min-w-0 italic">
-      <h2 className="text-7xl md:text-9xl font-black uppercase mb-4 tracking-tighter leading-none italic">LOCKED.</h2>
-      <p className="text-2xl uppercase mb-12 italic">TRANSACTION_SUCCESSFUL</p>
-      <div className="flex justify-between pt-8 text-3xl font-black uppercase border-t-8 border-black italic">
-        <span>TOTAL_SYNC</span>
-        <span>{orderMeta.total}</span>
-      </div>
-    </div>
-  </div>
-);
-
+// --- 05. Social Referral Hero ---
 export const ThankYouSocial = () => (
-  <div className="w-full max-w-lg mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-[#ec4899] border-[10px] border-black p-10 shadow-[20px_20px_0_0_#000] min-w-0 italic text-center">
-      <h2 className="text-4xl font-black text-white uppercase mb-8 italic">PROPAGATE_VIBES.</h2>
-      <div className="bg-white border-[6px] border-black p-4 rotate-2 shadow-[12px_12px_0_0_#000] mb-12 italic">
-        <div className="aspect-square bg-gray-100 border-4 border-black mb-4"></div>
-        <div className="text-left font-black uppercase italic">MESH_WATCH_LIMITED_V1</div>
-        <div className="text-left text-xs opacity-50 italic">JUST INJECTED VIA MESH.NETWORK 🔥</div>
+  <div className="bg-gradient-to-br from-indigo-50 via-white to-cyan-50 p-16 rounded-[3rem] border border-slate-100 text-center max-w-3xl mx-auto font-sans shadow-xl relative overflow-hidden">
+    <h2 className="text-5xl font-black text-gray-900 mb-4 italic uppercase tracking-tighter leading-none text-center">High-Five_Successful!</h2>
+    <p className="text-slate-400 font-black uppercase tracking-widest text-xs mb-16 italic text-center">Order #88291 confirmed. Now, let's share the wealth.</p>
+    <div className="bg-white p-8 rounded-[3rem] shadow-2xl mb-16 max-w-md mx-auto border border-slate-100 text-center">
+      <div className="aspect-video bg-indigo-50 rounded-2xl flex items-center justify-center text-5xl mb-8 mx-auto">🎁</div>
+      <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase italic">Get_20_Give_20</h3>
+      <p className="text-slate-500 mb-10 italic leading-relaxed">Share your unique node link. When they make their first pulse, you both get $20 in network credits.</p>
+      <div className="flex gap-2 p-2 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
+        <input type="text" value="nexus.io/r/sarah_node" readOnly className="flex-1 bg-transparent px-4 font-mono text-sm font-bold text-slate-400 outline-none" />
+        <button className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] shadow-lg">Copy</button>
       </div>
-      <div className="grid grid-cols-3 gap-4">
-        <button className="bg-black text-white py-4 font-black text-xs uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic shadow-[4px_4px_0_0_#fff]">INSTA</button>
-        <button className="bg-black text-white py-4 font-black text-xs uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic shadow-[4px_4px_0_0_#fff]">TWITTER</button>
-        <button className="bg-black text-white py-4 font-black text-xs uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic shadow-[4px_4px_0_0_#fff]">MESH_X</button>
+    </div>
+    <div className="flex justify-center gap-4 text-xs font-black uppercase tracking-widest text-slate-300 italic">
+      <a href="#" className="hover:text-indigo-600 transition-colors">Twitter_Signal</a>
+      <span>•</span>
+      <a href="#" className="hover:text-indigo-600 transition-colors">Insta_Node</a>
+    </div>
+  </div>
+);
+
+// --- 06. Minimalist Bauhaus ---
+export const ThankYouMinimal = () => (
+  <div className="bg-white p-24 rounded-none border-[12px] border-black max-w-3xl mx-auto font-sans text-left shadow-[20px_20px_0_0_#000]">
+    <h1 className="text-9xl font-black text-black mb-12 tracking-tighter uppercase italic leading-[0.8] text-left">Thank<br/>You.</h1>
+    <div className="w-24 h-4 bg-black mb-12"></div>
+    <div className="space-y-12 mb-20 text-left">
+      <p className="text-3xl font-black text-black uppercase tracking-tight italic">Order #88291 is confirmed.</p>
+      <p className="text-xl text-gray-500 italic lowercase font-medium leading-relaxed max-w-md">We are currently preparing your package. A digital confirmation has been sent to your primary coordinate.</p>
+    </div>
+    <div className="flex flex-col sm:flex-row gap-8 text-left">
+      <button className="text-2xl font-black text-black uppercase tracking-widest border-b-8 border-black pb-2 hover:bg-black hover:text-white px-4 transition-all italic text-left">Track_Order</button>
+      <button className="text-2xl font-black text-gray-300 uppercase tracking-widest hover:text-black transition-all italic text-left">Home_Return</button>
+    </div>
+  </div>
+);
+
+// --- 07. Neumorphic Soft UI ---
+export const ThankYouNeo = () => (
+  <div className="bg-[#e0e5ec] p-16 md:p-24 rounded-[5rem] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] text-center max-w-2xl mx-auto font-sans">
+    <div className="w-24 h-24 mx-auto rounded-full p-2 bg-[#e0e5ec] shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] mb-10 overflow-hidden flex items-center justify-center">
+       <div className="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff]">
+         <SuccessIcon />
+       </div>
+    </div>
+    <h2 className="text-4xl font-black text-slate-800 mb-4 uppercase tracking-tighter italic text-center">Soft_Confirmed</h2>
+    <p className="text-slate-500 text-lg mb-12 italic leading-relaxed text-center">Your order has been successfully processed into our ecosystem. Everything is flowing perfectly.</p>
+    <div className="grid grid-cols-2 gap-8">
+      <button className="bg-[#e0e5ec] p-6 rounded-[30px] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] hover:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] transition-all font-black uppercase tracking-widest text-[10px] text-slate-600 italic">View_Receipt</button>
+      <button className="bg-[#e0e5ec] p-6 rounded-[30px] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] hover:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] transition-all font-black uppercase tracking-widest text-[10px] text-blue-600 italic">Track_Delivery</button>
+    </div>
+  </div>
+);
+
+// --- 08. Corporate Invoice ---
+export const ThankYouInvoice = () => (
+  <div className="bg-white p-12 md:p-20 rounded-none border border-slate-100 shadow-2xl max-w-4xl mx-auto font-mono text-sm relative overflow-hidden text-left">
+    <div className="absolute top-0 left-0 w-full h-3 bg-blue-600"></div>
+    <div className="flex justify-between items-start mb-20 text-left">
+      <div className="text-left">
+        <h1 className="text-4xl font-black mb-2 italic tracking-tighter text-left">SUCCESS_INVOICE</h1>
+        <p className="text-slate-400 font-black uppercase tracking-[0.3em] text-left">#INV-2024-88291</p>
+      </div>
+      <div className="text-right">
+        <p className="font-black italic uppercase">TechFlow_Global_Corp</p>
+        <p className="text-xs text-slate-400">AUTH_STATUS: VALIDATED</p>
+      </div>
+    </div>
+    <div className="bg-blue-50 p-8 rounded-2xl mb-12 border border-blue-100 text-left">
+      <h3 className="font-black text-blue-900 mb-2 uppercase tracking-widest text-xs italic">Order_Receipt_Summary</h3>
+      <p className="text-blue-700 leading-relaxed italic">Thank you for your business. Your order has been logged and the fulfillment sequence has been initiated.</p>
+    </div>
+    <div className="space-y-6 mb-20 text-left">
+      <div className="flex justify-between border-b border-slate-50 pb-4"><span>Order_Date:</span><span className="font-black">OCT 24, 2024</span></div>
+      <div className="flex justify-between border-b border-slate-50 pb-4"><span>Ship_To:</span><span className="font-black">Sarah Jensen // Sector 07</span></div>
+      <div className="flex justify-between border-b border-slate-50 pb-4 text-xl mt-8 pt-4"><span>Total_Settlement:</span><span className="font-black text-blue-600">$499.00</span></div>
+    </div>
+    <button className="w-full py-5 bg-black text-white font-black uppercase tracking-[0.4em] text-[10px] hover:bg-slate-800 transition-all italic shadow-xl">Execute Print Job</button>
+  </div>
+);
+
+// --- 09. Retro Brutalist ---
+export const ThankYouBrutalist = () => (
+  <div className="bg-yellow-400 p-12 border-[10px] border-black rounded-[3rem] font-sans max-w-2xl mx-auto shadow-[20px_20px_0_0_#000] text-left">
+    <div className="text-6xl mb-10 text-left">🚀</div>
+    <h1 className="text-6xl font-black uppercase mb-6 leading-none italic tracking-tighter underline decoration-black decoration-[12px] underline-offset-[-5px] text-left">Order_Confirmed!</h1>
+    <p className="text-2xl font-black mb-12 uppercase italic leading-tight text-left">We've received your request. The fulfillment cluster is now active.</p>
+    <div className="bg-white border-8 border-black p-8 shadow-[12px_12px_0_0_#000] mb-12 text-left">
+       <div className="text-xs font-black uppercase tracking-widest mb-2 text-left">Order_Node: #88291</div>
+       <div className="text-3xl font-black italic uppercase text-left">Validated_Success</div>
+    </div>
+    <button className="bg-rose-500 text-white w-full py-6 border-8 border-black rounded-2xl font-black uppercase tracking-[0.2em] text-xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all shadow-[12px_12px_0_0_#000] italic text-center">Track Package</button>
+  </div>
+);
+
+// --- 10. App Download / Onboarding ---
+export const ThankYouApp = () => (
+  <div className="bg-slate-900 text-white p-16 rounded-[4rem] border border-slate-800 max-w-5xl mx-auto font-sans relative overflow-hidden text-left shadow-2xl">
+    <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-blue-600/10 rounded-full blur-[120px] -mr-64 -mt-64"></div>
+    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center text-left">
+      <div className="text-left">
+        <div className="bg-blue-600 text-white px-5 py-2 rounded-full font-black italic uppercase text-[10px] tracking-[0.3em] inline-block mb-10 shadow-lg shadow-blue-900/50">ORDER_SUCCESS</div>
+        <h2 className="text-5xl font-black mb-6 uppercase italic tracking-tighter leading-[0.9] text-left">Ready to <br/><span className="text-blue-500">Scale?</span></h2>
+        <p className="text-slate-400 text-lg mb-12 leading-relaxed italic text-left">Your order is on the way. Download the mobile interface to track your node in real-time and join our global collective.</p>
+        <div className="flex gap-4 text-left">
+           <button className="bg-white text-black px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-blue-500 hover:text-white transition-all italic text-center">App Store</button>
+           <button className="bg-slate-800 text-white border border-slate-700 px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-slate-700 transition-all italic text-center">Play Store</button>
+        </div>
+      </div>
+      <div className="relative aspect-square bg-slate-800 rounded-[3rem] border-4 border-slate-700 p-8 shadow-2xl group overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent"></div>
+        <div className="w-full h-full bg-slate-900 rounded-[2rem] border border-slate-700 p-6 flex flex-col justify-center items-center text-center transform group-hover:scale-110 transition-all duration-700">
+           <div className="w-24 h-24 bg-blue-600 rounded-3xl flex items-center justify-center text-5xl mb-8 animate-bounce shadow-2xl shadow-blue-600/30 mx-auto">📦</div>
+           <h3 className="text-2xl font-black uppercase italic tracking-tighter mb-2 text-center">Node_Arrival</h3>
+           <p className="text-slate-500 font-black uppercase tracking-widest text-[10px] italic text-center">Est. 2d: 14h: 22m</p>
+        </div>
       </div>
     </div>
   </div>
 );
 
-export const ThankYouChaos = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-white">
-    <div className="bg-black border-[12px] border-white p-8 md:p-16 shadow-[30px_30px_0_0_#facc15] min-w-0 italic relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-500 via-cyan-400 to-yellow-500 animate-pulse"></div>
-      <h2 className="text-6xl md:text-9xl font-black uppercase mb-12 tracking-tighter leading-none italic break-words text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 italic">SUCCESS_01.</h2>
-      <div className="grid md:grid-cols-2 gap-12 italic">
-        <div className="border-4 border-white p-8 bg-white/5 backdrop-blur-md shadow-[12px_12px_0_0_#ff00ff] italic">
-          <p className="text-2xl font-black uppercase mb-4 italic">MANIFEST_ID_CAPTURED.</p>
-          <p className="opacity-60 italic">THE MESH HAS ACKNOWLEDGED YOUR PAYLOAD. WELCOME TO THE NEW WORLD.</p>
-        </div>
-        <div className="flex flex-col justify-end">
-          <button className="bg-white text-black py-8 text-3xl font-black uppercase border-4 border-white hover:bg-transparent hover:text-white transition-all shadow-[12px_12px_0_0_#facc15] italic text-center">ACKNOWLEDGE_</button>
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-// --- MAIN GALLERY ---
+// --- Main Gallery Wrapper ---
 
 const ThankYouGallery = () => {
-  return (
-    <div className="container box-shadow overflow-y-auto bg-slate-100 p-6 md:p-12 font-sans pb-40">
-      <div className="max-w-4xl mx-auto text-center mb-16 italic">
-        <h1 className="text-5xl md:text-7xl font-black text-slate-800 mb-4 uppercase italic">Thank You Galleries</h1>
-        <p className="text-slate-500 font-bold uppercase tracking-widest italic">High-Fidelity Post-Purchase Restoration</p>
-      </div>
-      
-      <div className="space-y-32 max-w-6xl mx-auto">
-        
-        {/* 01. ALPHA */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouAlpha = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[10px] border-black p-12 shadow-[24px_24px_0_0_#000] text-center min-w-0 italic">
-      <div className="w-24 h-24 bg-black text-white border-[6px] border-black flex items-center justify-center mx-auto mb-10 rotate-3 shadow-[8px_8px_0_0_#22c55e] shrink-0">
-        <span className="text-5xl font-black">✓</span>
-      </div>
-      <h2 className="text-7xl font-black uppercase mb-4 tracking-tighter leading-none italic break-words italic">THANK_YOU.</h2>
-      <p className="text-2xl uppercase mb-12 border-b-4 border-black pb-6 inline-block text-center truncate max-w-full italic">MANIFEST_ID: ORD-88291_ALPHA</p>
-      <div className="bg-green-400 border-[6px] border-black p-8 shadow-[12px_12px_0_0_#000] mb-12 text-left italic">
-        <h3 className="text-2xl font-black uppercase mb-2 italic">SYNC_SUCCESSFUL</h3>
-        <p className="text-lg uppercase italic">A CONFIRMATION PACKET HAS BEEN TRANSMITTED TO ALEX@MESH.NETWORK</p>
-      </div>
-      <div className="grid grid-cols-2 gap-6 italic">
-        <button className="bg-black text-white py-6 text-2xl font-black uppercase border-4 border-black hover:bg-white hover:text-black transition-all shadow-[8px_8px_0_0_#000] italic">TRACK_SIGNAL</button>
-        <button className="bg-white text-black py-6 text-2xl font-black uppercase border-4 border-black hover:bg-black hover:text-white transition-all shadow-[8px_8px_0_0_#000] italic">CONTINUE_MESH</button>
+  const sections = [
+    {
+      id: 'standard',
+      title: '01. Enterprise Standard Success',
+      component: <ThankYouStandard />,
+      jsx: `import React from 'react';
+
+const ThankYouStandard = () => (
+  <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 text-center max-w-2xl mx-auto font-sans shadow-xl">
+    <div className="flex justify-center mb-8">
+      <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center shadow-lg shadow-green-100">
+        <svg className="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
       </div>
     </div>
+    <h1 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Thanks for your order!</h1>
+    <p className="text-gray-500 mb-10 text-lg leading-relaxed">Your order <span className="font-bold text-gray-900">#88291</span> has been confirmed. We'll send a confirmation email shortly.</p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <button className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-100">Track Order</button>
+      <button className="bg-white text-gray-600 px-8 py-4 rounded-2xl font-bold border border-gray-100 hover:bg-gray-50 transition-all">Continue Shopping</button>
+    </div>
   </div>
-);`}
-              htmlCode={`<div class="thank-you-root">
-  <div class="icon">✓</div>
-  <h2 class="title">THANK_YOU.</h2>
-  <p class="manifest-id">MANIFEST_ID: ORD-88291_ALPHA</p>
-  <div class="success-banner">
-    <h3>SYNC_SUCCESSFUL</h3>
-    <p>A CONFIRMATION PACKET HAS BEEN TRANSMITTED TO ALEX@MESH.NETWORK</p>
+);
+
+export default ThankYouStandard;`,
+      html: `<div class="thank-you-card">
+  <div class="icon-wrap">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
   </div>
+  <h1>Thanks for your order!</h1>
+  <p>Your order <strong>#88291</strong> has been confirmed. We'll send a confirmation email shortly.</p>
   <div class="actions">
-    <button class="btn btn-black">TRACK_SIGNAL</button>
-    <button class="btn btn-white">CONTINUE_MESH</button>
+    <button class="primary">Track Order</button>
+    <button class="secondary">Continue Shopping</button>
   </div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.thank-you-root { background: white; border: 10px solid black; padding: 48px; box-shadow: 24px 24px 0 0 #000; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; text-align: center; color: black; max-width: 800px; margin: 40px auto; }
-.icon { width: 96px; height: 96px; background: black; color: white; display: flex; align-items: center; justify-content: center; margin: 0 auto 40px; font-size: 48px; transform: rotate(3deg); box-shadow: 8px 8px 0 0 #22c55e; border: 6px solid black; }
-.title { font-size: 80px; text-transform: uppercase; line-height: 1; letter-spacing: -0.05em; margin-bottom: 16px; }
-.manifest-id { font-size: 24px; text-transform: uppercase; border-bottom: 4px solid black; padding-bottom: 24px; display: inline-block; margin-bottom: 48px; }
-.success-banner { background: #22c55e; border: 6px solid black; padding: 32px; text-align: left; box-shadow: 12px 12px 0 0 #000; margin-bottom: 48px; }
-.success-banner h3 { font-size: 24px; margin-bottom: 8px; text-transform: uppercase; }
-.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.btn { border: 4px solid black; padding: 24px; font-size: 24px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: all 0.2s; box-shadow: 8px 8px 0 0 #000; font-family: inherit; font-style: inherit; }
-.btn-black { background: black; color: white; }
-.btn-white { background: white; color: black; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">01. Alpha Protocol Success</span>
-          <ThankYouAlpha />
-        </section>
-
-        {/* 02. SPLIT */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouSplit = () => (
-  <div className="w-full max-w-6xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="flex flex-col lg:grid lg:grid-cols-12 border-[10px] border-black bg-white shadow-[32px_32px_0_0_#000] overflow-hidden min-w-0 italic">
-      <div className="lg:col-span-5 bg-black text-white p-12 flex flex-col justify-between border-r-[10px] border-black min-w-0 italic">
-        <h2 className="text-6xl font-black uppercase mb-6 leading-none tracking-tighter break-words italic">MANIFEST_<br/>LOCKED.</h2>
-        <div className="space-y-4 border-t-4 border-white/20 pt-8 italic text-left">
-          <div className="flex justify-between text-sm uppercase gap-4"><span className="text-gray-500">Node_ID</span><span>#ORD-88291</span></div>
-          <div className="flex justify-between text-sm uppercase gap-4"><span className="text-gray-500">Sync_Date</span><span>2024.10.24</span></div>
-        </div>
+</div>`,
+      css: `.thank-you-card { background: white; padding: 48px; border-radius: 40px; border: 1px solid #f3f4f6; text-align: center; max-width: 600px; margin: 0 auto; font-family: sans-serif; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+.icon-wrap { width: 96px; height: 96px; background: #f0fdf4; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; box-shadow: 0 10px 15px -3px rgba(34,197,94,0.1); }
+.icon-wrap svg { width: 64px; height: 64px; color: #22c55e; }
+h1 { font-size: 36px; font-weight: 700; color: #111827; margin: 0 0 16px 0; letter-spacing: -0.025em; }
+p { color: #6b7280; font-size: 18px; line-height: 1.6; margin-bottom: 40px; }
+.actions { display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+@media (min-width: 640px) { .actions { flex-direction: row; } }
+button { padding: 16px 32px; border-radius: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+button.primary { background: #2563eb; color: white; border: none; box-shadow: 0 10px 15px -3px rgba(37,99,235,0.2); }
+button.primary:hover { background: #1d4ed8; }
+button.secondary { background: white; color: #4b5563; border: 1px solid #f3f4f6; }
+button.secondary:hover { background: #f9fafb; }`
+    },
+    {
+      id: 'split',
+      title: '02. Account Conversion Split',
+      component: <ThankYouSplit />,
+      jsx: `export const ThankYouSplit = () => (
+  <div className="flex flex-col md:flex-row bg-white rounded-[3rem] overflow-hidden border border-gray-100 shadow-2xl max-w-5xl mx-auto font-sans text-left">
+    <div className="md:w-1/2 p-16 flex flex-col justify-center bg-gray-50 border-r border-gray-100">
+      <div className="mb-10 text-left">
+        <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase italic">Success.</h2>
+        <p className="text-gray-500 text-lg italic">Order #9921_Node is being processed by the logistics cluster.</p>
       </div>
-      <div className="lg:col-span-7 p-12 bg-white min-w-0 italic">
-        <h3 className="text-4xl font-black uppercase mb-10 border-b-4 border-black pb-4 italic text-left">CARGO_CONFIRMED</h3>
-        <div className="bg-slate-50 border-4 border-black p-8 shadow-[12px_12px_0_0_#000] mb-12 italic">
-          <p className="text-2xl font-black uppercase mb-4 italic text-left">ESTIMATED_DELIVERY</p>
-          <p className="text-5xl font-black italic text-cyan-600 text-left">2-3 CYCLES</p>
-        </div>
-        <button className="w-full bg-black text-white py-6 text-2xl font-black uppercase border-4 border-black hover:bg-white hover:text-black transition-all shadow-[8px_8px_0_0_#000] italic">VIEW_MANIFEST</button>
+      <div className="space-y-4">
+        <div className="flex justify-between font-bold text-gray-400 text-sm uppercase tracking-widest"><span>Est. Delivery</span><span className="text-gray-900">Oct 28 - 30</span></div>
+      </div>
+    </div>
+    <div className="md:w-1/2 p-16 flex flex-col justify-center bg-white text-left">
+      <h3 className="text-2xl font-bold text-gray-900 mb-4">Track your shipment</h3>
+      <p className="text-gray-500 mb-8 leading-relaxed">Create a password to save your order history and monitor nodes.</p>
+      <form className="space-y-6">
+        <input type="password" placeholder="Set Access Key" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-100 focus:bg-white focus:ring-4 focus:ring-blue-500/10 outline-none transition-all" />
+        <button className="w-full py-5 bg-black text-white font-black rounded-2xl hover:bg-gray-800 transition-all shadow-xl uppercase tracking-widest text-xs italic">Complete Profile</button>
+      </form>
+    </div>
+  </div>
+);`,
+      html: `<div class="thank-you-split">
+  <div class="info-panel">
+    <h2>Success.</h2>
+    <p>Order #9921_Node is being processed by the logistics cluster.</p>
+    <div class="meta">
+      <span>Est. Delivery</span>
+      <span>Oct 28 - 30</span>
+    </div>
+  </div>
+  <div class="form-panel">
+    <h3>Track your shipment</h3>
+    <p>Create a password to save your order history and monitor nodes.</p>
+    <form>
+      <input type="password" placeholder="Set Access Key">
+      <button type="submit">Complete Profile</button>
+    </form>
+  </div>
+</div>`,
+      css: `.thank-you-split { display: flex; flex-direction: column; background: white; border-radius: 48px; border: 1px solid #f3f4f6; max-width: 1000px; margin: 0 auto; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); font-family: sans-serif; text-align: left; }
+@media (min-width: 768px) { .thank-you-split { flex-direction: row; } }
+.info-panel { flex: 1; padding: 64px; background: #f9fafb; border-right: 1px solid #f1f5f9; display: flex; flex-direction: column; justify-content: center; }
+.info-panel h2 { font-size: 40px; font-weight: 900; text-transform: uppercase; font-style: italic; color: #111827; letter-spacing: -0.05em; margin-bottom: 16px; }
+.info-panel p { color: #6b7280; font-size: 18px; font-style: italic; margin-bottom: 40px; }
+.meta { display: flex; justify-content: space-between; font-weight: 700; color: #9ca3af; text-transform: uppercase; font-size: 14px; letter-spacing: 0.1em; }
+.form-panel { flex: 1; padding: 64px; display: flex; flex-direction: column; justify-content: center; background: #ffffff; }
+.form-panel h3 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 16px; }
+.form-panel p { color: #6b7280; margin-bottom: 32px; line-height: 1.6; }
+form input { width: 100%; padding: 16px 24px; border-radius: 16px; background: #f9fafb; border: 1px solid #f3f4f6; margin-bottom: 24px; outline: none; }
+form button { width: 100%; padding: 20px; background: #000; color: #fff; border-radius: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: all 0.2s; font-style: italic; }`
+    },
+    {
+      id: 'glass',
+      title: '03. Glassmorphic High-Fidelity',
+      component: <ThankYouGlass />,
+      jsx: `export const ThankYouGlass = () => (
+  <div className="min-h-[500px] bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 p-16 rounded-[4rem] flex items-center justify-center font-sans text-center relative overflow-hidden">
+    <div className="bg-white/10 backdrop-blur-3xl border border-white/20 p-20 rounded-[4rem] shadow-2xl w-full max-w-2xl text-white">
+      <h2 className="text-5xl font-black uppercase mb-6 tracking-tighter italic text-center">Payment_Synced</h2>
+      <p className="text-white/70 text-xl font-medium mb-12 italic text-center">Your order has been injected into our node network. Check your digital coordinate for updates.</p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button className="bg-white text-purple-600 px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-purple-50 shadow-xl">Dashboard_Link</button>
       </div>
     </div>
   </div>
-);`}
-              htmlCode={`<div class="split-thanks-root">
-  <div class="sidebar">
-    <h2 class="title">MANIFEST_<br>LOCKED.</h2>
-    <div class="meta"><span>Node_ID</span><span>#ORD-88291</span></div>
-    <div class="meta"><span>Sync_Date</span><span>2024.10.24</span></div>
-  </div>
-  <div class="content">
-    <h3 class="heading">CARGO_CONFIRMED</h3>
-    <div class="delivery-box">
-      <p class="lbl">ESTIMATED_DELIVERY</p>
-      <p class="val">2-3 CYCLES</p>
-    </div>
-    <div class="info-alert">A DIGITAL COPY OF YOUR MANIFEST HAS BEEN TRANSMITTED TO YOUR NEURAL LINK.</div>
-    <button class="manifest-btn">VIEW_MANIFEST</button>
-  </div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.split-thanks-root { display: flex; border: 10px solid black; background: white; box-shadow: 32px 32px 0 0 #000; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 1000px; margin: 40px auto; overflow: hidden; }
-@media (max-width: 768px) { .split-thanks-root { flex-direction: column; } }
-.sidebar { width: 40%; background: black; color: white; padding: 48px; border-right: 10px solid black; display: flex; flex-direction: column; justify-content: space-between; }
-@media (max-width: 768px) { .sidebar { width: 100%; border-right: none; border-bottom: 10px solid black; } }
-.content { width: 60%; padding: 48px; color: black; }
-@media (max-width: 768px) { .content { width: 100%; } }
-.title { font-size: 64px; text-transform: uppercase; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 48px; }
-.meta { display: flex; justify-content: space-between; font-size: 14px; text-transform: uppercase; border-top: 2px solid rgba(255,255,255,0.2); padding-top: 16px; margin-top: 16px; }
-.heading { font-size: 40px; text-transform: uppercase; border-bottom: 4px solid black; padding-bottom: 16px; margin-bottom: 40px; }
-.delivery-box { background: #f8fafc; border: 4px solid black; padding: 32px; box-shadow: 12px 12px 0 0 #000; margin-bottom: 40px; }
-.delivery-box .lbl { font-size: 20px; text-transform: uppercase; margin-bottom: 8px; }
-.delivery-box .val { font-size: 48px; color: #0891b2; }
-.info-alert { border-left: 8px solid black; padding-left: 24px; margin-bottom: 48px; font-size: 18px; opacity: 0.6; }
-.manifest-btn { width: 100%; background: black; color: white; border: 4px solid black; padding: 24px; font-size: 24px; font-weight: 900; text-transform: uppercase; cursor: pointer; box-shadow: 8px 8px 0 0 #000; font-family: inherit; font-style: inherit; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">02. Manifest Split Confirmed</span>
-          <ThankYouSplit />
-        </section>
-
-        {/* 03. LOYALTY */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouLoyalty = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[10px] border-black p-16 shadow-[24px_24px_0_0_#facc15] min-w-0 italic text-left">
-      <div className="flex flex-wrap md:flex-nowrap justify-between items-center mb-12 gap-8 italic">
-        <h2 className="text-8xl font-black uppercase tracking-tighter italic text-black italic">REWARDS_GEN.</h2>
-        <div className="w-24 h-24 bg-black text-white border-4 border-white flex items-center justify-center text-5xl rotate-6 shadow-[8px_8px_0_0_#facc15] shrink-0 italic">★</div>
-      </div>
-      <div className="bg-black text-white p-10 border-4 border-black shadow-[16px_16px_0_0_#facc15] mb-12 italic text-left">
-        <div className="text-xs uppercase text-yellow-400 mb-2 tracking-[0.4em] italic">Injected_Balance</div>
-        <div className="text-7xl font-black italic mb-8 italic">+150 PTS</div>
-        <div className="w-full h-8 bg-white/20 border-4 border-white relative overflow-hidden">
-          <div className="w-3/4 h-full bg-yellow-400 border-r-4 border-white"></div>
-        </div>
-      </div>
-      <button className="w-full bg-black text-white py-8 text-3xl font-black uppercase border-4 border-black hover:bg-yellow-400 hover:text-black transition-all shadow-[12px_12px_0_0_#000] italic">SPEND_CREDITS</button>
+);`,
+      html: `<div class="glass-root">
+  <div class="glass-card">
+    <div class="icon-wrap">✓</div>
+    <h2>Payment_Synced</h2>
+    <p>Your order has been injected into our node network. Check your digital coordinate for updates.</p>
+    <div class="actions">
+      <button class="glass-btn primary">Dashboard_Link</button>
+      <button class="glass-btn secondary">Support_Node</button>
     </div>
   </div>
-);`}
-              htmlCode={`<div class="loyalty-thanks-root">
-  <div class="header">
-    <h2 class="title">REWARDS_GEN.</h2>
-    <div class="star-icon">★</div>
-  </div>
-  <div class="points-card">
-    <div class="label">Injected_Balance</div>
-    <div class="val">+150 PTS</div>
-    <div class="progress-container">
-      <div class="progress-bar"></div>
+</div>`,
+      css: `.glass-root { min-height: 500px; background: linear-gradient(45deg, #4f46e5, #9333ea, #db2777); border-radius: 64px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; position: relative; overflow: hidden; }
+.glass-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.2); padding: 80px; border-radius: 64px; width: 100%; max-width: 600px; text-align: center; color: white; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+.icon-wrap { width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; font-size: 32px; font-weight: bold; }
+h2 { font-size: 48px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; font-style: italic; margin-bottom: 24px; }
+p { font-size: 20px; color: rgba(255,255,255,0.7); font-style: italic; margin-bottom: 48px; line-height: 1.6; }
+.actions { display: flex; gap: 16px; justify-content: center; flex-direction: column; }
+@media (min-width: 640px) { .actions { flex-direction: row; } }
+.glass-btn { padding: 16px 40px; border-radius: 16px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: all 0.2s; font-size: 12px; }
+.primary { background: white; color: #7c3aed; border: none; }
+.secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }`
+    },
+    {
+      id: 'cyber',
+      title: '04. Cyberpunk Digital Receipt',
+      component: <ThankYouCyber />,
+      jsx: `export const ThankYouCyber = () => (
+  <div className="bg-black p-12 rounded-3xl border-4 border-cyan-500/30 max-w-2xl mx-auto font-mono text-left relative overflow-hidden italic font-bold text-left">
+    <div className="absolute top-0 left-0 w-full h-1 bg-cyan-500/50 animate-pulse"></div>
+    <div className="mb-12 border-b-2 border-cyan-500/20 pb-8 text-left">
+      <h2 className="text-4xl text-cyan-400 uppercase tracking-tighter mb-2 text-left">SIGNAL_RECEIVED_001</h2>
+      <p className="text-cyan-100/40 text-xs uppercase tracking-widest text-left">TRANSACTION_HASH: 0x98A_21B_NODE_77</p>
     </div>
-    <div class="footer"><span>Silver_Node</span><span>50 PTS TO GOLD_NODE</span></div>
-  </div>
-  <div class="message">CONGRATULATIONS. YOUR LOYALTY HAS BEEN DETECTED BY THE SYSTEM CORE. YOU HAVE BEEN UPGRADED TO SILVER STATUS.</div>
-  <button class="spend-btn">SPEND_CREDITS</button>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.loyalty-thanks-root { background: white; border: 10px solid black; padding: 64px; box-shadow: 24px 24px 0 0 #facc15; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 800px; margin: 40px auto; color: black; }
-.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; flex-wrap: wrap; gap: 32px; }
-.title { font-size: 80px; text-transform: uppercase; line-height: 1; letter-spacing: -0.05em; }
-.star-icon { width: 96px; height: 96px; background: black; color: white; display: flex; align-items: center; justify-content: center; font-size: 48px; transform: rotate(6deg); border: 4px solid white; box-shadow: 8px 8px 0 0 #facc15; }
-.points-card { background: black; color: white; padding: 40px; border: 4px solid black; box-shadow: 16px 16px 0 0 #facc15; margin-bottom: 48px; text-align: left; }
-.points-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.4em; color: #facc15; margin-bottom: 8px; }
-.points-card .val { font-size: 72px; margin-bottom: 32px; line-height: 1; }
-.progress-container { width: 100%; height: 32px; background: rgba(255,255,255,0.2); border: 4px solid white; position: relative; margin-bottom: 16px; }
-.progress-bar { width: 75%; height: 100%; background: #facc15; border-right: 4px solid white; }
-.points-card .footer { display: flex; justify-content: space-between; font-size: 10px; text-transform: uppercase; }
-.message { text-align: left; border-left: 8px solid black; padding-left: 24px; margin-bottom: 48px; font-size: 18px; opacity: 0.6; }
-.spend-btn { width: 100%; background: black; color: white; border: 4px solid black; padding: 32px; font-size: 32px; font-weight: 900; text-transform: uppercase; cursor: pointer; box-shadow: 12px 12px 0 0 #000; transition: all 0.2s; font-family: inherit; font-style: inherit; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">03. Loyalty Matrix Rewards</span>
-          <ThankYouLoyalty />
-        </section>
-
-        {/* 04. DOWNLOAD */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouDownload = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-mono italic font-bold text-left text-green-500 italic">
-    <div className="bg-black border-4 border-green-500 p-12 shadow-[0_0_30px_rgba(34,197,94,0.2)] relative overflow-hidden min-w-0 text-left italic">
-      <h2 className="text-6xl font-black uppercase tracking-tighter mb-16 italic text-white italic">ACCESS_GRANTED</h2>
-      <div className="border-2 border-green-900 p-8 bg-green-950/20 text-left min-w-0 italic mb-12 italic">
-        <div className="flex flex-wrap justify-between items-center gap-4 italic text-left">
-          <div className="flex items-center gap-6 italic text-left">
-            <div className="w-16 h-16 bg-green-500 text-black flex items-center justify-center text-2xl font-black italic">ZIP</div>
-            <div>
-              <h4 className="text-xl font-black text-white italic">MESH_ASSETS_V2.ZIP</h4>
-              <p className="text-xs opacity-60 italic">145MB // SCAN_OK</p>
-            </div>
-          </div>
-          <button className="bg-green-500 text-black px-8 py-4 font-black uppercase hover:bg-white transition-all shadow-[8px_8px_0_0_#fff] italic">DOWNLOAD_NOW</button>
-        </div>
-      </div>
-      <p className="text-xs uppercase opacity-40 italic">EXPIRATION: 24_HOURS // ONE_TIME_LINK</p>
+    <div className="space-y-6 mb-12 text-left">
+      <div className="flex justify-between text-white uppercase text-left"><span>Order_ID</span><span className="text-cyan-400">#88291-C</span></div>
+      <div className="flex justify-between text-white uppercase text-left"><span>Status</span><span className="text-green-500 animate-pulse">[VALIDATED]</span></div>
+    </div>
+    <div className="flex gap-4 text-left">
+      <button className="flex-1 py-4 bg-cyan-500 text-black font-black uppercase tracking-widest text-xs hover:bg-cyan-400">VIEW_LOGS</button>
     </div>
   </div>
-);`}
-              htmlCode={`<div class="cyber-download-root">
+);`,
+      html: `<div class="cyber-receipt">
   <div class="scan-line"></div>
-  <h2 class="title">ACCESS_GRANTED</h2>
-  <div class="download-card">
-    <div class="file-info">
-      <div class="file-icon">ZIP</div>
-      <div class="details">
-        <h4>MESH_ASSETS_V2.ZIP</h4>
-        <p>145MB // SCAN_OK</p>
-      </div>
-    </div>
-    <button class="download-btn">DOWNLOAD_NOW</button>
+  <div class="header">
+    <h2>SIGNAL_RECEIVED_001</h2>
+    <p>TRANSACTION_HASH: 0x98A_21B_NODE_77</p>
   </div>
-  <div class="meta-info">
-    <p>EXPIRATION: 24_HOURS</p>
-    <p>ONE_TIME_LINK_ONLY</p>
+  <div class="stats">
+    <div class="row"><span>Order_ID</span><span class="value">#88291-C</span></div>
+    <div class="row"><span>Status</span><span class="value status">[VALIDATED]</span></div>
   </div>
-  <div class="footer">AUTHENTICATED_SECURE_PAYLOAD_NODE_7</div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap');
-.cyber-download-root { background: black; border: 4px solid #22c55e; padding: 48px; box-shadow: 0 0 30px rgba(34, 197, 94, 0.4); font-family: 'Inter', monospace; font-style: italic; font-weight: 700; color: #22c55e; max-width: 800px; margin: 40px auto; position: relative; overflow: hidden; }
-.scan-line { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: rgba(34, 197, 94, 0.5); animation: scan 3s linear infinite; }
-@keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-.title { font-size: 56px; font-weight: 900; color: white; text-transform: uppercase; margin-bottom: 64px; line-height: 1; letter-spacing: -0.05em; }
-.download-card { background: rgba(20, 83, 45, 0.2); border: 2px solid #14532d; padding: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
-.file-info { display: flex; align-items: center; gap: 24px; }
-.file-icon { width: 64px; height: 64px; background: #22c55e; color: black; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; }
-.details h4 { font-size: 20px; color: white; margin: 0 0 4px; }
-.details p { font-size: 12px; opacity: 0.6; margin: 0; }
-.download-btn { background: #22c55e; color: black; border: none; padding: 16px 32px; font-size: 16px; font-weight: 900; text-transform: uppercase; cursor: pointer; box-shadow: 8px 8px 0 0 #fff; transition: all 0.2s; font-family: inherit; font-style: inherit; }
-.download-btn:hover { background: white; box-shadow: 8px 8px 0 0 #22c55e; }
-.meta-info { display: flex; justify-content: space-between; font-size: 10px; opacity: 0.4; border-bottom: 1px solid #14532d; padding-bottom: 16px; margin-bottom: 32px; }
-.footer { font-size: 10px; text-align: center; opacity: 0.3; letter-spacing: 4px; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">04. Digital Instant Access</span>
-          <ThankYouDownload />
-        </section>
-
-        {/* 05. CALENDAR */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouCalendar = () => (
-  <div className="w-full max-w-xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[8px] border-black p-10 shadow-[20px_20px_0_0_#6366f1] min-w-0 italic text-left">
-      <div className="w-20 h-20 bg-indigo-600 text-white border-4 border-black flex items-center justify-center text-4xl mb-10 rotate-[-5deg] shadow-[8px_8px_0_0_#000] shrink-0 italic">📅</div>
-      <h2 className="text-5xl font-black uppercase mb-8 leading-none italic">SYNC_SCHEDULED.</h2>
-      <div className="bg-indigo-50 border-4 border-black p-6 mb-10 italic text-left">
-        <div className="flex justify-between items-center text-xl font-black uppercase mb-4 italic"><span>Mon, Oct 24</span><span>10:00 AM</span></div>
-        <p className="text-sm opacity-60 italic">MESH_CONSULTATION_ST_7</p>
-      </div>
-      <div className="grid grid-cols-2 gap-4 italic text-left">
-        <button className="bg-black text-white py-4 font-black uppercase border-4 border-black hover:bg-white hover:text-black transition-all italic">ADD_G_CAL</button>
-        <button className="bg-white text-black py-4 font-black uppercase border-4 border-black hover:bg-black hover:text-white transition-all italic">ADD_OUTLOOK</button>
-      </div>
-    </div>
-  </div>
-);`}
-              htmlCode={`<div class="calendar-thanks-root">
-  <div class="cal-icon">📅</div>
-  <h2 class="title">SYNC_SCHEDULED.</h2>
-  <div class="event-card">
-    <div class="row">
-      <div class="date">Mon, Oct 24</div>
-      <div class="time">10:00 AM</div>
-    </div>
-    <div class="divider"></div>
-    <p class="desc">MESH_CONSULTATION_ST_7 // LEAD_SYNC_ Sarah_Smith</p>
+  <div class="message">
+    <p>Your order is currently being synchronized with our global distribution nodes. Expect a physical pulse within 48-72 hours.</p>
   </div>
   <div class="actions">
-    <button class="btn btn-black">ADD_G_CAL</button>
-    <button class="btn btn-white">ADD_OUTLOOK</button>
+    <button class="cyber-btn primary">VIEW_LOGS</button>
+    <button class="cyber-btn secondary">TERMINATE_SES</button>
   </div>
-  <div class="footer-note">A CALENDAR INVITE HAS BEEN BROADCASTED TO YOUR REGISTERED NODE.</div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.calendar-thanks-root { background: white; border: 8px solid black; padding: 48px; box-shadow: 20px 20px 0 0 #6366f1; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 500px; margin: 40px auto; color: black; text-align: center; }
-.cal-icon { width: 80px; height: 80px; background: #4f46e5; color: white; display: flex; align-items: center; justify-content: center; font-size: 40px; transform: rotate(-5deg); border: 4px solid black; box-shadow: 8px 8px 0 0 #000; margin: 0 auto 40px; }
-.title { font-size: 48px; text-transform: uppercase; line-height: 1; letter-spacing: -0.05em; margin-bottom: 32px; }
-.event-card { background: #eef2ff; border: 4px solid black; padding: 24px; text-align: left; margin-bottom: 40px; }
-.event-card .row { display: flex; justify-content: space-between; font-size: 20px; text-transform: uppercase; }
-.event-card .divider { width: 100%; height: 4px; background: black; margin: 16px 0; }
-.event-card .desc { font-size: 12px; opacity: 0.6; text-transform: uppercase; }
-.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
-.btn { border: 4px solid black; padding: 16px; font-size: 16px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: all 0.2s; font-family: inherit; font-style: inherit; }
-.btn-black { background: black; color: white; }
-.btn-white { background: white; color: black; }
-.footer-note { font-size: 10px; opacity: 0.5; text-transform: uppercase; line-height: 1.4; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 16px; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">05. Calendar Sync Protocol</span>
-          <ThankYouCalendar />
-        </section>
-
-        {/* 06. REFERRAL */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouReferral = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-black">
-    <div className="bg-white border-[10px] border-black p-16 shadow-[24px_24px_0_0_#000] text-center min-w-0 italic text-left">
-      <h2 className="text-8xl font-black uppercase mb-12 tracking-tighter leading-none italic text-center italic">GROWTH_HACK.</h2>
-      <div className="bg-cyan-400 border-[6px] border-black p-10 shadow-[16px_16px_0_0_#000] mb-12 italic text-left">
-        <h3 className="text-3xl font-black uppercase mb-4 italic text-left">GIVE $20 // GET $20</h3>
-        <p className="text-xl uppercase mb-8 italic text-left">PROPAGATE THE MESH TO YOUR NODES AND EARN CREDITS FOR EVERY SUCCESSFUL LINK.</p>
-        <div className="flex bg-white border-4 border-black p-2 shadow-[8px_8px_0_0_#000] italic">
-          <input type="text" readOnly value="MESH.NET/R/ALEX20" className="flex-1 bg-transparent px-4 font-black outline-none italic" />
-          <button className="bg-black text-white px-8 py-4 font-black uppercase hover:bg-cyan-600 transition-all italic text-left">COPY_LINK</button>
+</div>`,
+      css: `.cyber-receipt { background: #000; padding: 48px; border-radius: 24px; border: 4px solid rgba(6, 182, 212, 0.3); max-width: 600px; margin: 0 auto; font-family: monospace; position: relative; overflow: hidden; color: white; text-align: left; }
+.scan-line { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: rgba(6, 182, 212, 0.5); animation: scan 4s linear infinite; }
+@keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+.header { border-bottom: 2px solid rgba(6, 182, 212, 0.2); padding-bottom: 32px; margin-bottom: 48px; }
+.header h2 { font-size: 32px; color: #22d3ee; text-transform: uppercase; letter-spacing: -0.05em; margin: 0; }
+.header p { color: rgba(207, 250, 254, 0.4); font-size: 12px; margin-top: 8px; letter-spacing: 0.1em; }
+.stats { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+.row { display: flex; justify-content: space-between; text-transform: uppercase; font-weight: bold; }
+.value { color: #22d3ee; }
+.status { color: #22c55e; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0.5; } }
+.message { background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); padding: 32px; border-radius: 16px; margin-bottom: 48px; }
+.message p { color: rgba(207, 250, 254, 0.6); font-size: 14px; line-height: 1.6; text-transform: uppercase; }
+.actions { display: flex; gap: 16px; }
+.cyber-btn { flex: 1; padding: 16px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; font-size: 12px; letter-spacing: 0.1em; }
+.primary { background: #22d3ee; color: #000; }
+.secondary { background: transparent; color: #22d3ee; border: 2px solid #22d3ee; }`
+    },
+    {
+      id: 'social',
+      title: '05. Social Referral Hero',
+      component: <ThankYouSocial />,
+      jsx: `export const ThankYouSocial = () => (
+  <div className="bg-gradient-to-br from-indigo-50 via-white to-cyan-50 p-16 rounded-[3rem] border border-slate-100 text-center max-w-3xl mx-auto font-sans shadow-xl relative overflow-hidden text-center">
+    <h2 className="text-5xl font-black text-gray-900 mb-4 italic uppercase tracking-tighter leading-none text-center">High-Five_Successful!</h2>
+    <p className="text-slate-400 font-black uppercase tracking-widest text-xs mb-16 italic text-center">Order #88291 confirmed.</p>
+    <div className="bg-white p-8 rounded-[3rem] shadow-2xl mb-16 max-w-md mx-auto border border-slate-100 text-center">
+      <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase italic text-center">Get_20_Give_20</h3>
+      <p className="text-slate-500 mb-10 italic leading-relaxed text-center">Share your unique node link.</p>
+      <div className="flex gap-2 p-2 bg-slate-50 rounded-2xl border border-slate-100 text-center">
+        <input type="text" value="nexus.io/r/sarah_node" readOnly className="flex-1 bg-transparent px-4 font-mono text-sm font-bold text-slate-400" />
+        <button className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-black uppercase tracking-widest text-[10px]">Copy</button>
+      </div>
+    </div>
+  </div>
+);`,
+      html: `<div class="thank-you-social">
+  <h2>High-Five_Successful!</h2>
+  <p class="subtitle">Order #88291 confirmed. Now, let's share the wealth.</p>
+  <div class="referral-card">
+    <div class="gift-icon">🎁</div>
+    <h3>Get_20_Give_20</h3>
+    <p>Share your unique node link. When they make their first pulse, you both get $20 in network credits.</p>
+    <div class="link-box">
+      <input type="text" value="nexus.io/r/sarah_node" readonly>
+      <button>Copy</button>
+    </div>
+  </div>
+  <div class="social-footer">
+    <span>Twitter_Signal</span>
+    <span>Insta_Node</span>
+  </div>
+</div>`,
+      css: `.thank-you-social { background: linear-gradient(to bottom right, #f5f3ff, #ffffff, #ecfeff); padding: 64px; border-radius: 48px; border: 1px solid #f1f5f9; max-width: 800px; margin: 0 auto; font-family: sans-serif; text-align: center; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+h2 { font-size: 48px; font-weight: 900; color: #111827; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; margin-bottom: 16px; }
+.subtitle { color: #94a3b8; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 0.2em; font-style: italic; margin-bottom: 64px; }
+.referral-card { background: white; padding: 32px; border-radius: 48px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); border: 1px solid #f1f5f9; max-width: 448px; margin: 0 auto 64px; }
+.gift-icon { font-size: 48px; background: #f5f3ff; width: 128px; height: 72px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; }
+.referral-card h3 { font-size: 24px; font-weight: 900; color: #1e293b; text-transform: uppercase; font-style: italic; margin-bottom: 16px; }
+.referral-card p { color: #64748b; font-style: italic; line-height: 1.6; margin-bottom: 40px; }
+.link-box { display: flex; gap: 8px; background: #f8fafc; padding: 8px; border-radius: 16px; border: 1px solid #f1f5f9; }
+.link-box input { flex: 1; background: transparent; border: none; padding: 0 16px; font-family: monospace; font-size: 14px; font-weight: 700; color: #94a3b8; outline: none; }
+.link-box button { background: #4f46e5; color: white; border: none; padding: 12px 24px; border-radius: 12px; font-weight: 900; text-transform: uppercase; font-size: 10px; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(79,70,229,0.2); }
+.social-footer { color: #cbd5e1; font-weight: 900; text-transform: uppercase; font-size: 10px; letter-spacing: 0.2em; display: flex; gap: 24px; justify-content: center; font-style: italic; }`
+    },
+    {
+      id: 'minimal',
+      title: '06. Minimalist Bauhaus Typography',
+      component: <ThankYouMinimal />,
+      jsx: `export const ThankYouMinimal = () => (
+  <div className="bg-white p-24 rounded-none border-[12px] border-black max-w-3xl mx-auto font-sans text-left shadow-[20px_20px_0_0_#000] text-left">
+    <h1 className="text-9xl font-black text-black mb-12 tracking-tighter uppercase italic leading-[0.8] text-left">Thank<br/>You.</h1>
+    <div className="w-24 h-4 bg-black mb-12 text-left"></div>
+    <div className="space-y-12 mb-20 text-left">
+      <p className="text-3xl font-black text-black uppercase tracking-tight italic text-left">Order #88291 confirmed.</p>
+    </div>
+    <div className="flex flex-col sm:flex-row gap-8 text-left">
+      <button className="text-2xl font-black text-black uppercase tracking-widest border-b-8 border-black pb-2 italic text-left">Track_Order</button>
+    </div>
+  </div>
+);`,
+      html: `<div class="thank-you-minimal">
+  <h1>Thank<br>You.</h1>
+  <div class="bar"></div>
+  <div class="content">
+    <p class="main">Order #88291 is confirmed.</p>
+    <p class="sub">We are currently preparing your package. A digital confirmation has been sent to your primary coordinate.</p>
+  </div>
+  <div class="actions">
+    <button class="btn">Track_Order</button>
+    <button class="btn ghost">Home_Return</button>
+  </div>
+</div>`,
+      css: `.thank-you-minimal { background: #ffffff; padding: 96px; border: 12px solid #000000; max-width: 768px; margin: 0 auto; font-family: sans-serif; text-align: left; box-shadow: 20px 20px 0 0 #000000; }
+h1 { font-size: 120px; font-weight: 900; color: #000; line-height: 0.8; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; margin: 0 0 48px 0; }
+.bar { width: 96px; height: 16px; background: #000; margin-bottom: 48px; }
+.content { margin-bottom: 80px; }
+.main { font-size: 30px; font-weight: 900; color: #000; text-transform: uppercase; font-style: italic; letter-spacing: -0.025em; margin-bottom: 48px; }
+.sub { font-size: 20px; color: #6b7280; font-style: italic; text-transform: lowercase; font-weight: 500; line-height: 1.6; max-width: 448px; }
+.actions { display: flex; flex-direction: column; gap: 32px; }
+@media (min-width: 640px) { .actions { flex-direction: row; } }
+.btn { font-size: 24px; font-weight: 900; color: #000; text-transform: uppercase; font-style: italic; background: none; border: none; border-bottom: 8px solid #000; padding: 0 16px 8px 16px; cursor: pointer; transition: all 0.2s; }
+.btn:hover { background: #000; color: #fff; }
+.btn.ghost { color: #d1d5db; border: none; }
+.btn.ghost:hover { background: none; color: #000; }`
+    },
+    {
+      id: 'neo',
+      title: '07. Neumorphic Soft Protocol',
+      component: <ThankYouNeo />,
+      jsx: `export const ThankYouNeo = () => (
+  <div className="bg-[#e0e5ec] p-24 rounded-[5rem] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] text-center max-w-2xl mx-auto font-sans text-center">
+    <div className="w-24 h-24 mx-auto rounded-full p-2 bg-[#e0e5ec] shadow-[inset_5px_5px_10px_#bebebe] mb-10 overflow-hidden flex items-center justify-center text-center">
+       <div className="w-16 h-16 bg-white/50 rounded-full flex items-center justify-center text-center">
+         ✓
+       </div>
+    </div>
+    <h2 className="text-4xl font-black text-slate-800 mb-4 uppercase tracking-tighter italic text-center">Soft_Confirmed</h2>
+    <div className="grid grid-cols-2 gap-8 text-center">
+      <button className="bg-[#e0e5ec] p-6 rounded-[30px] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] font-black uppercase tracking-widest text-[10px] text-slate-600 italic">View_Receipt</button>
+    </div>
+  </div>
+);`,
+      html: `<div class="thank-you-neo">
+  <div class="icon-wrap">
+    <div class="inner-icon">✓</div>
+  </div>
+  <h2>Soft_Confirmed</h2>
+  <p>Your order has been successfully processed into our ecosystem. Everything is flowing perfectly.</p>
+  <div class="actions">
+    <button class="neo-btn">View_Receipt</button>
+    <button class="neo-btn primary">Track_Delivery</button>
+  </div>
+</div>`,
+      css: `.thank-you-neo { background: #e0e5ec; padding: 96px; border-radius: 80px; font-family: sans-serif; text-align: center; box-shadow: 30px 30px 60px #bebebe, -30px -30px 60px #ffffff; max-width: 600px; margin: 0 auto; }
+.icon-wrap { width: 96px; height: 96px; background: #e0e5ec; border-radius: 50%; margin: 0 auto 40px; padding: 8px; box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff; display: flex; align-items: center; justify-content: center; }
+.inner-icon { width: 64px; height: 64px; background: rgba(255,255,255,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: #22c55e; box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; }
+h2 { font-size: 36px; font-weight: 900; color: #1e293b; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; margin-bottom: 16px; }
+p { font-size: 18px; color: #64748b; font-style: italic; margin-bottom: 48px; line-height: 1.6; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.neo-btn { padding: 24px; border: none; background: #e0e5ec; border-radius: 30px; font-weight: 900; text-transform: uppercase; color: #475569; font-size: 10px; cursor: pointer; box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff; transition: all 0.2s; font-style: italic; }
+.neo-btn:hover { box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff; }
+.neo-btn.primary { color: #2563eb; }`
+    },
+    {
+      id: 'invoice',
+      title: '08. Corporate Invoice Document',
+      component: <ThankYouInvoice />,
+      jsx: `export const ThankYouInvoice = () => (
+  <div className="bg-white p-20 rounded-none border border-slate-100 shadow-2xl max-w-4xl mx-auto font-mono text-sm relative overflow-hidden text-left">
+    <div className="absolute top-0 left-0 w-full h-3 bg-blue-600 text-left"></div>
+    <div className="flex justify-between items-start mb-20 text-left">
+      <div className="text-left">
+        <h1 className="text-4xl font-black mb-2 italic tracking-tighter text-left">SUCCESS_INVOICE</h1>
+        <p className="text-slate-400 font-black uppercase tracking-[0.3em] text-left">#INV-2024-88291</p>
+      </div>
+    </div>
+    <button className="w-full py-5 bg-black text-white font-black uppercase tracking-[0.4em] text-[10px] italic">Execute Print Job</button>
+  </div>
+);`,
+      html: `<div class="thank-you-invoice">
+  <div class="accent-bar"></div>
+  <div class="header">
+    <div class="title">
+      <h1>SUCCESS_INVOICE</h1>
+      <p class="id">#INV-2024-88291</p>
+    </div>
+    <div class="vendor">
+      <p class="name">TechFlow_Global_Corp</p>
+      <p class="status">AUTH_STATUS: VALIDATED</p>
+    </div>
+  </div>
+  <div class="alert">
+    <h3>Order_Receipt_Summary</h3>
+    <p>Thank you for your business. Your order has been logged and the fulfillment sequence has been initiated.</p>
+  </div>
+  <div class="details">
+    <div class="row"><span>Order_Date:</span><span>OCT 24, 2024</span></div>
+    <div class="row"><span>Ship_To:</span><span>Sarah Jensen // Sector 07</span></div>
+    <div class="row total"><span>Total_Settlement:</span><span>$499.00</span></div>
+  </div>
+  <button class="print-btn">Execute Print Job</button>
+</div>`,
+      css: `.thank-you-invoice { background: #ffffff; padding: 64px; border: 1px solid #f1f5f9; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); max-width: 800px; margin: 0 auto; font-family: monospace; position: relative; overflow: hidden; text-align: left; }
+.accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 12px; background: #2563eb; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 80px; }
+.title h1 { font-size: 36px; font-weight: 900; margin: 0 0 8px 0; font-style: italic; letter-spacing: -0.05em; }
+.title .id { color: #94a3b8; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; font-size: 12px; }
+.vendor { text-align: right; }
+.vendor .name { font-weight: 900; text-transform: uppercase; font-style: italic; margin: 0 0 8px 0; }
+.vendor .status { font-size: 10px; color: #94a3b8; font-weight: 700; }
+.alert { background: #eff6ff; padding: 32px; border-radius: 16px; border: 1px solid #dbeafe; margin-bottom: 48px; }
+.alert h3 { font-size: 12px; font-weight: 900; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.1em; font-style: italic; margin-bottom: 8px; }
+.alert p { color: #1d4ed8; font-style: italic; line-height: 1.6; margin: 0; }
+.details { display: flex; flex-direction: column; gap: 24px; margin-bottom: 80px; }
+.row { display: flex; justify-content: space-between; border-bottom: 1px solid #f8fafc; padding-bottom: 16px; font-size: 14px; }
+.total { font-size: 24px; font-weight: 900; font-style: italic; border: none; margin-top: 32px; color: #2563eb; }
+.print-btn { width: 100%; padding: 20px; background: #000; color: #fff; border: none; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; cursor: pointer; font-size: 10px; font-style: italic; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }`
+    },
+    {
+      id: 'brutalist',
+      title: '09. Retro Brutalist Success',
+      component: <ThankYouBrutalist />,
+      jsx: `export const ThankYouBrutalist = () => (
+  <div className="bg-yellow-400 p-12 border-[10px] border-black rounded-[3rem] font-sans max-w-2xl mx-auto shadow-[20px_20px_0_0_#000] text-left">
+    <h1 className="text-6xl font-black uppercase mb-6 italic underline decoration-black decoration-[12px] text-left">Order_Confirmed!</h1>
+    <p className="text-2xl font-black mb-12 uppercase italic text-left">We've received your request.</p>
+    <button className="bg-rose-500 text-white w-full py-6 border-8 border-black rounded-2xl font-black uppercase text-xl shadow-[12px_12px_0_0_#000] italic text-center">Track Package</button>
+  </div>
+);`,
+      html: `<div class="thank-you-brutalist">
+  <div class="icon">🚀</div>
+  <h1>Order_Confirmed!</h1>
+  <p>We've received your request. The fulfillment cluster is now active.</p>
+  <div class="node-box">
+    <div class="label">Order_Node: #88291</div>
+    <div class="status">Validated_Success</div>
+  </div>
+  <button class="track-btn">Track Package</button>
+</div>`,
+      css: `.thank-you-brutalist { background: #facc15; padding: 48px; border: 10px solid #000; border-radius: 48px; max-width: 600px; margin: 0 auto; text-align: left; box-shadow: 20px 20px 0 0 #000; font-family: sans-serif; }
+.icon { font-size: 64px; margin-bottom: 40px; }
+h1 { font-size: 56px; font-weight: 900; text-transform: uppercase; font-style: italic; text-decoration: underline 12px #000; text-underline-offset: -5px; margin: 0 0 24px 0; letter-spacing: -0.05em; line-height: 1; }
+p { font-size: 24px; font-weight: 900; text-transform: uppercase; font-style: italic; line-height: 1.1; margin-bottom: 48px; }
+.node-box { background: #fff; border: 8px solid #000; padding: 32px; box-shadow: 12px 12px 0 0 #000; margin-bottom: 48px; }
+.label { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.status { font-size: 30px; font-weight: 900; text-transform: uppercase; font-style: italic; }
+.track-btn { width: 100%; padding: 24px; background: #f43f5e; color: #fff; border: 8px solid #000; border-radius: 16px; font-weight: 900; text-transform: uppercase; font-size: 20px; font-style: italic; letter-spacing: 0.2em; cursor: pointer; box-shadow: 12px 12px 0 0 #000; transition: all 0.1s; }
+.track-btn:hover { transform: translate(4px, 4px); box-shadow: 8px 8px 0 0 #000; }`
+    },
+    {
+      id: 'app',
+      title: '10. Mobile App & Next Steps',
+      component: <ThankYouApp />,
+      jsx: `export const ThankYouApp = () => (
+  <div className="bg-slate-900 text-white p-16 rounded-[4rem] border border-slate-800 max-w-5xl mx-auto font-sans relative overflow-hidden text-left shadow-2xl">
+    <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center text-left">
+      <div className="text-left">
+        <h2 className="text-5xl font-black mb-6 uppercase italic tracking-tighter text-left">Ready to Scale?</h2>
+        <p className="text-slate-400 text-lg mb-12 italic text-left">Your order is on the way. Download the app.</p>
+        <button className="bg-white text-black px-10 py-4 rounded-2xl font-black uppercase text-[10px] italic text-center">App Store</button>
+      </div>
+    </div>
+  </div>
+);`,
+      html: `<div class="thank-you-app">
+  <div class="glow"></div>
+  <div class="grid">
+    <div class="content">
+      <div class="badge">ORDER_SUCCESS</div>
+      <h2>Ready to <br> <span>Scale?</span></h2>
+      <p>Your order is on the way. Download the mobile interface to track your node in real-time and join our global collective.</p>
+      <div class="app-btns">
+        <button class="app-btn dark">App Store</button>
+        <button class="app-btn light">Play Store</button>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="mockup">
+        <div class="inner">
+          <div class="box-icon">📦</div>
+          <h3>Node_Arrival</h3>
+          <p>Est. 2d: 14h: 22m</p>
         </div>
       </div>
     </div>
   </div>
-);`}
-              htmlCode={`<div class="growth-hack-root">
-  <h2 class="title">GROWTH_HACK.</h2>
-  <div class="promo-card">
-    <h3 class="heading">GIVE $20 // GET $20</h3>
-    <p class="desc">PROPAGATE THE MESH TO YOUR NODES AND EARN CREDITS FOR EVERY SUCCESSFUL LINK.</p>
-    <div class="copy-box">
-      <input type="text" readonly value="MESH.NET/R/ALEX20">
-      <button>COPY_LINK</button>
-    </div>
-  </div>
-  <div class="share-options">
-    <div class="s-btn">FACEBOOK</div>
-    <div class="s-btn">TWITTER</div>
-    <div class="s-btn">WHATSAPP</div>
-  </div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.growth-hack-root { background: white; border: 10px solid black; padding: 64px; box-shadow: 24px 24px 0 0 #000; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 800px; margin: 40px auto; text-align: center; color: black; }
-.title { font-size: 80px; text-transform: uppercase; line-height: 1; letter-spacing: -0.05em; margin-bottom: 48px; }
-.promo-card { background: #22d3ee; border: 6px solid black; padding: 40px; box-shadow: 16px 16px 0 0 #000; margin-bottom: 48px; text-align: left; }
-.heading { font-size: 32px; text-transform: uppercase; margin-bottom: 16px; }
-.desc { font-size: 18px; text-transform: uppercase; margin-bottom: 32px; line-height: 1.3; }
-.copy-box { background: white; border: 4px solid black; padding: 8px; display: flex; box-shadow: 8px 8px 0 0 #000; }
-.copy-box input { flex: 1; border: none; font-family: inherit; font-size: 18px; font-weight: 900; padding: 0 16px; outline: none; background: transparent; }
-.copy-box button { background: black; color: white; border: none; padding: 16px 32px; font-size: 18px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
-.share-options { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-.s-btn { border: 2px solid black; padding: 12px 24px; font-size: 12px; cursor: pointer; transition: all 0.2s; }
-.s-btn:hover { background: black; color: white; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">06. Propagation Growth Hack</span>
-          <ThankYouReferral />
-        </section>
+</div>`,
+      css: `.thank-you-app { background: #0f172a; padding: 80px; border-radius: 64px; border: 1px solid #1e293b; max-width: 1000px; margin: 0 auto; font-family: sans-serif; position: relative; overflow: hidden; color: white; text-align: left; }
+.glow { position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: rgba(37,99,235,0.1); border-radius: 50%; filter: blur(120px); }
+.grid { display: grid; grid-template-columns: 1fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+@media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
+.badge { background: #2563eb; padding: 8px 20px; border-radius: 999px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; display: inline-block; margin-bottom: 40px; font-style: italic; }
+h2 { font-size: 64px; font-weight: 900; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; line-height: 0.9; margin: 0 0 24px 0; }
+h2 span { color: #3b82f6; }
+p { color: #94a3b8; font-size: 18px; line-height: 1.6; font-style: italic; margin-bottom: 48px; }
+.app-btns { display: flex; gap: 16px; }
+.app-btn { padding: 16px 40px; border-radius: 16px; font-weight: 900; text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.2s; font-style: italic; }
+.app-btn.dark { background: white; color: black; border: none; }
+.app-btn.light { background: #1e293b; color: white; border: 1px solid #334155; }
+.visual { position: relative; }
+.mockup { aspect-ratio: 1; background: #1e293b; border: 4px solid #334155; border-radius: 48px; padding: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.inner { height: 100%; background: #0f172a; border-radius: 32px; border: 1px solid #334155; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.box-icon { font-size: 64px; margin-bottom: 32px; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+.inner h3 { font-size: 24px; font-weight: 900; text-transform: uppercase; font-style: italic; margin-bottom: 8px; }
+.inner p { font-size: 10px; color: #64748b; font-weight: 900; text-transform: uppercase; margin: 0; }`
+    }
+  ];
 
-        {/* 07. ONBOARDING */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouOnboarding = () => (
-  <div className="w-full max-w-5xl mx-auto px-4 font-sans italic font-bold text-left text-black italic">
-    <div className="bg-white border-[10px] border-black p-16 shadow-[32px_32px_0_0_#000] min-w-0 text-left italic">
-      <h2 className="text-7xl font-black uppercase mb-16 border-b-[10px] border-black pb-8 italic text-left">NEXT_PHASE.</h2>
-      <div className="grid md:grid-cols-3 gap-8 italic text-left">
-        {[
-          { t: "SYNC_PROFILE", i: "👤", b: "OPEN_EDITOR" },
-          { t: "JOIN_MESH", i: "💬", b: "CONNECT_DISCORD" },
-          { t: "START_TRAINING", i: "🎓", b: "LOAD_MODULE" }
-        ].map((step, idx) => (
-          <div key={idx} className="bg-slate-50 border-4 border-black p-8 shadow-[8px_8px_0_0_#000] hover:translate-y-[-8px] transition-transform cursor-pointer group italic text-left">
-            <div className="text-5xl mb-6 group-hover:rotate-12 transition-transform italic text-left">{step.i}</div>
-            <h3 className="text-xl font-black uppercase mb-8 italic text-left">{step.t}</h3>
-            <button className="w-full bg-black text-white py-3 text-xs font-black uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic text-left">{step.b}</button>
-          </div>
+  return (
+    <div className="container overflow-y-auto bg-slate-100 p-6 md:p-12 font-sans pb-64 text-gray-900">
+      <div className="max-w-4xl mx-auto text-center mb-24">
+        <h1 className="text-6xl font-black text-slate-900 mb-6 tracking-tighter uppercase italic leading-none underline decoration-blue-500 decoration-8 underline-offset-[-5px]">Success Signals</h1>
+        <p className="text-slate-500 font-bold text-xl italic lowercase">High-fidelity confirmation nodes for post-purchase excellence.</p>
+      </div>
+
+      <div className="space-y-40 max-w-6xl mx-auto">
+        {sections.map(section => (
+          <section key={section.id} className="bg-white p-4 rounded-[2.5rem] relative group/than border border-slate-200 shadow-xl overflow-hidden">
+            <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
+              <CopyButton 
+                jsxCode={section.jsx}
+                htmlCode={section.html}
+                cssCode={section.css}
+              />
+            </div>
+            <span className="text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] block text-center mb-10 italic text-center">{section.title}</span>
+            <div className="rounded-[2rem] overflow-hidden bg-slate-50/50 p-4 shadow-inner">
+              {section.component}
+            </div>
+          </section>
         ))}
-      </div>
-    </div>
-  </div>
-);`}
-              htmlCode={`<div class="onboarding-thanks-root">
-  <h2 class="title">NEXT_PHASE.</h2>
-  <div class="steps-grid">
-    <div class="step-card">
-      <div class="icon">👤</div>
-      <h3>SYNC_PROFILE</h3>
-      <p>UPDATE YOUR NEURAL IDENTITY FOR THE MESH.</p>
-      <button>OPEN_EDITOR</button>
-    </div>
-    <div class="step-card">
-      <div class="icon">💬</div>
-      <h3>JOIN_MESH</h3>
-      <p>CONNECT WITH OTHER SYNCHRONIZED NODES.</p>
-      <button>CONNECT_DISCORD</button>
-    </div>
-    <div class="step-card">
-      <div class="icon">🎓</div>
-      <h3>START_TRAINING</h3>
-      <p>LOAD THE CORE OPERATIONAL KNOWLEDGE.</p>
-      <button>LOAD_MODULE</button>
-    </div>
-  </div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.onboarding-thanks-root { background: white; border: 10px solid black; padding: 64px; box-shadow: 32px 32px 0 0 #000; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 1000px; margin: 40px auto; color: black; }
-.title { font-size: 72px; text-transform: uppercase; border-bottom: 10px solid black; padding-bottom: 32px; margin-bottom: 64px; line-height: 1; letter-spacing: -0.05em; }
-.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-@media (max-width: 1024px) { .steps-grid { grid-template-columns: 1fr; } }
-.step-card { background: #f8fafc; border: 4px solid black; padding: 32px; box-shadow: 8px 8px 0 0 #000; transition: transform 0.2s; text-align: left; }
-.step-card:hover { transform: translateY(-8px); }
-.step-card .icon { font-size: 48px; margin-bottom: 24px; }
-.step-card h3 { font-size: 20px; text-transform: uppercase; margin-bottom: 16px; }
-.step-card p { font-size: 12px; opacity: 0.6; text-transform: uppercase; margin-bottom: 32px; min-height: 48px; }
-.step-card button { width: 100%; background: black; color: white; border: 2px solid black; padding: 12px; font-size: 12px; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: all 0.2s; font-family: inherit; font-style: inherit; }
-.step-card button:hover { background: white; color: black; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">07. Onboarding Next Phase</span>
-          <ThankYouOnboarding />
-        </section>
-
-        {/* 08. MINIMAL */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouMinimal = () => (
-  <div className="w-full max-w-2xl mx-auto px-4 font-sans italic font-bold text-left text-black italic">
-    <div className="bg-white border-8 border-black p-16 text-center min-w-0 italic text-left">
-      <h2 className="text-9xl font-black uppercase mb-4 tracking-tighter leading-none italic text-left">LOCKED.</h2>
-      <p className="text-2xl uppercase mb-12 italic text-left">TRANSACTION_SUCCESSFUL</p>
-      <div className="flex justify-between pt-8 text-3xl font-black uppercase border-t-8 border-black italic text-left">
-        <span>TOTAL_SYNC</span>
-        <span>$240</span>
-      </div>
-    </div>
-  </div>
-);`}
-              htmlCode={`<div class="minimal-locked-root">
-  <div class="wrapper">
-    <h2 class="title">LOCKED.</h2>
-    <p class="status">TRANSACTION_SUCCESSFUL</p>
-    <div class="divider"></div>
-    <div class="total-row">
-      <span>TOTAL_SYNC</span>
-      <span>$240</span>
-    </div>
-    <button class="home-btn">RETURN_TO_BASE</button>
-  </div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.minimal-locked-root { background: white; border: 10px solid black; padding: 64px; text-align: center; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 500px; margin: 40px auto; color: black; }
-.title { font-size: 96px; text-transform: uppercase; line-height: 1; letter-spacing: -0.05em; margin-bottom: 16px; }
-.status { font-size: 24px; text-transform: uppercase; margin-bottom: 48px; opacity: 0.6; }
-.divider { width: 100%; height: 8px; background: black; margin-bottom: 32px; }
-.total-row { display: flex; justify-content: space-between; font-size: 32px; text-transform: uppercase; margin-bottom: 48px; }
-.home-btn { width: 100%; background: black; color: white; padding: 24px; font-size: 20px; font-weight: 900; border: none; text-transform: uppercase; cursor: pointer; transition: all 0.2s; font-family: inherit; font-style: inherit; }
-.home-btn:hover { background: white; color: black; box-shadow: inset 0 0 0 4px black; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">08. Locked Minimal Confirmation</span>
-          <ThankYouMinimal />
-        </section>
-
-        {/* 09. SOCIAL */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouSocial = () => (
-  <div className="w-full max-w-lg mx-auto px-4 font-sans italic font-bold text-left text-black italic">
-    <div className="bg-[#ec4899] border-[10px] border-black p-10 shadow-[20px_20px_0_0_#000] min-w-0 italic text-center italic">
-      <h2 className="text-4xl font-black text-white uppercase mb-8 italic text-center italic">PROPAGATE_VIBES.</h2>
-      <div className="bg-white border-[6px] border-black p-4 rotate-2 shadow-[12px_12px_0_0_#000] mb-12 italic text-left italic">
-        <div className="aspect-square bg-gray-100 border-4 border-black mb-4 italic text-left"></div>
-        <div className="text-left font-black uppercase italic text-left">MESH_WATCH_LIMITED_V1</div>
-        <div className="text-left text-xs opacity-50 italic text-left">JUST INJECTED VIA MESH.NETWORK 🔥</div>
-      </div>
-      <div className="grid grid-cols-3 gap-4 italic text-left">
-        <button className="bg-black text-white py-4 font-black text-xs uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic shadow-[4px_4px_0_0_#fff] text-left">INSTA</button>
-        <button className="bg-black text-white py-4 font-black text-xs uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic shadow-[4px_4px_0_0_#fff] text-left">TWITTER</button>
-        <button className="bg-black text-white py-4 font-black text-xs uppercase border-2 border-black hover:bg-white hover:text-black transition-all italic shadow-[4px_4px_0_0_#fff] text-left">MESH_X</button>
-      </div>
-    </div>
-  </div>
-);`}
-              htmlCode={`<div class="social-propagation-root">
-  <h2 class="title">PROPAGATE_VIBES.</h2>
-  <div class="product-card">
-    <div class="image-placeholder"></div>
-    <div class="card-footer">
-      <h4>MESH_WATCH_LIMITED_V1</h4>
-      <p>JUST INJECTED VIA MESH.NETWORK 🔥</p>
-    </div>
-  </div>
-  <p class="share-text">SHARE YOUR NEW ACQUISITION WITH THE MESH.</p>
-  <div class="share-grid">
-    <div class="s-link">INSTA</div>
-    <div class="s-link">TWITTER</div>
-    <div class="s-link">MESH_X</div>
-  </div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.social-propagation-root { background: #ec4899; border: 10px solid black; padding: 48px; box-shadow: 20px 20px 0 0 #000; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 450px; margin: 40px auto; text-align: center; color: black; }
-.title { font-size: 32px; text-transform: uppercase; color: white; margin-bottom: 40px; line-height: 1; }
-.product-card { background: white; border: 6px solid black; padding: 16px; transform: rotate(2deg); box-shadow: 12px 12px 0 0 #000; margin-bottom: 48px; }
-.image-placeholder { aspect-ratio: 1/1; background: #f3f4f6; border: 4px solid black; margin-bottom: 16px; }
-.card-footer { text-align: left; }
-.card-footer h4 { font-size: 16px; margin: 0 0 4px; text-transform: uppercase; }
-.card-footer p { font-size: 10px; opacity: 0.5; margin: 0; text-transform: uppercase; }
-.share-text { font-size: 12px; margin-bottom: 24px; color: black; text-transform: uppercase; }
-.share-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.s-link { background: black; color: white; border: 2px solid black; padding: 16px 0; font-size: 10px; cursor: pointer; box-shadow: 4px 4px 0 0 #fff; transition: all 0.2s; }
-.s-link:hover { background: white; color: black; transform: translate(-2px, -2px); box-shadow: 6px 6px 0 0 #fff; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">09. Propagate Social Share</span>
-          <ThankYouSocial />
-        </section>
-
-        {/* 10. CHAOS */}
-        <section className='box-shadow p-4 rounded-lg relative group/than bg-white border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/than:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const ThankYouChaos = () => (
-  <div className="w-full max-w-4xl mx-auto px-4 font-sans italic font-bold text-left text-white italic">
-    <div className="bg-black border-[12px] border-white p-16 shadow-[30px_30px_0_0_#facc15] min-w-0 italic relative overflow-hidden italic text-left">
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-500 via-cyan-400 to-yellow-500 animate-pulse italic"></div>
-      <h2 className="text-9xl font-black uppercase mb-12 tracking-tighter leading-none italic break-words text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 italic text-left">SUCCESS_01.</h2>
-      <div className="grid md:grid-cols-2 gap-12 italic text-left">
-        <div className="border-4 border-white p-8 bg-white/5 backdrop-blur-md shadow-[12px_12px_0_0_#ff00ff] italic text-left">
-          <p className="text-2xl font-black uppercase mb-4 italic text-left">MANIFEST_ID_CAPTURED.</p>
-          <p className="opacity-60 italic text-left">THE MESH HAS ACKNOWLEDGED YOUR PAYLOAD. WELCOME TO THE NEW WORLD.</p>
-        </div>
-        <div className="flex flex-col justify-end italic text-left">
-          <button className="bg-white text-black py-8 text-3xl font-black uppercase border-4 border-white hover:bg-transparent hover:text-white transition-all shadow-[12px_12px_0_0_#facc15] italic text-center italic">ACKNOWLEDGE_</button>
-        </div>
-      </div>
-    </div>
-  </div>
-);`}
-              htmlCode={`<div class="chaos-success-root">
-  <div class="top-glitch-bar"></div>
-  <h2 class="title">SUCCESS_01.</h2>
-  <div class="content-grid">
-    <div class="info-card">
-      <h3 class="heading">MANIFEST_ID_CAPTURED.</h3>
-      <p class="desc">THE MESH HAS ACKNOWLEDGED YOUR PAYLOAD. WELCOME TO THE NEW WORLD.</p>
-    </div>
-    <div class="action-card">
-      <button class="ack-btn">ACKNOWLEDGE_</button>
-    </div>
-  </div>
-  <div class="scan-overlay"></div>
-</div>`}
-              cssCode={`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-.chaos-success-root { background: black; border: 12px solid white; padding: 64px; box-shadow: 30px 30px 0 0 #facc15; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; max-width: 900px; margin: 40px auto; color: white; position: relative; overflow: hidden; }
-.top-glitch-bar { position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, #ec4899, #22d3ee, #facc15); animation: pulse 1s infinite; }
-@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
-.title { font-size: 120px; text-transform: uppercase; line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 64px; background: linear-gradient(to right, #22d3ee, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-@media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } }
-.info-card { border: 4px solid white; padding: 32px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); box-shadow: 12px 12px 0 0 #ff00ff; }
-.heading { font-size: 24px; text-transform: uppercase; margin-bottom: 16px; color: #ff00ff; }
-.desc { font-size: 16px; opacity: 0.6; line-height: 1.4; text-transform: uppercase; }
-.ack-btn { width: 100%; background: white; color: black; border: 4px solid white; padding: 32px; font-size: 32px; font-weight: 900; text-transform: uppercase; box-shadow: 12px 12px 0 0 #facc15; cursor: pointer; transition: all 0.2s; font-family: inherit; font-style: inherit; }
-.scan-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 2px, 3px 100%; pointer-events: none; }`}
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8 text-black italic">10. Chaos Success Protocol</span>
-          <ThankYouChaos />
-        </section>
-
       </div>
     </div>
   );
