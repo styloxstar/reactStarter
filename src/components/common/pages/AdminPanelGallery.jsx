@@ -407,6 +407,133 @@ const AdminPanelGallery = () => {
     { name: "Dark Analytics", comp: <DashAnalytics /> },
     { name: "Activity Feed", comp: <DashFeed /> },
   ];
+  // --- FULL CODE METADATA (Exhaustive & Standalone) ---
+  const metadata = {
+    sidebars: [
+      { 
+        name: "SidebarStandard",
+        title: "Standard Collapsible", 
+        jsx: `import React from 'react';\n\nexport const SidebarStandard = ({ isOpen, toggle }) => (\n  <div className={\`h-full bg-white border-r border-gray-200 transition-all flex flex-col \${isOpen ? 'w-64' : 'w-20'}\`}>\n    <div className="h-16 flex items-center justify-between px-4 border-b border-gray-100 flex-shrink-0">\n      {isOpen && <span className="font-bold text-xl text-blue-600 tracking-tight">AdminPro</span>}\n      <button onClick={toggle} className="p-2 hover:bg-gray-100 rounded-lg text-gray-500">\n        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/></svg>\n      </button>\n    </div>\n    <div className="flex-1 py-6 space-y-1 overflow-y-auto">\n      {['Dashboard', 'Analytics', 'Customers', 'Reports', 'Settings'].map((item) => (\n        <div key={item} className="flex items-center px-4 py-3 mx-2 hover:bg-blue-50 text-slate-600 hover:text-blue-600 rounded-xl cursor-pointer transition-colors group">\n          <div className="w-6 h-6 flex-shrink-0 bg-slate-100 group-hover:bg-blue-100 rounded-md transition-colors"></div>\n          {isOpen && <span className="ml-3 font-medium text-sm">{item}</span>}\n        </div>\n      ))}\n    </div>\n  </div>\n);`, 
+        html: `<aside class="sidebar-std">\n  <div class="header"><span>AdminPro</span></div>\n  <nav>\n    <div class="item">Dashboard</div>\n    <div class="item">Analytics</div>\n  </nav>\n</aside>`, 
+        css: `.sidebar-std { width: 256px; height: 100vh; background: white; border-right: 1px solid #e5e7eb; font-family: sans-serif; }\n.header { height: 64px; border-bottom: 1px solid #f3f4f6; padding: 0 16px; display: flex; align-items: center; color: #2563eb; font-weight: 700; }\nnav { padding: 24px 8px; }\n.item { padding: 12px; margin: 4px 8px; border-radius: 12px; color: #4b5563; cursor: pointer; transition: 0.2s; }\n.item:hover { background: #eff6ff; color: #2563eb; }` 
+      },
+      { 
+        name: "SidebarDual",
+        title: "Dual Rail Panel", 
+        jsx: `import React from 'react';\n\nexport const SidebarDual = () => (\n  <div className="h-full flex font-sans text-left">\n    <div className="w-20 bg-slate-900 flex flex-col items-center py-8 gap-8 text-slate-400">\n      <div className="w-10 h-10 bg-indigo-600 rounded-2xl mb-4 flex items-center justify-center text-white font-bold shadow-lg">A</div>\n      {['H', 'S', 'U', 'C', 'M'].map(icon => (\n        <button key={icon} className="p-3 hover:bg-slate-800 hover:text-white rounded-2xl transition-all">{icon}</button>\n      ))}\n    </div>\n    <div className="w-56 bg-slate-50 border-r border-slate-200 py-8 px-6">\n      <h3 className="text-[10px] font-black text-slate-400 uppercase mb-6 tracking-[0.2em]">Platform</h3>\n      <div className="space-y-2">\n        {['Overview', 'Team Sync', 'Asset Library'].map((item) => (\n          <div key={item} className="px-4 py-2 text-sm font-bold text-slate-600 hover:bg-white hover:text-indigo-600 rounded-xl cursor-pointer transition-all shadow-sm border border-transparent hover:border-slate-200">{item}</div>\n        ))}\n      </div>\n    </div>\n  </div>\n);`, 
+        html: `<div class="sidebar-dual"><div class="rail"></div><div class="panel"><h3>Platform</h3></div></div>`, 
+        css: `.sidebar-dual { display: flex; height: 100vh; }\n.rail { width: 80px; background: #0f172a; display: flex; flex-direction: column; align-items: center; padding: 32px 0; }\n.panel { width: 224px; background: #f8fafc; border-right: 1px solid #e2e8f0; padding: 32px 24px; }` 
+      },
+      { 
+        name: "SidebarGlass",
+        title: "Floating Glass", 
+        jsx: `import React from 'react';\n\nexport const SidebarGlass = () => (\n  <div className="h-full p-6 bg-gradient-to-br from-indigo-950 via-slate-950 to-blue-950 font-sans">\n    <div className="h-full w-24 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] flex flex-col items-center py-10 gap-10 shadow-2xl">\n      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-900 font-black text-xl shadow-white/20 shadow-lg">G</div>\n      <div className="flex flex-col gap-6 w-full px-4">\n        {[1,2,3,4,5].map(i => (\n          <div key={i} className="aspect-square w-full rounded-3xl flex items-center justify-center text-white/50 hover:bg-white hover:text-indigo-900 cursor-pointer transition-all duration-300 hover:scale-110 shadow-inner">\n            <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6"><circle cx="12" cy="12" r="10"/></svg>\n          </div>\n        ))}\n      </div>\n    </div>\n  </div>\n);`, 
+        html: `<div class="sidebar-glass"></div>`, 
+        css: `.sidebar-glass { width: 96px; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border-radius: 40px; border: 1px solid rgba(255,255,255,0.1); }` 
+      },
+      { 
+        name: "SidebarBrutalist",
+        title: "Brutalist Bar", 
+        jsx: `import React from 'react';\n\nexport const SidebarBrutalist = () => (\n  <div className="h-full w-64 bg-orange-400 border-r-4 border-black p-8 flex flex-col font-sans text-left">\n    <div className="text-4xl font-black uppercase mb-12 tracking-tighter leading-none italic">ADMIN<br/>CTRL</div>\n    <div className="space-y-4 flex-1">\n      {['Dashboard', 'Security', 'User Base', 'API Keys'].map((item) => (\n        <div key={item} className="bg-white border-2 border-black p-4 font-black shadow-[4px_4px_0_0_#000] cursor-pointer hover:bg-black hover:text-white transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">\n          {item.toUpperCase()}\n        </div>\n      ))}\n    </div>\n    <div className="mt-auto pt-8 border-t-2 border-black font-bold text-sm tracking-tight">V2.4.1_STABLE</div>\n  </div>\n);`, 
+        html: `<div class="sidebar-brutalist"></div>`, 
+        css: `.sidebar-brutalist { width: 256px; background: #fb923c; border-right: 4px solid black; padding: 32px; font-family: sans-serif; }` 
+      },
+      { 
+        name: "SidebarBottom",
+        title: "Mobile Bottom Nav", 
+        jsx: `import React from 'react';\n\nexport const SidebarBottom = () => (\n  <div className="h-full bg-slate-50 flex flex-col justify-end relative font-sans">\n    <div className="h-24 bg-white border-t border-slate-200 flex justify-around items-center px-12 shadow-[0_-10px_30px_-15px_rgba(0,0,0,0.1)] relative z-10 rounded-t-[3rem]">\n      {['H', 'S', '+', 'A', 'P'].map((item, i) => (\n        <div key={i} className={\`flex items-center justify-center \${i === 2 ? 'w-16 h-16 bg-indigo-600 text-white rounded-3xl -translate-y-6 shadow-xl shadow-indigo-200' : 'w-12 h-12 text-slate-400 hover:text-indigo-600'} transition-all font-bold cursor-pointer\`}>\n          {item}\n        </div>\n      ))}\n    </div>\n  </div>\n);`, 
+        html: `<div class="bottom-bar"></div>`, 
+        css: `.bottom-bar { position: fixed; bottom: 0; width: 100%; height: 96px; background: white; border-top: 1px solid #e5e7eb; border-radius: 48px 48px 0 0; }` 
+      },
+    ],
+    headers: [
+      { 
+        name: "HeaderSearch",
+        title: "Search Focused", 
+        jsx: `import React from 'react';\n\nexport const HeaderSearch = () => (\n  <div className="h-20 bg-white border-b border-slate-100 flex items-center px-10 justify-between font-sans">\n    <div className="flex items-center w-full max-w-xl bg-slate-100 rounded-2xl px-6 py-3 focus-within:bg-white focus-within:ring-2 focus-within:ring-indigo-600/10 focus-within:border-indigo-600 border border-transparent transition-all">\n      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-5 h-5 text-slate-400 mr-4"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>\n      <input type="text" placeholder="Search commands, users, or data..." className="bg-transparent border-none outline-none w-full text-sm font-medium" />\n    </div>\n    <div className="flex items-center gap-6">\n      <div className="text-right hidden md:block"><div className="text-sm font-bold">Alex Rivera</div><div className="text-[10px] text-slate-400 uppercase font-black tracking-widest">Admin</div></div>\n      <div className="w-12 h-12 rounded-2xl bg-indigo-100 border border-indigo-200"></div>\n    </div>\n  </div>\n);`, 
+        html: `<header class="header-search"></header>`, 
+        css: `.header-search { height: 80px; background: white; border-bottom: 1px solid #f1f5f9; }` 
+      },
+      { 
+        name: "HeaderBreadcrumb",
+        title: "Clean Breadcrumb", 
+        jsx: `import React from 'react';\n\nexport const HeaderBreadcrumb = () => (\n  <div className="h-24 bg-white border-b border-slate-200 flex flex-col justify-center px-10 font-sans text-left">\n    <div className="flex items-center gap-3 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">\n      <span>Platform</span>\n      <span className="text-slate-200">/</span>\n      <span>Cloud Infrastructure</span>\n      <span className="text-slate-200">/</span>\n      <span className="text-indigo-600">Active Nodes</span>\n    </div>\n    <h1 className="text-3xl font-black text-slate-900 tracking-tighter">System Health Overview</h1>\n  </div>\n);`, 
+        html: `<header class="header-bc"></header>`, 
+        css: `.header-bc { padding: 40px; background: white; font-family: sans-serif; }` 
+      },
+      { 
+        name: "HeaderTabs",
+        title: "Project Tabs Nav", 
+        jsx: `import React from 'react';\n\nexport const HeaderTabs = () => (\n  <div className="bg-slate-900 text-white pt-6 px-10 font-sans text-left">\n    <div className="flex justify-between items-center mb-8">\n      <div className="flex items-center gap-4">\n        <div className="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center font-bold">X</div>\n        <h2 className="text-xl font-bold tracking-tight">Project Genesis v4</h2>\n      </div>\n      <button className="px-6 py-2 bg-white/10 hover:bg-white/20 rounded-xl text-sm font-bold transition-all">Export Bundle</button>\n    </div>\n    <div className="flex gap-10 text-xs font-black uppercase tracking-widest text-slate-400">\n      {['Overview', 'Tasks', 'Cloud Ops', 'Metrics', 'Team'].map((tab, i) => (\n        <div key={tab} className={\`pb-4 cursor-pointer transition-all hover:text-white \${i === 2 ? 'text-white border-b-2 border-blue-500' : ''}\`}>{tab}</div>\n      ))}\n    </div>\n  </div>\n);`, 
+        html: `<header class="header-tabs"></header>`, 
+        css: `.header-tabs { background: #0f172a; color: white; padding: 24px 40px 0; }` 
+      },
+      { 
+        name: "HeaderGradient",
+        title: "Impact Gradient", 
+        jsx: `import React from 'react';\n\nexport const HeaderGradient = () => (\n  <div className="h-20 bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-600 flex items-center justify-between px-10 text-white font-sans">\n    <div className="text-2xl font-black tracking-tighter italic">VORTEX.AI</div>\n    <div className="flex items-center gap-4">\n      <div className="px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest border border-white/20 italic">Live_System_Active</div>\n    </div>\n  </div>\n);`, 
+        html: `<header class="header-grad"></header>`, 
+        css: `.header-grad { background: linear-gradient(to right, #1d4ed8, #4f46e5, #9333ea); height: 80px; }` 
+      },
+      { 
+        name: "HeaderFloating",
+        title: "Floating Command", 
+        jsx: `import React from 'react';\n\nexport const HeaderFloating = () => (\n  <div className="h-28 bg-slate-50 flex items-center justify-center font-sans">\n    <div className="bg-white border border-slate-200 rounded-[2rem] px-8 py-4 shadow-2xl shadow-slate-200/50 flex items-center gap-10 border-b-4 border-slate-100 hover:border-b-0 hover:translate-y-1 transition-all cursor-pointer">\n       <div className="flex items-center gap-3 text-slate-400"><span className="text-sm font-bold">⌘</span><span className="text-xs font-black uppercase tracking-widest">Command Center</span></div>\n       <div className="w-px h-6 bg-slate-100"></div>\n       <div className="flex gap-4"><div className="w-8 h-8 rounded-xl bg-slate-100"></div><div className="w-8 h-8 rounded-xl bg-slate-100"></div></div>\n    </div>\n  </div>\n);`, 
+        html: `<div class="hdr-float"></div>`, 
+        css: `.hdr-float { background: white; border-radius: 40px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2); }` 
+      },
+    ],
+    dashboards: [
+      { 
+        name: "DashBento",
+        title: "Bento Analytics", 
+        jsx: `import React from 'react';\n\nexport const DashBento = () => (\n  <div className="p-10 h-full bg-slate-50 overflow-y-auto font-sans text-left">\n    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[180px]">\n      <div className="md:col-span-2 md:row-span-2 bg-white rounded-[2.5rem] p-10 border border-slate-200 shadow-sm flex flex-col justify-end relative overflow-hidden group">\n         <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/5 rounded-full blur-[80px]"></div>\n         <h3 className="text-3xl font-black text-slate-900 tracking-tighter mb-4">Revenue Yield</h3>\n         <p className="text-slate-500 font-medium max-w-xs leading-relaxed">System-wide performance monitoring with real-time heuristic analysis.</p>\n      </div>\n      {[1,2,3,4].map(i => (\n        <div key={i} className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-indigo-600 transition-colors cursor-pointer group">\n           <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Metric_{i}</div>\n           <div className="text-2xl font-black text-slate-900 group-hover:text-indigo-600 transition-colors tracking-tighter">94.2%</div>\n        </div>\n      ))}\n    </div>\n  </div>\n);`, 
+        html: `<main class="dash-bento"></main>`, 
+        css: `.dash-bento { padding: 40px; background: #f8fafc; font-family: sans-serif; }` 
+      },
+      { 
+        name: "DashTable",
+        title: "Dense Data Grid", 
+        jsx: `import React from 'react';\n\nexport const DashTable = () => (\n  <div className="p-10 h-full bg-white font-sans text-left overflow-y-auto">\n    <div className="mb-8 flex justify-between items-end">\n      <div><h2 className="text-3xl font-black tracking-tight mb-1">User Management</h2><p className="text-slate-400 text-sm font-medium">Monitoring active sessions across clusters.</p></div>\n      <button className="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-indigo-600 transition-colors">Add_New_Node</button>\n    </div>\n    <div className="border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm">\n      <table className="w-full text-left">\n        <thead className="bg-slate-50 border-b border-slate-200 font-black text-[10px] text-slate-400 uppercase tracking-widest">\n          <tr><th className="p-6">Entity_ID</th><th>Status_Flag</th><th>Latency_MS</th><th className="p-6">Actions</th></tr>\n        </thead>\n        <tbody className="text-sm font-bold text-slate-600">\n          {[1,2,3,4,5,6].map(i => (\n            <tr key={i} className="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">\n              <td className="p-6 text-slate-900 font-black tracking-tight">NODE_0x24{i}</td>\n              <td><span className="px-3 py-1 bg-green-100 text-green-700 rounded-lg text-[10px] font-black uppercase">Active</span></td>\n              <td className="font-mono text-xs">{24 + i}ms</td>\n              <td className="p-6"><button className="text-indigo-600 hover:underline">Config</button></td>\n            </tr>\n          ))}\n        </tbody>\n      </table>\n    </div>\n  </div>\n);`, 
+        html: `<main class="dash-table"></main>`, 
+        css: `.dash-table { background: white; padding: 40px; }` 
+      },
+      { 
+        name: "DashKanban",
+        title: "Kanban Board Flow", 
+        jsx: `import React from 'react';\n\nexport const DashKanban = () => (\n  <div className="p-10 h-full bg-slate-50 flex gap-8 overflow-x-auto font-sans text-left">\n    {['Backlog_Alpha', 'In_Process', 'Deployment', 'Validated'].map((col, idx) => (\n      <div key={col} className="min-w-[320px] h-full flex flex-col">\n        <div className="flex justify-between items-center mb-6">\n          <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] italic">{col}</h3>\n          <span className="w-6 h-6 bg-white border border-slate-200 rounded-lg flex items-center justify-center text-[10px] font-bold text-slate-400">{idx+3}</span>\n        </div>\n        <div className="flex-1 space-y-4">\n           {[1,2].map(j => (\n             <div key={j} className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:border-indigo-600 transition-all cursor-grab active:cursor-grabbing group">\n                <div className="flex gap-2 mb-4"><div className="w-8 h-1.5 bg-indigo-600 rounded-full"></div><div className="w-8 h-1.5 bg-slate-100 rounded-full"></div></div>\n                <h4 className="font-black text-slate-900 tracking-tight mb-2 leading-none">Sub-Task Alpha Sync #{idx}{j}</h4>\n                <p className="text-xs text-slate-500 font-medium leading-relaxed mb-6">Updating security headers for the primary authentication module.</p>\n                <div className="flex justify-between items-center"><div className="w-8 h-8 rounded-xl bg-slate-100"></div><div className="text-[10px] font-black text-indigo-600 italic">LOW_PRIORITY</div></div>\n             </div>\n           ))}\n           <button className="w-full py-4 border-2 border-dashed border-slate-200 rounded-3xl text-slate-300 font-black text-[10px] uppercase tracking-widest hover:border-slate-400 hover:text-slate-500 transition-all">+ Add_New_Ticket</button>\n        </div>\n      </div>\n    ))}\n  </div>\n);`, 
+        html: `<main class="dash-kanban"></main>`, 
+        css: `.dash-kanban { display: flex; gap: 32px; padding: 40px; }` 
+      },
+      { 
+        name: "DashAnalytics",
+        title: "Dark Analytics Grid", 
+        jsx: `import React from 'react';\n\nexport const DashAnalytics = () => (\n  <div className="p-10 h-full bg-[#0B1120] text-white overflow-y-auto font-sans text-left">\n    <div className="mb-12 flex justify-between items-start">\n       <div><h2 className="text-4xl font-black tracking-tighter italic mb-2">NEURAL_DASHBOARD</h2><div className="flex gap-4 items-center"><div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse shadow-[0_0_15px_#22d3ee]"></div><span className="text-xs font-black text-cyan-500 uppercase tracking-widest">System_Live_0x94</span></div></div>\n       <div className="flex gap-2"><div className="px-6 py-2 bg-slate-800 rounded-xl text-xs font-bold border border-slate-700">Refresh_Stream</div></div>\n    </div>\n    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">\n      <div className="md:col-span-2 bg-slate-900/50 border border-slate-800 rounded-[2.5rem] p-10 h-96 relative overflow-hidden group">\n         <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/10 to-transparent"></div>\n         <h3 className="text-xl font-bold mb-10 relative">Throughput_Vector_Analysis</h3>\n         <div className="flex items-end gap-3 h-32">\n            {[40, 70, 45, 90, 65, 80, 50, 100, 60, 85].map((h, i) => (<div key={i} className="flex-1 bg-slate-800 rounded-t-lg relative group-hover:bg-cyan-500 transition-all" style={{height: \`\${h}%\`}}></div>))}\n         </div>\n      </div>\n      <div className="space-y-8">\n         {[1,2,3].map(i => (\n           <div key={i} className="bg-slate-900/50 border border-slate-800 rounded-[2rem] p-8 flex items-center justify-between group hover:border-cyan-500/50 transition-all">\n              <div><div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Channel_{i}</div><div className="text-2xl font-black tracking-tighter italic">92.4k</div></div>\n              <div className="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-black transition-all">→</div>\n           </div>\n         ))}\n      </div>\n    </div>\n  </div>\n);`, 
+        html: `<main class="dash-dark"></main>`, 
+        css: `.dash-dark { background: #0b1120; color: white; padding: 40px; }` 
+      },
+      { 
+        name: "DashFeed",
+        title: "Security Activity Feed", 
+        jsx: `import React from 'react';\n\nexport const DashFeed = () => (\n  <div className="p-10 h-full bg-white max-w-3xl mx-auto font-sans text-left overflow-y-auto">\n    <div className="flex justify-between items-center mb-10 pb-6 border-b border-slate-100">\n       <h2 className="text-2xl font-black tracking-tight">Audit Log</h2>\n       <div className="text-xs font-black text-indigo-600 uppercase tracking-widest italic cursor-pointer">Export_Report</div>\n    </div>\n    <div className="space-y-10">\n      {[1,2,3,4,5,6].map(i => (\n        <div key={i} className="flex gap-6 relative">\n          {i !== 6 && <div className="absolute top-10 left-5 w-px h-full bg-slate-100"></div>}\n          <div className={\`w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0 \${i % 3 === 0 ? 'bg-amber-100 text-amber-600' : 'bg-slate-100 text-slate-400'}\`}>\n             <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5"><circle cx="12" cy="12" r="8"/></svg>\n          </div>\n          <div className="pt-1 flex-1">\n            <div className="flex justify-between items-center mb-2"><div className="text-sm font-black text-slate-900 tracking-tight">Infrastructure_Scale_Event_0{i}</div><div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{i*5}m ago</div></div>\n            <p className="text-sm text-slate-500 font-medium leading-relaxed mb-3">Auto-scaling group successfully triggered for region US-EAST-1 following unexpected traffic surge.</p>\n            <div className="flex gap-2"><span className="px-3 py-1 bg-slate-100 text-[10px] font-black text-slate-500 rounded-lg">#AWS</span><span className="px-3 py-1 bg-slate-100 text-[10px] font-black text-slate-500 rounded-lg">#SYSTEM</span></div>\n          </div>\n        </div>\n      ))}\n    </div>\n  </div>\n);`, 
+        html: `<main class="dash-feed"></main>`, 
+        css: `.dash-feed { max-width: 768px; margin: 0 auto; background: white; padding: 40px; }` 
+      },
+    ]
+  };
+
+  // Helper to construct combined code
+  const getCombinedCode = () => {
+    const s = metadata.sidebars[activeSidebar];
+    const h = metadata.headers[activeHeader];
+    const d = metadata.dashboards[activeDash];
+    
+    return {
+      jsx: `import React, { useState } from 'react';\n\n// --- ADMIN LAYOUT COMPOSITION ---\n// 1. ${s.title}\n// 2. ${h.title}\n// 3. ${d.title}\n\n${s.jsx.replace("import React from 'react';", "")}\n\n${h.jsx.replace("import React from 'react';", "")}\n\n${d.jsx.replace("import React from 'react';", "")}\n\nconst AdminLayout = () => {\n  const [sidebarOpen, setSidebarOpen] = useState(true);\n  \n  return (\n    <div className="flex h-screen bg-gray-50 overflow-hidden font-sans">\n      <${s.name} isOpen={sidebarOpen} toggle={() => setSidebarOpen(!sidebarOpen)} />\n      <div className="flex-1 flex flex-col min-w-0">\n        <${h.name} />\n        <main className="flex-1 overflow-y-auto">\n          <${d.name} />\n        </main>\n      </div>\n    </div>\n  );\n};\n\nexport default AdminLayout;`,
+      html: `<!-- Sidebar: ${s.title} -->\n${s.html}\n\n<!-- Header: ${h.title} -->\n${h.html}\n\n<!-- Content: ${d.title} -->\n${d.html}`,
+      css: `/* Sidebar: ${s.title} */\n${s.css}\n\n/* Header: ${h.title} */\n${h.css}\n\n/* Content: ${d.title} */\n${d.css}`
+    };
+  };
 
   // Helper to get wrapper styles based on selection
   const getWrapperStyle = () => {
@@ -428,7 +555,7 @@ const AdminPanelGallery = () => {
             <div className="flex flex-wrap gap-2">
               {Sidebars.map((s, i) => (
                 <button key={i} onClick={() => setActiveSidebar(i)} 
-                  className={`px-3 py-1 text-sm rounded-full border transition-all ${activeSidebar === i ? 'bg-black text-white border-black' : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'}`}>
+                  className={`px-3 py-1 text-sm rounded-full border transition-all ${activeSidebar === i ? 'bg-black text-white border-black' : 'bg-white text-slate-600 border-slate-200 hover:border-slate-400'}`}>
                   {s.name}
                 </button>
               ))}
@@ -440,7 +567,7 @@ const AdminPanelGallery = () => {
             <div className="flex flex-wrap gap-2">
               {Headers.map((h, i) => (
                 <button key={i} onClick={() => setActiveHeader(i)} 
-                  className={`px-3 py-1 text-sm rounded-full border transition-all ${activeHeader === i ? 'bg-black text-white border-black' : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'}`}>
+                  className={`px-3 py-1 text-sm rounded-full border transition-all ${activeHeader === i ? 'bg-black text-white border-black' : 'bg-white text-slate-600 border-slate-200 hover:border-slate-400'}`}>
                   {h.name}
                 </button>
               ))}
@@ -452,7 +579,7 @@ const AdminPanelGallery = () => {
             <div className="flex flex-wrap gap-2">
               {Dashboards.map((d, i) => (
                 <button key={i} onClick={() => setActiveDash(i)} 
-                  className={`px-3 py-1 text-sm rounded-full border transition-all ${activeDash === i ? 'bg-black text-white border-black' : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'}`}>
+                  className={`px-3 py-1 text-sm rounded-full border transition-all ${activeDash === i ? 'bg-black text-white border-black' : 'bg-white text-slate-600 border-slate-200 hover:border-slate-400'}`}>
                   {d.name}
                 </button>
               ))}
@@ -463,92 +590,13 @@ const AdminPanelGallery = () => {
 
       {/* --- PREVIEW AREA --- */}
       <div className={`h-[800px] w-full rounded-2xl overflow-hidden shadow-2xl flex border border-gray-300/50 ${getWrapperStyle()} relative group/adm`}>
-        <div className="absolute top-2 right-2 z-50 opacity-0 group-hover/adm:opacity-100 transition-opacity"><CopyButton jsxCode={`import React from 'react';
-/* 
-  Representative Admin Panel Composition 
-  This snippet shows how to combine the Sidebar, Header, and Dashboard components.
-*/
-const AdminLayout = () => {
-  return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden font-sans">
-      {/* Sidebar - Component from common/layout/Sidebars.jsx */}
-      <aside className="w-64 bg-slate-900 text-white flex flex-col h-full">
-        <div className="p-6 border-b border-slate-800 font-bold text-xl">AdminPro</div>
-        <nav className="flex-1 p-4 space-y-2">
-          {['Dashboard', 'Analytics', 'Team', 'Projects', 'Settings'].map(item => (
-            <a key={item} href="#" className="block px-4 py-2 rounded hover:bg-slate-800 transition-colors">{item}</a>
-          ))}
-        </nav>
-      </aside>
-
-      <div className="flex-1 flex flex-col min-w-0">
-        {/* Header - Component from common/layout/Navbars.jsx */}
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
-          <h2 className="text-lg font-bold text-gray-800">Overview</h2>
-          <div className="flex items-center gap-4">
-             <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">JD</div>
-          </div>
-        </header>
-
-        {/* Content Area - Component from common/layout/Stats.jsx or Dashboards.jsx */}
-        <main className="flex-1 overflow-y-auto p-8">
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              {[1,2,3].map(i => (
-                <div key={i} className="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-                   <div className="text-sm font-medium text-gray-500">Metric {i}</div>
-                   <div className="text-2xl font-bold mt-1">$45,231.00</div>
-                </div>
-              ))}
-           </div>
-           <div className="bg-white rounded-xl shadow-sm border border-gray-100 h-96 flex items-center justify-center text-gray-400">
-              [ Main Visual Content Area ]
-           </div>
-        </main>
-      </div>
-    </div>
-  );
-};
-
-export default AdminLayout;`} htmlCode={`<!-- Static HTML Admin Layout -->
-<div class="flex h-screen bg-gray-50 overflow-hidden font-sans">
-  <aside class="w-64 bg-slate-900 text-white flex flex-col h-full">
-    <div class="p-6 border-b border-slate-800 font-bold text-xl">AdminPro</div>
-    <nav class="flex-1 p-4 space-y-2">
-      <a href="#" class="block px-4 py-2 rounded bg-slate-800 text-white">Dashboard</a>
-      <a href="#" class="block px-4 py-2 rounded text-slate-400 hover:bg-slate-800 transition-colors">Analytics</a>
-      <a href="#" class="block px-4 py-2 rounded text-slate-400 hover:bg-slate-800 transition-colors">Setting</a>
-    </nav>
-  </aside>
-
-  <div class="flex-1 flex flex-col min-w-0">
-    <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
-      <h2 class="text-lg font-bold text-gray-800">Overview</h2>
-      <div class="flex items-center gap-4">
-         <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">JD</div>
-      </div>
-    </header>
-
-    <main class="flex-1 overflow-y-auto p-8">
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-             <div class="text-sm font-medium text-gray-500">Revenue</div>
-             <div class="text-2xl font-bold mt-1">$45,231.00</div>
-          </div>
-          <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-             <div class="text-sm font-medium text-gray-500">Users</div>
-             <div class="text-2xl font-bold mt-1">2,420</div>
-          </div>
-          <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-             <div class="text-sm font-medium text-gray-500">Uptime</div>
-             <div class="text-2xl font-bold mt-1">99.9%</div>
-          </div>
-       </div>
-       <div class="bg-white rounded-xl shadow-sm border border-gray-100 h-96 flex items-center justify-center text-gray-400">
-          [ Dashboard Content Area ]
-       </div>
-    </main>
-  </div>
-</div>`} cssCode={`/* Admin Layout Styles */\n/* This layout depends on Tailwind CSS utility classes. */\n\n.admin-layout-container {\n  display: flex;\n  height: 100vh;\n  overflow: hidden;\n}`} /></div>
+        <div className="absolute top-2 right-2 z-50 opacity-0 group-hover/adm:opacity-100 transition-opacity">
+          <CopyButton 
+            jsxCode={getCombinedCode().jsx} 
+            htmlCode={getCombinedCode().html} 
+            cssCode={getCombinedCode().css} 
+          />
+        </div>
         
         {/* Sidebar Render */}
         {activeSidebar !== 4 && ( // Hide sidebar for "Mobile Bottom" layout
