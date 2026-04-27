@@ -221,15 +221,15 @@ export const RegisterCyberpunk = () => {
 
           <form className="space-y-6 font-mono">
             <div>
-              <label className="text-cyan-400 text-xs mb-1 block">>> INPUT_USER_ID</label>
+              <label className="text-cyan-400 text-xs mb-1 block">{">>"} INPUT_USER_ID</label>
               <input type="text" className="w-full bg-black border border-gray-700 text-green-400 px-4 py-2 focus:border-green-500 focus:outline-none" placeholder="_" />
             </div>
             <div>
-              <label className="text-cyan-400 text-xs mb-1 block">>> INPUT_EMAIL_ADDRESS</label>
+              <label className="text-cyan-400 text-xs mb-1 block">{">>"} INPUT_EMAIL_ADDRESS</label>
               <input type="email" className="w-full bg-black border border-gray-700 text-green-400 px-4 py-2 focus:border-green-500 focus:outline-none" />
             </div>
             <div>
-              <label className="text-cyan-400 text-xs mb-1 block">>> SET_ACCESS_KEY</label>
+              <label className="text-cyan-400 text-xs mb-1 block">{">>"} SET_ACCESS_KEY</label>
               <input type="password" className="w-full bg-black border border-gray-700 text-green-400 px-4 py-2 focus:border-green-500 focus:outline-none" />
             </div>
 
