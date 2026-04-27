@@ -22,110 +22,101 @@ const ShieldIcon = ({ className }) => (
 
 // --- 1. The SaaS Standard ---
 export const FeatureStandard = () => (
-  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
-    <div className="flex flex-col md:flex-row items-center gap-20">
+  <div className="bg-white p-12 rounded-3xl border border-gray-100 font-sans">
+    <div className="flex flex-col md:flex-row items-center gap-16 text-left">
       <div className="w-full md:w-1/2">
-        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-10 shadow-inner">
-          <BoltIcon className="w-8 h-8 text-blue-600" />
+        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+          <BoltIcon className="w-6 h-6 text-blue-600" />
         </div>
-        <h2 className="text-5xl md:text-7xl font-black text-slate-950 mb-8 tracking-tighter uppercase leading-[0.9]">
-          Automate_ <br/> <span className="text-blue-600">Logic_Flow</span>
+        <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          Automate your workflow with intelligence.
         </h2>
-        <p className="text-slate-500 mb-10 text-xl leading-relaxed lowercase font-medium">
-          Eliminate manual friction nodes. Our engine executes complex sequences with zero latency.
+        <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+          Eliminate manual tasks and focus on what matters. Our engine handles the complex logic so you don't have to.
         </p>
-        <div className="space-y-4 mb-12">
-          <div className="flex items-center gap-4 text-slate-900 uppercase text-xs tracking-widest font-black">
-            <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-[10px]">01</span>
-            Real_Time_Sync_Protocol
+        <div className="space-y-4 mb-10">
+          <div className="flex items-center gap-3 text-gray-700 font-medium">
+            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px]">✓</span>
+            Real-time synchronization
           </div>
-          <div className="flex items-center gap-4 text-slate-900 uppercase text-xs tracking-widest font-black">
-            <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-[10px]">02</span>
-            Custom_Trigger_Nodes
+          <div className="flex items-center gap-3 text-gray-700 font-medium">
+            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px]">✓</span>
+            Custom automation triggers
           </div>
-          <div className="flex items-center gap-4 text-slate-900 uppercase text-xs tracking-widest font-black">
-            <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-[10px]">03</span>
-            Global_API_Mesh
+          <div className="flex items-center gap-3 text-gray-700 font-medium">
+            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px]">✓</span>
+            Advanced analytics dashboard
           </div>
         </div>
-        <button className="px-10 py-5 bg-slate-950 text-white font-black rounded-2xl hover:bg-blue-600 transition-all uppercase text-xs tracking-widest active:scale-95 shadow-2xl">
-          Initialize_Control →
+        <button className="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">
+          Get Started Now
         </button>
       </div>
       <div className="w-full md:w-1/2">
-        <div className="rounded-[2.5rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden bg-slate-50 p-8 relative group">
-           <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 transition-transform group-hover:-translate-y-4 duration-500">
-              <div className="h-4 w-1/3 bg-slate-100 rounded-full mb-8"></div>
-              <div className="space-y-4">
-                <div className="h-4 w-full bg-slate-50 rounded-full"></div>
-                <div className="h-4 w-5/6 bg-slate-50 rounded-full"></div>
+        <div className="rounded-2xl shadow-2xl border border-gray-100 overflow-hidden bg-gray-50 p-6 relative group">
+           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-transform group-hover:-translate-y-2 duration-300">
+              <div className="h-4 w-1/3 bg-gray-100 rounded mb-6 text-left"></div>
+              <div className="space-y-3">
+                <div className="h-3 w-full bg-gray-50 rounded text-left"></div>
+                <div className="h-3 w-5/6 bg-gray-50 rounded text-left"></div>
               </div>
-              <div className="mt-12 flex gap-6">
-                 <div className="h-24 w-1/2 bg-blue-50 rounded-2xl border-2 border-blue-100 flex items-center justify-center">
-                    <div className="w-10 h-10 bg-blue-600 rounded-full animate-pulse opacity-20"></div>
-                 </div>
-                 <div className="h-24 w-1/2 bg-indigo-50 rounded-2xl border-2 border-indigo-100 flex items-center justify-center">
-                    <div className="w-10 h-10 bg-indigo-600 rounded-full animate-pulse opacity-20"></div>
-                 </div>
+              <div className="mt-8 flex gap-4">
+                 <div className="h-20 w-1/2 bg-blue-50 rounded-lg border border-blue-100"></div>
+                 <div className="h-20 w-1/2 bg-indigo-50 rounded-lg border border-indigo-100"></div>
               </div>
            </div>
-           <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-600 rounded-full blur-[80px] opacity-10"></div>
         </div>
       </div>
     </div>
   </div>
 );
 
-// --- 2. The Bento Grid (Modern) ---
+// --- 2. The Bento Grid ---
 export const FeatureBento = () => (
-  <div className="bg-slate-50 p-12 rounded-[3rem] font-sans italic font-bold">
-    <div className="text-center mb-20">
-      <h2 className="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-none mb-6">Matrix_Features</h2>
-      <p className="text-slate-500 text-xl lowercase font-medium italic">High-performance architecture wrapped in a premium interface.</p>
+  <div className="bg-gray-50 p-12 rounded-3xl font-sans">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+      <p className="text-gray-500 text-lg">Everything you need to scale your application globally.</p>
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {/* Big Card */}
-      <div className="md:col-span-2 bg-white rounded-[2.5rem] p-12 border border-slate-100 shadow-xl relative overflow-hidden h-[450px]">
-        <div className="relative z-10">
-          <h3 className="text-4xl font-black mb-4 uppercase tracking-tight text-slate-950">Global_Analytics_Node</h3>
-          <p className="text-slate-500 text-lg lowercase max-w-sm font-medium">Synchronize user data streams from across the digital grid in real-time.</p>
+      <div className="md:col-span-2 bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden h-[400px]">
+        <div className="relative z-10 text-left">
+          <h3 className="text-2xl font-bold mb-3 text-gray-900">Advanced Analytics</h3>
+          <p className="text-gray-500 max-w-sm">Deep dive into your data with our comprehensive analytics suite.</p>
         </div>
-        <div className="absolute right-[-10%] bottom-[-10%] w-[70%] h-[70%] bg-slate-50 rounded-tl-[5rem] border-t-4 border-l-4 border-slate-100 p-10 flex items-end">
-           <div className="w-full h-full bg-white rounded-3xl shadow-2xl p-8 flex flex-col justify-between">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-blue-600"></div>
-                <div className="w-2 h-2 rounded-full bg-slate-100"></div>
-              </div>
-              <div className="flex items-end gap-3 h-32 justify-between">
-                 <div className="w-full bg-blue-500 rounded-t-xl" style={{height: '40%'}}></div>
-                 <div className="w-full bg-blue-600 rounded-t-xl" style={{height: '70%'}}></div>
-                 <div className="w-full bg-blue-400 rounded-t-xl" style={{height: '50%'}}></div>
-                 <div className="w-full bg-blue-700 rounded-t-xl" style={{height: '90%'}}></div>
-                 <div className="w-full bg-blue-500 rounded-t-xl" style={{height: '60%'}}></div>
+        <div className="absolute right-0 bottom-0 w-[60%] h-[60%] bg-gray-50 rounded-tl-3xl border-t border-l border-gray-100 p-6">
+           <div className="w-full h-full bg-white rounded-xl shadow-sm p-4 flex flex-col justify-between">
+              <div className="flex gap-1"><div className="w-2 h-2 rounded-full bg-blue-500"></div><div className="w-2 h-2 rounded-full bg-gray-200"></div></div>
+              <div className="flex items-end gap-2 h-24">
+                 <div className="w-full bg-blue-100 rounded-t h-1/2"></div>
+                 <div className="w-full bg-blue-500 rounded-t h-3/4"></div>
+                 <div className="w-full bg-blue-200 rounded-t h-1/3"></div>
+                 <div className="w-full bg-blue-600 rounded-t h-full"></div>
+                 <div className="w-full bg-blue-300 rounded-t h-2/3"></div>
               </div>
            </div>
         </div>
       </div>
 
       {/* Tall Card */}
-      <div className="md:row-span-1 bg-slate-950 rounded-[2.5rem] p-12 shadow-2xl flex flex-col items-center text-center justify-center relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600 rounded-full blur-[60px] opacity-20"></div>
-        <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center mb-10 text-5xl backdrop-blur-xl border border-white/10 animate-pulse shadow-2xl">🔒</div>
-        <h3 className="text-3xl font-black mb-4 text-white uppercase tracking-tight">Secure_Protocol</h3>
-        <p className="text-white/40 text-sm lowercase font-medium">Enterprise-grade quantum encryption for every data node.</p>
+      <div className="md:row-span-1 bg-indigo-600 rounded-3xl p-10 shadow-xl flex flex-col items-center text-center justify-center relative overflow-hidden text-white">
+        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6 text-3xl backdrop-blur-md">🔒</div>
+        <h3 className="text-2xl font-bold mb-3 text-white">Enterprise Security</h3>
+        <p className="text-indigo-100 text-sm">Bank-grade encryption for all your sensitive data nodes.</p>
       </div>
 
       {/* Small Card 1 */}
-      <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl group hover:bg-blue-600 transition-colors duration-500">
-        <h3 className="text-2xl font-black mb-2 uppercase tracking-tight text-slate-950 group-hover:text-white transition-colors">Edge_Sync</h3>
-        <p className="text-slate-500 text-sm lowercase font-medium group-hover:text-white/60 transition-colors">Built on high-fidelity global edge networks.</p>
+      <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm group hover:border-blue-500 transition-colors text-left">
+        <h3 className="text-xl font-bold mb-2 text-gray-900">Cloud Sync</h3>
+        <p className="text-gray-500 text-sm">Automatic sync across all your devices in real-time.</p>
       </div>
 
       {/* Small Card 2 */}
-      <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl group hover:bg-indigo-600 transition-colors duration-500">
-        <h3 className="text-2xl font-black mb-2 uppercase tracking-tight text-slate-950 group-hover:text-white transition-colors">Neural_Team</h3>
-        <p className="text-slate-500 text-sm lowercase font-medium group-hover:text-white/60 transition-colors">Collaborate instantly via shared logic nodes.</p>
+      <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm group hover:border-indigo-500 transition-colors text-left">
+        <h3 className="text-xl font-bold mb-2 text-gray-900">Team Collaboration</h3>
+        <p className="text-gray-500 text-sm">Built-in tools for seamless teamwork and communication.</p>
       </div>
     </div>
   </div>
@@ -135,88 +126,79 @@ export const FeatureBento = () => (
 export const FeatureTabs = () => {
   const [active, setActive] = useState(0);
   const features = [
-    { title: "Design_Logic", desc: "Craft premium digital architectures.", color: "bg-blue-600" },
-    { title: "Core_Build", desc: "Assemble nodes with modern tools.", color: "bg-indigo-600" },
-    { title: "Sync_Deploy", desc: "Push signal to the global matrix.", color: "bg-slate-950" }
+    { title: "Plan", desc: "Design your logic flow with ease.", color: "bg-blue-600" },
+    { title: "Build", desc: "Assemble components with speed.", color: "bg-indigo-600" },
+    { title: "Deploy", desc: "Ship to global nodes instantly.", color: "bg-slate-900" }
   ];
 
   return (
-    <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
+    <div className="bg-white p-12 rounded-3xl border border-gray-100 font-sans">
       <div className="grid md:grid-cols-12 gap-12">
-        <div className="md:col-span-5 flex flex-col gap-6">
+        <div className="md:col-span-5 flex flex-col gap-4 text-left">
           {features.map((feat, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`text-left p-8 rounded-3xl transition-all duration-500 border-2 ${
+              className={`text-left p-6 rounded-2xl transition-all duration-300 border-2 ${
                 active === i 
-                ? 'bg-slate-50 border-slate-950 shadow-[8px_8px_0_0_#000]' 
-                : 'bg-white border-slate-100 hover:border-slate-300 opacity-60 grayscale'
+                ? 'bg-gray-50 border-gray-900 shadow-md' 
+                : 'bg-white border-transparent hover:border-gray-100 opacity-70'
               }`}
             >
-              <h3 className={`font-black text-2xl mb-2 uppercase tracking-tight ${active === i ? 'text-slate-950' : 'text-slate-400'}`}>
+              <h3 className={`font-bold text-xl mb-1 ${active === i ? 'text-gray-900' : 'text-gray-400'}`}>
                 {feat.title}
               </h3>
-              <p className="text-sm text-slate-500 lowercase font-medium italic">{feat.desc}</p>
+              <p className="text-sm text-gray-500">{feat.desc}</p>
             </button>
           ))}
         </div>
 
-        <div className="md:col-span-7 bg-slate-50 rounded-[3rem] overflow-hidden relative min-h-[450px] flex items-center justify-center p-12">
-          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-          <div className="relative z-10 w-full">
-             <div className={`w-full aspect-video rounded-3xl shadow-2xl flex flex-col items-center justify-center text-white transition-all duration-700 ${features[active].color} transform hover:scale-105`}>
-               <div className="text-7xl font-black mb-6 opacity-20 italic">0{active + 1}</div>
-               <div className="text-xs font-black uppercase tracking-[0.5em] border-2 border-white/20 px-6 py-2 rounded-full backdrop-blur-xl">Protocol_Active</div>
-             </div>
-             <p className="mt-8 font-mono text-slate-400 text-center text-[10px] uppercase tracking-widest italic opacity-50 font-black">Real_Time_Interactive_Preview</p>
-          </div>
+        <div className="md:col-span-7 bg-gray-50 rounded-3xl overflow-hidden relative min-h-[350px] flex items-center justify-center p-8">
+           <div className={`w-full aspect-video rounded-2xl shadow-xl flex flex-col items-center justify-center text-white transition-all duration-500 ${features[active].color}`}>
+             <div className="text-6xl font-bold mb-4 opacity-30">0{active + 1}</div>
+             <div className="text-sm font-bold uppercase tracking-widest px-4 py-1 border border-white/30 rounded-full text-white">Active Mode</div>
+           </div>
         </div>
       </div>
     </div>
   );
 };
 
-// --- 4. The Code Block (Developer Focus) ---
+// --- 4. The Code Block ---
 export const FeatureDev = () => (
-  <div className="bg-slate-950 text-white p-16 rounded-[3rem] border border-white/5 overflow-hidden relative font-sans italic font-bold">
-    <div className="absolute top-[-10%] left-[-5%] w-[40rem] h-[40rem] bg-blue-600 rounded-full blur-[160px] opacity-10"></div>
-    
-    <div className="relative z-10 flex flex-col lg:flex-row items-center gap-24">
+  <div className="bg-[#0d1117] text-white p-12 rounded-3xl border border-gray-800 overflow-hidden relative font-sans">
+    <div className="relative z-10 flex flex-col lg:flex-row items-center gap-16 text-left">
       <div className="w-full lg:w-1/2">
-        <div className="inline-block px-4 py-1 bg-blue-600/10 text-blue-500 border border-blue-500/20 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-10">API_First_Protocol</div>
-        <h2 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">Built_For <br/> <span className="text-blue-500 italic">Architects</span></h2>
-        <p className="text-white/40 text-xl mb-12 leading-relaxed lowercase font-medium">
-          Integrate our core logic mesh in minutes. Fully typed SDKs, comprehensive documentation, and 99.9% protocol uptime.
+        <div className="inline-block px-3 py-1 bg-green-500/10 text-green-500 border border-green-500/20 rounded-full text-xs font-bold uppercase tracking-widest mb-6">API First</div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white text-left">Built for developers,<br/> by developers.</h2>
+        <p className="text-gray-400 text-lg mb-10 leading-relaxed text-left">
+          Integrate our SDK in minutes. Comprehensive documentation, typed SDKs, and 99.99% uptime guarantee.
         </p>
-        <div className="flex gap-6">
-          <button className="bg-white text-slate-950 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all active:scale-95 shadow-2xl">Read_Docs</button>
-          <button className="bg-transparent border-2 border-white/10 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:border-white transition-all active:scale-95">Core_Access</button>
+        <div className="flex gap-4">
+          <button className="bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-200 transition-colors">Read Docs</button>
+          <button className="bg-transparent border border-gray-700 text-white px-6 py-3 rounded-lg font-bold hover:border-gray-500 transition-colors">Get API Key</button>
         </div>
       </div>
       
       <div className="w-full lg:w-1/2">
-        <div className="bg-[#0a0a0a] rounded-[2rem] border-2 border-white/5 shadow-2xl overflow-hidden font-mono text-left italic">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-white/5">
-            <div className="flex gap-2">
+        <div className="bg-[#161b22] rounded-2xl border border-gray-700 shadow-2xl overflow-hidden font-mono text-left">
+          <div className="flex items-center justify-between px-5 py-3 border-b border-gray-700 bg-[#0d1117]">
+            <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
               <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
             </div>
-            <span className="text-[10px] text-white/30 font-black uppercase tracking-widest italic">initialize_sdk.ts</span>
+            <span className="text-[10px] text-gray-500 uppercase tracking-widest">initialize_sdk.ts</span>
           </div>
-          <div className="p-8 text-sm leading-relaxed">
-            <p className="mb-2"><span className="text-blue-400">import</span> {'{'} <span className="text-indigo-400">CoreClient</span> {'}'} <span className="text-blue-400">from</span> <span className="text-emerald-400">'@logic/mesh'</span>;</p>
-            <p className="mb-6"><span className="text-blue-400">const</span> client = <span className="text-blue-400">new</span> <span className="text-indigo-400">CoreClient</span>();</p>
+          <div className="p-6 text-sm leading-relaxed">
+            <p className="mb-2"><span className="text-purple-400">import</span> {'{'} <span className="text-blue-300">Client</span> {'}'} <span className="text-purple-400">from</span> <span className="text-green-300">'@sdk/core'</span>;</p>
+            <p className="mb-6"><span className="text-purple-400">const</span> client = <span className="text-purple-400">new</span> <span className="text-blue-300">Client</span>();</p>
             
-            <p className="text-white/40 mb-2 font-black uppercase text-[10px] tracking-widest opacity-50 italic">// Initialize logic sync</p>
-            <p className="mb-2"><span className="text-blue-400">await</span> client.<span className="text-yellow-200">initialize</span>({'{'}</p>
-            <p className="pl-6 mb-2">nodeID: <span className="text-emerald-400">'mesh_0842'</span>,</p>
-            <p className="pl-6 mb-2">encryption: <span className="text-emerald-400">'quantum_AES'</span>,</p>
-            <p className="pl-6 mb-2">priority: <span className="text-blue-400">true</span></p>
-            <p className="mb-6">{'}'});</p>
-
-            <p className="text-blue-400 italic">console.<span className="text-yellow-200">log</span>(<span className="text-emerald-400">"protocol_active"</span>);</p>
+            <p className="text-gray-500 mb-2">// Initialize logic sync</p>
+            <p className="mb-2"><span className="text-purple-400">await</span> client.<span className="text-yellow-200">initialize</span>({'{'}</p>
+            <p className="pl-6">apiKey: <span className="text-green-300">'sk_live_...'</span>,</p>
+            <p className="pl-6">priority: <span className="text-blue-400">true</span></p>
+            <p>{'}'});</p>
           </div>
         </div>
       </div>
@@ -226,37 +208,30 @@ export const FeatureDev = () => (
 
 // --- 5. The Glassmorphism ---
 export const FeatureGlass = () => (
-  <div className="relative bg-slate-950 p-20 rounded-[3rem] overflow-hidden min-h-[500px] flex items-center font-sans italic font-bold">
+  <div className="relative bg-indigo-600 p-16 rounded-3xl overflow-hidden min-h-[450px] flex items-center font-sans">
     {/* Decorative Orbs */}
-    <div className="absolute top-0 right-[-10%] w-[40rem] h-[40rem] bg-blue-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse"></div>
-    <div className="absolute bottom-[-10%] left-[-10%] w-[40rem] h-[40rem] bg-indigo-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse delay-1000"></div>
+    <div className="absolute top-0 right-[-10%] w-[30rem] h-[30rem] bg-purple-500 rounded-full mix-blend-screen filter blur-[80px] opacity-40"></div>
+    <div className="absolute bottom-[-10%] left-[-10%] w-[30rem] h-[30rem] bg-pink-500 rounded-full mix-blend-screen filter blur-[80px] opacity-40"></div>
 
-    <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center w-full">
-      <div>
-        <h2 className="text-6xl md:text-8xl font-black text-white mb-10 tracking-tighter uppercase leading-[0.85] drop-shadow-2xl">
-          Protocol_ <br/> <span className="text-blue-400 italic">Evolution</span>
-        </h2>
-        <p className="text-white/60 text-xl mb-12 max-w-lg lowercase font-medium">
-          The next generation of creative logic. Designed for the high-fidelity digital economy.
+    <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center w-full">
+      <div className="text-white text-left">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg text-white">Unleash Creativity</h2>
+        <p className="text-white/80 text-lg mb-10 max-w-md text-left">
+          Tools that don't get in your way. Designed for the modern high-fidelity digital economy.
         </p>
-        <button className="bg-white/5 backdrop-blur-2xl border-2 border-white/10 text-white px-12 py-5 rounded-2xl hover:bg-white/10 transition-all uppercase text-xs font-black tracking-[0.3em] shadow-2xl active:scale-95">
-          Explore_Nodes
+        <button className="bg-white/10 backdrop-blur-xl border border-white/30 text-white px-10 py-4 rounded-full hover:bg-white/20 transition-all font-bold shadow-2xl">
+          Explore Architecture
         </button>
       </div>
       
       <div className="grid grid-cols-2 gap-6">
-        {[
-          { title: "Node_Sync", color: "bg-blue-600" },
-          { title: "Mesh_Flow", color: "bg-indigo-600" },
-          { title: "Core_Link", color: "bg-slate-900" },
-          { title: "API_Grid", color: "bg-blue-500" }
-        ].map((item, i) => (
-          <div key={i} className={`bg-white/5 backdrop-blur-3xl border border-white/10 p-10 rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:-translate-y-4 ${i%2===0 ? 'translate-y-12' : ''}`}>
-            <div className={`w-14 h-14 ${item.color} rounded-2xl mb-8 flex items-center justify-center shadow-2xl`}>
-               <div className="w-4 h-4 bg-white rounded-full animate-ping opacity-30"></div>
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className={`bg-white/10 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl shadow-2xl transition-transform hover:-translate-y-2 ${i%2===0 ? 'translate-y-8' : ''}`}>
+            <div className="w-12 h-12 bg-white/20 rounded-xl mb-6 flex items-center justify-center text-white">
+               <span className="text-xl">✨</span>
             </div>
-            <h4 className="text-white text-lg font-black uppercase tracking-tight mb-2">{item.title}</h4>
-            <div className="h-1 w-12 bg-white/20 rounded-full"></div>
+            <div className="h-2 w-2/3 bg-white/40 rounded-full mb-3 text-left"></div>
+            <div className="h-2 w-1/2 bg-white/20 rounded-full text-left"></div>
           </div>
         ))}
       </div>
@@ -266,26 +241,25 @@ export const FeatureGlass = () => (
 
 // --- 6. The Grid Icons ---
 export const FeatureGrid = () => (
-  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
-    <div className="text-center max-w-3xl mx-auto mb-24">
-      <div className="text-[10px] text-blue-600 font-black uppercase tracking-[0.5em] mb-8 italic">// Architecture_Nodes</div>
-      <h2 className="text-5xl md:text-7xl font-black text-slate-950 mb-6 uppercase tracking-tighter leading-none">Why_Integrate_Core?</h2>
-      <p className="text-slate-500 text-xl lowercase font-medium">Comprehensive suite of high-fidelity tools for the digital vanguard.</p>
+  <div className="bg-white p-12 rounded-3xl border border-gray-100 font-sans">
+    <div className="text-center max-w-2xl mx-auto mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
+      <p className="text-gray-500 text-lg">We provide a comprehensive suite of professional tools.</p>
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {[
-        { title: 'Secure_Shield', icon: '🛡️', desc: 'Bank-grade encryption logic.' },
-        { title: 'Flash_Speed', icon: '⚡', desc: 'Optimized for sub-ms latency.' },
-        { title: 'Crystal_Uptime', icon: '💎', desc: '99.9% protocol guarantee.' },
-        { title: 'Node_Scale', icon: '📈', desc: 'Grow from 1 to 1M nodes.' },
-        { title: 'Logic_Support', icon: '💬', desc: '24/7 dedicated core team.' },
-        { title: 'Global_Mesh', icon: '🌍', desc: 'Nodes in 30+ regions.' },
+        { title: 'Secure Shield', icon: '🛡️', desc: 'Bank-grade encryption protocols for all data.' },
+        { title: 'Flash Speed', icon: '⚡', desc: 'Optimized for sub-ms latency globally.' },
+        { title: 'Crystal Uptime', icon: '💎', desc: '99.99% uptime guarantee with SLA.' },
+        { title: 'Node Scale', icon: '📈', desc: 'Seamlessly grow from 1 to 1M nodes.' },
+        { title: 'Logic Support', icon: '💬', desc: '24/7 dedicated support for architecture.' },
+        { title: 'Global Mesh', icon: '🌍', desc: 'Strategic nodes in 30+ regions.' },
       ].map((item) => (
-        <div key={item.title} className="p-10 rounded-[2.5rem] bg-slate-50 hover:bg-slate-950 transition-all duration-500 cursor-default group border border-slate-100 hover:border-slate-800 shadow-xl hover:shadow-2xl">
-          <div className="text-5xl mb-8 group-hover:scale-125 transition-transform duration-500 inline-block drop-shadow-2xl">{item.icon}</div>
-          <h3 className="text-2xl font-black text-slate-950 mb-4 uppercase tracking-tight group-hover:text-white transition-colors">{item.title}</h3>
-          <p className="text-slate-500 text-sm leading-relaxed lowercase font-medium group-hover:text-white/40 transition-colors">{item.desc}</p>
+        <div key={item.title} className="p-10 rounded-3xl bg-gray-50 hover:bg-blue-50 transition-all duration-300 cursor-default group text-left">
+          <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block drop-shadow-sm">{item.icon}</div>
+          <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+          <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
         </div>
       ))}
     </div>
@@ -294,42 +268,39 @@ export const FeatureGrid = () => (
 
 // --- 7. The Mobile App ---
 export const FeatureApp = () => (
-  <div className="bg-blue-600 p-16 rounded-[3rem] overflow-hidden font-sans italic font-bold">
-    <div className="flex flex-col lg:flex-row items-center gap-24 max-w-6xl mx-auto">
-      <div className="w-full lg:w-1/2">
-        <div className="inline-block px-4 py-1 bg-white/10 text-white border border-white/20 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-10">Mobile_First_Node</div>
-        <h2 className="text-5xl md:text-8xl font-black text-white mb-10 uppercase tracking-tighter leading-[0.85]">
-          Your_Grid, <br/> <span className="text-slate-950">In_Pocket.</span>
-        </h2>
-        <p className="text-white/60 text-xl mb-12 leading-relaxed lowercase font-medium italic">
-          Synchronize nodes, manage logic flows, and chat with the core team on the go. Available for all mobile OS.
+  <div className="bg-orange-50 p-16 rounded-3xl overflow-hidden font-sans">
+    <div className="flex flex-col lg:flex-row items-center gap-20 max-w-6xl mx-auto">
+      <div className="w-full lg:w-1/2 text-left">
+        <div className="inline-block px-4 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Mobile First</div>
+        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight text-left">Your Entire Grid,<br/> in Your Pocket.</h2>
+        <p className="text-gray-600 text-xl mb-10 leading-relaxed text-left">
+          Manage nodes, track logic flows, and chat with the core team on the go. Available for all mobile OS.
         </p>
-        <div className="flex flex-col sm:flex-row gap-6">
-          <button className="bg-slate-950 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-slate-950 transition-all shadow-2xl">App_Store</button>
-          <button className="bg-white/10 border-2 border-white/20 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/20 transition-all">Play_Store</button>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold shadow-xl hover:bg-black transition-all">App Store</button>
+          <button className="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold shadow-xl hover:bg-black transition-all">Play Store</button>
         </div>
       </div>
       
-      <div className="w-full lg:w-1/2 flex justify-center relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-white rounded-full blur-[140px] opacity-10"></div>
-        <div className="relative w-[300px] h-[600px] bg-slate-950 rounded-[4rem] border-[12px] border-slate-900 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden scale-110">
+      <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3.5rem] border-[10px] border-gray-900 shadow-2xl overflow-hidden scale-110">
           <div className="w-full h-full bg-white relative">
-            <div className="bg-blue-600 h-48 p-8 pt-16 text-white italic">
-              <div className="text-[10px] uppercase font-black tracking-widest opacity-60 mb-2">Dashboard</div>
-              <div className="text-4xl font-black tracking-tighter">$12,450_USD</div>
+            <div className="bg-orange-500 h-40 p-8 pt-16 text-white text-left">
+              <div className="text-xs opacity-70 uppercase tracking-widest font-bold mb-2">Dashboard</div>
+              <div className="text-3xl font-bold text-white text-left">$12,450.00</div>
             </div>
-            <div className="p-6 space-y-4 text-left">
-              {[1,2,3,4].map(i => (
-                <div key={i} className="flex items-center gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                  <div className="w-12 h-12 rounded-xl bg-slate-200"></div>
+            <div className="p-6 space-y-4">
+              {[1, 2, 3, 4].map(i => (
+                <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100 text-left">
+                  <div className="w-12 h-12 rounded-xl bg-gray-200"></div>
                   <div className="flex-1 space-y-2">
-                    <div className="h-2 w-2/3 bg-slate-200 rounded-full"></div>
-                    <div className="h-2 w-1/2 bg-slate-100 rounded-full"></div>
+                    <div className="h-2 w-2/3 bg-gray-200 rounded-full text-left"></div>
+                    <div className="h-2 w-1/2 bg-gray-100 rounded-full text-left"></div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="absolute bottom-8 right-8 w-16 h-16 bg-blue-600 rounded-2xl shadow-2xl flex items-center justify-center text-white font-black text-2xl active:scale-90 transition-transform">+</div>
+            <div className="absolute bottom-8 right-8 w-14 h-14 bg-orange-500 rounded-full shadow-xl flex items-center justify-center text-white font-bold text-2xl active:scale-90 transition-transform">+</div>
           </div>
         </div>
       </div>
@@ -339,25 +310,22 @@ export const FeatureApp = () => (
 
 // --- 8. The Brutalist ---
 export const FeatureBrutalist = () => (
-  <div className="bg-yellow-400 p-12 rounded-[3rem] border-[8px] border-slate-950 font-sans italic font-black uppercase text-center">
+  <div className="bg-yellow-400 p-12 rounded-3xl border-8 border-black font-sans">
     <div className="grid md:grid-cols-2 gap-12 items-center text-left">
-      <div className="bg-white border-[8px] border-slate-950 p-12 shadow-[20px_20px_0_0_#000] hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all">
-        <h2 className="text-7xl font-black uppercase mb-10 leading-[0.8] tracking-tighter">
-          Power. <br/> Speed. <br/> Control.
-        </h2>
-        <p className="font-black text-2xl mb-12 text-slate-950 italic">
-          Zero friction. <br/> Just raw performance for power nodes.
+      <div className="bg-white border-8 border-black p-10 shadow-[20px_20px_0_0_#000] hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all">
+        <h2 className="text-6xl font-black uppercase mb-8 leading-[0.8] tracking-tighter text-black text-left">Power.<br/>Speed.<br/>Control.</h2>
+        <p className="font-bold text-2xl mb-10 text-black text-left">
+          Zero friction. Just raw performance for power nodes.
         </p>
-        <button className="w-full py-8 bg-slate-950 text-white font-black text-2xl uppercase hover:bg-white hover:text-slate-950 border-4 border-transparent hover:border-slate-950 transition-all tracking-[0.2em] shadow-2xl">
-          Get_Core_Access
+        <button className="w-full py-6 bg-black text-white font-black text-2xl uppercase hover:bg-white hover:text-black border-4 border-transparent hover:border-black transition-all tracking-widest shadow-2xl">
+          Get Access
         </button>
       </div>
       
       <div className="grid grid-cols-2 gap-8">
-        {[1,2,3,4].map(i => (
-          <div key={i} className="bg-blue-600 border-[8px] border-slate-950 p-8 aspect-square flex flex-col items-center justify-center hover:-translate-y-2 hover:shadow-[10px_10px_0_0_#000] transition-all cursor-pointer group">
-            <span className="text-6xl font-black text-white italic group-hover:scale-125 transition-transform">0{i}</span>
-            <div className="h-2 w-full bg-slate-950 mt-4 opacity-20"></div>
+        {[1, 2, 3, 4].map(i => (
+          <div key={i} className="bg-indigo-600 border-8 border-black p-8 aspect-square flex items-center justify-center hover:-translate-y-2 hover:shadow-[10px_10px_0_0_#000] transition-all cursor-pointer group">
+            <span className="text-6xl font-black text-white group-hover:scale-125 transition-transform">0{i}</span>
           </div>
         ))}
       </div>
@@ -367,31 +335,31 @@ export const FeatureBrutalist = () => (
 
 // --- 9. The Sticky Scroll ---
 export const FeatureSticky = () => (
-  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 overflow-hidden font-sans italic font-bold">
-    <div className="flex flex-col lg:flex-row gap-24 max-w-6xl mx-auto">
+  <div className="bg-white p-12 rounded-3xl border border-gray-100 overflow-hidden font-sans text-left">
+    <div className="flex flex-col lg:flex-row gap-20 max-w-6xl mx-auto">
       <div className="w-full lg:w-1/2 lg:sticky lg:top-24 h-fit">
-        <div className="aspect-square bg-slate-950 rounded-[3rem] flex flex-col items-center justify-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)]">
-           <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 opacity-30 animate-pulse"></div>
-           <div className="text-white text-center p-12 relative z-10">
-             <div className="text-9xl mb-10 drop-shadow-2xl animate-bounce">🚀</div>
-             <h3 className="text-4xl font-black uppercase tracking-tighter italic">Launch_Core</h3>
-             <div className="h-1 w-24 bg-blue-500 mx-auto mt-6 rounded-full shadow-[0_0_20px_#3b82f6]"></div>
+        <div className="aspect-square bg-slate-900 rounded-[3rem] flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+           <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-20 animate-pulse"></div>
+           <div className="text-white text-center p-12 text-left">
+             <div className="text-9xl mb-8 drop-shadow-2xl text-white text-left text-center">🚀</div>
+             <h3 className="text-4xl font-bold uppercase tracking-tighter text-white text-center">Launch_Core</h3>
+             <div className="h-1 w-20 bg-blue-500 mx-auto mt-6 rounded-full text-center"></div>
            </div>
         </div>
       </div>
       
-      <div className="w-full lg:w-1/2 flex flex-col gap-32 py-12 text-left">
+      <div className="w-full lg:w-1/2 flex flex-col gap-32 py-12">
         {[
-          { title: "Collaborate_Logic", desc: "Work together in the shared logic mesh with real-time multiplayer synchronization nodes." },
-          { title: "Version_Control", desc: "Never lose a logic state. Rollback to any node in the history matrix with one single click." },
-          { title: "Design_Systems", desc: "Maintain absolute consistency across your entire product suite automatically via core logic." },
-          { title: "Global_Mesh", desc: "Push your architecture to the edge of the digital void with zero latency synchronization." }
+          { title: "Collaborate Logic", desc: "Work together in the shared logic mesh with real-time synchronization nodes." },
+          { title: "Version Control", desc: "Never lose a logic state. Rollback to any version in history with one click." },
+          { title: "Design Systems", desc: "Maintain absolute consistency across your entire product suite automatically." },
+          { title: "Global Mesh", desc: "Push your architecture to the edge with zero latency global synchronization." }
         ].map((item, i) => (
-          <div key={i} className="relative pl-12 border-l-4 border-slate-100 hover:border-blue-600 transition-colors duration-500">
-            <div className="absolute left-[-14px] top-0 w-6 h-6 bg-white border-4 border-blue-600 rounded-full shadow-2xl"></div>
-            <div className="text-blue-600 font-black text-2xl mb-4 italic tracking-widest">NODE_0{i+1}</div>
-            <h3 className="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tight">{item.title}</h3>
-            <p className="text-slate-500 text-xl leading-relaxed lowercase font-medium italic">{item.desc}</p>
+          <div key={i} className="relative pl-12 border-l-4 border-gray-100 hover:border-blue-600 transition-colors duration-500 text-left">
+            <div className="absolute left-[-14px] top-0 w-6 h-6 bg-white border-4 border-blue-600 rounded-full text-left"></div>
+            <div className="text-blue-600 font-bold text-2xl mb-4 italic text-left">NODE_0{i+1}</div>
+            <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight text-left">{item.title}</h3>
+            <p className="text-gray-500 text-xl leading-relaxed italic text-left">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -401,20 +369,20 @@ export const FeatureSticky = () => (
 
 // --- 10. The Neumorphic ---
 export const FeatureNeumorphic = () => (
-  <div className="bg-[#e0e5ec] p-16 rounded-[3rem] font-sans italic font-bold">
+  <div className="bg-[#e0e5ec] p-20 rounded-[3rem] font-sans">
     <div className="text-center mb-24">
-      <h2 className="text-6xl font-black text-slate-700 uppercase tracking-tighter leading-none italic mb-4">Soft_UI_Nodes</h2>
-      <p className="text-slate-500 text-lg lowercase font-medium italic">High-fidelity tactile architecture.</p>
+      <h2 className="text-5xl font-bold text-gray-700 uppercase tracking-tight mb-4">Soft UI Nodes</h2>
+      <p className="text-gray-500 text-lg">High-fidelity tactile architecture.</p>
     </div>
     
     <div className="grid md:grid-cols-3 gap-16">
-      {['Tactile_Logic', 'Accessible_Core', 'Modern_Mesh'].map((item) => (
-        <div key={item} className="bg-[#e0e5ec] p-12 rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-4 border border-white/20">
-          <div className="w-24 h-24 bg-[#e0e5ec] rounded-full shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] mb-10 flex items-center justify-center text-4xl text-slate-600 border-4 border-white/50">
+      {['Tactile Logic', 'Accessible Core', 'Modern Mesh'].map((item) => (
+        <div key={item} className="bg-[#e0e5ec] p-12 rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-4">
+          <div className="w-24 h-24 bg-[#e0e5ec] rounded-full shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] mb-10 flex items-center justify-center text-4xl text-gray-600 border-4 border-white/50">
             ✨
           </div>
-          <h3 className="text-2xl font-black text-slate-700 mb-6 uppercase tracking-tight">{item}</h3>
-          <p className="text-slate-500 text-sm lowercase font-medium italic">Experience the depth and softness of next-generation neumorphic design logic.</p>
+          <h3 className="text-2xl font-bold text-gray-700 mb-6">{item}</h3>
+          <p className="text-gray-500 text-sm leading-relaxed lowercase">Experience the depth and softness of next-generation tactile design logic.</p>
         </div>
       ))}
     </div>
@@ -424,969 +392,914 @@ export const FeatureNeumorphic = () => (
 
 // --- Main Gallery Wrapper ---
 const FeatureGallery = () => {
-  return (
-    <div className="container overflow-y-auto bg-slate-50 p-6 md:p-12 font-sans pb-64">
-      <div className="max-w-4xl mx-auto text-center mb-24">
-        <h1 className="text-6xl font-black text-slate-950 mb-6 tracking-tighter uppercase italic leading-none">Feature_Manifest</h1>
-        <p className="text-slate-500 font-bold text-xl italic lowercase">High-fidelity components to showcase architectural value.</p>
-      </div>
-      
-      <div className="space-y-32 max-w-7xl mx-auto">
-        
-        {/* 01. Standard SaaS */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureStandard = () => (
-  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
-    <div className="flex flex-col md:flex-row items-center gap-20">
+  const metadata = [
+    {
+      id: "01",
+      name: "Standard SaaS Evolution",
+      component: <FeatureStandard />,
+      jsx: `import React from 'react';
+
+// --- Shared Icons ---
+const BoltIcon = ({ className }) => (
+  <svg className={className || "w-6 h-6 text-blue-600"} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>
+);
+
+export const FeatureStandard = () => (
+  <div className="bg-white p-12 rounded-3xl border border-gray-100 font-sans">
+    <div className="flex flex-col md:flex-row items-center gap-16 text-left">
       <div className="w-full md:w-1/2">
-        <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-10 shadow-inner">
-          <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
+        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+          <BoltIcon className="w-6 h-6 text-blue-600" />
         </div>
-        <h2 className="text-5xl md:text-7xl font-black text-slate-950 mb-8 tracking-tighter uppercase leading-[0.9]">
-          Automate_ <br/> <span className="text-blue-600">Logic_Flow</span>
-        </h2>
-        <p className="text-slate-500 mb-10 text-xl leading-relaxed lowercase font-medium">
-          Eliminate manual friction nodes. Our engine executes complex sequences with zero latency.
-        </p>
-        <div className="space-y-4 mb-12">
-          <div className="flex items-center gap-4 text-slate-900 uppercase text-xs tracking-widest font-black">
-            <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-[10px]">01</span>
-            Real_Time_Sync_Protocol
+        <h2 className="text-4xl font-bold text-gray-900 mb-6">Automate your workflow with intelligence.</h2>
+        <p className="text-gray-600 mb-8 text-lg leading-relaxed">Eliminate manual tasks and focus on what matters. Our engine handles the complex logic so you don't have to.</p>
+        <div className="space-y-4 mb-10">
+          <div className="flex items-center gap-3 text-gray-700 font-medium">
+            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px]">✓</span> Real-time synchronization
           </div>
-          <div className="flex items-center gap-4 text-slate-900 uppercase text-xs tracking-widest font-black">
-            <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-[10px]">02</span>
-            Custom_Trigger_Nodes
+          <div className="flex items-center gap-3 text-gray-700 font-medium">
+            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px]">✓</span> Custom automation triggers
           </div>
-          <div className="flex items-center gap-4 text-slate-900 uppercase text-xs tracking-widest font-black">
-            <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-[10px]">03</span>
-            Global_API_Mesh
+          <div className="flex items-center gap-3 text-gray-700 font-medium">
+            <span className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px]">✓</span> Advanced analytics dashboard
           </div>
         </div>
-        <button className="px-10 py-5 bg-slate-950 text-white font-black rounded-2xl hover:bg-blue-600 transition-all uppercase text-xs tracking-widest active:scale-95 shadow-2xl">
-          Initialize_Control →
-        </button>
+        <button className="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">Get Started Now</button>
       </div>
       <div className="w-full md:w-1/2">
-        <div className="rounded-[2.5rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden bg-slate-50 p-8 relative">
-           <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8">
-              <div className="h-4 w-1/3 bg-slate-100 rounded-full mb-8"></div>
-              <div className="space-y-4">
-                <div className="h-4 w-full bg-slate-50 rounded-full"></div>
-                <div className="h-4 w-5/6 bg-slate-50 rounded-full"></div>
+        <div className="rounded-2xl shadow-2xl border border-gray-100 overflow-hidden bg-gray-50 p-6 relative group">
+           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-transform group-hover:-translate-y-2 duration-300">
+              <div className="h-4 w-1/3 bg-gray-100 rounded mb-6"></div>
+              <div className="space-y-3">
+                <div className="h-3 w-full bg-gray-50 rounded"></div>
+                <div className="h-3 w-5/6 bg-gray-50 rounded"></div>
               </div>
-              <div className="mt-12 flex gap-6">
-                 <div className="h-24 w-1/2 bg-blue-50 rounded-2xl border-2 border-blue-100 flex items-center justify-center">
-                    <div className="w-10 h-10 bg-blue-600 rounded-full animate-pulse opacity-20"></div>
-                 </div>
-                 <div className="h-24 w-1/2 bg-indigo-50 rounded-2xl border-2 border-indigo-100 flex items-center justify-center">
-                    <div className="w-10 h-10 bg-indigo-600 rounded-full animate-pulse opacity-20"></div>
-                 </div>
+              <div className="mt-8 flex gap-4">
+                 <div className="h-20 w-1/2 bg-blue-50 rounded-lg border border-blue-100"></div>
+                 <div className="h-20 w-1/2 bg-indigo-50 rounded-lg border border-indigo-100"></div>
               </div>
            </div>
         </div>
       </div>
     </div>
   </div>
-);`} 
-              htmlCode={`<!-- Standard SaaS Feature -->
-<div class="feature-standard-root">
-  <div class="feature-flex-wrapper">
-    <div class="feature-content-side">
-      <div class="icon-box">
-        <svg class="feat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+);`,
+      html: `<!-- Standard SaaS Feature -->
+<div class="feat-standard">
+  <div class="feat-container">
+    <div class="feat-content">
+      <div class="feat-icon-box">
+        <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       </div>
-      <h2 class="feat-title">Automate_ <br/> <span class="text-blue">Logic_Flow</span></h2>
-      <p class="feat-desc">Eliminate manual friction nodes. Our engine executes complex sequences with zero latency.</p>
+      <h2>Automate your workflow with intelligence.</h2>
+      <p>Eliminate manual tasks and focus on what matters. Our engine handles the complex logic so you don't have to.</p>
       <div class="feat-list">
-        <div class="feat-item"><span class="feat-num">01</span> Real_Time_Sync_Protocol</div>
-        <div class="feat-item"><span class="feat-num">02</span> Custom_Trigger_Nodes</div>
-        <div class="feat-item"><span class="feat-num">03</span> Global_API_Mesh</div>
+        <div class="feat-item"><span>✓</span> Real-time synchronization</div>
+        <div class="feat-item"><span>✓</span> Custom automation triggers</div>
+        <div class="feat-item"><span>✓</span> Advanced analytics dashboard</div>
       </div>
-      <button class="feat-btn">Initialize_Control →</button>
+      <button class="feat-cta">Get Started Now</button>
     </div>
-    <div class="feature-visual-side">
-      <div class="visual-card">
-         <div class="card-inner">
+    <div class="feat-visual">
+      <div class="visual-wrapper">
+         <div class="visual-card">
             <div class="skeleton-title"></div>
             <div class="skeleton-lines">
-              <div class="skeleton-line"></div>
-              <div class="skeleton-line-half"></div>
+               <div class="skeleton-line full"></div>
+               <div class="skeleton-line half"></div>
             </div>
-            <div class="card-action-blocks">
-               <div class="action-block-blue"><div class="ping-circle"></div></div>
-               <div class="action-block-indigo"><div class="ping-circle"></div></div>
+            <div class="visual-blocks">
+               <div class="block blue"></div>
+               <div class="block indigo"></div>
             </div>
          </div>
       </div>
     </div>
   </div>
-</div>`} 
-              cssCode={`.feature-standard-root { background: white; padding: 48px; border-radius: 48px; border: 1px solid #f1f5f9; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-sizing: border-box; }
-.feature-flex-wrapper { display: flex; flex-direction: column; gap: 80px; align-items: center; }
-@media (min-width: 768px) { .feature-flex-wrapper { flex-direction: row; } }
-.feature-content-side, .feature-visual-side { width: 100%; }
-@media (min-width: 768px) { .feature-content-side, .feature-visual-side { width: 50%; } }
-.icon-box { width: 64px; height: 64px; background: #eff6ff; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 40px; box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.06); }
-.feat-icon { width: 32px; height: 32px; color: #2563eb; }
-.feat-title { font-size: 48px; font-weight: 900; color: #020617; margin-bottom: 32px; letter-spacing: -0.05em; text-transform: uppercase; line-height: 0.9; }
-@media (min-width: 768px) { .feat-title { font-size: 64px; } }
-.text-blue { color: #2563eb; }
-.feat-desc { color: #64748b; margin-bottom: 40px; font-size: 20px; text-transform: lowercase; font-weight: 500; line-height: 1.6; }
-.feat-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
-.feat-item { display: flex; align-items: center; gap: 16px; color: #0f172a; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; font-weight: 900; }
-.feat-num { width: 24px; height: 24px; border-radius: 8px; background: #2563eb; color: white; display: flex; align-items: center; justify-content: center; font-size: 10px; }
-.feat-btn { padding: 20px 40px; background: #020617; color: white; font-weight: 900; border-radius: 16px; border: none; text-transform: uppercase; font-size: 12px; cursor: pointer; letter-spacing: 0.1em; transition: all 0.3s ease; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
-.feat-btn:hover { background: #2563eb; transform: translateY(-2px); }
-.visual-card { background: #f8fafc; border-radius: 40px; padding: 32px; border: 1px solid #f1f5f9; box-shadow: 0 40px 100px -20px rgba(0,0,0,0.1); position: relative; overflow: hidden; }
-.card-inner { background: white; border-radius: 24px; padding: 32px; border: 1px solid #f1f5f9; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); }
-.skeleton-title { height: 16px; width: 33%; background: #f1f5f9; border-radius: 999px; margin-bottom: 32px; }
-.skeleton-lines { display: flex; flex-direction: column; gap: 16px; }
-.skeleton-line { height: 16px; width: 100%; background: #f8fafc; border-radius: 999px; }
-.skeleton-line-half { height: 16px; width: 83%; background: #f8fafc; border-radius: 999px; }
-.card-action-blocks { margin-top: 48px; display: flex; gap: 24px; }
-.action-block-blue, .action-block-indigo { height: 96px; width: 50%; border-radius: 16px; display: flex; align-items: center; justify-content: center; border: 2px solid; }
-.action-block-blue { background: #eff6ff; border-color: #dbeafe; }
-.action-block-indigo { background: #eef2ff; border-color: #e0e7ff; }
-.ping-circle { width: 40px; height: 40px; background: #2563eb; border-radius: 50%; opacity: 0.2; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-.action-block-indigo .ping-circle { background: #4f46e5; }
-@keyframes pulse { 0%, 100% { opacity: 0.2; transform: scale(1); } 50% { opacity: 0.1; transform: scale(0.9); } }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 01. Standard SaaS Evolution </span>
-          <FeatureStandard />
-        </section>
+</div>`,
+      css: `.feat-standard { background: white; padding: 48px; border-radius: 24px; border: 1px solid #f3f4f6; font-family: sans-serif; box-sizing: border-box; }
+.feat-container { display: flex; flex-direction: column; gap: 64px; align-items: center; }
+@media (min-width: 768px) { .feat-container { flex-direction: row; } }
+.feat-content, .feat-visual { width: 100%; }
+@media (min-width: 768px) { .feat-content, .feat-visual { width: 50%; } }
+.feat-icon-box { width: 48px; height: 48px; background: #eff6ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+.icon-svg { width: 24px; height: 24px; color: #2563eb; }
+h2 { font-size: 32px; font-weight: 700; color: #111827; margin-bottom: 24px; line-height: 1.2; text-align: left; }
+p { color: #4b5563; margin-bottom: 32px; font-size: 18px; line-height: 1.6; text-align: left; }
+.feat-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+.feat-item { display: flex; align-items: center; gap: 12px; color: #374151; font-weight: 500; font-size: 16px; text-align: left; }
+.feat-item span { width: 20px; height: 20px; border-radius: 50%; background: #dbeafe; color: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+.feat-cta { padding: 12px 32px; background: #2563eb; color: white; font-weight: 700; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; box-shadow: 0 10px 15px -3px rgba(37,99,235,0.2); }
+.feat-cta:hover { background: #1d4ed8; transform: translateY(-1px); }
+.visual-wrapper { padding: 24px; background: #f9fafb; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); }
+.visual-card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #f3f4f6; }
+.skeleton-title { height: 16px; width: 33%; background: #f3f4f6; border-radius: 4px; margin-bottom: 24px; }
+.skeleton-lines { display: flex; flex-direction: column; gap: 12px; }
+.skeleton-line { height: 12px; background: #f9fafb; border-radius: 4px; }
+.skeleton-line.full { width: 100%; }
+.skeleton-line.half { width: 83%; }
+.visual-blocks { margin-top: 32px; display: flex; gap: 16px; }
+.block { height: 80px; width: 50%; border-radius: 8px; border: 1px solid; }
+.block.blue { background: #eff6ff; border-color: #dbeafe; }
+.block.indigo { background: #eef2ff; border-color: #e0e7ff; }`
+    },
+    {
+      id: "02",
+      name: "Modern Bento Grid Protocol",
+      component: <FeatureBento />,
+      jsx: `import React from 'react';
 
-        {/* 02. Bento Grid */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureBento = () => (
-  <div className="bg-slate-50 p-12 rounded-[3rem] font-sans italic font-bold">
-    <div className="text-center mb-20">
-      <h2 className="text-6xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter leading-none mb-6">Matrix_Features</h2>
-      <p className="text-slate-500 text-xl lowercase font-medium italic">High-performance architecture wrapped in a premium interface.</p>
+export const FeatureBento = () => (
+  <div className="bg-gray-50 p-12 rounded-3xl font-sans text-left">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+      <p className="text-gray-500 text-lg">Everything you need to scale your application globally.</p>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div className="md:col-span-2 bg-white rounded-[2.5rem] p-12 border border-slate-100 shadow-xl relative overflow-hidden h-[450px]">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="md:col-span-2 bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden h-[400px]">
         <div className="relative z-10 text-left">
-          <h3 className="text-4xl font-black mb-4 uppercase tracking-tight text-slate-950">Global_Analytics_Node</h3>
-          <p className="text-slate-500 text-lg lowercase max-w-sm font-medium">Synchronize user data streams from across the digital grid in real-time.</p>
+          <h3 className="text-2xl font-bold mb-3 text-gray-900">Advanced Analytics</h3>
+          <p className="text-gray-500 max-w-sm">Deep dive into your data with our comprehensive analytics suite.</p>
         </div>
-        <div className="absolute right-[-10%] bottom-[-10%] w-[70%] h-[70%] bg-slate-50 rounded-tl-[5rem] border-t-4 border-l-4 border-slate-100 p-10 flex items-end">
-           <div className="w-full h-full bg-white rounded-3xl shadow-2xl p-8 flex flex-col justify-between">
-              <div className="flex gap-1"><div className="w-2 h-2 rounded-full bg-blue-600"></div><div className="w-2 h-2 rounded-full bg-slate-100"></div></div>
-              <div className="flex items-end gap-3 h-32 justify-between">
-                 <div className="w-full bg-blue-500 rounded-t-xl" style={{height: '40%'}}></div>
-                 <div className="w-full bg-blue-600 rounded-t-xl" style={{height: '70%'}}></div>
-                 <div className="w-full bg-blue-400 rounded-t-xl" style={{height: '50%'}}></div>
-                 <div className="w-full bg-blue-700 rounded-t-xl" style={{height: '90%'}}></div>
-                 <div className="w-full bg-blue-500 rounded-t-xl" style={{height: '60%'}}></div>
+        <div className="absolute right-0 bottom-0 w-[60%] h-[60%] bg-gray-50 rounded-tl-3xl border-t border-l border-gray-100 p-6">
+           <div className="w-full h-full bg-white rounded-xl shadow-sm p-4 flex flex-col justify-between">
+              <div className="flex gap-1"><div className="w-2 h-2 rounded-full bg-blue-500"></div><div className="w-2 h-2 rounded-full bg-gray-200"></div></div>
+              <div className="flex items-end gap-2 h-24">
+                 <div className="w-full bg-blue-100 rounded-t h-1/2"></div>
+                 <div className="w-full bg-blue-500 rounded-t h-3/4"></div>
+                 <div className="w-full bg-blue-200 rounded-t h-1/3"></div>
+                 <div className="w-full bg-blue-600 rounded-t h-full"></div>
+                 <div className="w-full bg-blue-300 rounded-t h-2/3"></div>
               </div>
            </div>
         </div>
       </div>
-      <div className="md:row-span-1 bg-slate-950 rounded-[2.5rem] p-12 shadow-2xl flex flex-col items-center text-center justify-center relative overflow-hidden text-white">
-        <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center mb-10 text-5xl backdrop-blur-xl border border-white/10 shadow-2xl">🔒</div>
-        <h3 className="text-3xl font-black mb-4 uppercase tracking-tight">Secure_Protocol</h3>
-        <p className="text-white/40 text-sm lowercase font-medium">Enterprise-grade quantum encryption for every data node.</p>
+      <div className="md:row-span-1 bg-indigo-600 rounded-3xl p-10 shadow-xl flex flex-col items-center text-center justify-center relative overflow-hidden text-white">
+        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6 text-3xl backdrop-blur-md">🔒</div>
+        <h3 className="text-2xl font-bold mb-3 text-white">Enterprise Security</h3>
+        <p className="text-indigo-100 text-sm">Bank-grade encryption for all your sensitive data nodes.</p>
       </div>
-      <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl group hover:bg-blue-600 transition-colors duration-500 text-left">
-        <h3 className="text-2xl font-black mb-2 uppercase tracking-tight text-slate-950 group-hover:text-white transition-colors">Edge_Sync</h3>
-        <p className="text-slate-500 text-sm lowercase font-medium group-hover:text-white/60 transition-colors">Built on high-fidelity global edge networks.</p>
+      <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm group hover:border-blue-500 transition-colors text-left">
+        <h3 className="text-xl font-bold mb-2 text-gray-900">Cloud Sync</h3>
+        <p className="text-gray-500 text-sm">Automatic sync across all your devices in real-time.</p>
       </div>
-      <div className="bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-xl group hover:bg-indigo-600 transition-colors duration-500 text-left">
-        <h3 className="text-2xl font-black mb-2 uppercase tracking-tight text-slate-950 group-hover:text-white transition-colors">Neural_Team</h3>
-        <p className="text-slate-500 text-sm lowercase font-medium group-hover:text-white/60 transition-colors">Collaborate instantly via shared logic nodes.</p>
+      <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm group hover:border-indigo-500 transition-colors text-left">
+        <h3 className="text-xl font-bold mb-2 text-gray-900">Team Collaboration</h3>
+        <p className="text-gray-500 text-sm">Built-in tools for seamless teamwork and communication.</p>
       </div>
     </div>
   </div>
-);`} 
-              htmlCode={`<!-- Bento Grid Feature -->
-<div class="bento-root">
+);`,
+      html: `<!-- Bento Grid Feature -->
+<div class="feat-bento">
   <div class="bento-header">
-    <h2 class="bento-main-title">Matrix_Features</h2>
-    <p class="bento-main-desc">High-performance architecture wrapped in a premium interface.</p>
+    <h2>Powerful Features</h2>
+    <p>Everything you need to scale your application globally.</p>
   </div>
   <div class="bento-grid">
-    <div class="card-analytics">
-      <div class="card-content">
-        <h3 class="card-title">Global_Analytics_Node</h3>
-        <p class="card-desc">Synchronize user data streams from across the digital grid in real-time.</p>
+    <div class="card card-wide">
+      <div class="card-text">
+        <h3>Advanced Analytics</h3>
+        <p>Deep dive into your data with our comprehensive analytics suite.</p>
       </div>
       <div class="card-visual-inset">
-         <div class="inset-dashboard">
-            <div class="dash-header">
-              <div class="dot-blue"></div>
-              <div class="dot-slate"></div>
-            </div>
-            <div class="dash-chart">
-               <div class="bar bar-1"></div>
-               <div class="bar bar-2"></div>
-               <div class="bar bar-3"></div>
-               <div class="bar bar-4"></div>
-               <div class="bar bar-5"></div>
+         <div class="inset-inner">
+            <div class="chart-header"><span></span><span></span></div>
+            <div class="chart-bars">
+               <div class="bar h-50"></div>
+               <div class="bar h-75"></div>
+               <div class="bar h-33"></div>
+               <div class="bar h-100"></div>
+               <div class="bar h-66"></div>
             </div>
          </div>
       </div>
     </div>
-    <div class="card-secure">
-      <div class="secure-icon">🔒</div>
-      <h3 class="card-title text-white">Secure_Protocol</h3>
-      <p class="card-desc text-white-mute">Enterprise-grade quantum encryption for every data node.</p>
+    <div class="card card-dark">
+      <div class="icon-circle">🔒</div>
+      <h3>Enterprise Security</h3>
+      <p>Bank-grade encryption for all your sensitive data nodes.</p>
     </div>
-    <div class="card-sync group-blue">
-      <h3 class="card-title-sm">Edge_Sync</h3>
-      <p class="card-desc-sm">Built on high-fidelity global edge networks.</p>
+    <div class="card card-small">
+      <h3>Cloud Sync</h3>
+      <p>Automatic sync across all your devices in real-time.</p>
     </div>
-    <div class="card-sync group-indigo">
-      <h3 class="card-title-sm">Neural_Team</h3>
-      <p class="card-desc-sm">Collaborate instantly via shared logic nodes.</p>
+    <div class="card card-small">
+      <h3>Team Collaboration</h3>
+      <p>Built-in tools for seamless teamwork and communication.</p>
     </div>
   </div>
-</div>`} 
-              cssCode={`.bento-root { background: #f8fafc; padding: 48px; border-radius: 48px; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; }
-.bento-header { text-align: center; margin-bottom: 80px; }
-.bento-main-title { font-size: 64px; font-weight: 900; color: #020617; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1; margin-bottom: 24px; }
-@media (min-width: 768px) { .bento-main-title { font-size: 80px; } }
-.bento-main-desc { color: #64748b; font-size: 20px; text-transform: lowercase; font-weight: 500; }
-.bento-grid { display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 1152px; margin: 0 auto; }
+</div>`,
+      css: `.feat-bento { background: #f9fafb; padding: 48px; border-radius: 24px; font-family: sans-serif; box-sizing: border-box; }
+.bento-header { text-align: center; margin-bottom: 64px; }
+h2 { font-size: 32px; font-weight: 700; color: #111827; margin-bottom: 16px; }
+p { color: #6b7280; font-size: 18px; }
+.bento-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 1152px; margin: 0 auto; }
 @media (min-width: 768px) { .bento-grid { grid-template-columns: repeat(3, 1fr); } }
-.card-analytics { grid-column: span 1; background: white; border-radius: 40px; padding: 48px; border: 1px solid #f1f5f9; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); position: relative; overflow: hidden; height: 450px; }
-@media (min-width: 768px) { .card-analytics { grid-column: span 2; } }
-.card-secure { grid-row: span 1; background: #020617; color: white; border-radius: 40px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-.card-sync { background: white; border-radius: 40px; padding: 40px; border: 1px solid #f1f5f9; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); transition: all 0.5s ease; cursor: pointer; }
-.group-blue:hover { background: #2563eb; }
-.group-indigo:hover { background: #4f46e5; }
-.card-sync:hover * { color: white !important; }
-.card-title { font-size: 36px; font-weight: 900; color: #020617; text-transform: uppercase; margin-bottom: 16px; letter-spacing: -0.02em; }
-.card-desc { color: #64748b; font-size: 18px; text-transform: lowercase; max-width: 320px; line-height: 1.5; }
-.card-title-sm { font-size: 24px; font-weight: 900; text-transform: uppercase; margin-bottom: 8px; }
-.card-desc-sm { color: #64748b; font-size: 14px; text-transform: lowercase; }
-.text-white { color: white; }
-.text-white-mute { color: rgba(255,255,255,0.4); }
-.secure-icon { font-size: 80px; margin-bottom: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; width: 96px; height: 96px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); }
-.card-visual-inset { position: absolute; right: -10%; bottom: -10%; width: 70%; height: 70%; background: #f8fafc; border-radius: 80px 0 0 0; border-top: 4px solid #f1f5f9; border-left: 4px solid #f1f5f9; padding: 40px; box-sizing: border-box; }
-.inset-dashboard { background: white; border-radius: 24px; height: 100%; width: 100%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); padding: 32px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; }
-.dash-header { display: flex; gap: 4px; }
-.dot-blue { width: 8px; height: 8px; background: #2563eb; border-radius: 50%; }
-.dot-slate { width: 8px; height: 8px; background: #f1f5f9; border-radius: 50%; }
-.dash-chart { display: flex; gap: 12px; align-items: flex-end; height: 128px; }
-.bar { flex: 1; border-radius: 8px 8px 0 0; background: #2563eb; transition: height 0.3s ease; }
-.bar-1 { height: 40%; background: #3b82f6; }
-.bar-2 { height: 70%; background: #2563eb; }
-.bar-3 { height: 50%; background: #60a5fa; }
-.bar-4 { height: 90%; background: #1e40af; }
-.bar-5 { height: 60%; background: #3b82f6; }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 02. Modern Bento Grid Protocol </span>
-          <FeatureBento />
-        </section>
+.card { background: white; border-radius: 24px; padding: 40px; border: 1px solid #f3f4f6; position: relative; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05); text-align: left; }
+.card-wide { grid-column: span 1; height: 400px; }
+@media (min-width: 768px) { .card-wide { grid-column: span 2; } }
+.card-dark { background: #4f46e5; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+.card-dark h3 { color: white !important; }
+.card-dark p { color: #e0e7ff !important; }
+.card h3 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+.card p { font-size: 16px; color: #6b7280; line-height: 1.5; }
+.card-small:hover { border-color: #2563eb; }
+.icon-circle { width: 64px; height: 64px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 24px; }
+.card-visual-inset { position: absolute; right: 0; bottom: 0; width: 60%; height: 60%; background: #f9fafb; border-radius: 24px 0 0 0; border-top: 1px solid #f3f4f6; border-left: 1px solid #f3f4f6; padding: 24px; box-sizing: border-box; }
+.inset-inner { background: white; border-radius: 12px; height: 100%; width: 100%; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; }
+.chart-header { display: flex; gap: 4px; }
+.chart-header span:first-child { width: 8px; height: 8px; background: #3b82f6; border-radius: 50%; }
+.chart-header span:last-child { width: 8px; height: 8px; background: #e5e7eb; border-radius: 50%; }
+.chart-bars { display: flex; gap: 8px; align-items: flex-end; height: 96px; }
+.bar { flex: 1; border-radius: 2px 2px 0 0; background: #3b82f6; }
+.h-50 { height: 50%; background: #dbeafe; }
+.h-75 { height: 75%; background: #3b82f6; }
+.h-33 { height: 33%; background: #bfdbfe; }
+.h-100 { height: 100%; background: #2563eb; }
+.h-66 { height: 66%; background: #60a5fa; }`
+    },
+    {
+      id: "03",
+      name: "Interactive Logic Tabs",
+      component: <FeatureTabs />,
+      jsx: `import React, { useState } from 'react';
 
-        {/* 03. Interactive Tabs */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureTabs = () => {
-  const [active, setActive] = React.useState(0);
+export const FeatureTabs = () => {
+  const [active, setActive] = useState(0);
   const features = [
-    { title: "Design_Logic", desc: "Craft premium digital architectures.", color: "bg-blue-600" },
-    { title: "Core_Build", desc: "Assemble nodes with modern tools.", color: "bg-indigo-600" },
-    { title: "Sync_Deploy", desc: "Push signal to the global matrix.", color: "bg-slate-950" }
+    { title: "Plan", desc: "Design your logic flow with ease.", color: "bg-blue-600" },
+    { title: "Build", desc: "Assemble components with speed.", color: "bg-indigo-600" },
+    { title: "Deploy", desc: "Ship to global nodes instantly.", color: "bg-slate-900" }
   ];
 
   return (
-    <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
-      <div className="grid md:grid-cols-12 gap-12 text-left">
-        <div className="md:col-span-5 flex flex-col gap-6">
+    <div className="bg-white p-12 rounded-3xl border border-gray-100 font-sans text-left">
+      <div className="grid md:grid-cols-12 gap-12">
+        <div className="md:col-span-5 flex flex-col gap-4 text-left">
           {features.map((feat, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={\`text-left p-8 rounded-3xl transition-all duration-500 border-2 \${
+              className={\`text-left p-6 rounded-2xl transition-all duration-300 border-2 \${
                 active === i 
-                ? 'bg-slate-50 border-slate-950 shadow-[8px_8px_0_0_#000]' 
-                : 'bg-white border-slate-100 hover:border-slate-300 opacity-60 grayscale'
+                ? 'bg-gray-50 border-gray-900 shadow-md' 
+                : 'bg-white border-transparent hover:border-gray-100 opacity-70'
               }\`}
             >
-              <h3 className={\`font-black text-2xl mb-2 uppercase tracking-tight \${active === i ? 'text-slate-950' : 'text-slate-400'}\`}>
+              <h3 className={\`font-bold text-xl mb-1 \${active === i ? 'text-gray-900' : 'text-gray-400'}\`}>
                 {feat.title}
               </h3>
-              <p className="text-sm text-slate-500 lowercase font-medium italic">{feat.desc}</p>
+              <p className="text-sm text-gray-500">{feat.desc}</p>
             </button>
           ))}
         </div>
-        <div className="md:col-span-7 bg-slate-50 rounded-[3rem] overflow-hidden relative min-h-[450px] flex items-center justify-center p-12">
-          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-          <div className={\`w-full aspect-video rounded-3xl shadow-2xl flex flex-col items-center justify-center text-white transition-all duration-700 \${features[active].color}\`}>
-            <div className="text-7xl font-black mb-6 opacity-20 italic">0{active + 1}</div>
-            <div className="text-xs font-black uppercase tracking-[0.5em] border-2 border-white/20 px-6 py-2 rounded-full backdrop-blur-xl">Protocol_Active</div>
-          </div>
+        <div className="md:col-span-7 bg-gray-50 rounded-3xl overflow-hidden relative min-h-[350px] flex items-center justify-center p-8">
+           <div className={\`w-full aspect-video rounded-2xl shadow-xl flex flex-col items-center justify-center text-white transition-all duration-500 \${features[active].color}\`}>
+             <div className="text-6xl font-bold mb-4 opacity-30">0{active + 1}</div>
+             <div className="text-sm font-bold uppercase tracking-widest px-4 py-1 border border-white/30 rounded-full">Active Mode</div>
+           </div>
         </div>
       </div>
     </div>
   );
-};`} 
-              htmlCode={`<!-- Interactive Tabs Feature -->
-<div class="tabs-root">
+};`,
+      html: `<!-- Interactive Tabs Feature -->
+<div class="feat-tabs">
   <div class="tabs-grid">
     <div class="tabs-controls">
-      <div class="tab-control active">
-        <h3 class="tab-title">Design_Logic</h3>
-        <p class="tab-desc">Craft premium digital architectures.</p>
+      <div class="tab-btn active">
+        <h3>Plan</h3>
+        <p>Design your logic flow with ease.</p>
       </div>
-      <div class="tab-control inactive">
-        <h3 class="tab-title mute">Core_Build</h3>
-        <p class="tab-desc">Assemble nodes with modern tools.</p>
+      <div class="tab-btn inactive">
+        <h3>Build</h3>
+        <p>Assemble components with speed.</p>
       </div>
-      <div class="tab-control inactive">
-        <h3 class="tab-title mute">Sync_Deploy</h3>
-        <p class="tab-desc">Push signal to the global matrix.</p>
+      <div class="tab-btn inactive">
+        <h3>Deploy</h3>
+        <p>Ship to global nodes instantly.</p>
       </div>
     </div>
     <div class="tabs-display">
-      <div class="display-inner color-blue">
-        <div class="node-number">01</div>
-        <div class="node-badge">Protocol_Active</div>
-      </div>
+       <div class="display-card color-blue">
+         <div class="node-num">01</div>
+         <div class="node-badge">Active Mode</div>
+       </div>
     </div>
   </div>
-</div>`} 
-              cssCode={`.tabs-root { background: white; padding: 48px; border-radius: 48px; border: 1px solid #f1f5f9; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-sizing: border-box; }
+</div>`,
+      css: `.feat-tabs { background: white; padding: 48px; border-radius: 24px; border: 1px solid #f3f4f6; font-family: sans-serif; box-sizing: border-box; }
 .tabs-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 @media (min-width: 768px) { .tabs-grid { grid-template-columns: repeat(12, 1fr); } }
-.tabs-controls { grid-column: span 1; display: flex; flex-direction: column; gap: 24px; }
+.tabs-controls { grid-column: span 1; display: flex; flex-direction: column; gap: 16px; }
 @media (min-width: 768px) { .tabs-controls { grid-column: span 5; } }
-.tabs-display { grid-column: span 1; background: #f8fafc; border-radius: 48px; padding: 48px; display: flex; align-items: center; justify-content: center; min-height: 450px; position: relative; overflow: hidden; }
+.tabs-display { grid-column: span 1; background: #f9fafb; border-radius: 24px; padding: 32px; display: flex; align-items: center; justify-content: center; min-height: 350px; }
 @media (min-width: 768px) { .tabs-display { grid-column: span 7; } }
-.tab-control { padding: 32px; border-radius: 24px; border: 2px solid #f1f5f9; transition: all 0.5s ease; cursor: pointer; text-align: left; }
-.tab-control.active { border-color: #020617; background: #f8fafc; box-shadow: 8px 8px 0 0 #000; opacity: 1; }
-.tab-control.inactive { opacity: 0.6; filter: grayscale(1); }
-.tab-title { font-size: 24px; font-weight: 900; text-transform: uppercase; margin-bottom: 8px; letter-spacing: -0.02em; }
-.tab-title.mute { color: #94a3b8; }
-.tab-desc { color: #64748b; font-size: 14px; text-transform: lowercase; font-weight: 500; }
-.display-inner { width: 100%; aspect-ratio: 16/9; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; transition: all 0.7s ease; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.tab-btn { padding: 24px; border-radius: 16px; border: 2px solid transparent; transition: 0.3s; cursor: pointer; text-align: left; }
+.tab-btn.active { border-color: #111827; background: #f9fafb; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+.tab-btn.inactive { opacity: 0.5; }
+.tab-btn h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+.tab-btn p { color: #6b7280; font-size: 14px; }
+.display-card { width: 100%; aspect-ratio: 16/9; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; transition: 0.5s; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
 .color-blue { background: #2563eb; }
 .color-indigo { background: #4f46e5; }
-.color-dark { background: #020617; }
-.node-number { font-size: 72px; font-weight: 900; opacity: 0.2; font-style: italic; margin-bottom: 24px; }
-.node-badge { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; border: 2px solid rgba(255,255,255,0.2); padding: 8px 24px; border-radius: 999px; backdrop-filter: blur(8px); }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 03. Interactive Logic Tabs </span>
-          <FeatureTabs />
-        </section>
+.color-dark { background: #0f172a; }
+.node-num { font-size: 64px; font-weight: 700; opacity: 0.3; margin-bottom: 16px; }
+.node-badge { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid rgba(255,255,255,0.3); padding: 4px 16px; border-radius: 999px; }`
+    },
+    {
+      id: "04",
+      name: "Developer Core Mesh Block",
+      component: <FeatureDev />,
+      jsx: `import React from 'react';
 
-        {/* 04. Code Block */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureDev = () => (
-  <div className="bg-slate-950 text-white p-16 rounded-[3rem] border border-white/5 overflow-hidden relative font-sans italic font-bold text-left">
-    <div className="relative z-10 flex flex-col lg:flex-row items-center gap-24">
+export const FeatureDev = () => (
+  <div className="bg-[#0d1117] text-white p-12 rounded-3xl border border-gray-800 overflow-hidden relative font-sans text-left">
+    <div className="relative z-10 flex flex-col lg:flex-row items-center gap-16 text-left">
       <div className="w-full lg:w-1/2">
-        <div className="inline-block px-4 py-1 bg-blue-600/10 text-blue-500 border border-blue-500/20 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-10">API_First_Protocol</div>
-        <h2 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-[0.9]">Built_For <br/> <span className="text-blue-500 italic">Architects</span></h2>
-        <p className="text-white/40 text-xl mb-12 leading-relaxed lowercase font-medium">Integrate our core logic mesh in minutes. Fully typed SDKs and 99.9% protocol uptime.</p>
-        <div className="flex gap-6">
-          <button className="bg-white text-slate-950 px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-2xl">Read_Docs</button>
+        <div className="inline-block px-3 py-1 bg-green-500/10 text-green-500 border border-green-500/20 rounded-full text-xs font-bold uppercase tracking-widest mb-6">API First</div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white text-left">Built for developers,<br/> by developers.</h2>
+        <p className="text-gray-400 text-lg mb-10 leading-relaxed text-left">Integrate our SDK in minutes. Comprehensive documentation, typed SDKs, and 99.99% uptime guarantee.</p>
+        <div className="flex gap-4">
+          <button className="bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-200 transition-colors">Read Docs</button>
+          <button className="bg-transparent border border-gray-700 text-white px-6 py-3 rounded-lg font-bold hover:border-gray-500 transition-colors">Get API Key</button>
         </div>
       </div>
       <div className="w-full lg:w-1/2">
-        <div className="bg-[#0a0a0a] rounded-[2rem] border-2 border-white/5 shadow-2xl overflow-hidden font-mono text-left italic">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-white/5">
-            <div className="flex gap-2"><div className="w-3 h-3 rounded-full bg-red-500/50"></div><div className="w-3 h-3 rounded-full bg-yellow-500/50"></div></div>
-            <span className="text-[10px] text-white/30 font-black uppercase tracking-widest italic">initialize_sdk.ts</span>
+        <div className="bg-[#161b22] rounded-2xl border border-gray-700 shadow-2xl overflow-hidden font-mono text-left">
+          <div className="flex items-center justify-between px-5 py-3 border-b border-gray-700 bg-[#0d1117]">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
+            </div>
+            <span className="text-[10px] text-gray-500 uppercase tracking-widest">initialize_sdk.ts</span>
           </div>
-          <div className="p-8 text-sm leading-relaxed">
-            <p className="mb-2"><span className="text-blue-400">import</span> {'{'} <span className="text-indigo-400">CoreClient</span> {'}'} <span className="text-blue-400">from</span> <span className="text-emerald-400">'@logic/mesh'</span>;</p>
-            <p className="mb-6"><span className="text-blue-400">const</span> client = <span className="text-blue-400">new</span> <span className="text-indigo-400">CoreClient</span>();</p>
-            <p className="text-white/40 mb-2 font-black uppercase text-[10px] tracking-widest opacity-50 italic">// Initialize logic sync</p>
-            <p className="mb-2"><span className="text-blue-400">await</span> client.<span className="text-yellow-200">initialize</span>({'{'}</p>
-            <p className="pl-6 mb-2">nodeID: <span className="text-emerald-400">'mesh_0842'</span>,</p>
-            <p className="pl-6 mb-2">priority: <span className="text-blue-400">true</span></p>
+          <div className="p-6 text-sm leading-relaxed">
+            <p className="mb-2"><span className="text-purple-400">import</span> {'{'} <span className="text-blue-300">Client</span> {'}'} <span className="text-purple-400">from</span> <span className="text-green-300">'@sdk/core'</span>;</p>
+            <p className="mb-6"><span className="text-purple-400">const</span> client = <span className="text-purple-400">new</span> <span className="text-blue-300">Client</span>();</p>
+            <p className="text-gray-500 mb-2">// Initialize logic sync</p>
+            <p className="mb-2"><span className="text-purple-400">await</span> client.<span className="text-yellow-200">initialize</span>({'{'}</p>
+            <p className="pl-6">apiKey: <span className="text-green-300">'sk_live_...'</span>,</p>
+            <p className="pl-6">priority: <span className="text-blue-400">true</span></p>
             <p>{'}'});</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-);`} 
-              htmlCode={`<!-- Developer Code Feature -->
-<div class="dev-root">
-  <div class="dev-flex">
+);`,
+      html: `<!-- Developer Code Feature -->
+<div class="feat-dev">
+  <div class="dev-container">
     <div class="dev-content">
-      <div class="dev-badge">API_First_Protocol</div>
-      <h2 class="dev-title">Built_For <br/> <span class="blue-text">Architects</span></h2>
-      <p class="dev-desc">Integrate our core logic mesh in minutes. Fully typed SDKs and 99.9% protocol uptime.</p>
-      <button class="dev-btn">Read_Docs</button>
+      <div class="dev-badge">API First</div>
+      <h2>Built for developers,<br/> by developers.</h2>
+      <p>Integrate our SDK in minutes. Comprehensive documentation, typed SDKs, and 99.99% uptime guarantee.</p>
+      <div class="dev-actions">
+        <button class="btn-white">Read Docs</button>
+        <button class="btn-outline">Get API Key</button>
+      </div>
     </div>
     <div class="dev-visual">
-      <div class="code-window">
-        <div class="code-header">
-          <div class="window-dots">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
-          </div>
-          <span class="file-name">initialize_sdk.ts</span>
-        </div>
-        <div class="code-body">
-          <p><span class="tok-kw">import</span> { <span class="tok-type">CoreClient</span> } <span class="tok-kw">from</span> <span class="tok-str">'@logic/mesh'</span>;</p>
-          <p><span class="tok-kw">const</span> client = <span class="tok-kw">new</span> <span class="tok-type">CoreClient</span>();</p>
-          <p class="tok-comment">// Initialize logic sync</p>
-          <p><span class="tok-kw">await</span> client.<span class="tok-func">initialize</span>({</p>
-          <p class="indent">nodeID: <span class="tok-str">'mesh_0842'</span>,</p>
-          <p class="indent">priority: <span class="tok-kw">true</span></p>
-          <p>});</p>
-        </div>
-      </div>
+       <div class="code-window">
+         <div class="window-header">
+           <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+           <span class="file-label">initialize_sdk.ts</span>
+         </div>
+         <div class="code-content">
+           <p><span class="tok-kw">import</span> { <span class="tok-type">Client</span> } <span class="tok-kw">from</span> <span class="tok-str">'@sdk/core'</span>;</p>
+           <p><span class="tok-kw">const</span> client = <span class="tok-kw">new</span> <span class="tok-type">Client</span>();</p>
+           <p class="tok-comment">// Initialize logic sync</p>
+           <p><span class="tok-kw">await</span> client.<span class="tok-func">initialize</span>({</p>
+           <p class="indent">apiKey: <span class="tok-str">'sk_live_...'</span>,</p>
+           <p class="indent">priority: <span class="tok-kw">true</span></p>
+           <p>});</p>
+         </div>
+       </div>
     </div>
   </div>
-</div>`} 
-              cssCode={`.dev-root { background: #020617; color: white; padding: 64px; border-radius: 48px; border: 1px solid rgba(255,255,255,0.05); font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; position: relative; overflow: hidden; box-sizing: border-box; }
-.dev-flex { display: flex; flex-direction: column; gap: 80px; align-items: center; }
-@media (min-width: 1024px) { .dev-flex { flex-direction: row; } }
+</div>`,
+      css: `.feat-dev { background: #0d1117; color: white; padding: 64px; border-radius: 24px; border: 1px solid #1f2937; font-family: sans-serif; box-sizing: border-box; }
+.dev-container { display: flex; flex-direction: column; gap: 64px; align-items: center; }
+@media (min-width: 1024px) { .dev-container { flex-direction: row; } }
 .dev-content, .dev-visual { width: 100%; }
 @media (min-width: 1024px) { .dev-content, .dev-visual { width: 50%; } }
-.dev-badge { display: inline-block; padding: 4px 16px; background: rgba(37,99,235,0.1); color: #3b82f6; border: 1px solid rgba(37,99,235,0.2); border-radius: 999px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 40px; }
-.dev-title { font-size: 48px; font-weight: 900; text-transform: uppercase; line-height: 0.9; margin-bottom: 32px; letter-spacing: -0.05em; }
-@media (min-width: 768px) { .dev-title { font-size: 64px; } }
-.blue-text { color: #3b82f6; }
-.dev-desc { color: rgba(255,255,255,0.4); font-size: 20px; text-transform: lowercase; margin-bottom: 48px; line-height: 1.6; }
-.dev-btn { background: white; color: #020617; padding: 20px 40px; border-radius: 16px; border: none; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
-.dev-btn:hover { background: #3b82f6; color: white; }
-.code-window { background: #000; border-radius: 32px; border: 2px solid rgba(255,255,255,0.05); overflow: hidden; font-family: 'JetBrains Mono', monospace; text-align: left; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5); }
-.code-header { padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
-.window-dots { display: flex; gap: 8px; }
-.dot { width: 12px; height: 12px; border-radius: 50%; opacity: 0.5; }
-.red { background: #ef4444; }
-.yellow { background: #eab308; }
-.green { background: #22c55e; }
-.file-name { font-size: 10px; color: rgba(255,255,255,0.3); font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; }
-.code-body { padding: 32px; font-size: 14px; line-height: 1.8; color: #94a3b8; }
-.tok-kw { color: #60a5fa; }
-.tok-type { color: #818cf8; }
-.tok-str { color: #34d399; }
-.tok-func { color: #fde047; }
-.tok-comment { color: rgba(255,255,255,0.2); font-size: 12px; text-transform: uppercase; font-weight: 900; letter-spacing: 0.1em; }
-.indent { padding-left: 24px; }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 04. Developer Core Mesh Block </span>
-          <FeatureDev />
-        </section>
+.dev-badge { display: inline-block; padding: 4px 12px; background: rgba(34,197,94,0.1); color: #22c55e; border: 1px solid rgba(34,197,94,0.2); border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
+h2 { font-size: 36px; font-weight: 700; color: white; margin-bottom: 24px; line-height: 1.2; text-align: left; }
+@media (min-width: 768px) { h2 { font-size: 48px; } }
+p { color: #9ca3af; margin-bottom: 40px; font-size: 18px; line-height: 1.6; text-align: left; }
+.dev-actions { display: flex; gap: 16px; }
+.btn-white { padding: 12px 24px; background: white; color: #111827; font-weight: 700; border-radius: 8px; border: none; cursor: pointer; transition: 0.2s; }
+.btn-outline { padding: 12px 24px; background: transparent; color: white; font-weight: 700; border-radius: 8px; border: 1px solid #374151; cursor: pointer; transition: 0.2s; }
+.btn-white:hover { background: #e5e7eb; }
+.btn-outline:hover { border-color: #4b5563; }
+.code-window { background: #161b22; border-radius: 16px; border: 1px solid #30363d; overflow: hidden; font-family: monospace; text-align: left; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+.window-header { padding: 12px 20px; border-bottom: 1px solid #30363d; background: #0d1117; display: flex; justify-content: space-between; align-items: center; }
+.dots { display: flex; gap: 6px; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+.file-label { font-size: 12px; color: #8b949e; }
+.code-content { padding: 24px; font-size: 14px; line-height: 1.8; color: #c9d1d9; }
+.tok-kw { color: #ff7b72; }
+.tok-type { color: #79c0ff; }
+.tok-str { color: #a5d6ff; }
+.tok-func { color: #d2a8ff; }
+.tok-comment { color: #8b949e; }
+.indent { padding-left: 20px; }`
+    },
+    {
+      id: "05",
+      name: "Glassmorphism Protocol Evolution",
+      component: <FeatureGlass />,
+      jsx: `import React from 'react';
 
-        {/* 05. Glassmorphism */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureGlass = () => (
-  <div className="relative bg-slate-950 p-20 rounded-[3rem] overflow-hidden min-h-[500px] flex items-center font-sans italic font-bold text-left">
-    <div className="absolute top-0 right-[-10%] w-[40rem] h-[40rem] bg-blue-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse"></div>
-    <div className="absolute bottom-[-10%] left-[-10%] w-[40rem] h-[40rem] bg-indigo-600 rounded-full mix-blend-screen filter blur-[140px] opacity-20 animate-pulse delay-1000"></div>
-    <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center w-full">
-      <div>
-        <h2 className="text-6xl md:text-8xl font-black text-white mb-10 tracking-tighter uppercase leading-[0.85] drop-shadow-2xl">Protocol_ <br/> <span className="text-blue-400 italic">Evolution</span></h2>
-        <p className="text-white/60 text-xl mb-12 max-w-lg lowercase font-medium">The next generation of creative logic. Designed for the high-fidelity digital economy.</p>
-        <button className="bg-white/5 backdrop-blur-2xl border-2 border-white/10 text-white px-12 py-5 rounded-2xl hover:bg-white/10 transition-all uppercase text-xs font-black tracking-[0.3em] shadow-2xl">Explore_Nodes</button>
+export const FeatureGlass = () => (
+  <div className="relative bg-indigo-600 p-16 rounded-3xl overflow-hidden min-h-[450px] flex items-center font-sans text-left">
+    <div className="absolute top-0 right-[-10%] w-[30rem] h-[30rem] bg-purple-500 rounded-full mix-blend-screen filter blur-[80px] opacity-40"></div>
+    <div className="absolute bottom-[-10%] left-[-10%] w-[30rem] h-[30rem] bg-pink-500 rounded-full mix-blend-screen filter blur-[80px] opacity-40"></div>
+    <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center w-full">
+      <div className="text-white text-left">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg text-white">Unleash Creativity</h2>
+        <p className="text-white/80 text-lg mb-10 max-w-md text-left">Tools that don't get in your way. Designed for the modern high-fidelity digital economy.</p>
+        <button className="bg-white/10 backdrop-blur-xl border border-white/30 text-white px-10 py-4 rounded-full hover:bg-white/20 transition-all font-bold shadow-2xl">Explore Architecture</button>
       </div>
       <div className="grid grid-cols-2 gap-6">
-        <div class="glass-card"><div class="glass-icon-blue"></div><h4 class="card-title-xs">Node_Sync</h4></div>
-        <div class="glass-card lift"><div class="glass-icon-indigo"></div><h4 class="card-title-xs">Mesh_Flow</h4></div>
-        <div class="glass-card"><div class="glass-icon-dark"></div><h4 class="card-title-xs">Core_Link</h4></div>
-        <div class="glass-card lift"><div class="glass-icon-sky"></div><h4 class="card-title-xs">API_Grid</h4></div>
-      </div>
-    </div>
-  </div>
-);`} 
-              htmlCode={`<!-- Glassmorphic Feature -->
-<div class="glass-root">
-  <div class="glass-orb-blue"></div>
-  <div class="glass-orb-indigo"></div>
-  <div class="glass-flex">
-    <div class="glass-content">
-      <h2 class="glass-title">Protocol_ <br/> <span class="sky-text">Evolution</span></h2>
-      <p class="glass-desc">The next generation of creative logic. Designed for the high-fidelity digital economy.</p>
-      <button class="glass-btn">Explore_Nodes</button>
-    </div>
-    <div class="glass-grid">
-      <div class="glass-card">
-        <div class="glass-icon bg-blue"><div class="ping"></div></div>
-        <h4 class="glass-card-title">Node_Sync</h4>
-        <div class="glass-line"></div>
-      </div>
-      <div class="glass-card lift">
-        <div class="glass-icon bg-indigo"><div class="ping"></div></div>
-        <h4 class="glass-card-title">Mesh_Flow</h4>
-        <div class="glass-line"></div>
-      </div>
-      <div class="glass-card">
-        <div class="glass-icon bg-dark"><div class="ping"></div></div>
-        <h4 class="glass-card-title">Core_Link</h4>
-        <div class="glass-line"></div>
-      </div>
-      <div class="glass-card lift">
-        <div class="glass-icon bg-sky"><div class="ping"></div></div>
-        <h4 class="glass-card-title">API_Grid</h4>
-        <div class="glass-line"></div>
-      </div>
-    </div>
-  </div>
-</div>`} 
-              cssCode={`.glass-root { position: relative; background: #020617; padding: 80px; border-radius: 48px; overflow: hidden; min-height: 500px; display: flex; align-items: center; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-sizing: border-box; }
-.glass-orb-blue { position: absolute; top: 0; right: -10%; width: 640px; height: 640px; background: #2563eb; border-radius: 50%; filter: blur(140px); opacity: 0.2; animation: pulse 8s infinite alternate; }
-.glass-orb-indigo { position: absolute; bottom: -10%; left: -10%; width: 640px; height: 640px; background: #4f46e5; border-radius: 50%; filter: blur(140px); opacity: 0.2; animation: pulse 8s infinite alternate-reverse; }
-@keyframes pulse { 0% { transform: scale(1); opacity: 0.1; } 100% { transform: scale(1.2); opacity: 0.3; } }
-.glass-flex { position: relative; z-index: 10; display: flex; flex-direction: column; gap: 80px; width: 100%; }
-@media (min-width: 1024px) { .glass-flex { flex-direction: row; } }
-.glass-content, .glass-grid { width: 100%; }
-@media (min-width: 1024px) { .glass-content, .glass-grid { width: 50%; } }
-.glass-title { font-size: 64px; font-weight: 900; color: white; margin-bottom: 40px; letter-spacing: -0.05em; text-transform: uppercase; line-height: 0.85; }
-.sky-text { color: #60a5fa; }
-.glass-desc { color: rgba(255,255,255,0.6); font-size: 20px; text-transform: lowercase; margin-bottom: 48px; max-width: 448px; line-height: 1.6; }
-.glass-btn { background: rgba(255,255,255,0.05); backdrop-filter: blur(40px); border: 2px solid rgba(255,255,255,0.1); color: white; padding: 20px 48px; border-radius: 16px; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 0.3em; cursor: pointer; transition: all 0.3s ease; }
-.glass-btn:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
-.glass-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.glass-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.1); padding: 40px; border-radius: 40px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transition: all 0.5s ease; text-align: left; }
-.glass-card.lift { transform: translateY(48px); }
-.glass-card:hover { transform: translateY(-16px) !important; background: rgba(255,255,255,0.1); }
-.glass-icon { width: 56px; height: 56px; border-radius: 16px; margin-bottom: 32px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); }
-.bg-blue { background: #2563eb; }
-.bg-indigo { background: #4f46e5; }
-.bg-dark { background: #0f172a; }
-.bg-sky { background: #0ea5e9; }
-.ping { width: 16px; height: 16px; background: white; border-radius: 50%; opacity: 0.3; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; }
-@keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
-.glass-card-title { color: white; font-size: 18px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-.glass-line { height: 4px; width: 48px; background: rgba(255,255,255,0.1); border-radius: 999px; }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 05. Glassmorphism Protocol Evolution </span>
-          <FeatureGlass />
-        </section>
-
-        {/* 06. Service Grid */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureGrid = () => (
-  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 font-sans italic font-bold">
-    <div className="text-center max-w-3xl mx-auto mb-24">
-      <div className="text-[10px] text-blue-600 font-black uppercase tracking-[0.5em] mb-8 italic">// Architecture_Nodes</div>
-      <h2 className="text-5xl md:text-7xl font-black text-slate-950 mb-6 uppercase tracking-tighter leading-none">Why_Integrate_Core?</h2>
-      <p className="text-slate-500 text-xl lowercase font-medium">Comprehensive suite of high-fidelity tools for the digital vanguard.</p>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
-      {[
-        { title: 'Secure_Shield', icon: '🛡️', desc: 'Bank-grade encryption logic.' },
-        { title: 'Flash_Speed', icon: '⚡', desc: 'Optimized for sub-ms latency.' },
-        { title: 'Crystal_Uptime', icon: '💎', desc: '99.9% protocol guarantee.' },
-        { title: 'Node_Scale', icon: '📈', desc: 'Grow from 1 to 1M nodes.' },
-        { title: 'Logic_Support', icon: '💬', desc: '24/7 dedicated core team.' },
-        { title: 'Global_Mesh', icon: '🌍', desc: 'Nodes in 30+ regions.' },
-      ].map((item) => (
-        <div key={item.title} className="p-10 rounded-[2.5rem] bg-slate-50 hover:bg-slate-950 transition-all duration-500 cursor-default group border border-slate-100 hover:border-slate-800 shadow-xl hover:shadow-2xl">
-          <div className="text-5xl mb-8 group-hover:scale-125 transition-transform duration-500 inline-block drop-shadow-2xl">{item.icon}</div>
-          <h3 className="text-2xl font-black text-slate-950 mb-4 uppercase tracking-tight group-hover:text-white transition-colors">{item.title}</h3>
-          <p className="text-slate-500 text-sm leading-relaxed lowercase font-medium group-hover:text-white/40 transition-colors">{item.desc}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-);`} 
-              htmlCode={`<!-- Service Grid Feature -->
-<div class="grid-root">
-  <div class="grid-header">
-    <div class="header-badge">// Architecture_Nodes</div>
-    <h2 class="grid-main-title">Why_Integrate_Core?</h2>
-    <p class="grid-main-desc">Comprehensive suite of high-fidelity tools for the digital vanguard.</p>
-  </div>
-  <div class="feature-grid-wrapper">
-    <div class="feature-tile">
-      <div class="tile-icon">🛡️</div>
-      <h3 class="tile-title">Secure_Shield</h3>
-      <p class="tile-desc">Bank-grade encryption logic.</p>
-    </div>
-    <div class="feature-tile">
-      <div class="tile-icon">⚡</div>
-      <h3 class="tile-title">Flash_Speed</h3>
-      <p class="tile-desc">Optimized for sub-ms latency.</p>
-    </div>
-    <div class="feature-tile">
-      <div class="tile-icon">💎</div>
-      <h3 class="tile-title">Crystal_Uptime</h3>
-      <p class="tile-desc">99.9% protocol guarantee.</p>
-    </div>
-    <div class="feature-tile">
-      <div class="tile-icon">📈</div>
-      <h3 class="tile-title">Node_Scale</h3>
-      <p class="tile-desc">Grow from 1 to 1M nodes.</p>
-    </div>
-    <div class="feature-tile">
-      <div class="tile-icon">💬</div>
-      <h3 class="tile-title">Logic_Support</h3>
-      <p class="tile-desc">24/7 dedicated core team.</p>
-    </div>
-    <div class="feature-tile">
-      <div class="tile-icon">🌍</div>
-      <h3 class="tile-title">Global_Mesh</h3>
-      <p class="tile-desc">Nodes in 30+ regions.</p>
-    </div>
-  </div>
-</div>`} 
-              cssCode={`.grid-root { background: white; padding: 48px; border-radius: 48px; border: 1px solid #f1f5f9; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-sizing: border-box; }
-.grid-header { text-align: center; max-width: 768px; margin: 0 auto 96px auto; }
-.header-badge { font-size: 10px; color: #2563eb; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; margin-bottom: 32px; }
-.grid-main-title { font-size: 64px; font-weight: 900; color: #020617; text-transform: uppercase; margin-bottom: 24px; line-height: 1; letter-spacing: -0.05em; }
-.grid-main-desc { color: #64748b; font-size: 20px; text-transform: lowercase; font-weight: 500; }
-.feature-grid-wrapper { display: grid; grid-template-columns: 1fr; gap: 48px; }
-@media (min-width: 768px) { .feature-grid-wrapper { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .feature-grid-wrapper { grid-template-columns: repeat(3, 1fr); } }
-.feature-tile { padding: 40px; border-radius: 40px; background: #f8fafc; border: 1px solid #f1f5f9; text-align: left; transition: all 0.5s ease; cursor: default; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); }
-.feature-tile:hover { background: #020617; border-color: #1e293b; transform: translateY(-12px); box-shadow: 0 40px 100px -20px rgba(0,0,0,0.3); }
-.tile-icon { font-size: 48px; margin-bottom: 32px; transition: transform 0.5s ease; display: inline-block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
-.feature-tile:hover .tile-icon { transform: scale(1.25) rotate(10deg); }
-.tile-title { font-size: 24px; font-weight: 900; color: #020617; text-transform: uppercase; margin-bottom: 16px; transition: color 0.3s ease; }
-.feature-tile:hover .tile-title { color: white; }
-.tile-desc { color: #64748b; font-size: 14px; text-transform: lowercase; transition: color 0.3s ease; line-height: 1.6; }
-.feature-tile:hover .tile-desc { color: rgba(255,255,255,0.4); }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 06. High-Fidelity Service Grid </span>
-          <FeatureGrid />
-        </section>
-
-        {/* 07. Mobile App */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureApp = () => (
-  <div className="bg-blue-600 p-16 rounded-[3rem] overflow-hidden font-sans italic font-bold text-left">
-    <div className="flex flex-col lg:flex-row items-center gap-24 max-w-6xl mx-auto">
-      <div className="w-full lg:w-1/2">
-        <div className="inline-block px-4 py-1 bg-white/10 text-white border border-white/20 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-10">Mobile_First_Node</div>
-        <h2 className="text-5xl md:text-8xl font-black text-white mb-10 uppercase tracking-tighter leading-[0.85]">Your_Grid, <br/> <span className="text-slate-950">In_Pocket.</span></h2>
-        <p className="text-white/60 text-xl mb-12 leading-relaxed lowercase font-medium italic">Synchronize nodes, manage logic flows, and chat with the core team on the go.</p>
-        <div className="flex flex-col sm:flex-row gap-6">
-          <button className="bg-slate-950 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-slate-950 transition-all shadow-2xl">App_Store</button>
-          <button className="bg-white/10 border-2 border-white/20 text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/20 transition-all">Play_Store</button>
-        </div>
-      </div>
-      <div className="w-full lg:w-1/2 flex justify-center">
-        <div className="relative w-[300px] h-[600px] bg-slate-950 rounded-[4rem] border-[12px] border-slate-900 shadow-2xl overflow-hidden scale-110">
-          <div className="w-full h-full bg-white relative">
-            <div className="bg-blue-600 h-48 p-8 pt-16 text-white italic text-left">
-              <div className="text-[10px] uppercase font-black tracking-widest opacity-60 mb-2">Dashboard</div>
-              <div className="text-4xl font-black tracking-tighter">$12,450_USD</div>
-            </div>
-            <div className="p-6 space-y-4">
-              <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-1"></div><div class="line-2"></div></div></div>
-              <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-1"></div><div class="line-2"></div></div></div>
-              <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-1"></div><div class="line-2"></div></div></div>
-              <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-1"></div><div class="line-2"></div></div></div>
-            </div>
-            <div className="absolute bottom-8 right-8 w-16 h-16 bg-blue-600 rounded-2xl shadow-2xl flex items-center justify-center text-white font-black text-2xl">+</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-);`} 
-              htmlCode={`<!-- Mobile App Feature -->
-<div class="app-root">
-  <div class="app-flex">
-    <div class="app-content">
-      <div class="app-badge">Mobile_First_Node</div>
-      <h2 class="app-title">Your_Grid, <br/> <span class="text-dark">In_Pocket.</span></h2>
-      <p class="app-desc">Synchronize nodes, manage logic flows, and chat with the core team on the go. Available for all mobile OS.</p>
-      <div class="app-btns">
-        <button class="btn-dark">App_Store</button>
-        <button class="btn-outline">Play_Store</button>
-      </div>
-    </div>
-    <div class="app-visual">
-      <div class="phone-mockup">
-        <div class="phone-screen">
-          <div class="app-header">
-            <div class="header-label">Dashboard</div>
-            <div class="header-value">$12,450_USD</div>
-          </div>
-          <div class="app-body">
-            <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-lg"></div><div class="line-sm"></div></div></div>
-            <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-lg"></div><div class="line-sm"></div></div></div>
-            <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-lg"></div><div class="line-sm"></div></div></div>
-            <div class="app-row"><div class="row-sq"></div><div class="row-lines"><div class="line-lg"></div><div class="line-sm"></div></div></div>
-          </div>
-          <div class="app-fab">+</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`} 
-              cssCode={`.app-root { background: #2563eb; padding: 64px; border-radius: 48px; overflow: hidden; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-sizing: border-box; }
-.app-flex { display: flex; flex-direction: column; gap: 80px; align-items: center; max-width: 1152px; margin: 0 auto; }
-@media (min-width: 1024px) { .app-flex { flex-direction: row; } }
-.app-content, .app-visual { width: 100%; }
-@media (min-width: 1024px) { .app-content, .app-visual { width: 50%; } }
-.app-badge { display: inline-block; padding: 4px 16px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 40px; }
-.app-title { font-size: 64px; font-weight: 900; color: white; margin-bottom: 40px; text-transform: uppercase; line-height: 0.85; letter-spacing: -0.05em; }
-@media (min-width: 768px) { .app-title { font-size: 80px; } }
-.text-dark { color: #020617; }
-.app-desc { color: rgba(255,255,255,0.6); font-size: 20px; text-transform: lowercase; margin-bottom: 48px; line-height: 1.6; }
-.app-btns { display: flex; flex-direction: column; gap: 24px; }
-@media (min-width: 640px) { .app-btns { flex-direction: row; } }
-.btn-dark { background: #020617; color: white; padding: 20px 40px; border-radius: 16px; border: none; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-.btn-outline { background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); color: white; padding: 18px 40px; border-radius: 16px; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s ease; }
-.btn-dark:hover { background: white; color: #020617; }
-.btn-outline:hover { background: rgba(255,255,255,0.2); }
-.phone-mockup { width: 300px; height: 600px; background: #020617; border-radius: 64px; border: 12px solid #0f172a; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5); overflow: hidden; position: relative; margin: 0 auto; transform: scale(1.1); }
-.phone-screen { width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; }
-.app-header { background: #2563eb; height: 192px; padding: 32px; padding-top: 64px; color: white; text-align: left; }
-.header-label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; margin-bottom: 8px; }
-.header-value { font-size: 32px; font-weight: 900; letter-spacing: -0.05em; }
-.app-body { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
-.app-row { display: flex; align-items: center; gap: 16px; padding: 16px; background: #f8fafc; border-radius: 16px; border: 1px solid #f1f5f9; }
-.row-sq { width: 48px; height: 48px; border-radius: 12px; background: #e2e8f0; }
-.row-lines { flex: 1; display: flex; flex-direction: column; gap: 8px; }
-.line-lg { height: 8px; width: 66%; background: #e2e8f0; border-radius: 999px; }
-.line-sm { height: 8px; width: 50%; background: #f1f5f9; border-radius: 999px; }
-.app-fab { position: absolute; bottom: 32px; right: 32px; width: 64px; height: 64px; background: #2563eb; border-radius: 20px; box-shadow: 0 25px 50px -12px rgba(37,99,235,0.5); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 900; cursor: pointer; transition: transform 0.2s ease; }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 07. Mobile Mesh Node Interface </span>
-          <FeatureApp />
-        </section>
-
-        {/* 08. Brutalist */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureBrutalist = () => (
-  <div className="bg-yellow-400 p-12 rounded-[3rem] border-[8px] border-slate-950 font-sans italic font-black uppercase text-center">
-    <div className="grid md:grid-cols-2 gap-12 items-center text-left">
-      <div className="bg-white border-[8px] border-slate-950 p-12 shadow-[20px_20px_0_0_#000] hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all">
-        <h2 className="text-7xl font-black uppercase mb-10 leading-[0.8] tracking-tighter">Power. <br/> Speed. <br/> Control.</h2>
-        <p className="font-black text-2xl mb-12 text-slate-950 italic">Zero friction. <br/> Just raw performance for power nodes.</p>
-        <button className="w-full py-8 bg-slate-950 text-white font-black text-2xl uppercase hover:bg-white hover:text-slate-950 border-4 border-transparent hover:border-slate-950 transition-all tracking-[0.2em] shadow-2xl">Get_Core_Access</button>
-      </div>
-      <div className="grid grid-cols-2 gap-8">
-        {[1,2,3,4].map(i => (
-          <div key={i} className="bg-blue-600 border-[8px] border-slate-950 p-8 aspect-square flex flex-col items-center justify-center hover:-translate-y-2 hover:shadow-[10px_10px_0_0_#000] transition-all cursor-pointer group">
-            <span className="text-6xl font-black text-white italic group-hover:scale-125 transition-transform">0{i}</span>
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className={\`bg-white/10 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl shadow-2xl transition-transform hover:-translate-y-2 \${i%2===0 ? 'translate-y-8' : ''}\`}>
+            <div className="w-12 h-12 bg-white/20 rounded-xl mb-6 flex items-center justify-center text-white"><span className="text-xl">✨</span></div>
+            <div className="h-2 w-2/3 bg-white/40 rounded-full mb-3 text-left"></div>
+            <div className="h-2 w-1/2 bg-white/20 rounded-full text-left"></div>
           </div>
         ))}
       </div>
     </div>
   </div>
-);`} 
-              htmlCode={`<!-- Brutalist Feature -->
-<div class="brutal-root">
-  <div class="brutal-grid">
-    <div class="brutal-hero-card">
-      <h2 class="brutal-big-title">Power. <br/> Speed. <br/> Control.</h2>
-      <p class="brutal-sub-text">Zero friction. <br/> Just raw performance for power nodes.</p>
-      <button class="brutal-action-btn">Get_Core_Access</button>
+);`,
+      html: `<!-- Glassmorphic Feature -->
+<div class="feat-glass">
+  <div class="orb-purple"></div>
+  <div class="orb-pink"></div>
+  <div class="glass-flex">
+    <div class="glass-content">
+      <h2>Unleash Creativity</h2>
+      <p>Tools that don't get in your way. Designed for the modern high-fidelity digital economy.</p>
+      <button class="glass-btn">Explore Architecture</button>
     </div>
-    <div class="brutal-nodes-grid">
-      <div class="node-sq"><span class="node-num">01</span></div>
-      <div class="node-sq"><span class="node-num">02</span></div>
-      <div class="node-sq"><span class="node-num">03</span></div>
-      <div class="node-sq"><span class="node-num">04</span></div>
+    <div class="glass-grid">
+      <div class="glass-card"><div class="glass-icon">✨</div><div class="line-lg"></div><div class="line-sm"></div></div>
+      <div class="glass-card lift"><div class="glass-icon">✨</div><div class="line-lg"></div><div class="line-sm"></div></div>
+      <div class="glass-card"><div class="glass-icon">✨</div><div class="line-lg"></div><div class="line-sm"></div></div>
+      <div class="glass-card lift"><div class="glass-icon">✨</div><div class="line-lg"></div><div class="line-sm"></div></div>
     </div>
   </div>
-</div>`} 
-              cssCode={`.brutal-root { background: #facc15; padding: 48px; border-radius: 48px; border: 8px solid #020617; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 900; text-transform: uppercase; text-align: center; box-sizing: border-box; }
+</div>`,
+      css: `.feat-glass { position: relative; background: #4f46e5; padding: 64px; border-radius: 24px; overflow: hidden; min-height: 450px; display: flex; align-items: center; font-family: sans-serif; box-sizing: border-box; }
+.orb-purple { position: absolute; top: -150px; right: -150px; width: 480px; height: 480px; background: #a855f7; border-radius: 50%; filter: blur(80px); opacity: 0.4; }
+.orb-pink { position: absolute; bottom: -150px; left: -150px; width: 480px; height: 480px; background: #ec4899; border-radius: 50%; filter: blur(80px); opacity: 0.4; }
+.glass-flex { position: relative; z-index: 10; display: flex; flex-direction: column; gap: 64px; width: 100%; }
+@media (min-width: 1024px) { .glass-flex { flex-direction: row; } }
+.glass-content, .glass-grid { width: 100%; }
+@media (min-width: 1024px) { .glass-content, .glass-grid { width: 50%; } }
+h2 { font-size: 36px; font-weight: 700; color: white; margin-bottom: 24px; text-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: left; }
+@media (min-width: 768px) { h2 { font-size: 48px; } }
+p { color: rgba(255,255,255,0.8); font-size: 18px; margin-bottom: 40px; max-width: 448px; line-height: 1.6; text-align: left; }
+.glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 16px 40px; border-radius: 999px; font-weight: 700; cursor: pointer; transition: 0.3s; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+.glass-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
+.glass-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.glass-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.2); padding: 32px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2); transition: 0.3s; text-align: left; }
+.glass-card.lift { transform: translateY(32px); }
+.glass-card:hover { transform: translateY(-8px) !important; background: rgba(255,255,255,0.2); }
+.glass-icon { width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 12px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+.line-lg { height: 8px; width: 66%; background: rgba(255,255,255,0.4); border-radius: 999px; margin-bottom: 12px; }
+.line-sm { height: 8px; width: 50%; background: rgba(255,255,255,0.2); border-radius: 999px; }`
+    },
+    {
+      id: "06",
+      name: "High-Fidelity Service Grid",
+      component: <FeatureGrid />,
+      jsx: `import React from 'react';
+
+export const FeatureGrid = () => (
+  <div className="bg-white p-12 rounded-3xl border border-gray-100 font-sans text-left">
+    <div className="text-center max-w-2xl mx-auto mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
+      <p className="text-gray-500 text-lg">We provide a comprehensive suite of professional tools.</p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {[
+        { title: 'Secure Shield', icon: '🛡️', desc: 'Bank-grade encryption protocols for all data.' },
+        { title: 'Flash Speed', icon: '⚡', desc: 'Optimized for sub-ms latency globally.' },
+        { title: 'Crystal Uptime', icon: '💎', desc: '99.99% uptime guarantee with SLA.' },
+        { title: 'Node Scale', icon: '📈', desc: 'Seamlessly grow from 1 to 1M nodes.' },
+        { title: 'Logic Support', icon: '💬', desc: '24/7 dedicated support for architecture.' },
+        { title: 'Global Mesh', icon: '🌍', desc: 'Strategic nodes in 30+ regions.' },
+      ].map((item) => (
+        <div key={item.title} className="p-10 rounded-3xl bg-gray-50 hover:bg-blue-50 transition-all duration-300 cursor-default group text-left">
+          <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block drop-shadow-sm">{item.icon}</div>
+          <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+          <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);`,
+      html: `<!-- Service Grid Feature -->
+<div class="feat-grid">
+  <div class="grid-header">
+    <h2>Why Choose Us?</h2>
+    <p>We provide a comprehensive suite of professional tools.</p>
+  </div>
+  <div class="grid-wrapper">
+    <div class="grid-tile">
+      <div class="tile-icon">🛡️</div>
+      <h3>Secure Shield</h3>
+      <p>Bank-grade encryption protocols for all data.</p>
+    </div>
+    <div class="grid-tile">
+      <div class="tile-icon">⚡</div>
+      <h3>Flash Speed</h3>
+      <p>Optimized for sub-ms latency globally.</p>
+    </div>
+    <div class="grid-tile">
+      <div class="tile-icon">💎</div>
+      <h3>Crystal Uptime</h3>
+      <p>99.99% uptime guarantee with SLA.</p>
+    </div>
+    <div class="grid-tile">
+      <div class="tile-icon">📈</div>
+      <h3>Node Scale</h3>
+      <p>Seamlessly grow from 1 to 1M nodes.</p>
+    </div>
+    <div class="grid-tile">
+      <div class="tile-icon">💬</div>
+      <h3>Logic Support</h3>
+      <p>24/7 dedicated support for architecture.</p>
+    </div>
+    <div class="grid-tile">
+      <div class="tile-icon">🌍</div>
+      <h3>Global Mesh</h3>
+      <p>Strategic nodes in 30+ regions.</p>
+    </div>
+  </div>
+</div>`,
+      css: `.feat-grid { background: white; padding: 48px; border-radius: 24px; border: 1px solid #f3f4f6; font-family: sans-serif; box-sizing: border-box; }
+.grid-header { text-align: center; max-width: 672px; margin: 0 auto 64px auto; }
+h2 { font-size: 32px; font-weight: 700; color: #111827; margin-bottom: 16px; }
+p { color: #6b7280; font-size: 18px; }
+.grid-wrapper { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 768px) { .grid-wrapper { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid-wrapper { grid-template-columns: repeat(3, 1fr); } }
+.grid-tile { padding: 40px; border-radius: 24px; background: #f9fafb; transition: all 0.3s ease; text-align: left; }
+.grid-tile:hover { background: #eff6ff; transform: translateY(-4px); }
+.tile-icon { font-size: 40px; margin-bottom: 24px; display: inline-block; }
+h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+p { color: #6b7280; font-size: 14px; line-height: 1.6; }`
+    },
+    {
+      id: "07",
+      name: "Mobile Mesh Node Interface",
+      component: <FeatureApp />,
+      jsx: `import React from 'react';
+
+export const FeatureApp = () => (
+  <div className="bg-orange-50 p-16 rounded-3xl overflow-hidden font-sans text-left">
+    <div className="flex flex-col lg:flex-row items-center gap-20 max-w-6xl mx-auto">
+      <div className="w-full lg:w-1/2">
+        <div className="inline-block px-4 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Mobile First</div>
+        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight text-left">Your Entire Grid,<br/> in Your Pocket.</h2>
+        <p className="text-gray-600 text-xl mb-10 leading-relaxed text-left">Manage nodes, track logic flows, and chat with the core team on the go. Available for all mobile OS.</p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold shadow-xl hover:bg-black transition-all">App Store</button>
+          <button className="bg-gray-900 text-white px-8 py-3 rounded-xl font-bold shadow-xl hover:bg-black transition-all">Play Store</button>
+        </div>
+      </div>
+      <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3.5rem] border-[10px] border-gray-900 shadow-2xl overflow-hidden scale-110">
+          <div className="w-full h-full bg-white relative">
+            <div className="bg-orange-500 h-40 p-8 pt-16 text-white text-left">
+              <div className="text-xs opacity-70 uppercase tracking-widest font-bold mb-2">Dashboard</div>
+              <div className="text-3xl font-bold text-white text-left">$12,450.00</div>
+            </div>
+            <div className="p-6 space-y-4 text-left">
+              {[1, 2, 3, 4].map(i => (
+                <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100 text-left">
+                  <div className="w-12 h-12 rounded-xl bg-gray-200"></div>
+                  <div className="flex-1 space-y-2">
+                    <div className="h-2 w-2/3 bg-gray-200 rounded-full text-left"></div>
+                    <div className="h-2 w-1/2 bg-gray-100 rounded-full text-left"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="absolute bottom-8 right-8 w-14 h-14 bg-orange-500 rounded-full shadow-xl flex items-center justify-center text-white font-bold text-2xl active:scale-90 transition-transform">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);`,
+      html: `<!-- Mobile App Feature -->
+<div class="feat-app">
+  <div class="app-container">
+    <div class="app-content">
+      <div class="app-badge">Mobile First</div>
+      <h2>Your Entire Grid,<br/> in Your Pocket.</h2>
+      <p>Manage nodes, track logic flows, and chat with the core team on the go. Available for all mobile OS.</p>
+      <div class="app-actions">
+        <button class="btn-black">App Store</button>
+        <button class="btn-black">Play Store</button>
+      </div>
+    </div>
+    <div class="app-visual">
+       <div class="phone-mockup">
+         <div class="phone-screen">
+           <div class="phone-header">
+             <div class="header-label">Dashboard</div>
+             <div class="header-value">$12,450.00</div>
+           </div>
+           <div class="phone-body">
+             <div class="phone-row"><div class="row-sq"></div><div class="row-lines"><div class="l-1"></div><div class="l-2"></div></div></div>
+             <div class="phone-row"><div class="row-sq"></div><div class="row-lines"><div class="l-1"></div><div class="l-2"></div></div></div>
+             <div class="phone-row"><div class="row-sq"></div><div class="row-lines"><div class="l-1"></div><div class="l-2"></div></div></div>
+             <div class="phone-row"><div class="row-sq"></div><div class="row-lines"><div class="l-1"></div><div class="l-2"></div></div></div>
+           </div>
+           <div class="phone-fab">+</div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>`,
+      css: `.feat-app { background: #fff7ed; padding: 64px; border-radius: 24px; font-family: sans-serif; box-sizing: border-box; }
+.app-container { display: flex; flex-direction: column; gap: 80px; align-items: center; max-width: 1152px; margin: 0 auto; }
+@media (min-width: 1024px) { .app-container { flex-direction: row; } }
+.app-content, .app-visual { width: 100%; }
+@media (min-width: 1024px) { .app-content, .app-visual { width: 50%; } }
+.app-badge { display: inline-block; padding: 4px 16px; background: #ffedd5; color: #ea580c; border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px; }
+h2 { font-size: 40px; font-weight: 700; color: #111827; margin-bottom: 32px; line-height: 1.1; text-align: left; }
+@media (min-width: 768px) { h2 { font-size: 60px; } }
+p { color: #4b5563; font-size: 20px; margin-bottom: 40px; line-height: 1.6; text-align: left; }
+.app-actions { display: flex; flex-direction: column; gap: 16px; }
+@media (min-width: 640px) { .app-actions { flex-direction: row; } }
+.btn-black { padding: 12px 32px; background: #111827; color: white; font-weight: 700; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); }
+.btn-black:hover { background: #000; transform: translateY(-1px); }
+.phone-mockup { width: 300px; height: 600px; background: #111827; border-radius: 56px; border: 10px solid #111827; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5); overflow: hidden; position: relative; transform: scale(1.1); margin: 0 auto; }
+.phone-screen { width: 100%; height: 100%; background: white; position: relative; display: flex; flex-direction: column; }
+.phone-header { background: #f97316; height: 160px; padding: 32px; padding-top: 64px; color: white; text-align: left; }
+.header-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 8px; }
+.header-value { font-size: 32px; font-weight: 700; }
+.phone-body { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.phone-row { display: flex; align-items: center; gap: 16px; padding: 16px; background: #f9fafb; border-radius: 16px; border: 1px solid #f3f4f6; }
+.row-sq { width: 48px; height: 48px; border-radius: 12px; background: #e5e7eb; }
+.row-lines { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.l-1 { height: 8px; width: 66%; background: #e5e7eb; border-radius: 4px; }
+.l-2 { height: 8px; width: 50%; background: #f3f4f6; border-radius: 4px; }
+.phone-fab { position: absolute; bottom: 32px; right: 32px; width: 56px; height: 56px; background: #f97316; border-radius: 50%; box-shadow: 0 10px 15px -3px rgba(249,115,22,0.4); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 700; cursor: pointer; }`
+    },
+    {
+      id: "08",
+      name: "Retro Brutalist Power Node",
+      component: <FeatureBrutalist />,
+      jsx: `import React from 'react';
+
+export const FeatureBrutalist = () => (
+  <div className="bg-yellow-400 p-12 rounded-3xl border-8 border-black font-sans text-left">
+    <div className="grid md:grid-cols-2 gap-12 items-center text-left">
+      <div className="bg-white border-8 border-black p-10 shadow-[20px_20px_0_0_#000] hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all text-left">
+        <h2 className="text-6xl font-black uppercase mb-8 leading-[0.8] tracking-tighter text-black text-left">Power.<br/>Speed.<br/>Control.</h2>
+        <p className="font-bold text-2xl mb-10 text-black text-left">Zero friction. Just raw performance for power nodes.</p>
+        <button className="w-full py-6 bg-black text-white font-black text-2xl uppercase hover:bg-white hover:text-black border-4 border-transparent hover:border-black transition-all tracking-widest shadow-2xl">Get Access</button>
+      </div>
+      <div className="grid grid-cols-2 gap-8 text-left">
+        {[1, 2, 3, 4].map(i => (
+          <div key={i} className="bg-indigo-600 border-8 border-black p-8 aspect-square flex items-center justify-center hover:-translate-y-2 hover:shadow-[10px_10px_0_0_#000] transition-all cursor-pointer group text-left">
+            <span className="text-6xl font-black text-white group-hover:scale-125 transition-transform">0{i}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);`,
+      html: `<!-- Brutalist Feature -->
+<div class="feat-brutal">
+  <div class="brutal-grid">
+    <div class="brutal-card">
+      <h2>Power.<br/>Speed.<br/>Control.</h2>
+      <p>Zero friction. Just raw performance for power nodes.</p>
+      <button class="brutal-btn">Get Access</button>
+    </div>
+    <div class="nodes-grid">
+      <div class="node-box"><span>01</span></div>
+      <div class="node-box"><span>02</span></div>
+      <div class="node-box"><span>03</span></div>
+      <div class="node-box"><span>04</span></div>
+    </div>
+  </div>
+</div>`,
+      css: `.feat-brutal { background: #facc15; padding: 48px; border-radius: 24px; border: 8px solid black; font-family: sans-serif; box-sizing: border-box; }
 .brutal-grid { display: grid; grid-template-columns: 1fr; gap: 48px; text-align: left; align-items: center; }
 @media (min-width: 768px) { .brutal-grid { grid-template-columns: repeat(2, 1fr); } }
-.brutal-hero-card { background: white; border: 8px solid #020617; padding: 48px; box-shadow: 20px 20px 0 0 #000; transition: all 0.1s ease; }
-.brutal-hero-card:hover { transform: translate(4px, 4px); box-shadow: 12px 12px 0 0 #000; }
-.brutal-big-title { font-size: 48px; font-weight: 900; margin-bottom: 40px; line-height: 0.8; letter-spacing: -0.05em; color: #020617; }
-@media (min-width: 768px) { .brutal-big-title { font-size: 72px; } }
-.brutal-sub-text { font-size: 24px; margin-bottom: 48px; color: #020617; }
-.brutal-action-btn { width: 100%; padding: 32px; background: #020617; color: white; font-weight: 900; border: 4px solid transparent; text-transform: uppercase; font-size: 20px; letter-spacing: 0.2em; cursor: pointer; transition: all 0.2s ease; }
-.brutal-action-btn:hover { background: white; color: #020617; border-color: #020617; }
-.brutal-nodes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
-.node-sq { background: #2563eb; border: 8px solid #020617; padding: 32px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; cursor: pointer; }
-.node-sq:hover { transform: translateY(-8px); box-shadow: 10px 10px 0 0 #000; }
-.node-num { font-size: 48px; color: white; font-style: italic; }
-@media (min-width: 768px) { .node-num { font-size: 64px; } }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 08. Retro Brutalist Power Node </span>
-          <FeatureBrutalist />
-        </section>
+.brutal-card { background: white; border: 8px solid black; padding: 40px; box-shadow: 20px 20px 0 0 #000; transition: 0.1s; text-align: left; }
+.brutal-card:hover { transform: translate(4px, 4px); box-shadow: 12px 12px 0 0 #000; }
+h2 { font-size: 64px; font-weight: 900; color: black; margin-bottom: 32px; line-height: 0.8; letter-spacing: -0.05em; text-transform: uppercase; text-align: left; }
+p { font-size: 24px; font-weight: 700; color: black; margin-bottom: 40px; text-align: left; }
+.brutal-btn { width: 100%; padding: 24px; background: black; color: white; font-weight: 900; border: 4px solid transparent; text-transform: uppercase; font-size: 20px; letter-spacing: 0.1em; cursor: pointer; transition: 0.2s; }
+.brutal-btn:hover { background: white; color: black; border-color: black; }
+.nodes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.node-box { background: #4f46e5; border: 8px solid black; padding: 32px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; transition: 0.2s; cursor: pointer; }
+.node-box:hover { transform: translateY(-8px); box-shadow: 10px 10px 0 0 #000; }
+.node-box span { font-size: 64px; font-weight: 900; color: white; }`
+    },
+    {
+      id: "09",
+      name: "Sticky Storytelling Logic Scroll",
+      component: <FeatureSticky />,
+      jsx: `import React from 'react';
 
-        {/* 09. Sticky Story */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureSticky = () => (
-  <div className="bg-white p-12 rounded-[3rem] border border-slate-100 overflow-hidden font-sans italic font-bold text-left">
-    <div className="flex flex-col lg:flex-row gap-24 max-w-6xl mx-auto">
+export const FeatureSticky = () => (
+  <div className="bg-white p-12 rounded-3xl border border-gray-100 overflow-hidden font-sans text-left">
+    <div className="flex flex-col lg:flex-row gap-20 max-w-6xl mx-auto">
       <div className="w-full lg:w-1/2 lg:sticky lg:top-24 h-fit">
-        <div className="aspect-square bg-slate-950 rounded-[3rem] flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
-           <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 opacity-30 animate-pulse"></div>
-           <div className="text-white text-center p-12 relative z-10">
-             <div className="text-9xl mb-10 drop-shadow-2xl animate-bounce">🚀</div>
-             <h3 className="text-4xl font-black uppercase tracking-tighter italic">Launch_Core</h3>
+        <div className="aspect-square bg-slate-900 rounded-[3rem] flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+           <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-20 animate-pulse"></div>
+           <div className="text-white text-center p-12">
+             <div className="text-9xl mb-8 drop-shadow-2xl">🚀</div>
+             <h3 className="text-4xl font-bold uppercase tracking-tighter">Launch_Core</h3>
+             <div className="h-1 w-20 bg-blue-500 mx-auto mt-6 rounded-full"></div>
            </div>
         </div>
       </div>
       <div className="w-full lg:w-1/2 flex flex-col gap-32 py-12">
         {[
-          { title: "Collaborate_Logic", desc: "Work together in the shared logic mesh with real-time multiplayer synchronization nodes." },
-          { title: "Version_Control", desc: "Never lose a logic state. Rollback to any node in the history matrix with one single click." },
-          { title: "Design_Systems", desc: "Maintain absolute consistency across your entire product suite automatically via core logic." },
-          { title: "Global_Mesh", desc: "Push your architecture to the edge of the digital void with zero latency synchronization." }
+          { title: "Collaborate Logic", desc: "Work together in the shared logic mesh with real-time synchronization nodes." },
+          { title: "Version Control", desc: "Never lose a logic state. Rollback to any version in history with one click." },
+          { title: "Design Systems", desc: "Maintain absolute consistency across your entire product suite automatically." },
+          { title: "Global Mesh", desc: "Push your architecture to the edge with zero latency global synchronization." }
         ].map((item, i) => (
-          <div key={i} className="relative pl-12 border-l-4 border-slate-100 hover:border-blue-600 transition-colors duration-500">
-            <div className="absolute left-[-14px] top-0 w-6 h-6 bg-white border-4 border-blue-600 rounded-full shadow-2xl"></div>
-            <div className="text-blue-600 font-black text-2xl mb-4 italic tracking-widest">NODE_0{i+1}</div>
-            <h3 className="text-4xl font-black text-slate-950 mb-6 uppercase tracking-tight">{item.title}</h3>
-            <p className="text-slate-500 text-xl leading-relaxed lowercase font-medium italic">{item.desc}</p>
+          <div key={i} className="relative pl-12 border-l-4 border-gray-100 hover:border-blue-600 transition-colors duration-500 text-left">
+            <div className="absolute left-[-14px] top-0 w-6 h-6 bg-white border-4 border-blue-600 rounded-full"></div>
+            <div className="text-blue-600 font-bold text-2xl mb-4 italic text-left">NODE_0{i+1}</div>
+            <h3 className="text-4xl font-bold text-gray-900 mb-6 leading-tight text-left">{item.title}</h3>
+            <p className="text-gray-500 text-xl leading-relaxed italic text-left">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </div>
-);`} 
-              htmlCode={`<!-- Sticky Story Feature -->
-<div class="sticky-root">
+);`,
+      html: `<!-- Sticky Story Feature -->
+<div class="feat-sticky">
   <div class="sticky-container">
-    <div class="sticky-visual-side">
-      <div class="visual-box">
-        <div class="visual-gradient"></div>
-        <div class="visual-content">
-          <div class="visual-emoji">🚀</div>
-          <h3 class="visual-title">Launch_Core</h3>
-        </div>
-      </div>
+    <div class="sticky-visual">
+       <div class="visual-box">
+         <div class="box-gradient"></div>
+         <div class="box-content">
+           <div class="box-emoji">🚀</div>
+           <h3>Launch_Core</h3>
+           <div class="box-line"></div>
+         </div>
+       </div>
     </div>
-    <div class="sticky-content-side">
-      <div class="story-node">
-        <div class="node-marker"></div>
-        <div class="node-id">NODE_01</div>
-        <h3 class="node-title">Collaborate_Logic</h3>
-        <p class="node-desc">Work together in the shared logic mesh with real-time multiplayer synchronization nodes.</p>
+    <div class="sticky-story">
+      <div class="story-item">
+        <div class="item-marker"></div>
+        <div class="item-id">NODE_01</div>
+        <h3>Collaborate Logic</h3>
+        <p>Work together in the shared logic mesh with real-time synchronization nodes.</p>
       </div>
-      <div class="story-node">
-        <div class="node-marker"></div>
-        <div class="node-id">NODE_02</div>
-        <h3 class="node-title">Version_Control</h3>
-        <p class="node-desc">Never lose a logic state. Rollback to any node in the history matrix with one single click.</p>
+      <div class="story-item">
+        <div class="item-marker"></div>
+        <div class="item-id">NODE_02</div>
+        <h3>Version Control</h3>
+        <p>Never lose a logic state. Rollback to any version in history with one click.</p>
       </div>
-      <div class="story-node">
-        <div class="node-marker"></div>
-        <div class="node-id">NODE_03</div>
-        <h3 class="node-title">Design_Systems</h3>
-        <p class="node-desc">Maintain absolute consistency across your entire product suite automatically via core logic.</p>
+      <div class="story-item">
+        <div class="item-marker"></div>
+        <div class="item-id">NODE_03</div>
+        <h3>Design Systems</h3>
+        <p>Maintain absolute consistency across your entire product suite automatically.</p>
       </div>
-      <div class="story-node">
-        <div class="node-marker"></div>
-        <div class="node-id">NODE_04</div>
-        <h3 class="node-title">Global_Mesh</h3>
-        <p class="node-desc">Push your architecture to the edge of the digital void with zero latency synchronization.</p>
+      <div class="story-item">
+        <div class="item-marker"></div>
+        <div class="item-id">NODE_04</div>
+        <h3>Global Mesh</h3>
+        <p>Push your architecture to the edge with zero latency global synchronization.</p>
       </div>
     </div>
   </div>
-</div>`} 
-              cssCode={`.sticky-root { background: white; padding: 48px; border-radius: 48px; border: 1px solid #f1f5f9; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; box-sizing: border-box; }
-.sticky-container { display: flex; flex-direction: column; gap: 96px; max-width: 1152px; margin: 0 auto; }
+</div>`,
+      css: `.feat-sticky { background: white; padding: 48px; border-radius: 24px; border: 1px solid #f3f4f6; font-family: sans-serif; box-sizing: border-box; }
+.sticky-container { display: flex; flex-direction: column; gap: 80px; max-width: 1152px; margin: 0 auto; }
 @media (min-width: 1024px) { .sticky-container { flex-direction: row; } }
-.sticky-visual-side, .sticky-content-side { width: 100%; }
-@media (min-width: 1024px) { .sticky-visual-side, .sticky-content-side { width: 50%; } }
-.visual-box { aspect-ratio: 1/1; background: #020617; border-radius: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.3); }
+.sticky-visual, .sticky-story { width: 100%; }
+@media (min-width: 1024px) { .sticky-visual, .sticky-story { width: 50%; } }
+.visual-box { aspect-ratio: 1/1; background: #0f172a; border-radius: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); }
 @media (min-width: 1024px) { .visual-box { position: sticky; top: 96px; } }
-.visual-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom right, #2563eb, #4f46e5); opacity: 0.3; animation: pulse 4s infinite alternate; }
-@keyframes pulse { 0% { opacity: 0.2; } 100% { opacity: 0.4; } }
-.visual-content { position: relative; z-index: 10; text-align: center; }
-.visual-emoji { font-size: 96px; margin-bottom: 40px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); animation: bounce 2s infinite; }
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-.visual-title { font-size: 36px; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: -0.05em; }
-.sticky-content-side { display: flex; flex-direction: column; gap: 128px; padding-top: 48px; padding-bottom: 48px; }
-.story-node { padding-left: 48px; border-left: 4px solid #f1f5f9; position: relative; transition: all 0.5s ease; text-align: left; }
-.story-node:hover { border-color: #2563eb; }
-.node-marker { position: absolute; left: -14px; top: 0; width: 24px; height: 24px; background: white; border: 4px solid #2563eb; border-radius: 50%; box-shadow: 0 10px 15px -3px rgba(37,99,235,0.2); }
-.node-id { color: #2563eb; font-weight: 900; font-size: 24px; margin-bottom: 16px; font-style: italic; letter-spacing: 0.1em; }
-.node-title { font-size: 32px; font-weight: 900; color: #020617; text-transform: uppercase; margin-bottom: 24px; letter-spacing: -0.05em; }
-@media (min-width: 768px) { .node-title { font-size: 36px; } }
-.node-desc { color: #64748b; font-size: 20px; text-transform: lowercase; font-weight: 500; line-height: 1.6; }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 09. Sticky Storytelling Logic Scroll </span>
-          <FeatureSticky />
-        </section>
+.box-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom right, #2563eb, #9333ea); opacity: 0.2; }
+.box-content { position: relative; z-index: 10; text-align: center; color: white; }
+.box-emoji { font-size: 96px; margin-bottom: 32px; }
+.box-content h3 { font-size: 36px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.05em; margin: 0; color: white; }
+.box-line { height: 4px; width: 80px; background: #3b82f6; margin: 24px auto 0; border-radius: 999px; }
+.sticky-story { display: flex; flex-direction: column; gap: 128px; padding-top: 48px; padding-bottom: 48px; }
+.story-item { padding-left: 48px; border-left: 4px solid #f3f4f6; position: relative; transition: 0.3s; text-align: left; }
+.story-item:hover { border-color: #2563eb; }
+.item-marker { position: absolute; left: -14px; top: 0; width: 24px; height: 24px; background: white; border: 4px solid #2563eb; border-radius: 50%; }
+.item-id { color: #2563eb; font-weight: 700; font-size: 24px; margin-bottom: 16px; font-style: italic; }
+.story-item h3 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 24px; line-height: 1.1; text-align: left; }
+.story-item p { color: #6b7280; font-size: 20px; font-weight: 500; line-height: 1.6; text-align: left; }`
+    },
+    {
+      id: "10",
+      name: "Neumorphic Soft Logic Nodes",
+      component: <FeatureNeumorphic />,
+      jsx: `import React from 'react';
 
-        {/* 10. Neumorphic */}
-        <section className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-slate-200'>
-          <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
-            <CopyButton 
-              jsxCode={`export const FeatureNeumorphic = () => (
-  <div className="bg-[#e0e5ec] p-16 rounded-[3rem] font-sans italic font-bold text-center">
+export const FeatureNeumorphic = () => (
+  <div className="bg-[#e0e5ec] p-20 rounded-[3rem] font-sans text-center">
     <div className="text-center mb-24">
-      <h2 className="text-6xl font-black text-slate-700 uppercase tracking-tighter leading-none italic mb-4">Soft_UI_Nodes</h2>
-      <p className="text-slate-500 text-lg lowercase font-medium italic">High-fidelity tactile architecture.</p>
+      <h2 className="text-5xl font-bold text-gray-700 uppercase tracking-tight mb-4">Soft UI Nodes</h2>
+      <p className="text-gray-500 text-lg">High-fidelity tactile architecture.</p>
     </div>
-    <div className="grid md:grid-cols-3 gap-16">
-      {['Tactile_Logic', 'Accessible_Core', 'Modern_Mesh'].map((item) => (
-        <div key={item} className="bg-[#e0e5ec] p-12 rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-4 border border-white/20">
-          <div className="w-24 h-24 bg-[#e0e5ec] rounded-full shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] mb-10 flex items-center justify-center text-4xl text-slate-600 border-4 border-white/50">✨</div>
-          <h3 className="text-2xl font-black text-slate-700 mb-6 uppercase tracking-tight">{item}</h3>
-          <p className="text-slate-500 text-sm lowercase font-medium italic">Experience the depth and softness of next-generation neumorphic design logic.</p>
+    <div className="grid md:grid-cols-3 gap-16 text-center">
+      {['Tactile Logic', 'Accessible Core', 'Modern Mesh'].map((item) => (
+        <div key={item} className="bg-[#e0e5ec] p-12 rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-4">
+          <div className="w-24 h-24 bg-[#e0e5ec] rounded-full shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] mb-10 flex items-center justify-center text-4xl text-gray-600 border-4 border-white/50">✨</div>
+          <h3 className="text-2xl font-bold text-gray-700 mb-6">{item}</h3>
+          <p className="text-gray-500 text-sm leading-relaxed lowercase">Experience the depth and softness of next-generation tactile design logic.</p>
         </div>
       ))}
     </div>
   </div>
-);`} 
-              htmlCode={`<!-- Neumorphic Feature -->
-<div class="neu-root">
+);`,
+      html: `<!-- Neumorphic Feature -->
+<div class="feat-neu">
   <div class="neu-header">
-    <h2 class="neu-title">Soft_UI_Nodes</h2>
-    <p class="neu-desc">High-fidelity tactile architecture.</p>
+    <h2>Soft UI Nodes</h2>
+    <p>High-fidelity tactile architecture.</p>
   </div>
   <div class="neu-grid">
     <div class="neu-card">
-      <div class="neu-icon-inset">✨</div>
-      <h3 class="neu-card-title">Tactile_Logic</h3>
-      <p class="neu-card-desc">Experience the depth and softness of next-generation neumorphic design logic.</p>
+      <div class="neu-icon">✨</div>
+      <h3>Tactile Logic</h3>
+      <p>Experience the depth and softness of next-generation tactile design logic.</p>
     </div>
     <div class="neu-card">
-      <div class="neu-icon-inset">✨</div>
-      <h3 class="neu-card-title">Accessible_Core</h3>
-      <p class="neu-card-desc">Experience the depth and softness of next-generation neumorphic design logic.</p>
+      <div class="neu-icon">✨</div>
+      <h3>Accessible Core</h3>
+      <p>Experience the depth and softness of next-generation tactile design logic.</p>
     </div>
     <div class="neu-card">
-      <div class="neu-icon-inset">✨</div>
-      <h3 class="neu-card-title">Modern_Mesh</h3>
-      <p class="neu-card-desc">Experience the depth and softness of next-generation neumorphic design logic.</p>
+      <div class="neu-icon">✨</div>
+      <h3>Modern Mesh</h3>
+      <p>Experience the depth and softness of next-generation tactile design logic.</p>
     </div>
   </div>
-</div>`} 
-              cssCode={`.neu-root { background: #e0e5ec; padding: 64px; border-radius: 48px; font-family: 'Inter', sans-serif; font-style: italic; font-weight: 700; text-align: center; box-sizing: border-box; }
-.neu-header { margin-bottom: 96px; }
-.neu-title { font-size: 64px; font-weight: 900; color: #475569; text-transform: uppercase; line-height: 1; margin-bottom: 16px; letter-spacing: -0.05em; }
-.neu-desc { color: #64748b; font-size: 18px; text-transform: lowercase; font-weight: 500; }
-.neu-grid { display: grid; grid-template-columns: 1fr; gap: 64px; }
+</div>`,
+      css: `.feat-neu { background: #e0e5ec; padding: 64px; border-radius: 48px; font-family: sans-serif; text-align: center; box-sizing: border-box; }
+.neu-header { margin-bottom: 80px; }
+h2 { font-size: 48px; font-weight: 700; color: #374151; text-transform: uppercase; margin-bottom: 16px; }
+p { color: #6b7280; font-size: 18px; }
+.neu-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 @media (min-width: 768px) { .neu-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .neu-grid { grid-template-columns: repeat(3, 1fr); } }
-.neu-card { background: #e0e5ec; padding: 48px; border-radius: 48px; box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; border: 1px solid rgba(255,255,255,0.2); transition: all 0.5s ease; text-align: center; }
-.neu-card:hover { transform: translateY(-16px); }
-.neu-icon-inset { width: 96px; height: 96px; border-radius: 50%; background: #e0e5ec; box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 40px auto; border: 4px solid rgba(255,255,255,0.5); }
-.neu-card-title { font-size: 24px; font-weight: 900; color: #475569; text-transform: uppercase; margin-bottom: 24px; letter-spacing: -0.02em; }
-.neu-card-desc { color: #64748b; font-size: 14px; text-transform: lowercase; font-weight: 500; line-height: 1.6; }`} 
-            />
-          </div>
-          <span className="text-xs font-black text-slate-400 uppercase tracking-widest block text-center mb-8"> 10. Neumorphic Soft Logic Nodes </span>
-          <FeatureNeumorphic />
-        </section>
+.neu-card { background: #e0e5ec; padding: 48px; border-radius: 48px; box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; transition: 0.5s ease; border: 1px solid rgba(255,255,255,0.2); text-align: center; }
+.neu-card:hover { transform: translateY(-12px); }
+.neu-icon { width: 96px; height: 96px; border-radius: 50%; background: #e0e5ec; box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 32px auto; border: 4px solid rgba(255,255,255,0.5); }
+h3 { font-size: 24px; font-weight: 700; color: #374151; margin-bottom: 24px; }
+p { color: #6b7280; font-size: 14px; line-height: 1.6; }`
+    }
+  ];
 
+  return (
+    <div className="container overflow-y-auto bg-gray-50 p-6 md:p-12 font-sans pb-64">
+      <div className="max-w-4xl mx-auto text-center mb-24">
+        <h1 className="text-6xl font-bold text-gray-900 mb-6 tracking-tight">Feature_Manifest</h1>
+        <p className="text-gray-500 text-xl italic text-center">High-fidelity components to showcase product value.</p>
+      </div>
+      
+      <div className="space-y-32 max-w-7xl mx-auto">
+        {metadata.map((item) => (
+          <section key={item.id} className='bg-white p-4 rounded-xl shadow-lg relative group/feat border border-gray-200'>
+            <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/feat:opacity-100 transition-opacity">
+              <CopyButton 
+                jsxCode={item.jsx}
+                htmlCode={item.html}
+                cssCode={item.css}
+              />
+            </div>
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-8">
+              {item.id}. {item.name}
+            </span>
+            {item.component}
+          </section>
+        ))}
       </div>
     </div>
   );
