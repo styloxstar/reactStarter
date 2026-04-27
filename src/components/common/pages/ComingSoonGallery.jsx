@@ -57,7 +57,7 @@ export const ComingMinimal = () => (
           <label className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">Sync_Your_Node</label>
           <div className="flex border-b-2 border-white/10 pb-4 group focus-within:border-blue-600 transition-all">
             <input type="email" placeholder="NODE_ID@EMAIL.COM" className="w-full bg-transparent outline-none placeholder-white/20 text-white font-black uppercase tracking-widest" />
-            <button className="font-black text-xs uppercase text-white hover:text-blue-500 transition-colors tracking-widest ml-4">Submit_→</button>
+            <button className="font-black text-xs uppercase text-white hover:text-blue-500 transition-colors tracking-widest ml-4">Submit_ΓåÆ</button>
           </div>
         </div>
         <div className="flex-1 text-right">
@@ -153,7 +153,7 @@ export const ComingCyber = () => (
         <div className="absolute -top-4 -left-4 bg-green-500 text-black px-4 py-1 text-[10px] font-black uppercase tracking-widest">System_Status</div>
         
         <div className="text-green-500 text-[10px] mb-12 flex justify-between uppercase tracking-widest opacity-50">
-          <span>> PROTOCOL_V4.0</span>
+          <span>&gt; PROTOCOL_V4.0</span>
           <span>SECURE_NODE</span>
         </div>
         
@@ -162,9 +162,9 @@ export const ComingCyber = () => (
         </h1>
         
         <div className="space-y-4 mb-12 text-green-500/60 text-xs uppercase leading-relaxed">
-          <p>> INITIATING_LAUNCH_HANDSHAKE...</p>
-          <p>> DEPLOYING_NEURAL_MODULES...</p>
-          <p>> ESTIMATED_SYNC: <span className="text-green-500 font-black">14_DAYS</span></p>
+          <p>&gt; INITIATING_LAUNCH_HANDSHAKE...</p>
+          <p>&gt; DEPLOYING_NEURAL_MODULES...</p>
+          <p>&gt; ESTIMATED_SYNC: <span className="text-green-500 font-black">14_DAYS</span></p>
         </div>
 
         <div className="flex border-2 border-green-500">
@@ -226,7 +226,7 @@ export const ComingBrutalist = () => (
     </div>
     
     <div className="p-10 border-t-8 border-slate-950 bg-white flex flex-col md:flex-row justify-between items-center gap-6">
-      <span className="font-black text-xl text-slate-950">🚧 Building_In_The_Void</span>
+      <span className="font-black text-xl text-slate-950">≡ƒÜº Building_In_The_Void</span>
       <div className="flex gap-8 font-black underline text-sm tracking-widest text-slate-950">
         <a href="#" className="hover:text-yellow-500">Twitter_X</a>
         <a href="#" className="hover:text-yellow-500">Discord</a>
@@ -240,7 +240,7 @@ export const ComingNeumorphic = () => (
   <div className="flex items-center justify-center min-h-[600px] w-full bg-[#e0e5ec] rounded-[3rem] font-sans italic font-bold">
     <div className="w-full max-w-xl p-16 md:p-20 rounded-[4rem] bg-[#e0e5ec] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] text-center border border-white/20">
       <div className="w-28 h-28 rounded-full bg-[#e0e5ec] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex items-center justify-center text-4xl mb-12 mx-auto border-4 border-white/50">
-        ⌛
+        Γî¢
       </div>
       
       <h2 className="text-4xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tighter leading-none">Logic_Pending</h2>
@@ -442,7 +442,7 @@ const ComingSoonGallery = () => {
           <label className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">Sync_Your_Node</label>
           <div className="flex border-b-2 border-white/10 pb-4 group focus-within:border-blue-600 transition-all">
             <input type="email" placeholder="NODE_ID@EMAIL.COM" className="w-full bg-transparent outline-none placeholder-white/20 text-white font-black uppercase tracking-widest" />
-            <button className="font-black text-xs uppercase text-white hover:text-blue-500 transition-colors tracking-widest ml-4">Submit_→</button>
+            <button className="font-black text-xs uppercase text-white hover:text-blue-500 transition-colors tracking-widest ml-4">Submit_ΓåÆ</button>
           </div>
         </div>
         <div className="flex-1 text-right">
@@ -467,7 +467,7 @@ const ComingSoonGallery = () => {
         <label style="font-size: 10px; font-weight: 900; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 24px; display: block;">Sync_Your_Node</label>
         <div style="display: flex; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 16px;">
           <input type="email" placeholder="NODE_ID@EMAIL.COM" style="width: 100%; background: transparent; border: none; outline: none; color: white; font-weight: 900; text-transform: uppercase;" />
-          <button style="background: transparent; border: none; color: white; font-weight: 900; text-transform: uppercase; font-size: 12px; margin-left: 16px; cursor: pointer;">Submit_→</button>
+          <button style="background: transparent; border: none; color: white; font-weight: 900; text-transform: uppercase; font-size: 12px; margin-left: 16px; cursor: pointer;">Submit_ΓåÆ</button>
         </div>
       </div>
       <div style="flex: 1; text-align: right;">
@@ -823,7 +823,7 @@ const ComingSoonGallery = () => {
       </div>
     </div>
     <div className="p-10 border-t-8 border-slate-950 bg-white flex flex-col md:flex-row justify-between items-center gap-6">
-      <span className="font-black text-xl text-slate-950">🚧 Building_In_The_Void</span>
+      <span className="font-black text-xl text-slate-950">≡ƒÜº Building_In_The_Void</span>
       <div className="flex gap-8 font-black underline text-sm tracking-widest text-slate-950">
         <a href="#" className="hover:text-yellow-500">Twitter_X</a>
         <a href="#" className="hover:text-yellow-500">Discord</a>
@@ -847,7 +847,7 @@ const ComingSoonGallery = () => {
     </div>
   </div>
   <div style="padding: 40px; border-top: 8px solid #0f172a; background: white; display: flex; justify-content: space-between; align-items: center;">
-    <span style="font-size: 20px; color: #0f172a;">🚧 Building_In_The_Void</span>
+    <span style="font-size: 20px; color: #0f172a;">≡ƒÜº Building_In_The_Void</span>
     <div style="display: flex; gap: 32px; font-size: 14px; letter-spacing: 0.1em;">
       <span>Twitter_X</span>
       <span>Discord</span>
@@ -886,7 +886,7 @@ const ComingSoonGallery = () => {
               jsxCode={`export const ComingNeumorphic = () => (
   <div className="flex items-center justify-center min-h-[600px] w-full bg-[#e0e5ec] rounded-[3rem] font-sans italic font-bold">
     <div className="w-full max-w-xl p-16 md:p-20 rounded-[4rem] bg-[#e0e5ec] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] text-center border border-white/20 text-left">
-      <div className="w-28 h-28 rounded-full bg-[#e0e5ec] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex items-center justify-center text-4xl mb-12 mx-auto border-4 border-white/50 text-center">⌛</div>
+      <div className="w-28 h-28 rounded-full bg-[#e0e5ec] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex items-center justify-center text-4xl mb-12 mx-auto border-4 border-white/50 text-center">Γî¢</div>
       <h2 className="text-4xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tighter leading-none text-center">Logic_Pending</h2>
       <p className="text-slate-500 mb-12 lowercase font-medium text-lg italic text-center">We are optimizing nodes for a flawless synchronization.</p>
       <div className="flex flex-col gap-8 max-w-sm mx-auto">
@@ -901,7 +901,7 @@ const ComingSoonGallery = () => {
               htmlCode={`<!-- Neumorphic Coming Soon -->
 <div style="background: #e0e5ec; min-height: 600px; width: 100%; border-radius: 48px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-style: italic; font-weight: 700; text-align: center;">
   <div style="width: 100%; max-width: 576px; padding: 80px; border-radius: 64px; background: #e0e5ec; box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; border: 1px solid rgba(255,255,255,0.2);">
-    <div style="width: 112px; height: 112px; border-radius: 50%; background: #e0e5ec; box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 48px auto; border: 4px solid rgba(255,255,255,0.5);">⌛</div>
+    <div style="width: 112px; height: 112px; border-radius: 50%; background: #e0e5ec; box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 48px auto; border: 4px solid rgba(255,255,255,0.5);">Γî¢</div>
     <h2 style="font-size: 48px; font-weight: 900; color: #1e293b; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.05em;">Logic_Pending</h2>
     <p style="color: #64748b; margin-bottom: 48px; font-size: 18px; font-weight: 500; text-transform: lowercase;">We are optimizing nodes for a flawless synchronization.</p>
     <div style="display: flex; flex-direction: column; gap: 32px; max-width: 384px; margin: 0 auto;">
