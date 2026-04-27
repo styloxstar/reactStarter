@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import CopyButton from '../CopyButton';
 
 // --- Shared Icon Component ---
@@ -110,7 +110,7 @@ export const MaintenanceGlass = () => (
     <div className="absolute bottom-20 right-20 w-80 h-80 bg-indigo-600 rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-pulse delay-1000"></div>
 
     <div className="relative bg-white/5 backdrop-blur-3xl border border-white/10 p-12 md:p-20 rounded-[4rem] shadow-2xl text-center text-white max-w-2xl mx-4">
-      <div className="text-7xl mb-12 animate-bounce drop-shadow-2xl">🛠️</div>
+      <div className="text-7xl mb-12 animate-bounce drop-shadow-2xl">≡ƒ¢á∩╕Å</div>
       <h1 className="text-6xl md:text-8xl font-black mb-10 tracking-tighter uppercase leading-[0.85] drop-shadow-2xl">
         Protocol <br/> <span className="italic text-blue-400">Refinement</span>
       </h1>
@@ -171,7 +171,7 @@ export const MaintenanceNeumorphic = () => (
   <div className="flex items-center justify-center min-h-[600px] w-full bg-[#e0e5ec] rounded-[3rem] font-sans italic font-bold">
     <div className="w-full max-w-xl p-16 md:p-20 rounded-[4rem] bg-[#e0e5ec] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] text-center border border-white/20">
       <div className="w-32 h-32 rounded-full bg-[#e0e5ec] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex items-center justify-center text-5xl mb-12 mx-auto border-4 border-white/50">
-        💤
+        ≡ƒÆñ
       </div>
       
       <h2 className="text-4xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tighter leading-none">Matrix_Sleep</h2>
@@ -502,7 +502,7 @@ const MaintenanceGallery = () => {
     <div className="absolute top-20 left-20 w-80 h-80 bg-blue-600 rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-pulse"></div>
     <div className="absolute bottom-20 right-20 w-80 h-80 bg-indigo-600 rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-pulse delay-1000"></div>
     <div className="relative bg-white/5 backdrop-blur-3xl border border-white/10 p-12 md:p-20 rounded-[4rem] shadow-2xl text-center text-white max-w-2xl mx-4">
-      <div className="text-7xl mb-12 animate-bounce drop-shadow-2xl">🛠️</div>
+      <div className="text-7xl mb-12 animate-bounce drop-shadow-2xl">≡ƒ¢á∩╕Å</div>
       <h1 className="text-6xl md:text-8xl font-black mb-10 tracking-tighter uppercase leading-[0.85] drop-shadow-2xl">Protocol <br/> <span className="italic text-blue-400">Refinement</span></h1>
       <p className="text-white/70 text-xl mb-16 lowercase font-medium">We're building a more robust digital matrix. <br/> synchronization will resume shortly.</p>
       <div className="inline-block px-8 py-4 bg-white/10 rounded-3xl border-2 border-white/10 text-xs font-black uppercase tracking-[0.3em] shadow-2xl">Estimated_Return: 120_Mins</div>
@@ -514,7 +514,7 @@ const MaintenanceGallery = () => {
   <div style="position: absolute; top: 80px; left: 80px; width: 320px; height: 320px; background: #2563eb; border-radius: 50%; filter: blur(120px); opacity: 0.4;"></div>
   <div style="position: absolute; bottom: 80px; right: 80px; width: 320px; height: 320px; background: #4f46e5; border-radius: 50%; filter: blur(120px); opacity: 0.4;"></div>
   <div style="position: relative; background: rgba(255,255,255,0.05); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.1); padding: 80px; border-radius: 64px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); text-align: center; color: white; max-width: 672px; width: calc(100% - 32px);">
-    <div style="font-size: 72px; margin-bottom: 48px;">🛠️</div>
+    <div style="font-size: 72px; margin-bottom: 48px;">≡ƒ¢á∩╕Å</div>
     <h1 style="font-size: 64px; font-weight: 900; margin-bottom: 40px; letter-spacing: -0.05em; text-transform: uppercase; line-height: 0.85;">Protocol <br/> <span style="color: #60a5fa; font-style: italic;">Refinement</span></h1>
     <p style="color: rgba(255,255,255,0.7); font-size: 20px; margin-bottom: 64px; text-transform: lowercase; font-weight: 500;">We're building a more robust digital matrix. <br/> synchronization will resume shortly.</p>
     <div style="display: inline-block; padding: 16px 32px; border-radius: 24px; border: 2px solid rgba(255,255,255,0.1); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; background: rgba(255,255,255,0.05);">Estimated_Return: 120_Mins</div>
@@ -651,7 +651,7 @@ const MaintenanceGallery = () => {
               jsxCode={`export const MaintenanceNeumorphic = () => (
   <div className="flex items-center justify-center min-h-[600px] w-full bg-[#e0e5ec] rounded-[3rem] font-sans italic font-bold text-center">
     <div className="w-full max-w-xl p-16 md:p-20 rounded-[4rem] bg-[#e0e5ec] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] text-center border border-white/20">
-      <div className="w-32 h-32 rounded-full bg-[#e0e5ec] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex items-center justify-center text-5xl mb-12 mx-auto border-4 border-white/50 text-center">💤</div>
+      <div className="w-32 h-32 rounded-full bg-[#e0e5ec] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex items-center justify-center text-5xl mb-12 mx-auto border-4 border-white/50 text-center">≡ƒÆñ</div>
       <h2 className="text-4xl md:text-5xl font-black text-slate-800 mb-6 uppercase tracking-tighter leading-none text-center">Matrix_Sleep</h2>
       <p className="text-slate-500 mb-16 lowercase font-medium text-lg italic text-center">We are optimizing nodes for a flawless synchronization.</p>
       <button className="px-12 py-6 rounded-2xl bg-[#e0e5ec] text-blue-600 font-black shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] hover:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] active:scale-95 transition-all uppercase text-xs tracking-widest border border-white/20">Refresh_Signal</button>
@@ -661,7 +661,7 @@ const MaintenanceGallery = () => {
               htmlCode={`<!-- Neumorphic Sleep Maintenance -->
 <div style="background: #e0e5ec; min-height: 600px; width: 100%; border-radius: 48px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; font-style: italic; font-weight: 700; text-align: center;">
   <div style="width: 100%; max-width: 576px; padding: 80px; border-radius: 64px; background: #e0e5ec; box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff; border: 1px solid rgba(255,255,255,0.2);">
-    <div style="width: 128px; height: 128px; border-radius: 50%; background: #e0e5ec; box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff; display: flex; align-items: center; justify-content: center; font-size: 48px; margin: 0 auto 48px auto; border: 4px solid rgba(255,255,255,0.5);">💤</div>
+    <div style="width: 128px; height: 128px; border-radius: 50%; background: #e0e5ec; box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff; display: flex; align-items: center; justify-content: center; font-size: 48px; margin: 0 auto 48px auto; border: 4px solid rgba(255,255,255,0.5);">≡ƒÆñ</div>
     <h2 style="font-size: 48px; font-weight: 900; color: #1e293b; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.05em;">Matrix_Sleep</h2>
     <p style="color: #64748b; margin-bottom: 64px; font-size: 18px; font-weight: 500; text-transform: lowercase;">We are optimizing nodes for a flawless synchronization.</p>
     <button style="padding: 24px 48px; border-radius: 16px; background: #e0e5ec; color: #2563eb; font-weight: 900; text-transform: uppercase; font-size: 12px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; letter-spacing: 0.1em;">Refresh_Signal</button>
