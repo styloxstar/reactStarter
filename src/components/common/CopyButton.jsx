@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import CodePreviewModal from './CodePreviewModal';
 
-const CopyButton = ({ jsxCode, htmlCode, cssCode, className = "" }) => {
+const CopyButton = ({ jsxCode, htmlCode, cssCode, jsCode, className = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const codeSnippets = {
     jsx: jsxCode,
     html: htmlCode,
-    css: cssCode
+    css: cssCode,
+    js: jsCode
   };
 
   return (

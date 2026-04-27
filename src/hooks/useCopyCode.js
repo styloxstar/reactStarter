@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export const useCopyCode = () => {
-  const [activeTab, setActiveTab] = useState('jsx'); // jsx, html, css
+  const [activeTab, setActiveTab] = useState('jsx'); // jsx, html, css, js
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToClipboard = async (text) => {

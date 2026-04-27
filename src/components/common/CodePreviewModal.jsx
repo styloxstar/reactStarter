@@ -15,17 +15,26 @@ const CodePreviewModal = ({ isOpen, onClose, codeSnippets }) => {
         {/* Header */}
         <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-white">
           <div className="flex gap-4">
-            {['jsx', 'html', 'css'].map((tab) => (
+            {[
+              { key: 'jsx', label: 'React + Tailwind' },
+              { key: 'html', label: 'HTML' },
+              { key: 'css', label: 'Vanilla CSS' },
+              { key: 'js', label: 'JavaScript' },
+            ]
+              .filter(({ key }) => !!codeSnippets[key])
+              .map(({ key, label }) => (
               <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
+                key={key}
+                onClick={() => setActiveTab(key)}
                 className={`px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-lg transition-all duration-200 ${
-                  activeTab === tab
-                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200'
+                  activeTab === key
+                    ? key === 'js'
+                      ? 'bg-yellow-400 text-yellow-900 shadow-lg shadow-yellow-100'
+                      : 'bg-indigo-600 text-white shadow-lg shadow-indigo-200'
                     : 'text-gray-400 hover:text-gray-600 hover:bg-gray-100'
                 }`}
               >
-                {tab === 'jsx' ? 'React + Tailwind' : tab === 'html' ? 'HTML' : 'Vanilla CSS'}
+                {label}
               </button>
             ))}
           </div>

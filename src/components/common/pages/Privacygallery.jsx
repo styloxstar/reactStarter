@@ -211,7 +211,16 @@ const PrivacyGallery = () => {
       id: 'standard', 
       title: '01. Standard SaaS Sidebar', 
       component: <PrivacyStandard />, 
-      jsx: `export const PrivacyStandard = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyStandard = () => (
   <div className="bg-white p-8 rounded-3xl border border-gray-100 flex flex-col md:flex-row gap-12 h-[600px] overflow-hidden">
     <div className="w-1/4 flex-shrink-0 border-r border-gray-100 pr-6">
       <h2 className="font-bold text-lg mb-8">Privacy Center</h2>
@@ -236,16 +245,18 @@ const PrivacyGallery = () => {
 );`,
       html: `<div class="privacy-standard">
   <div class="sidebar">
-    <div class="sidebar-header">
-      <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-      <span>Privacy Center</span>
+    <div class="sidebar-sticky">
+      <div class="sidebar-header">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        <span>Privacy Center</span>
+      </div>
+      <ul class="nav">
+        <li class="active">01. Data Collection</li>
+        <li>02. Use of Information</li>
+        <li>03. Sharing of Data</li>
+        <li>04. Security Standards</li>
+      </ul>
     </div>
-    <ul class="nav">
-      <li class="active">01. Data Collection</li>
-      <li>02. Use of Information</li>
-      <li>03. Sharing of Data</li>
-      <li>04. Security Standards</li>
-    </ul>
   </div>
   <div class="content">
     <h1>Privacy Policy</h1>
@@ -270,29 +281,43 @@ const PrivacyGallery = () => {
     </div>
   </div>
 </div>`,
-      css: `.privacy-standard { background: #ffffff; padding: 32px; border-radius: 24px; border: 1px solid #f3f4f6; display: flex; flex-direction: column; gap: 48px; font-family: sans-serif; overflow: hidden; height: auto; text-align: left; }
-@media (min-width: 768px) { .privacy-standard { flex-direction: row; height: 600px; } }
-.sidebar { width: 100%; border-right: none; padding-right: 0; }
-@media (min-width: 768px) { .sidebar { width: 25%; border-right: 1px solid #f3f4f6; padding-right: 24px; } }
-.sidebar-header { display: flex; align-items: center; gap: 8px; color: #2563eb; font-weight: 700; font-size: 18px; margin-bottom: 32px; text-transform: uppercase; font-style: italic; }
+      css: `.privacy-standard { background: #ffffff; padding: 32px; border-radius: 24px; border: 1px solid #f3f4f6; display: flex; flex-direction: column; gap: 48px; height: auto; overflow: hidden; font-family: sans-serif; text-align: left; }
+@media (min-width: 768px) { .privacy-standard { flex-direction: row; height: 600px; padding: 32px; } }
+.sidebar { width: 100%; flex-shrink: 0; border-right: 1px solid #f3f4f6; padding-right: 24px; box-sizing: border-box; }
+@media (min-width: 768px) { .sidebar { width: 25%; } }
+.sidebar-sticky { position: sticky; top: 0; }
+.sidebar-header { display: flex; align-items: center; gap: 8px; margin-bottom: 32px; color: #2563eb; }
 .sidebar-header .icon { width: 24px; height: 24px; }
-.nav { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
-.nav li { font-size: 14px; color: #6b7280; cursor: pointer; padding: 8px 12px; }
-.nav li.active { color: #2563eb; font-weight: 500; background: #eff6ff; rounded: 8px; }
-.content { flex: 1; overflow-y: auto; padding-right: 16px; }
-.content h1 { font-size: 36px; font-weight: 900; color: #111827; margin: 0 0 8px 0; text-transform: uppercase; font-style: italic; }
-.subtitle { color: #9ca3af; font-size: 18px; font-style: italic; margin-bottom: 40px; }
+.sidebar-header span { font-weight: 700; font-size: 18px; font-style: italic; text-transform: uppercase; letter-spacing: -0.025em; }
+.nav { display: flex; flex-direction: column; gap: 16px; font-size: 14px; color: #6b7280; list-style: none; padding: 0; margin: 0; }
+.nav li { padding: 8px 12px; }
+.nav li.active { color: #2563eb; font-weight: 500; background: #eff6ff; border-radius: 8px; }
+.nav li:not(.active) { cursor: pointer; transition: color 0.15s ease-in-out; }
+.nav li:not(.active):hover { color: #2563eb; }
+.content { width: 100%; overflow-y: auto; padding-right: 16px; box-sizing: border-box; }
+@media (min-width: 768px) { .content { width: 75%; } }
+.content h1 { font-size: 36px; font-weight: 900; color: #111827; margin-bottom: 8px; text-transform: uppercase; letter-spacing: -0.05em; font-style: italic; text-align: left; margin-top: 0; }
+.subtitle { color: #9ca3af; margin-bottom: 40px; font-size: 18px; font-style: italic; text-transform: lowercase; font-weight: 500; text-align: left; margin-top: 0; }
 .sections { display: flex; flex-direction: column; gap: 48px; }
-.section { border-bottom: 1px solid #f9fafb; padding-bottom: 32px; }
-.section:last-child { border: none; }
-.section h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 16px; text-transform: uppercase; }
-.section p { color: #6b7280; font-size: 18px; line-height: 1.6; }`
+.section { border-bottom: 1px solid #f9fafb; padding-bottom: 32px; text-align: left; }
+.section:last-child { border-bottom: 0; }
+.section h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 16px; text-transform: uppercase; margin-top: 0; }
+.section p { color: #6b7280; line-height: 1.625; font-size: 18px; margin: 0; }`
     },
     { 
       id: 'cards', 
       title: '02. Visual Framework Cards', 
       component: <PrivacyCards />, 
-      jsx: `export const PrivacyCards = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyCards = () => (
   <div className="bg-slate-50 p-12 rounded-[3rem] font-sans">
     <h2 className="text-center text-5xl font-black mb-16 uppercase italic">Privacy Framework</h2>
     <div className="grid grid-cols-2 gap-8">
@@ -306,45 +331,58 @@ const PrivacyGallery = () => {
   </div>
 );`,
       html: `<div class="privacy-cards">
-  <div class="header">
-    <h2>Privacy Framework</h2>
-    <div class="bar"></div>
-  </div>
-  <div class="grid">
-    <div class="card">
-      <h3>01. Data Collection</h3>
-      <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
+  <div class="container">
+    <div class="header">
+      <h2>Privacy Framework</h2>
+      <div class="bar"></div>
     </div>
-    <div class="card">
-      <h3>02. Use of Information</h3>
-      <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
-    </div>
-    <div class="card">
-      <h3>03. Sharing of Data</h3>
-      <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
-    </div>
-    <div class="card">
-      <h3>04. Security Standards</h3>
-      <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>01. Data Collection</h3>
+        <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
+      </div>
+      <div class="card">
+        <h3>02. Use of Information</h3>
+        <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
+      </div>
+      <div class="card">
+        <h3>03. Sharing of Data</h3>
+        <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
+      </div>
+      <div class="card">
+        <h3>04. Security Standards</h3>
+        <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
+      </div>
     </div>
   </div>
 </div>`,
-      css: `.privacy-cards { background: #f8fafc; padding: 48px; border-radius: 48px; font-family: sans-serif; text-align: left; }
+      css: `.privacy-cards { background: #f8fafc; padding: 32px; border-radius: 48px; height: auto; overflow-y: auto; font-family: sans-serif; text-align: left; }
+@media (min-width: 768px) { .privacy-cards { padding: 48px; height: 600px; } }
+.container { max-width: 1024px; margin: 0 auto; }
 .header { text-align: center; margin-bottom: 64px; }
-.header h2 { font-size: 48px; font-weight: 900; color: #0f172a; text-transform: uppercase; font-style: italic; }
-.bar { width: 80px; height: 8px; background: #4f46e5; margin: 16px auto 0; border-radius: 999px; }
-.grid { display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 1024px; margin: 0 auto; }
+.header h2 { font-size: 48px; font-weight: 900; color: #0f172a; margin-bottom: 16px; letter-spacing: -0.05em; font-style: italic; text-transform: uppercase; margin-top: 0; }
+.bar { width: 80px; height: 8px; background: #4f46e5; margin: 0 auto; border-radius: 9999px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
 @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-.card { background: #ffffff; padding: 40px; border-radius: 40px; border: 1px solid #f1f5f9; transition: all 0.3s; }
-.card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); }
-.card h3 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; text-transform: uppercase; font-style: italic; }
-.card p { color: #64748b; font-size: 18px; line-height: 1.6; font-style: italic; font-weight: 500; }`
+.card { background: #ffffff; padding: 40px; border-radius: 40px; border: 1px solid #f1f5f9; transition: all 0.15s ease-in-out; }
+.card:hover { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.card h3 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 16px; text-transform: uppercase; font-style: italic; margin-top: 0; }
+.card p { color: #64748b; line-height: 1.625; font-style: italic; font-weight: 500; margin: 0; }`
     },
     { 
       id: 'accordion', 
       title: '03. Interactive Legal Accordion', 
       component: <PrivacyAccordion />, 
-      jsx: `export const PrivacyAccordion = () => {
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyAccordion = () => {
   const [active, setActive] = useState(0);
   return (
     <div className="bg-white p-16 rounded-3xl border border-gray-100">
@@ -360,64 +398,80 @@ const PrivacyGallery = () => {
   );
 };`,
       html: `<div class="privacy-accordion">
-  <h2>Legal_FAQ</h2>
-  <div class="list">
-    <div class="item active">
-      <button>
-        <span>01. Data Collection</span>
-        <span class="arrow">▼</span>
-      </button>
-      <div class="panel">
-        <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
+  <div class="container">
+    <h2>Legal_FAQ</h2>
+    <div class="accordion-list">
+      <div class="accordion-item active">
+        <button class="accordion-header">
+          <span class="accordion-title">01. Data Collection</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <button>
-        <span>02. Use of Information</span>
-        <span class="arrow">▼</span>
-      </button>
-      <div class="panel">
-        <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="accordion-title">02. Use of Information</span>
+          <span class="accordion-icon">▼</span>
+        </button>
       </div>
-    </div>
-    <div class="item">
-      <button>
-        <span>03. Sharing of Data</span>
-        <span class="arrow">▼</span>
-      </button>
-      <div class="panel">
-        <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="accordion-title">03. Sharing of Data</span>
+          <span class="accordion-icon">▼</span>
+        </button>
       </div>
-    </div>
-    <div class="item">
-      <button>
-        <span>04. Security Standards</span>
-        <span class="arrow">▼</span>
-      </button>
-      <div class="panel">
-        <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span class="accordion-title">04. Security Standards</span>
+          <span class="accordion-icon">▼</span>
+        </button>
       </div>
     </div>
   </div>
 </div>`,
-      css: `.privacy-accordion { background: #ffffff; padding: 64px; border-radius: 32px; border: 1px solid #f1f5f9; font-family: sans-serif; text-align: center; }
-.privacy-accordion h2 { font-size: 36px; font-weight: 900; color: #111827; margin-bottom: 48px; text-transform: uppercase; font-style: italic; }
-.list { max-width: 768px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
-.item { border: 4px solid #f9fafb; border-radius: 32px; overflow: hidden; transition: all 0.3s; text-align: left; }
-.item.active { border-color: #3b82f6; background: rgba(59, 130, 246, 0.05); }
-button { width: 100%; border: none; background: transparent; padding: 32px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; text-transform: uppercase; font-style: italic; }
-.arrow { font-size: 20px; color: #94a3b8; transition: transform 0.3s; }
-.item.active .arrow { transform: rotate(180deg); color: #3b82f6; }
-.panel { padding: 0 32px 32px; }
-.item:not(.active) .panel { display: none; }
-.panel p { color: #6b7280; font-size: 18px; line-height: 1.6; font-style: italic; font-weight: 500; }`
+      css: `.privacy-accordion { background: #ffffff; padding: 32px; border-radius: 24px; border: 1px solid #f3f4f6; height: auto; overflow-y: auto; font-family: sans-serif; text-align: left; }
+@media (min-width: 768px) { .privacy-accordion { padding: 64px; height: 600px; } }
+.container { max-width: 768px; margin: 0 auto; }
+.container h2 { font-size: 36px; font-weight: 900; color: #111827; margin-bottom: 48px; text-align: center; text-transform: uppercase; letter-spacing: -0.05em; font-style: italic; margin-top: 0; }
+.accordion-list { display: flex; flex-direction: column; gap: 24px; }
+.accordion-item { border: 4px solid #f9fafb; border-radius: 32px; overflow: hidden; transition: all 0.15s ease-in-out; }
+.accordion-item.active { border-color: #3b82f6; background-color: rgba(239, 246, 255, 0.2); }
+.accordion-header { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 32px; text-align: left; outline: none; background: transparent; border: none; cursor: pointer; }
+.accordion-title { font-size: 20px; font-weight: 700; text-transform: uppercase; font-style: italic; color: #374151; }
+.accordion-item.active .accordion-title { color: #2563eb; }
+.accordion-icon { font-size: 24px; transition: transform 0.15s ease-in-out; color: #d1d5db; }
+.accordion-item.active .accordion-icon { transform: rotate(180deg); color: #2563eb; }
+.accordion-content { padding: 0 32px 40px 32px; color: #6b7280; font-size: 18px; line-height: 1.625; text-align: left; font-style: italic; border-top: 1px solid rgba(219, 234, 254, 0.5); margin-top: 24px; padding-top: 24px; display: none; }
+.accordion-item.active .accordion-content { display: block; }`
+      ,
+      js: `// Privacy Accordion - Vanilla JS
+document.querySelectorAll('.accordion-header').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.accordion-item');
+    const isActive = item.classList.contains('active');
+    // Close all
+    document.querySelectorAll('.accordion-item').forEach((i) => i.classList.remove('active'));
+    // Open clicked (toggle off if already active)
+    if (!isActive) item.classList.add('active');
+  });
+});`
     },
     { 
       id: 'minimal', 
       title: '04. Bauhaus Typography Suite', 
       component: <PrivacyMinimal />, 
-      jsx: `export const PrivacyMinimal = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyMinimal = () => (
   <div className="bg-[#f8f9fa] p-24 rounded-[3rem] text-left">
     <h1 className="text-8xl font-black uppercase italic border-b-8 border-black pb-8">Privacy.</h1>
     <div className="space-y-24 mt-24">
@@ -433,45 +487,55 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
 );`,
       html: `<div class="privacy-minimal">
   <div class="container">
-    <h1 class="main-title">Privacy.</h1>
+    <h1 class="title">Privacy.</h1>
     <div class="sections">
       <div class="section">
-        <span class="num">01</span>
-        <h3 class="title">Data Collection</h3>
-        <p class="text">We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
+        <span class="section-number">01</span>
+        <h3>Data Collection</h3>
+        <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
       </div>
       <div class="section">
-        <span class="num">02</span>
-        <h3 class="title">Use of Information</h3>
-        <p class="text">We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
+        <span class="section-number">02</span>
+        <h3>Use of Information</h3>
+        <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
       </div>
       <div class="section">
-        <span class="num">03</span>
-        <h3 class="title">Sharing of Data</h3>
-        <p class="text">We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
+        <span class="section-number">03</span>
+        <h3>Sharing of Data</h3>
+        <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
       </div>
       <div class="section">
-        <span class="num">04</span>
-        <h3 class="title">Security Standards</h3>
-        <p class="text">We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
+        <span class="section-number">04</span>
+        <h3>Security Standards</h3>
+        <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
       </div>
     </div>
   </div>
 </div>`,
-      css: `.privacy-minimal { background: #f8f9fa; padding: 96px; border-radius: 48px; font-family: sans-serif; text-align: left; }
-.container { max-width: 896px; margin: 0 auto; }
-.main-title { font-size: 80px; font-weight: 900; color: #000000; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; border-bottom: 8px solid #000000; padding-bottom: 32px; margin-bottom: 96px; line-height: 1; }
+      css: `.privacy-minimal { background: #f8f9fa; padding: 48px; border-radius: 48px; height: auto; overflow-y: auto; border: 1px solid #e5e7eb; font-family: sans-serif; text-align: left; }
+@media (min-width: 768px) { .privacy-minimal { padding: 96px; height: 600px; } }
+.container { max-width: 672px; margin: 0 auto; }
+.title { font-size: 96px; font-weight: 900; color: #000000; margin-bottom: 96px; letter-spacing: -0.05em; text-transform: uppercase; font-style: italic; line-height: 1; border-bottom: 8px solid #000000; padding-bottom: 32px; margin-top: 0; }
 .sections { display: flex; flex-direction: column; gap: 96px; }
 .section { position: relative; }
-.num { position: absolute; left: -80px; top: 0; font-size: 64px; font-weight: 900; color: #f1f5f9; z-index: 0; }
-.title { position: relative; z-index: 1; font-size: 40px; font-weight: 900; color: #000000; text-transform: uppercase; font-style: italic; margin-bottom: 32px; letter-spacing: -0.025em; }
-.text { font-size: 24px; color: #6b7280; line-height: 1.5; font-style: italic; text-transform: lowercase; font-weight: 500; }`
+.section-number { position: absolute; left: -80px; top: 0; font-size: 60px; font-weight: 900; color: #f3f4f6; }
+.section h3 { font-size: 36px; font-weight: 900; margin-bottom: 32px; color: #000000; text-transform: uppercase; letter-spacing: -0.025em; font-style: italic; margin-top: 0; }
+.section p { font-size: 24px; line-height: 1.625; color: #6b7280; font-style: italic; text-transform: lowercase; font-weight: 500; margin: 0; }`
     },
     { 
       id: 'timeline', 
       title: '05. Data Lifecycle Timeline', 
       component: <PrivacyTimeline />, 
-      jsx: `export const PrivacyTimeline = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyTimeline = () => (
   <div className="bg-white p-20 rounded-3xl border border-gray-100 text-left">
     <h2 className="text-5xl font-black mb-20 text-center uppercase italic">Data Lifecycle</h2>
     <div className="relative border-l-8 border-blue-50 ml-10 pl-16 space-y-24">
@@ -488,52 +552,65 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
   </div>
 );`,
       html: `<div class="privacy-timeline">
-  <h2>Data Lifecycle</h2>
-  <div class="timeline">
-    <div class="node">
-      <div class="marker">01</div>
-      <div class="card">
-        <h3>01. Data Collection</h3>
-        <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
+  <div class="container">
+    <h2 class="title">Data Lifecycle</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">01</div>
+        <div class="timeline-content">
+          <h3>Data Collection</h3>
+          <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
+        </div>
       </div>
-    </div>
-    <div class="node">
-      <div class="marker">02</div>
-      <div class="card">
-        <h3>02. Use of Information</h3>
-        <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
+      <div class="timeline-item">
+        <div class="timeline-marker">02</div>
+        <div class="timeline-content">
+          <h3>Use of Information</h3>
+          <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
+        </div>
       </div>
-    </div>
-    <div class="node">
-      <div class="marker">03</div>
-      <div class="card">
-        <h3>03. Sharing of Data</h3>
-        <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
+      <div class="timeline-item">
+        <div class="timeline-marker">03</div>
+        <div class="timeline-content">
+          <h3>Sharing of Data</h3>
+          <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
+        </div>
       </div>
-    </div>
-    <div class="node">
-      <div class="marker">04</div>
-      <div class="card">
-        <h3>04. Security Standards</h3>
-        <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
+      <div class="timeline-item">
+        <div class="timeline-marker">04</div>
+        <div class="timeline-content">
+          <h3>Security Standards</h3>
+          <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>`,
-      css: `.privacy-timeline { background: #ffffff; padding: 80px; border-radius: 32px; border: 1px solid #f1f5f9; font-family: sans-serif; text-align: left; }
-.privacy-timeline h2 { font-size: 48px; font-weight: 900; color: #111827; margin-bottom: 80px; text-align: center; text-transform: uppercase; font-style: italic; }
-.timeline { position: relative; border-left: 8px solid #eff6ff; margin-left: 40px; padding-left: 64px; display: flex; flex-direction: column; gap: 96px; max-width: 896px; margin: 0 auto; }
-.node { position: relative; }
-.marker { position: absolute; left: -108px; top: 0; width: 80px; height: 80px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #ffffff; font-size: 24px; box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.2); border: 4px solid #ffffff; }
-.card { background: #f9fafb; padding: 40px; border-radius: 40px; border: 1px solid #f3f4f6; }
-.card h3 { font-size: 30px; font-weight: 900; color: #111827; margin-bottom: 16px; text-transform: uppercase; font-style: italic; }
-.card p { color: #6b7280; font-size: 20px; line-height: 1.6; font-style: italic; }`
+      css: `.privacy-timeline { background: #ffffff; padding: 32px; border-radius: 24px; border: 1px solid #f3f4f6; height: auto; overflow-y: auto; font-family: sans-serif; text-align: left; }
+@media (min-width: 768px) { .privacy-timeline { padding: 80px; height: 600px; } }
+.container { max-width: 896px; margin: 0 auto; }
+.title { font-size: 48px; font-weight: 900; color: #111827; margin-bottom: 80px; text-align: center; text-transform: uppercase; letter-spacing: -0.05em; font-style: italic; margin-top: 0; }
+.timeline { position: relative; border-left: 8px solid #eff6ff; margin-left: 40px; padding-left: 64px; display: flex; flex-direction: column; gap: 96px; }
+.timeline-item { position: relative; }
+.timeline-marker { position: absolute; left: -108px; top: 0; width: 80px; height: 80px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 900; font-size: 24px; box-shadow: 0 20px 25px -5px rgba(219, 234, 254, 1); border: 4px solid #ffffff; box-sizing: border-box; }
+.timeline-content { background: #f9fafb; padding: 40px; border-radius: 40px; border: 1px solid #f3f4f6; }
+.timeline-content h3 { font-size: 30px; font-weight: 900; color: #111827; margin-bottom: 16px; text-transform: uppercase; letter-spacing: -0.025em; font-style: italic; margin-top: 0; }
+.timeline-content p { color: #6b7280; line-height: 1.625; font-size: 20px; font-style: italic; margin: 0; }`
     },
     { 
       id: 'split', 
       title: '06. Contrast Node Sidebar', 
       component: <PrivacySplit />, 
-      jsx: `export const PrivacySplit = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacySplit = () => (
   <div className="flex bg-slate-900 rounded-[2.5rem] overflow-hidden text-white font-sans text-left">
     <div className="w-1/3 bg-black p-20 flex flex-col justify-between border-r border-slate-800">
       <h1 className="text-6xl font-black uppercase italic leading-[0.8] tracking-tighter">Secure <br/><span class="text-green-500">Node</span></h1>
@@ -552,53 +629,64 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
 );`,
       html: `<div class="privacy-split">
   <div class="sidebar">
-    <div class="header">
-      <h1>Secure <br> <span>Node</span></h1>
-      <p class="meta">Privacy infrastructure.</p>
+    <div>
+      <h1 class="sidebar-title">Secure <br/><span>Node</span></h1>
+      <p class="sidebar-subtitle">Privacy infrastructure.</p>
     </div>
-    <div class="indicator"></div>
+    <div class="sidebar-icon"></div>
   </div>
-  <div class="main-content">
-    <div class="item">
-      <div class="id">Section_01</div>
-      <h3>01. Data Collection</h3>
+  <div class="content">
+    <div class="section">
+      <div class="section-tag">Section_01</div>
+      <h3>Data Collection</h3>
       <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
     </div>
-    <div class="item">
-      <div class="id">Section_02</div>
-      <h3>02. Use of Information</h3>
+    <div class="section">
+      <div class="section-tag">Section_02</div>
+      <h3>Use of Information</h3>
       <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
     </div>
-    <div class="item">
-      <div class="id">Section_03</div>
-      <h3>03. Sharing of Data</h3>
+    <div class="section">
+      <div class="section-tag">Section_03</div>
+      <h3>Sharing of Data</h3>
       <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
     </div>
-    <div class="item">
-      <div class="id">Section_04</div>
-      <h3>04. Security Standards</h3>
+    <div class="section">
+      <div class="section-tag">Section_04</div>
+      <h3>Security Standards</h3>
       <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
     </div>
   </div>
 </div>`,
-      css: `.privacy-split { display: flex; flex-direction: column; background: #0f172a; border-radius: 40px; overflow: hidden; font-family: sans-serif; text-align: left; }
+      css: `.privacy-split { display: flex; flex-direction: column; height: auto; background: #0f172a; border-radius: 40px; overflow: hidden; color: #ffffff; font-family: sans-serif; text-align: left; }
 @media (min-width: 768px) { .privacy-split { flex-direction: row; height: 600px; } }
-.sidebar { width: 100%; background: #000000; padding: 64px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid #1e293b; }
-@media (min-width: 768px) { .sidebar { width: 33.33%; } }
-.sidebar h1 { font-size: 64px; font-weight: 900; color: #ffffff; line-height: 0.8; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; }
-.sidebar h1 span { color: #22c55e; }
-.sidebar .meta { color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 900; margin-top: 24px; font-style: italic; opacity: 0.6; }
-.indicator { width: 64px; height: 64px; background: #22c55e; border-radius: 50%; margin-top: 48px; }
-.main-content { flex: 1; padding: 64px; overflow-y: auto; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(20px); display: flex; flex-direction: column; gap: 64px; }
-.item .id { color: #22c55e; font-size: 12px; font-family: monospace; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 8px; font-style: italic; }
-.item h3 { color: #ffffff; font-size: 40px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.025em; font-style: italic; margin-bottom: 24px; }
-.item p { color: #94a3b8; font-size: 20px; line-height: 1.6; font-style: italic; border-left: 4px solid rgba(34, 197, 94, 0.3); padding-left: 32px; }`
+.sidebar { width: 100%; background: #000000; padding: 64px; border-right: 1px solid #1e293b; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; }
+@media (min-width: 768px) { .sidebar { width: 33.333333%; } }
+.sidebar-title { font-size: 60px; font-weight: 900; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.05em; font-style: italic; line-height: 0.8; color: #ffffff; margin-top: 0; }
+.sidebar-title span { color: #22c55e; }
+.sidebar-subtitle { color: #94a3b8; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900; font-style: italic; opacity: 0.6; margin: 0; }
+.sidebar-icon { width: 64px; height: 64px; background: #22c55e; border-radius: 50%; margin-top: 64px; }
+@media (min-width: 768px) { .sidebar-icon { margin-top: 0; } }
+.content { width: 100%; padding: 64px; overflow-y: auto; display: flex; flex-direction: column; gap: 64px; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(24px); box-sizing: border-box; }
+@media (min-width: 768px) { .content { width: 66.666667%; padding: 80px; } }
+.section-tag { color: #22c55e; font-size: 12px; font-family: monospace; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900; font-style: italic; }
+.section h3 { font-size: 36px; font-weight: 900; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.025em; font-style: italic; margin-top: 0; }
+.section p { color: #94a3b8; font-size: 20px; line-height: 1.625; font-style: italic; border-left: 4px solid rgba(34, 197, 94, 0.3); padding-left: 32px; margin: 0; }`
     },
     { 
       id: 'glass', 
       title: '07. Premium Crystal Glass', 
       component: <PrivacyGlass />, 
-      jsx: `export const PrivacyGlass = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyGlass = () => (
   <div className="bg-gradient-to-br from-indigo-600 to-cyan-400 p-16 flex items-center justify-center font-sans text-left">
     <div className="bg-white/10 backdrop-blur-3xl border border-white/20 p-16 rounded-[4rem] shadow-2xl max-w-5xl w-full text-center">
       <h2 className="text-6xl font-black text-white uppercase italic mb-20">Crystal_Privacy</h2>
@@ -614,43 +702,54 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
   </div>
 );`,
       html: `<div class="privacy-glass">
-  <div class="glass-card">
-    <h2>Crystal_Privacy</h2>
+  <div class="glass-container">
+    <h2 class="title">Crystal_Privacy</h2>
     <div class="grid">
-      <div class="item">
-        <h3>01. Data Collection</h3>
+      <div class="glass-card">
+        <h3>Data Collection</h3>
         <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
       </div>
-      <div class="item">
-        <h3>02. Use of Information</h3>
+      <div class="glass-card">
+        <h3>Use of Information</h3>
         <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
       </div>
-      <div class="item">
-        <h3>03. Sharing of Data</h3>
+      <div class="glass-card">
+        <h3>Sharing of Data</h3>
         <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
       </div>
-      <div class="item">
-        <h3>04. Security Standards</h3>
+      <div class="glass-card">
+        <h3>Security Standards</h3>
         <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
       </div>
     </div>
   </div>
 </div>`,
-      css: `.privacy-glass { min-height: 600px; background: linear-gradient(to bottom right, #4f46e5, #06b6d4); padding: 64px; border-radius: 64px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; text-align: left; }
-.glass-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 64px; padding: 64px; width: 100%; max-width: 1024px; text-align: center; }
-.glass-card h2 { font-size: 64px; font-weight: 900; color: #ffffff; text-transform: uppercase; margin-bottom: 80px; font-style: italic; letter-spacing: -0.05em; }
-.grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+      css: `.privacy-glass { min-height: 600px; width: 100%; border-radius: 64px; overflow: hidden; background: linear-gradient(to bottom right, #4f46e5, #22d3ee); padding: 32px; display: flex; align-items: center; justify-content: center; font-family: sans-serif; text-align: left; box-sizing: border-box; }
+@media (min-width: 768px) { .privacy-glass { padding: 64px; } }
+.glass-container { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.2); padding: 64px; border-radius: 64px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); width: 100%; max-width: 1024px; box-sizing: border-box; text-align: center; }
+.title { font-size: 60px; font-weight: 900; color: #ffffff; text-align: center; margin-bottom: 80px; text-transform: uppercase; letter-spacing: -0.05em; font-style: italic; margin-top: 0; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 48px; text-align: left; }
 @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-.item { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 48px; border-radius: 48px; transition: all 0.3s; text-align: left; }
-.item:hover { background: rgba(255, 255, 255, 0.1); }
-.item h3 { font-size: 24px; font-weight: 900; color: #ffffff; text-transform: uppercase; margin-bottom: 16px; font-style: italic; letter-spacing: -0.02em; }
-.item p { color: rgba(255, 255, 255, 0.5); font-size: 18px; line-height: 1.6; font-style: italic; }`
+.glass-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 48px; border-radius: 48px; transition: all 0.15s ease-in-out; }
+.glass-card:hover { background-color: rgba(255, 255, 255, 0.2); }
+.glass-card h3 { font-size: 24px; font-weight: 900; color: #ffffff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: -0.025em; font-style: italic; transition: color 0.15s ease-in-out; margin-top: 0; }
+.glass-card:hover h3 { color: #67e8f9; }
+.glass-card p { color: rgba(255, 255, 255, 0.5); line-height: 1.625; font-style: italic; font-size: 18px; margin: 0; }`
     },
     { 
       id: 'brutalist', 
       title: '08. Gold Standard Brutalist', 
       component: <PrivacyBrutalist />, 
-      jsx: `export const PrivacyBrutalist = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyBrutalist = () => (
   <div className="bg-yellow-400 p-16 border-[12px] border-black rounded-[4rem] font-sans shadow-[30px_30px_0_0_#000] text-left">
     <h1 className="text-9xl font-black uppercase mb-20 italic bg-black text-white px-8 py-4 inline-block tracking-tighter">Privacy!</h1>
     <div className="grid grid-cols-2 gap-16">
@@ -664,40 +763,51 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
   </div>
 );`,
       html: `<div class="privacy-brutalist">
-  <h1>Privacy!</h1>
+  <h1 class="title">Privacy!</h1>
   <div class="grid">
     <div class="card">
-      <h3>01. Data Collection</h3>
+      <h3>Data Collection</h3>
       <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
     </div>
     <div class="card">
-      <h3>02. Use of Information</h3>
+      <h3>Use of Information</h3>
       <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
     </div>
     <div class="card">
-      <h3>03. Sharing of Data</h3>
+      <h3>Sharing of Data</h3>
       <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
     </div>
     <div class="card">
-      <h3>04. Security Standards</h3>
+      <h3>Security Standards</h3>
       <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
     </div>
   </div>
 </div>`,
-      css: `.privacy-brutalist { background: #facc15; padding: 64px; border: 12px solid #000000; border-radius: 64px; font-family: sans-serif; box-shadow: 30px 30px 0 0 #000000; text-align: left; }
-.privacy-brutalist h1 { font-size: 120px; font-weight: 900; color: #ffffff; background: #000000; display: inline-block; padding: 16px 32px; margin: 0 0 80px 0; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; line-height: 0.7; }
+      css: `.privacy-brutalist { background: #facc15; padding: 32px; border: 12px solid #000000; border-radius: 64px; font-family: sans-serif; max-width: 1024px; margin: 0 auto; box-shadow: 30px 30px 0 0 #000000; text-align: left; }
+@media (min-width: 768px) { .privacy-brutalist { padding: 64px; } }
+.title { font-size: 128px; font-weight: 900; text-transform: uppercase; margin-bottom: 80px; line-height: 0.7; letter-spacing: -0.05em; font-style: italic; background: #000000; color: #ffffff; display: inline-block; padding: 16px 32px; margin-top: 0; }
 .grid { display: grid; grid-template-columns: 1fr; gap: 64px; }
 @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-.card { background: #ffffff; border: 8px solid #000000; padding: 48px; shadow: 20px 20px 0 0 #000000; transition: all 0.2s; }
+.card { background: #ffffff; border: 8px solid #000000; padding: 48px; box-shadow: 20px 20px 0 0 #000000; transition: all 0.15s ease-in-out; }
 .card:hover { transform: translate(8px, 8px); box-shadow: none; }
-.card h3 { font-size: 40px; font-weight: 900; text-transform: uppercase; margin-bottom: 32px; border-bottom: 8px solid #000000; padding-bottom: 24px; font-style: italic; }
-.card p { color: #000000; font-size: 24px; font-weight: 900; line-height: 1.1; font-style: italic; text-transform: lowercase; }`
+.card h3 { font-size: 36px; font-weight: 900; text-transform: uppercase; margin-bottom: 32px; border-bottom: 8px solid #000000; padding-bottom: 24px; letter-spacing: -0.025em; font-style: italic; transition: all 0.15s ease-in-out; padding: 0 16px; margin-top: 0; }
+.card:hover h3 { background: #000000; color: #ffffff; }
+.card p { color: #000000; font-weight: 900; font-size: 24px; line-height: 1.375; font-style: italic; text-transform: lowercase; margin: 0; }`
     },
     { 
       id: 'cyber', 
       title: '09. Cyber Web3 Protocol', 
       component: <PrivacyCyber />, 
-      jsx: `export const PrivacyCyber = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyCyber = () => (
   <div className="bg-black p-20 rounded-3xl border-4 border-cyan-500/30 font-mono text-left italic font-bold">
     <h2 className="text-6xl font-black text-cyan-400 mb-20 uppercase tracking-[0.2em]">HANDSHAKE_PROTOCOL</h2>
     <div className="grid grid-cols-2 gap-12 text-left">
@@ -712,48 +822,58 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
   </div>
 );`,
       html: `<div class="privacy-cyber">
-  <div class="scan-line"></div>
-  <h2>HANDSHAKE_PROTOCOL</h2>
+  <div class="cyber-line"></div>
+  <h2 class="title">HANDSHAKE_PROTOCOL</h2>
   <div class="grid">
-    <div class="item">
-      <div class="node">SYSTEM_NODE_01</div>
-      <h3>01. Data Collection</h3>
+    <div class="cyber-card">
+      <div class="node-id">SYSTEM_NODE_01</div>
+      <h3>Data Collection</h3>
       <p>We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide.</p>
     </div>
-    <div class="item">
-      <div class="node">SYSTEM_NODE_02</div>
-      <h3>02. Use of Information</h3>
+    <div class="cyber-card">
+      <div class="node-id">SYSTEM_NODE_02</div>
+      <h3>Use of Information</h3>
       <p>We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions.</p>
     </div>
-    <div class="item">
-      <div class="node">SYSTEM_NODE_03</div>
-      <h3>03. Sharing of Data</h3>
+    <div class="cyber-card">
+      <div class="node-id">SYSTEM_NODE_03</div>
+      <h3>Sharing of Data</h3>
       <p>We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf.</p>
     </div>
-    <div class="item">
-      <div class="node">SYSTEM_NODE_04</div>
-      <h3>04. Security Standards</h3>
+    <div class="cyber-card">
+      <div class="node-id">SYSTEM_NODE_04</div>
+      <h3>Security Standards</h3>
       <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction.</p>
     </div>
   </div>
 </div>`,
-      css: `.privacy-cyber { background: #000000; padding: 80px; border-radius: 24px; border: 4px solid rgba(6, 182, 212, 0.3); font-family: monospace; font-style: italic; font-weight: 800; position: relative; overflow: hidden; text-align: left; }
-.scan-line { position: absolute; top: 0; left: 0; width: 100%; h: 1px; background: rgba(6, 182, 212, 0.5); animation: scan 4s linear infinite; }
-@keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-.privacy-cyber h2 { font-size: 64px; font-weight: 900; color: #22d3ee; margin-bottom: 80px; text-transform: uppercase; letter-spacing: 0.2em; }
+      css: `.privacy-cyber { background: #000000; padding: 32px; border-radius: 24px; border: 4px solid rgba(6, 182, 212, 0.3); font-family: monospace; text-align: left; position: relative; overflow: hidden; font-style: italic; font-weight: 700; }
+@media (min-width: 768px) { .privacy-cyber { padding: 80px; } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.cyber-line { position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: rgba(6, 182, 212, 0.5); animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.title { font-size: 60px; font-weight: 900; color: #22d3ee; margin-bottom: 80px; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 0; }
 .grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-.item { border-left: 4px solid rgba(6, 182, 212, 0.2); padding-left: 48px; transition: border-color 0.3s; }
-.item:hover { border-color: #22d3ee; }
-.node { color: rgba(34, 197, 94, 0.4); font-size: 12px; tracking: 0.5em; margin-bottom: 24px; }
-.item h3 { font-size: 36px; font-weight: 900; color: #ffffff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.05em; }
-.item p { color: rgba(207, 250, 254, 0.4); font-size: 20px; line-height: 1.6; text-transform: uppercase; }`
+.cyber-card { border-left: 4px solid rgba(6, 182, 212, 0.2); padding-left: 48px; transition: border-color 0.15s ease-in-out; }
+.cyber-card:hover { border-color: #22d3ee; }
+.node-id { color: rgba(6, 182, 212, 0.4); font-size: 12px; letter-spacing: 0.5em; margin-bottom: 24px; text-transform: uppercase; }
+.cyber-card h3 { font-size: 36px; font-weight: 900; color: #ffffff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.05em; margin-top: 0; }
+.cyber-card p { color: rgba(207, 250, 254, 0.4); font-size: 20px; line-height: 1.625; text-transform: uppercase; margin: 0; }`
     },
     { 
       id: 'neo', 
       title: '10. Soft Tactile Protocol', 
       component: <PrivacyNeo />, 
-      jsx: `export const PrivacyNeo = () => (
+      jsx: `import React, { useState } from 'react';
+
+const PRIVACY_SECTIONS = [
+  { id: '01', title: "Data Collection", content: "We collect information you provide directly to us when you create an account, update your profile, or communicate with us. This may include your name, email address, and any other information you choose to provide." },
+  { id: '02', title: "Use of Information", content: "We use the information we collect to provide, maintain, and improve our services, such as to process transactions, send technical notices, and respond to your comments and questions." },
+  { id: '03', title: "Sharing of Data", content: "We do not share your personal information with third parties except as described in this policy, such as with your consent or with service providers who perform work on our behalf." },
+  { id: '04', title: "Security Standards", content: "We take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access, disclosure, alteration, and destruction." },
+];
+
+export const PrivacyNeo = () => (
   <div className="bg-[#e0e5ec] p-24 rounded-[5rem] shadow-[30px_30px_60px_#bebebe,-30px_-30px_60px_#ffffff] text-center font-sans">
     <h2 className="text-6xl font-black text-slate-800 mb-24 uppercase tracking-tighter italic">Soft Policy</h2>
     <div className="space-y-16 max-w-5xl mx-auto">
@@ -787,12 +907,14 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
     </div>
   </div>
 </div>`,
-      css: `.privacy-neo { background: #e0e5ec; padding: 96px; border-radius: 80px; font-family: sans-serif; text-align: center; box-shadow: 30px 30px 60px #bebebe, -30px -30px 60px #ffffff; }
-.privacy-neo h2 { font-size: 64px; font-weight: 900; color: #1e293b; text-transform: uppercase; margin-bottom: 96px; font-style: italic; letter-spacing: -0.05em; }
-.container { max-width: 1024px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; }
-.neo-card { background: #e0e5ec; padding: 48px; border-radius: 50px; shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff; text-align: left; }
-.neo-card h3 { font-size: 30px; font-weight: 900; color: #334155; text-transform: uppercase; margin-bottom: 24px; font-style: italic; }
-.neo-card p { font-size: 20px; color: #64748b; line-height: 1.6; font-style: italic; font-weight: 500; }`
+      css: `.privacy-neo { background: #e0e5ec; padding: 48px; border-radius: 80px; box-shadow: 30px 30px 60px #bebebe, -30px -30px 60px #ffffff; font-family: sans-serif; text-align: left; }
+@media (min-width: 768px) { .privacy-neo { padding: 96px; text-align: center; } }
+.privacy-neo h2 { font-size: 60px; font-weight: 900; color: #1e293b; margin-bottom: 96px; text-transform: uppercase; letter-spacing: -0.05em; font-style: italic; margin-top: 0; }
+.container { max-width: 1024px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; text-align: left; }
+.neo-card { background: #e0e5ec; padding: 48px; border-radius: 50px; box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff; transition: all 0.15s ease-in-out; }
+.neo-card:hover { box-shadow: inset 10px 10px 20px #bebebe, inset -10px -10px 20px #ffffff; }
+.neo-card h3 { font-size: 30px; font-weight: 900; color: #334155; margin-bottom: 24px; text-transform: uppercase; font-style: italic; letter-spacing: -0.025em; margin-top: 0; }
+.neo-card p { font-size: 20px; color: #64748b; font-weight: 500; font-style: italic; line-height: 1.625; margin: 0; }`
     }
   ];
 
@@ -811,6 +933,7 @@ button span:first-child { font-size: 20px; font-weight: 800; color: #1e293b; tex
                 jsxCode={section.jsx}
                 htmlCode={section.html}
                 cssCode={section.css}
+                jsCode={section.js}
               />
             </div>
             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block text-center mb-8 italic text-black">
