@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CopyButton from '../common/CopyButton';
 
 // --- Shared Dummy Data ---
 const images = [
@@ -279,52 +280,115 @@ const ImageGallery = () => {
       
       <div className="space-y-32 flex flex-col items-center">
         
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Bento grid gallery with hero, tall, small and wide items`} htmlCode={`<div class="bento"><div class="hero"><img src="..."/></div><div class="tall"><img src="..."/></div><div class="small"><img src="..."/></div></div>`} cssCode={`.bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; height: 600px; max-width: 56rem; }
+.bento .hero { grid-column: span 2; grid-row: span 2; border-radius: 1.5rem; overflow: hidden; position: relative; }
+.bento .tall { grid-row: span 2; border-radius: 1.5rem; overflow: hidden; }
+.bento .small { border-radius: 1.5rem; overflow: hidden; }
+.bento img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+.bento > div:hover img { transform: scale(1.05); }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">01. Bento Grid</span>
           <GalleryBento />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Pinterest-style masonry gallery with hover overlay and view button`} htmlCode={`<div class="masonry-gallery"><div class="item"><img src="..."/><div class="overlay"><button>View</button></div></div></div>`} cssCode={`.masonry-gallery { columns: 3; gap: 1rem; max-width: 56rem; }
+.masonry-gallery .item { break-inside: avoid; position: relative; border-radius: 0.75rem; overflow: hidden; margin-bottom: 1rem; }
+.masonry-gallery img { width: 100%; object-fit: cover; }
+.overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); opacity: 0; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; }
+.item:hover .overlay { opacity: 1; }
+.overlay button { background: #fff; color: #000; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 700; font-size: 0.875rem; border: none; cursor: pointer; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">02. Masonry</span>
           <GalleryMasonry />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Hover-expanding strips gallery with flex grow on hover`} htmlCode={`<div class="strips"><div class="strip"><img src="..."/><span>Title</span></div></div>`} cssCode={`.strips { display: flex; max-width: 56rem; height: 24rem; gap: 0.5rem; }
+.strip { flex: 1; position: relative; border-radius: 1rem; overflow: hidden; cursor: pointer; transition: flex 0.5s ease-in-out; }
+.strip:hover { flex: 3; }
+.strip img { width: 100%; height: 100%; object-fit: cover; }
+.strip span { position: absolute; bottom: 1rem; left: 1rem; color: #fff; font-weight: 700; font-size: 1.125rem; opacity: 0; transition: opacity 0.5s 0.1s; }
+.strip:hover span { opacity: 1; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">03. Hover Expand</span>
           <GalleryExpanding />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Lightbox grid with click-to-open full-screen modal`} htmlCode={`<div class="lightbox-grid"><div class="thumb" onclick="open()"><img src="..."/></div></div><div class="lightbox-modal"><img src="..."/><button>&times;</button></div>`} cssCode={`.lightbox-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25rem; max-width: 48rem; }
+.thumb { aspect-ratio: 1; overflow: hidden; cursor: pointer; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.thumb:hover img { transform: scale(1.1); }
+.lightbox-modal { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.lightbox-modal img { max-width: 100%; max-height: 90vh; border-radius: 0.5rem; box-shadow: 0 25px 50px rgba(0,0,0,0.25); }
+.lightbox-modal button { position: absolute; top: 1rem; right: 1rem; color: #fff; font-size: 2rem; background: none; border: none; cursor: pointer; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">04. Lightbox Grid</span>
           <GalleryLightbox />
         </div>
 
-        <div className="w-full flex flex-col items-center bg-gray-900 p-12 rounded-3xl shadow">
+        <div className="w-full flex flex-col items-center bg-gray-900 p-12 rounded-3xl shadow relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Glass cards with slide-up info overlay on hover`} htmlCode={`<div class="glass-cards"><div class="gc-card"><img src="..."/><div class="gc-info"><h3>Title</h3><p>Description</p></div></div></div>`} cssCode={`.glass-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 64rem; }
+.gc-card { position: relative; aspect-ratio: 3/4; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.25); }
+.gc-card img { width: 100%; height: 100%; object-fit: cover; }
+.gc-info { position: absolute; bottom: 1rem; left: 1rem; right: 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); padding: 1rem; border-radius: 0.75rem; transform: translateY(6rem); transition: transform 0.3s; }
+.gc-card:hover .gc-info { transform: translateY(0); }
+.gc-info h3 { color: #fff; font-weight: 700; }
+.gc-info p { color: rgba(255,255,255,0.7); font-size: 0.875rem; }`} /></div>
           <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-8">05. Glass Cards</span>
           <GalleryGlassCards />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Filterable gallery with category buttons and animated grid`} htmlCode={`<div class="filter-gallery"><div class="filter-bar"><button class="active">All</button><button>Nature</button></div><div class="grid"><div class="item"><img src="..."/></div></div></div>`} cssCode={`.filter-bar { display: flex; gap: 0.5rem; margin-bottom: 2rem; padding: 0.25rem; background: #f3f4f6; border-radius: 0.5rem; }
+.filter-bar button { padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; background: transparent; border: none; color: #6b7280; cursor: pointer; }
+.filter-bar button.active { background: #fff; color: #000; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.filter-gallery .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.filter-gallery .item { aspect-ratio: 1; border-radius: 0.75rem; overflow: hidden; }
+.filter-gallery img { width: 100%; height: 100%; object-fit: cover; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">06. Filterable</span>
           <GalleryFilter />
         </div>
 
-        <div className="w-full flex flex-col items-center overflow-hidden box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center overflow-hidden box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Horizontal scrolling gallery with numbered cards and gradient overlay`} htmlCode={`<div class="scroll-gallery"><div class="scroll-track"><div class="scroll-card"><img src="..."/><span>01.</span></div></div></div>`} cssCode={`.scroll-gallery { width: 100%; overflow-x: auto; padding-bottom: 1rem; }
+.scroll-track { display: flex; gap: 1rem; min-width: max-content; padding: 0 1rem; }
+.scroll-card { position: relative; width: 18rem; height: 24rem; border-radius: 1rem; overflow: hidden; flex-shrink: 0; }
+.scroll-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+.scroll-card:hover img { transform: scale(1.1); }
+.scroll-card span { position: absolute; bottom: 1.5rem; left: 1.5rem; color: #fff; font-size: 1.5rem; font-weight: 700; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">07. Horizontal Parallax</span>
           <GalleryScroll />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Polaroid scatter gallery with rotated photo cards`} htmlCode={`<div class="polaroid-gallery"><div class="polaroid" style="transform:rotate(-6deg)"><img src="..."/><span>Title</span></div></div>`} cssCode={`.polaroid-gallery { position: relative; height: 500px; max-width: 48rem; display: flex; align-items: center; justify-content: center; }
+.polaroid { position: absolute; width: 16rem; background: #fff; padding: 0.75rem; padding-bottom: 3rem; box-shadow: 0 20px 25px rgba(0,0,0,0.15); border: 1px solid #e5e7eb; cursor: pointer; transition: transform 0.3s; }
+.polaroid:hover { transform: scale(1.1) !important; z-index: 50; }
+.polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; filter: sepia(30%); }
+.polaroid span { display: block; text-align: center; font-weight: 700; color: #1f2937; margin-top: 0.5rem; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">08. Polaroid Scatter</span>
           <GalleryPolaroid />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Hexagonal clip-path gallery with overlapping honeycomb layout`} htmlCode={`<div class="hex-gallery"><div class="hex"><img src="..."/></div></div>`} cssCode={`.hex-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 56rem; }
+.hex { width: 12rem; height: 12rem; position: relative; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); transition: transform 0.3s; margin-left: -2rem; }
+.hex:first-child { margin-left: 0; }
+.hex:hover { transform: scale(1.05); z-index: 10; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3)); }
+.hex img { width: 100%; height: 100%; object-fit: cover; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">09. Geometric Clip</span>
           <GalleryHexagon />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/ig">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/ig:opacity-100 transition-opacity"><CopyButton jsxCode={`// Cyberpunk glitch gallery with offset colored layers`} htmlCode={`<div class="glitch-gallery"><div class="glitch-card"><div class="cyan"></div><div class="pink"></div><div class="main"><img src="..."/><span>IMG_00</span></div></div></div>`} cssCode={`.glitch-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 64rem; }
+.glitch-card { position: relative; }
+.glitch-card .cyan { position: absolute; inset: 0; background: #06b6d4; transform: translate(8px, 8px); transition: transform 0.3s; }
+.glitch-card .pink { position: absolute; inset: 0; background: #ec4899; transform: translate(-8px, -8px); transition: transform 0.3s; }
+.glitch-card:hover .cyan { transform: translate(12px, 12px); }
+.glitch-card:hover .pink { transform: translate(-12px, -12px); }
+.glitch-card .main { position: relative; height: 16rem; background: #111827; border: 2px solid #fff; overflow: hidden; }
+.glitch-card .main img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 0.3s; }
+.glitch-card:hover .main img { filter: none; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">10. Cyberpunk</span>
           <GalleryCyberpunk />
         </div>

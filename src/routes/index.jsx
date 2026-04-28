@@ -49,7 +49,7 @@ import LoginGallery from "../components/common/pages/LoginGallery";
 import RegisterGallery from "../components/common/pages/RegisterGallery";
 import ForgotPasswordGallery from "../components/common/pages/ForgotPasswordGallery";
 import LandingPageGallery from "../components/common/pages/LandingPageGallery";
-import ContactGallery, { ContactNeumorphic } from "../components/common/pages/ContactGallery";
+import ContactGallery from "../components/common/pages/ContactGallery";
 import PricingGallery from "../components/common/pages/PricingGallery";
 import ComingSoonGallery from "../components/common/pages/ComingSoonGallery";
 import MaintenanceGallery, { MaintenanceBrutalist, MaintenanceCountdown, MaintenanceDashboard, MaintenanceGlass, MaintenanceTerminal } from "../components/common/pages/MaintenanceGallery";

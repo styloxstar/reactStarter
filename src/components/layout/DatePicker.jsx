@@ -862,6 +862,7 @@
 
 
 import React, { useState, useEffect, useRef } from 'react';
+import CopyButton from '../common/CopyButton';
 
 // ==========================================
 // 1. THE BRAIN: Shared Logic Hook
@@ -1412,52 +1413,107 @@ const DatePicker = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 max-w-7xl mx-auto items-start justify-items-center">
         
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// SaaS datepicker with dropdown month/year selectors`} htmlCode={`<div class="datepicker-saas"><div class="header"><select><!-- months --></select><select><!-- years --></select></div><div class="grid">
+  <button class="day">1</button><button class="day selected">15</button>
+</div></div>`} cssCode={`.datepicker-saas { width: 20rem; background: #fff; border-radius: 0.75rem; box-shadow: 0 20px 25px rgba(0,0,0,0.15); border: 1px solid #f3f4f6; padding: 1.25rem; }
+.datepicker-saas .header { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.datepicker-saas select { flex: 1; padding: 0.625rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; font-weight: 700; cursor: pointer; }
+.datepicker-saas .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.25rem; }
+.day { width: 2.25rem; height: 2.25rem; border-radius: 0.5rem; border: none; font-size: 0.875rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.day.selected { background: #2563eb; color: #fff; font-weight: 700; box-shadow: 0 4px 6px rgba(37,99,235,0.3); }
+.day:hover { background: #eff6ff; color: #2563eb; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase">01. SaaS Dropdowns</span>
           <DatePickerSaaS />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Material style datepicker with animated month/year switcher`} htmlCode={`<div class="datepicker-material"><div class="header"><button>&larr;</button><span>January 2024</span><button>&rarr;</button></div><div class="weekdays"><span>Su</span></div><div class="grid"><button class="day selected">15</button></div></div>`} cssCode={`.datepicker-material { width: 20rem; background: #fff; border-radius: 1rem; box-shadow: 0 20px 25px rgba(0,0,0,0.1); padding: 1.5rem; }
+.datepicker-material .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.datepicker-material .header span { font-weight: 700; font-size: 1.125rem; }
+.weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 0.5rem; }
+.weekdays span { font-size: 0.75rem; color: #9ca3af; font-weight: 500; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase">02. Material Switcher</span>
           <DatePickerMaterial />
         </div>
 
-        <div className="flex flex-col items-center gap-4 lg:col-span-2 xl:col-span-1 box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 lg:col-span-2 xl:col-span-1 box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Sidebar datepicker with year list on the left`} htmlCode={`<div class="datepicker-sidebar"><aside class="year-list"><button class="active">2024</button></aside><div class="calendar"><div class="header"><span>January</span></div><div class="grid"><button class="day">1</button></div></div></div>`} cssCode={`.datepicker-sidebar { display: flex; background: #fff; border-radius: 0.75rem; box-shadow: 0 10px 15px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #f3f4f6; }
+.year-list { width: 5rem; background: #f9fafb; border-right: 1px solid #f3f4f6; overflow-y: auto; max-height: 20rem; }
+.year-list button { width: 100%; padding: 0.5rem; font-size: 0.875rem; border: none; background: transparent; cursor: pointer; }
+.year-list button.active { background: #2563eb; color: #fff; font-weight: 700; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase">03. Sidebar Year</span>
           <DatePickerSidebar />
         </div>
 
-        <div className="flex flex-col items-center gap-4 md:col-span-2 xl:col-span-2 box-shadow p-4 rounded-lg  ">
+        <div className="flex flex-col items-center gap-4 md:col-span-2 xl:col-span-2 box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Dual pane range datepicker (travel/booking style)`} htmlCode={`<div class="datepicker-dual"><div class="pane"><div class="header">January 2024</div><div class="grid"><button class="day range-start">12</button><button class="day in-range">13</button><button class="day range-end">18</button></div></div><div class="divider"></div><div class="pane"><div class="header">February 2024</div><div class="grid"><button class="day">1</button></div></div></div>`} cssCode={`.datepicker-dual { display: flex; gap: 2rem; background: #fff; border-radius: 1rem; box-shadow: 0 10px 15px rgba(0,0,0,0.1); padding: 1.5rem; border: 1px solid #e5e7eb; }
+.pane { flex: 1; }
+.divider { width: 1px; background: #f3f4f6; }
+.day.range-start, .day.range-end { background: #2563eb; color: #fff; border-radius: 50%; }
+.day.in-range { background: #eff6ff; color: #2563eb; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase">04. Dual Pane (Range)</span>
           <DatePickerDual />
         </div>
 
-        <div className="flex flex-col items-center gap-4 z-50 xl:col-span-1 box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 z-50 xl:col-span-1 box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Input popover datepicker with floating calendar`} htmlCode={`<div class="datepicker-input"><label>Pick a Date</label><div class="trigger"><span>15 January 2024</span><svg>...</svg></div><div class="popover"><div class="grid"><button class="day">1</button></div></div></div>`} cssCode={`.datepicker-input { position: relative; width: 16rem; }
+.trigger { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; background: #fff; border: 1px solid #e5e7eb; border-radius: 0.5rem; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.trigger:hover { border-color: #2563eb; }
+.popover { position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background: #fff; border-radius: 0.75rem; box-shadow: 0 20px 25px rgba(0,0,0,0.15); border: 1px solid #f3f4f6; padding: 1rem; z-index: 50; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase">05. Input Popover</span>
           <DatePickerInput />
         </div>
 
-        <div className="flex flex-col items-center gap-4 bg-gray-950 p-8 rounded-2xl box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 bg-gray-950 p-8 rounded-2xl box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Cyberpunk neon datepicker with corner brackets and pink accents`} htmlCode={`<div class="datepicker-cyber"><div class="corner-tl"></div><div class="corner-br"></div><div class="header">JANUARY</div><div class="grid"><button class="day selected">15</button></div></div>`} cssCode={`.datepicker-cyber { width: 16rem; background: #000; border: 1px solid #06b6d4; padding: 1rem; box-shadow: 0 0 15px rgba(6,182,212,0.4); position: relative; font-family: monospace; }
+.corner-tl { position: absolute; top: 0; right: 0; width: 1rem; height: 1rem; border-top: 2px solid #06b6d4; border-right: 2px solid #06b6d4; }
+.corner-br { position: absolute; bottom: 0; left: 0; width: 1rem; height: 1rem; border-bottom: 2px solid #06b6d4; border-left: 2px solid #06b6d4; }
+.datepicker-cyber .header { color: #22d3ee; text-align: center; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #1f2937; padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.datepicker-cyber .day { color: #6b7280; font-family: monospace; }
+.datepicker-cyber .day.selected { background: #ec4899; color: #000; font-weight: 700; }`} /></div>
           <span className="text-xs font-bold text-gray-500 uppercase">06. Cyberpunk</span>
           <DatePickerCyber />
         </div>
 
-        <div className="flex flex-col items-center gap-4 bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-2xl box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-2xl box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Glassmorphism datepicker with frosted backdrop`} htmlCode={`<div class="datepicker-glass"><div class="header">January 2024</div><div class="grid"><button class="day selected">15</button></div></div>`} cssCode={`.datepicker-glass { width: 16rem; padding: 1.25rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); border-radius: 1rem; box-shadow: 0 20px 25px rgba(0,0,0,0.15); }
+.datepicker-glass .header { color: #fff; text-align: center; font-weight: 500; margin-bottom: 1rem; }
+.datepicker-glass .day { color: rgba(255,255,255,0.7); border: none; background: transparent; border-radius: 50%; width: 2rem; height: 2rem; cursor: pointer; }
+.datepicker-glass .day:hover { background: rgba(255,255,255,0.1); }
+.datepicker-glass .day.selected { background: #fff; color: #581c87; font-weight: 700; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }`} /></div>
           <span className="text-xs font-bold text-white/50 uppercase">07. Glassmorphism</span>
           <DatePickerGlass />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Horizontal week strip datepicker for mobile/habit tracking`} htmlCode={`<div class="datepicker-horizontal"><div class="header"><h3>This Week</h3><button>View Calendar</button></div><div class="week-strip"><button class="day-card"><span class="label">Mo</span><span class="number">14</span></button><button class="day-card active"><span class="label">Tu</span><span class="number">15</span></button></div></div>`} cssCode={`.datepicker-horizontal { width: 100%; max-width: 28rem; background: #fff; padding: 1rem; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); border: 1px solid #f3f4f6; }
+.week-strip { display: flex; justify-content: space-between; }
+.day-card { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; min-width: 3rem; padding: 0.75rem; border-radius: 0.75rem; background: #f9fafb; border: none; cursor: pointer; transition: all 0.2s; }
+.day-card.active { background: #000; color: #fff; box-shadow: 0 10px 15px rgba(0,0,0,0.1); transform: scale(1.1); }
+.day-card .label { font-size: 0.75rem; font-weight: 500; opacity: 0.8; }
+.day-card .number { font-size: 1.125rem; font-weight: 700; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase">08. Horizontal Week</span>
           <DatePickerHorizontal />
         </div>
 
-        <div className="flex flex-col items-center gap-4 bg-[#e0e5ec] p-8 rounded-2xl box-shadow">
+        <div className="flex flex-col items-center gap-4 bg-[#e0e5ec] p-8 rounded-2xl box-shadow relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Neumorphic soft UI datepicker with inset/outset shadows`} htmlCode={`<div class="datepicker-neu"><div class="header"><button class="neu-btn">&lsaquo;</button><span>January 2024</span><button class="neu-btn">&rsaquo;</button></div><div class="grid"><button class="day">1</button><button class="day selected">15</button></div></div>`} cssCode={`.datepicker-neu { width: 18rem; background: #e0e5ec; padding: 1.5rem; border-radius: 1.5rem; box-shadow: 9px 9px 16px rgb(163,177,198), -9px -9px 16px rgba(255,255,255,0.5); }
+.neu-btn { width: 2rem; height: 2rem; border-radius: 50%; background: #e0e5ec; border: none; box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; cursor: pointer; }
+.datepicker-neu .day { width: 2rem; height: 2rem; border-radius: 0.5rem; border: none; font-weight: 700; font-size: 0.75rem; background: #e0e5ec; color: #6b7280; cursor: pointer; box-shadow: 3px 3px 6px #bebebe, -3px -3px 6px #ffffff; }
+.datepicker-neu .day.selected { color: #3b82f6; box-shadow: inset 3px 3px 6px #bebebe, inset -3px -3px 6px #ffffff; }`} /></div>
           <span className="text-xs font-bold text-gray-400 uppercase">09. Neumorphic</span>
           <DatePickerNeumorphic />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg">
+        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/dp">
+          <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/dp:opacity-100 transition-opacity"><CopyButton jsxCode={`// Grid toggle datepicker with month/year grid views`} htmlCode={`<div class="datepicker-grid"><div class="header"><button>January</button><button>2024</button></div><div class="view-calendar"><div class="grid"><button class="day">1</button></div></div><div class="view-month"><button>Jan</button><button>Feb</button></div><div class="view-year"><button>2020</button></div></div>`} cssCode={`.datepicker-grid { width: 18rem; background: #fff; border-radius: 0.75rem; box-shadow: 0 10px 15px rgba(0,0,0,0.1); border: 1px solid #f3f4f6; padding: 1.25rem; }
+.datepicker-grid .header { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.datepicker-grid .header button { font-weight: 700; color: #1f2937; background: transparent; border: none; cursor: pointer; padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
+.datepicker-grid .header button:hover { background: #f3f4f6; }
+.view-month, .view-year { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.view-month button, .view-year button { padding: 0.75rem; border-radius: 0.25rem; border: none; cursor: pointer; }
+.view-month button:hover, .view-year button:hover { background: #f3f4f6; }`} /></div>
           <span className="text-xs font-bold text-slate-400 uppercase">10. Grid Toggle</span>
           <DatePickerGridToggle />
         </div>

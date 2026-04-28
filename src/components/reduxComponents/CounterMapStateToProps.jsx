@@ -20,7 +20,7 @@ const CounterMapStateToProps = (props) => {
     <div>
          <div className='flex flex-col justify-center items-center p-2 text-white '>
               <div>
-                    <p className='text-2xl font-bold text-black my-6 box-shadow-inner rounded-md px-6 py-2'> {props.count ?? 0} </p>
+                    <p className='text-2xl font-bold text-[hsl(var(--foreground))] my-6 glass-card rounded-md px-6 py-2'> {props.count ?? 0} </p>
               </div>
               <div>
                   
@@ -34,22 +34,22 @@ const CounterMapStateToProps = (props) => {
                
                   {
                       enablePostFetch && getPostData?.length > 0 ? (
-                          <div className='h-80 overflow-y-scroll border box-shadow-inner rounded-md border-gray-300 p-2 mt-4 text-black'>
+                          <div className='h-80 overflow-y-scroll border glass-card rounded-md border-[hsl(var(--border))] p-2 mt-4 text-[hsl(var(--foreground))]'>
                               {getPostData.map((post) => (
-                                  <div key={post.id} className='mb-2 p-2  border-gray-200'>
+                                  <div key={post.id} className='mb-2 p-2 border-b border-[hsl(var(--border))] opacity-80'>
                                       <p><b>Post ID:</b> {post.id}</p>
                                       <p><b>Title:</b> {post.title}</p>
                                   </div>
                               ))}
                           </div>
-                      ) : (enablePostFetch ? <p className='italic  mt-4 text-black animate-pulse-slow'>Loading post data...</p> : null
+                      ) : (enablePostFetch ? <p className='italic  mt-4 text-[hsl(var(--foreground))] animate-pulse-slow'>Loading post data...</p> : null
                               
                       )
                   }
                   
                   {
                       enablePostFetch === false ? (
-                          <p className='italic mt-4 text-black my-10 animate-pulse-slow'>Post data is disabled.</p>
+                          <p className='italic mt-4 text-[hsl(var(--foreground))] opacity-60 my-10 animate-pulse-slow'>Post data is disabled.</p>
                       ) : null
                   }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import CopyButton from '../common/CopyButton';
 
 // --- Shared Logic Hook ---
 const useCarousel = (length, interval = 5000) => {
@@ -362,52 +363,132 @@ const Carousels = () => {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start justify-items-center">
         
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 1. Standard Fade */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselStandard = () => {\n  const { current, next, prev, goTo } = useCarousel(slides.length);\n  return (\n    <div className="relative w-full aspect-video rounded-xl overflow-hidden group">\n      {slides.map((slide, index) => (\n        <div key={slide.id} className={\`absolute inset-0 transition-opacity duration-700 \${index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}\`}>\n          <img src={slide.img} className="w-full h-full object-cover" />\n          <div className="absolute bottom-0 p-6 bg-gradient-to-t from-black/80 text-white w-full">\n            <h3 className="text-xl font-bold">{slide.title}</h3>\n          </div>\n        </div>\n      ))}\n      <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 z-20">←</button>\n      <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 z-20">→</button>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="carousel-fade">\n  <div class="carousel-item active">\n    <img src="image1.jpg">\n    <div class="caption">Title</div>\n  </div>\n  <button class="prev">←</button>\n  <button class="next">→</button>\n</div>`}
+              cssCode={`.carousel-fade { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; }\n.carousel-item { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s; }\n.carousel-item.active { opacity: 1; z-index: 10; }\n.caption { position: absolute; bottom: 0; padding: 1.5rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; width: 100%; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">01. Standard Fade</span>
           <CarouselStandard />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 2. Horizontal Slide */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselSlide = () => {\n  const { current, next, prev } = useCarousel(slides.length);\n  return (\n    <div className="relative w-full overflow-hidden rounded-xl h-64">\n      <div className="flex transition-transform duration-500" style={{ transform: \`translateX(-\${current * 100}%)\` }}>\n        {slides.map((slide) => (\n          <div key={slide.id} className="min-w-full h-full relative">\n            <img src={slide.img} className="w-full h-full object-cover" />\n          </div>\n        ))}\n      </div>\n      <div className="absolute bottom-4 flex justify-between w-full px-4">\n        <button onClick={prev} className="bg-black/50 text-white p-2">PREV</button>\n        <button onClick={next} className="bg-black/50 text-white p-2">NEXT</button>\n      </div>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="carousel-slide">\n  <div class="slide-track">\n    <div class="slide"><img src="1.jpg"></div>\n    <div class="slide"><img src="2.jpg"></div>\n  </div>\n</div>`}
+              cssCode={`.carousel-slide { overflow: hidden; position: relative; }\n.slide-track { display: flex; transition: transform 0.5s ease-out; }\n.slide { min-width: 100%; height: 256px; }\n.slide img { width: 100%; height: 100%; object-fit: cover; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">02. Horizontal Slide</span>
           <CarouselSlide />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 3. 3D Card Stack */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselStack = () => {\n  const { current, next } = useCarousel(slides.length);\n  return (\n    <div className="relative w-full h-64 perspective-1000">\n      {slides.map((slide, index) => {\n        let offset = (index - current + slides.length) % slides.length;\n        if (offset > 2) return null;\n        return (\n          <div key={slide.id} onClick={next} className={\`absolute top-0 w-full h-full transition-all duration-500 \${offset === 0 ? 'z-30 scale-100 opacity-100' : offset === 1 ? 'z-20 scale-90 opacity-70 translate-y-4' : 'z-10 scale-80 opacity-40 translate-y-8'}\`}>\n            <img src={slide.img} className="w-full h-full object-cover rounded-2xl" />\n          </div>\n        );\n      })}\n    </div>\n  );\n};`}
+              htmlCode={`<div class="card-stack">\n  <div class="card card-1"><img src="1.jpg"></div>\n  <div class="card card-2"><img src="2.jpg"></div>\n  <div class="card card-3"><img src="3.jpg"></div>\n</div>`}
+              cssCode={`.card-stack { position: relative; height: 256px; perspective: 1000px; }\n.card { position: absolute; width: 100%; height: 100%; transition: 0.5s; cursor: pointer; border-radius: 1rem; overflow: hidden; }\n.card-1 { z-index: 30; transform: scale(1); opacity: 1; }\n.card-2 { z-index: 20; transform: scale(0.9) translateY(20px); opacity: 0.7; }\n.card-3 { z-index: 10; transform: scale(0.8) translateY(40px); opacity: 0.4; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">03. 3D Card Stack</span>
           <CarouselStack />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 4. Thumbnail Gallery */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white text-center">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselThumbnails = () => {\n  const { current, goTo } = useCarousel(slides.length);\n  return (\n    <div className="w-full space-y-2">\n      <div className="h-64 rounded-xl overflow-hidden shadow-md">\n        <img src={slides[current].img} className="w-full h-full object-cover" />\n      </div>\n      <div className="grid grid-cols-4 gap-2">\n        {slides.map((slide, idx) => (\n          <button key={slide.id} onClick={() => goTo(idx)} className={\`h-20 rounded-lg \${current === idx ? 'ring-2 ring-indigo-600' : 'opacity-60'}\`}>\n            <img src={slide.img} className="w-full h-full object-cover" />\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="thumb-carousel">\n  <div class="main-img"><img src="large.jpg"></div>\n  <div class="thumbs">\n    <img src="1.jpg" class="active">\n    <img src="2.jpg">\n  </div>\n</div>`}
+              cssCode={`.main-img { height: 256px; border-radius: 0.75rem; overflow: hidden; }\n.thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.5rem; }\n.thumbs img { height: 80px; width: 100%; object-fit: cover; border-radius: 0.5rem; cursor: pointer; opacity: 0.6; transition: 0.3s; }\n.thumbs img.active { opacity: 1; outline: 2px solid #4f46e5; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">04. Thumbnail Gallery</span>
           <CarouselThumbnails />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 5. Vertical Split */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselVertical = () => {\n  const { current, goTo } = useCarousel(slides.length);\n  return (\n    <div className="flex bg-white rounded-xl shadow-lg h-64 overflow-hidden">\n      <div className="w-1/3 flex flex-col">\n        {slides.map((s, idx) => (\n          <button key={s.id} onMouseEnter={() => goTo(idx)} className={\`flex-1 p-4 \${current === idx ? 'bg-white border-l-4 border-blue-600' : 'bg-gray-50'}\`}>{s.title}</button>\n        ))}\n      </div>\n      <div className="w-2/3 relative">\n        <img src={slides[current].img} className="w-full h-full object-cover" />\n      </div>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="split-carousel">\n  <div class="tabs">\n    <button class="active">Title 1</button>\n    <button>Title 2</button>\n  </div>\n  <div class="content"><img src="1.jpg"></div>\n</div>`}
+              cssCode={`.split-carousel { display: flex; height: 256px; border-radius: 0.75rem; overflow: hidden; }\n.tabs { width: 33%; background: #f9fafb; display: flex; flex-direction: column; }\n.tabs button { flex: 1; padding: 1rem; border: none; font-weight: 500; cursor: pointer; text-align: left; }\n.tabs button.active { background: #fff; border-left: 4px solid #2563eb; color: #2563eb; }\n.content { width: 67%; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">05. Vertical Split</span>
           <CarouselVertical />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 6. Parallax Text */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselParallax = () => (\n  <div className="relative h-64 overflow-hidden rounded-xl">\n    <img src={...} className="scale-110 transition-transform duration-700" />\n    <div className="absolute inset-0 flex flex-col items-center justify-center p-8">...</div>\n  </div>\n);`}
+              htmlCode={`<div class="carousel-parallax">...</div>`}
+              cssCode={`.parallax-img { transform: scale(1.1); transition: transform 0.7s ease-out; }\n.text-animate { animation: slideIn 0.7s; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">06. Parallax Text</span>
           <CarouselParallax />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 7. Progress Bar */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselProgress = () => {\n  const { current, next } = useCarousel(slides.length);\n  return (\n    <div className="relative aspect-video rounded-xl overflow-hidden">\n      <img src={slides[current].img} className="w-full h-full object-cover" />\n      <div className="absolute top-4 inset-x-4 flex gap-2">\n        {slides.map((_, idx) => (\n          <div key={idx} className="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">\n            <div className={\`h-full bg-white transition-all linear \${current === idx ? 'w-full duration-[5000ms]' : current > idx ? 'w-full' : 'w-0'}\`} />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="prog-carousel">\n  <img src="1.jpg">\n  <div class="bars">\n    <div class="bar active"><div class="fill"></div></div>\n    <div class="bar"></div>\n  </div>\n</div>`}
+              cssCode={`.prog-carousel { position: relative; aspect-ratio: 16/9; overflow: hidden; }\n.bars { position: absolute; top: 1rem; left: 1rem; right: 1rem; display: flex; gap: 0.5rem; }\n.bar { flex: 1; height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; overflow: hidden; }\n.fill { height: 100%; background: #fff; width: 0; transition: width 5s linear; }\n.bar.active .fill { width: 100%; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">07. Progress Bar</span>
           <CarouselProgress />
         </div>
 
-        <div className="w-full flex flex-col items-center bg-gray-900 p-8 box-shadow rounded-lg">
+        {/* 8. Glass Card */}
+        <div className="w-full flex flex-col items-center bg-gray-900 p-8 rounded-2xl relative group/car box-shadow">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselGlass = () => {\n  const { current, next, prev } = useCarousel(slides.length);\n  return (\n    <div className="relative h-72 rounded-2xl overflow-hidden" style={{ backgroundImage: \`url(\${slides[current].img})\` }}>\n      <div className="absolute inset-0 backdrop-blur-[2px] bg-black/20"></div>\n      <div className="absolute inset-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 text-white">\n        <h2 className="text-2xl font-bold">{slides[current].title}</h2>\n        <p className="mt-2">{slides[current].desc}</p>\n      </div>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="glass-carousel" style="background-image:url(1.jpg)">\n  <div class="glass-card">\n    <h2>Featured</h2>\n    <p>Description here</p>\n  </div>\n</div>`}
+              cssCode={`.glass-carousel { position: relative; height: 288px; background-size: cover; border-radius: 1.5rem; overflow: hidden; }\n.glass-card { position: absolute; inset: 2rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); border-radius: 1rem; padding: 1.5rem; color: #fff; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">08. Glass Card</span>
           <CarouselGlass />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 9. Minimal Numbered */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselMinimal = () => {\n  const { current, next } = useCarousel(slides.length);\n  return (\n    <div className="w-full flex flex-col gap-4">\n      <div className="h-64 rounded-lg overflow-hidden"><img src={slides[current].img} /></div>\n      <div className="flex items-center justify-between text-gray-900">\n        <span className="text-3xl font-black">0{current+1}/0{slides.length}</span>\n        <button onClick={next} className="w-12 h-12 rounded-full bg-black text-white">→</button>\n      </div>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="mini-carousel">\n  <div class="img-box"><img src="1.jpg"></div>\n  <div class="controls">\n    <span class="numbers">01/04</span>\n    <button class="next">Next</button>\n  </div>\n</div>`}
+              cssCode={`.mini-carousel { width: 100%; }\n.img-box { height: 256px; border-radius: 0.5rem; overflow: hidden; margin-bottom: 1rem; }\n.controls { display: flex; justify-content: space-between; align-items: center; }\n.numbers { font-weight: 900; font-size: 1.875rem; }\n.next { background: #000; color: #fff; width: 3rem; height: 3rem; border-radius: 50%; border: none; cursor: pointer; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">09. Minimal Numbered</span>
           <CarouselMinimal />
         </div>
 
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg">
+        {/* 10. Cyberpunk */}
+        <div className="w-full flex flex-col items-center box-shadow p-6 rounded-xl relative group/car bg-white">
+          <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/car:opacity-100 transition-opacity">
+            <CopyButton 
+              jsxCode={`export const CarouselCyberpunk = () => {\n  const { current, next } = useCarousel(slides.length);\n  return (\n    <div className="relative h-64 bg-black border-2 border-yellow-400 p-1 shadow-[4px_4px_0px_0px_#facc15] overflow-hidden">\n      <img src={slides[current].img} className="grayscale" />\n      <div className="absolute top-2 left-2 bg-yellow-400 text-black px-2 font-mono text-xs">IMG_0{current+1}</div>\n      <button onClick={next} className="absolute right-0 inset-y-0 w-12 bg-yellow-400/20 text-yellow-400">&gt;</button>\n    </div>\n  );\n};`}
+              htmlCode={`<div class="cyber-car">\n  <div class="screen">\n    <img src="1.jpg">\n    <div class="tag">IMG_01</div>\n  </div>\n</div>`}
+              cssCode={`.cyber-car { border: 2px solid #facc15; box-shadow: 4px 4px 0 0 #facc15; background: #000; padding: 4px; }\n.screen { position: relative; height: 256px; overflow: hidden; }\n.screen img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }\n.tag { position: absolute; top: 8px; left: 8px; background: #facc15; color: #000; padding: 2px 8px; font-family: monospace; font-size: 12px; }`}
+            />
+          </div>
           <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">10. Cyberpunk</span>
           <CarouselCyberpunk />
         </div>
