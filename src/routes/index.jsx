@@ -43,7 +43,7 @@ import ScrollSpy from "../components/layout/ScrollSpy";
 import Filters from "../components/layout/Filters";
 
 // Common Pages
-import NotFoundGallery from "../components/common/pages/NotFoundGAllery";
+import NotFoundGallery from "../components/common/pages/NotFoundGallery";
 import InternalServer from "../components/common/pages/InternalServer";
 import LoginGallery from "../components/common/pages/LoginGallery";
 import RegisterGallery from "../components/common/pages/RegisterGallery";
@@ -56,17 +56,17 @@ import MaintenanceGallery, { MaintenanceBrutalist, MaintenanceCountdown, Mainten
 import FeatureGallery from "../components/common/pages/FeatureGallery";
 import TeamGallery from "../components/common/pages/TeamGallery";
 import TestimonialGallery from "../components/common/pages/TestimonialsGallery";
-import TermsGallery from "../components/common/pages/Termsgallery";
-import PrivacyGallery from "../components/common/pages/Privacygallery";
+import TermsGallery from "../components/common/pages/TermsGallery";
+import PrivacyGallery from "../components/common/pages/PrivacyGallery";
 import ProfileGallery from "../components/common/pages/ProfileGallery";
 import ErrorPageGallery from "../components/common/pages/ErrorPageGallery";
 import CheckoutGallery from "../components/common/pages/CheckoutGallery";
 import OrderSummaryGallery from "../components/common/pages/OrderSummaryGallery";
-import ThankYouGallery from "../components/common/pages/ThankYougallery";
+import ThankYouGallery from "../components/common/pages/ThankYouGallery";
 import CartGallery from "../components/common/pages/CartGallery";
 import ProductGalleryAnimation from "../components/common/pages/ProductGalleryAnimation";
 import AdminPanelGallery from "../components/common/pages/AdminPanelGallery";
-import ServicesGallery from "../components/common/pages/ServicesGallery.jsx";
+import ServicesGallery from "../components/common/pages/ServicesGallery";
 import RTKStore from "../redux-toolkit/store.jsx";
 import RootReduxToolkit from "../redux-toolkit/RootReduxToolkit.jsx";
 import ZComponent1 from "../components/zustandComponent/ZComponent1.jsx";
