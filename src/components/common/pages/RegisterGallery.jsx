@@ -16,7 +16,7 @@ const GithubIcon = () => (
 
 // --- 1. SaaS Split ---
 export const RegisterSaaS = () => (
-  <div className="flex h-[730px] w-full bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xl font-sans">
+  <div className="flex min-h-[730px] w-full bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xl font-sans">
     <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
       <p className="text-gray-500 mb-8">Start your 30-day free trial. No credit card required.</p>
@@ -183,7 +183,7 @@ export const RegisterPlan = () => (
 
 // --- 4. Glassmorphism ---
 export const RegisterGlass = () => (
-  <div className="relative flex items-center justify-center h-[700px] w-full rounded-xl overflow-hidden bg-[#0a0a0c] p-4">
+  <div className="relative flex items-center justify-center min-h-[700px] w-full rounded-xl overflow-hidden bg-[#0a0a0c] p-4">
     <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-fuchsia-600/30 rounded-full blur-[100px] animate-pulse"></div>
     <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-600/30 rounded-full blur-[100px] animate-pulse delay-1000"></div>
     
@@ -211,7 +211,7 @@ export const RegisterGlass = () => (
 
 // --- 5. Cyberpunk ---
 export const RegisterCyberpunk = () => (
-  <div className="flex items-center justify-center h-[700px] w-full bg-[#050505] rounded-xl overflow-hidden border border-gray-800 font-mono p-4 relative">
+  <div className="flex items-center justify-center min-h-[700px] w-full bg-[#050505] rounded-xl overflow-hidden border border-gray-800 font-mono p-4 relative">
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-20"></div>
     <div className="w-full max-w-md p-[1px] bg-gradient-to-b from-cyan-500/50 via-purple-500/50 to-transparent rounded-sm">
       <div className="bg-[#0a0a0a] p-8 relative overflow-hidden">
@@ -388,7 +388,7 @@ export const RegisterBrutalist = () => (
           <input type="password" placeholder="********" className="w-full border-4 border-black p-4 font-black outline-none focus:bg-yellow-300 transition-colors placeholder-gray-300" />
         </div>
         <button className="w-full py-5 bg-black text-white font-black text-2xl uppercase hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all shadow-[8px_8px_0px_0px_rgba(253,224,71,1)] border-2 border-black">
-          SIGN UP NOW ->
+          SIGN UP NOW -&gt;
         </button>
       </form>
       <div className="mt-8 flex gap-4 text-[10px] font-black uppercase tracking-widest overflow-hidden whitespace-nowrap">
@@ -400,7 +400,7 @@ export const RegisterBrutalist = () => (
 
 // --- 10. Overlay ---
 export const RegisterOverlay = () => (
-  <div className="relative h-[750px] w-full rounded-2xl overflow-hidden shadow-2xl flex font-sans group">
+  <div className="relative min-h-[750px] w-full rounded-2xl overflow-hidden shadow-2xl flex font-sans group">
     <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
       <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover" alt="tech-bg" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
@@ -454,7 +454,7 @@ const RegisterGallery = () => {
         <section className='box-shadow p-4 rounded-lg relative group/regi'>
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/regi:opacity-100 transition-opacity">
             <CopyButton jsxCode={`const RegisterSaaS = () => (
-  <div className="flex h-[730px] w-full bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xl font-sans">
+  <div className="flex min-h-[730px] w-full bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xl font-sans">
     <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
       <p className="text-gray-500 mb-8">Start your 30-day free trial. No credit card required.</p>
@@ -843,7 +843,7 @@ const RegisterWizard = () => {
         <section className='box-shadow p-4 rounded-lg relative group/regi'>
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/regi:opacity-100 transition-opacity">
             <CopyButton jsxCode={`const RegisterGlass = () => (
-  <div className="relative flex items-center justify-center h-[700px] w-full rounded-xl overflow-hidden bg-[#0a0a0c] p-4">
+  <div className="relative flex items-center justify-center min-h-[700px] w-full rounded-xl overflow-hidden bg-[#0a0a0c] p-4">
     <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-fuchsia-600/30 rounded-full blur-[100px] animate-pulse"></div>
     <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-600/30 rounded-full blur-[100px] animate-pulse delay-1000"></div>
     
@@ -914,7 +914,7 @@ const RegisterWizard = () => {
         <section className='box-shadow p-4 rounded-lg relative group/regi'>
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/regi:opacity-100 transition-opacity">
             <CopyButton jsxCode={`const RegisterCyberpunk = () => (
-  <div className="flex items-center justify-center h-[700px] w-full bg-[#050505] rounded-xl overflow-hidden border border-gray-800 font-mono p-4 relative">
+  <div className="flex items-center justify-center min-h-[700px] w-full bg-[#050505] rounded-xl overflow-hidden border border-gray-800 font-mono p-4 relative">
     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-20"></div>
     <div className="w-full max-w-md p-[1px] bg-gradient-to-b from-cyan-500/50 via-purple-500/50 to-transparent rounded-sm">
       <div className="bg-[#0a0a0a] p-8 relative overflow-hidden">
@@ -1349,7 +1349,7 @@ form input:focus { background: white; border-color: #2563eb; }
         <section className='box-shadow p-4 rounded-lg relative group/regi'>
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/regi:opacity-100 transition-opacity">
             <CopyButton jsxCode={`const RegisterOverlay = () => (
-  <div className="relative h-[750px] w-full rounded-2xl overflow-hidden shadow-2xl flex font-sans group">
+  <div className="relative min-h-[750px] w-full rounded-2xl overflow-hidden shadow-2xl flex font-sans group">
     <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
       <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover" alt="tech-bg" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>

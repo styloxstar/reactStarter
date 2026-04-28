@@ -100,9 +100,9 @@ const ErrorCyber = () => (
       <h2 className="text-7xl font-black text-white mb-2 uppercase tracking-tighter" style={{textShadow: "6px 6px 0px #dc2626"}}>ERROR</h2>
       <div className="bg-red-600 text-black font-black px-4 py-1 inline-block transform -rotate-1 mb-10 text-lg uppercase tracking-tight">Logic_Cluster_Aborted</div>
       <div className="text-red-400 text-[10px] mb-10 border-l-4 border-red-800 pl-6 text-left max-w-[280px] mx-auto uppercase leading-loose font-black tracking-widest">
-        > TRACE: NULL_PTR_REF<br/>
-        > MODULE: CORE_RENDER_MESH<br/>
-        > STATUS: FATAL_EXCEPTION
+        &gt; TRACE: NULL_PTR_REF<br/>
+        &gt; MODULE: CORE_RENDER_MESH<br/>
+        &gt; STATUS: FATAL_EXCEPTION
       </div>
       <button className="px-10 py-4 bg-transparent border-2 border-red-600 text-red-500 font-black hover:bg-red-600 hover:text-black transition-all uppercase tracking-widest text-xs">REBOOT SYSTEM</button>
     </div>
@@ -404,9 +404,9 @@ const ErrorPageGallery = () => {
       <h2 className="text-7xl font-black text-white mb-2 uppercase tracking-tighter" style={{textShadow: "6px 6px 0px #dc2626"}}>ERROR</h2>
       <div className="bg-red-600 text-black font-black px-4 py-1 inline-block transform -rotate-1 mb-10 text-lg uppercase tracking-tight">Logic_Cluster_Aborted</div>
       <div className="text-red-400 text-[10px] mb-10 border-l-4 border-red-800 pl-6 text-left max-w-[280px] mx-auto uppercase leading-loose font-black tracking-widest">
-        > TRACE: NULL_PTR_REF<br/>
-        > MODULE: CORE_RENDER_MESH<br/>
-        > STATUS: FATAL_EXCEPTION
+        &gt; TRACE: NULL_PTR_REF<br/>
+        &gt; MODULE: CORE_RENDER_MESH<br/>
+        &gt; STATUS: FATAL_EXCEPTION
       </div>
       <button className="px-10 py-4 bg-transparent border-2 border-red-600 text-red-500 font-black hover:bg-red-600 hover:text-black transition-all uppercase tracking-widest text-xs">REBOOT SYSTEM</button>
     </div>
@@ -418,9 +418,9 @@ const ErrorPageGallery = () => {
     <h2 class="title">ERROR</h2>
     <div class="alert-strip">Logic_Cluster_Aborted</div>
     <div class="trace-log">
-      > TRACE: NULL_PTR_REF<br>
-      > MODULE: CORE_RENDER_MESH<br>
-      > STATUS: FATAL_EXCEPTION
+      &gt; TRACE: NULL_PTR_REF<br>
+      &gt; MODULE: CORE_RENDER_MESH<br>
+      &gt; STATUS: FATAL_EXCEPTION
     </div>
     <button class="reboot-btn">REBOOT SYSTEM</button>
   </div>

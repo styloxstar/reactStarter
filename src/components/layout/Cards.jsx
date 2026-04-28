@@ -61,10 +61,10 @@ export const CardGradientBorder = () => (
 
 // --- 4. The Minimalist (Clean Shadow) ---
 export const CardMinimal = () => (
-  <div className="w-full max-w-sm bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-shadow duration-300 ease-in-out">
-    <div className="h-2 w-12 bg-gray-900 rounded-full mb-6"></div>
-    <h3 className="text-2xl font-bold text-gray-900 mb-2">Minimalist</h3>
-    <p className="text-gray-500 mb-6 leading-relaxed">
+  <div className="w-full max-w-sm glass-card rounded-2xl p-6 shadow-lg border border-[hsl(var(--border))] hover:shadow-xl transition-all duration-300 ease-in-out">
+    <div className="h-2 w-12 bg-[hsl(var(--foreground))] rounded-full mb-6 opacity-80"></div>
+    <h3 className="text-2xl font-bold text-[hsl(var(--foreground))] mb-2">Minimalist</h3>
+    <p className="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
       Less is more. A clean white card with a deep, soft shadow that makes it pop off the page elegantly.
     </p>
     <div className="flex items-center justify-between pt-4 border-t border-gray-100">
@@ -116,12 +116,12 @@ export const CardImageOverlay = () => (
 
 // --- 7. The Floating Info Card ---
 export const CardFloating = () => (
-  <div className="w-full max-w-sm bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+  <div className="w-full max-w-sm bg-[hsl(var(--card))] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-[hsl(var(--border))]">
     <div className="h-24 bg-indigo-600 flex items-center justify-center">
         <svg className="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
     </div>
     <div className="p-6">
-      <h3 className="text-lg font-bold text-gray-800 mb-2">Design Tools</h3>
+      <h3 className="text-lg font-bold text-[hsl(var(--foreground))] mb-2">Design Tools</h3>
       <p className="text-gray-500 text-sm mb-4">
         Access premium resources and assets for your next big project.
       </p>
@@ -158,21 +158,21 @@ export const CardCyberpunk = () => (
 
 // --- 9. The Profile Grid Card ---
 export const CardProfile = () => (
-  <div className="w-full max-w-sm bg-white rounded-3xl p-6 text-center shadow-lg border border-gray-100">
+  <div className="w-full max-w-sm glass-card rounded-3xl p-6 text-center shadow-lg border border-[hsl(var(--border))]">
     <div className="relative w-24 h-24 mx-auto mb-4">
-      <img className="w-full h-full rounded-full object-cover border-4 border-white shadow-md" src="https://i.pravatar.cc/150?img=32" alt="Profile" />
-      <span className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></span>
+      <img className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-md" src="https://i.pravatar.cc/150?img=32" alt="Profile" />
+      <span className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-2 border-white dark:border-gray-800 rounded-full"></span>
     </div>
-    <h3 className="text-lg font-bold text-gray-800">Sarah Jenkins</h3>
-    <p className="text-gray-500 text-sm mb-4">Product Designer</p>
+    <h3 className="text-lg font-bold text-[hsl(var(--foreground))]">Sarah Jenkins</h3>
+    <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">Product Designer</p>
     <div className="flex justify-center gap-4 mb-6">
       <div className="text-center">
-        <div className="font-bold text-gray-800">1.2k</div>
+        <div className="font-bold text-[hsl(var(--foreground))]">1.2k</div>
         <div className="text-xs text-gray-400">Followers</div>
       </div>
       <div className="w-px bg-gray-200"></div>
       <div className="text-center">
-        <div className="font-bold text-gray-800">450</div>
+        <div className="font-bold text-[hsl(var(--foreground))]">450</div>
         <div className="text-xs text-gray-400">Following</div>
       </div>
     </div>
@@ -193,14 +193,14 @@ export const CardStack = () => (
     <div className="absolute top-2 left-2 w-full h-full bg-blue-100 rounded-2xl -z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></div>
     
     {/* Main Card */}
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+    <div className="bg-[hsl(var(--card))] p-6 rounded-2xl shadow-sm border border-[hsl(var(--border))]">
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0 text-blue-500">
            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
         </div>
         <div className="flex-1">
           <div className="flex justify-between items-center mb-1">
-            <h4 className="font-bold text-gray-800">New Message</h4>
+            <h4 className="font-bold text-[hsl(var(--foreground))]">New Message</h4>
             <span className="text-xs text-gray-400">2m ago</span>
           </div>
           <p className="text-sm text-gray-500 leading-relaxed mb-3">
@@ -219,10 +219,10 @@ export const CardStack = () => (
 // --- Main Gallery Layout ---
 const Cards = () => {
   return (
-    <div className="container box-shadow bg-slate-50 p-8 overflow-y-auto">
+    <div className="container bg-transparent p-8 overflow-y-auto">
         <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl font-bold text-slate-800 mb-2 text-center">Modern Card Components</h1>
-            <p className="text-slate-500 text-center mb-12">A collection of glass, neumorphic, and modern styles.</p>
+            <h1 className="text-3xl font-bold text-[hsl(var(--foreground))] mb-2 text-center">Modern Card Components</h1>
+            <p className="text-[hsl(var(--foreground))] opacity-60 text-center mb-12">A collection of glass, neumorphic, and modern styles.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
                 
@@ -323,7 +323,7 @@ const Cards = () => {
                 </div>
 
                 {/* 9. Profile */}
-                <div className="w-full flex flex-col gap-2 items-center bg-gray-50 p-8 rounded-2xl relative group/card box-shadow">
+                <div className="w-full flex flex-col gap-2 items-center glass-card p-8 rounded-2xl relative group/card">
                     <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/card:opacity-100 transition-opacity">
                         <CopyButton 
                             jsxCode={`export const CardProfile = () => (\n  <div className="w-full max-w-sm bg-white rounded-3xl p-6 text-center shadow-lg border border-gray-100">\n    <img className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white shadow-md" src="https://i.pravatar.cc/150?img=32" />\n    <h3 className="text-lg font-bold text-gray-800">Sarah Jenkins</h3>\n    <p className="text-gray-500 text-sm mb-6">Product Designer</p>\n    <button className="w-full py-2 rounded-full bg-gray-900 text-white font-medium">Follow</button>\n  </div>\n);`}
@@ -335,7 +335,7 @@ const Cards = () => {
                 </div>
 
                 {/* 10. Stack */}
-                <div className="w-full flex flex-col gap-2 items-center bg-white p-8 rounded-2xl relative group/card box-shadow">
+                <div className="w-full flex flex-col gap-2 items-center glass-card p-8 rounded-2xl relative group/card">
                     <div className="absolute top-4 right-4 z-30 opacity-0 group-hover/card:opacity-100 transition-opacity">
                         <CopyButton 
                             jsxCode={`export const CardStack = () => (\n  <div className="w-full max-w-sm relative group">\n    <div className="absolute top-4 left-4 w-full h-full bg-blue-200 rounded-2xl -z-10 transition-transform group-hover:translate-x-1 group-hover:translate-y-1"></div>\n    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">\n      <h4 className="font-bold text-gray-800">New Message</h4>\n      <p className="text-sm text-gray-500 mb-3">You have a new project invitation.</p>\n      <button className="text-xs font-semibold text-blue-600">Reply</button>\n    </div>\n  </div>\n);`}

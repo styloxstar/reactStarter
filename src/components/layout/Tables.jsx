@@ -11,8 +11,8 @@ const users = [
 // --- 1. The Standard Stripe (Clean Enterprise) ---
 export const TableStandard = () => (
   <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
-    <table className="w-full text-sm text-left text-gray-500">
-      <thead className="bg-gray-50 text-xs uppercase text-gray-700">
+    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead className="bg-gray-50 dark:bg-gray-800 text-xs uppercase text-gray-700 dark:text-gray-300">
         <tr>
           <th className="px-6 py-3">Name</th>
           <th className="px-6 py-3">Role</th>
@@ -22,8 +22,8 @@ export const TableStandard = () => (
       </thead>
       <tbody className="divide-y divide-gray-200">
         {users.map((user) => (
-          <tr key={user.id} className="bg-white hover:bg-gray-50 transition-colors">
-            <td className="px-6 py-4 font-medium text-gray-900">{user.name}</td>
+          <tr key={user.id} className="bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+            <td className="px-6 py-4 font-medium text-[hsl(var(--foreground))]">{user.name}</td>
             <td className="px-6 py-4">{user.role}</td>
             <td className="px-6 py-4">
               <span className={`px-2 py-1 rounded-full text-xs font-semibold ${user.status === 'Active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'}`}>
@@ -41,8 +41,8 @@ export const TableStandard = () => (
 // --- 2. The Minimalist (Whitespace) ---
 export const TableMinimal = () => (
   <div className="overflow-x-auto">
-    <table className="w-full text-left text-sm text-slate-600">
-      <thead className="border-b border-slate-200 text-slate-800">
+    <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+      <thead className="border-b border-slate-200 dark:border-slate-700 text-[hsl(var(--foreground))] opacity-80">
         <tr>
           <th className="py-3 font-semibold">User</th>
           <th className="py-3 font-semibold">Designation</th>
@@ -51,10 +51,10 @@ export const TableMinimal = () => (
       </thead>
       <tbody>
         {users.map((user) => (
-          <tr key={user.id} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-            <td className="py-3 font-medium text-slate-900">{user.name}</td>
+          <tr key={user.id} className="border-b border-slate-100 dark:border-slate-800 last:border-0 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+            <td className="py-3 font-medium text-[hsl(var(--foreground))]">{user.name}</td>
             <td className="py-3">{user.role}</td>
-            <td className="py-3 text-right text-slate-400">{user.email}</td>
+            <td className="py-3 text-right text-slate-400 dark:text-slate-500">{user.email}</td>
           </tr>
         ))}
       </tbody>
@@ -105,14 +105,14 @@ export const TableCards = () => (
       </thead>
       <tbody>
         {users.map((user) => (
-          <tr key={user.id} className="bg-white shadow-sm rounded-lg hover:shadow-md transition-shadow group">
+          <tr key={user.id} className="bg-[hsl(var(--card))] dark:bg-gray-800/50 shadow-sm rounded-lg hover:shadow-md dark:shadow-black/20 transition-shadow group border border-[hsl(var(--border))] border-opacity-50">
             <td className="px-4 py-3 rounded-l-lg border-l-4 border-transparent group-hover:border-indigo-500 transition-colors">
-              <div className="font-bold text-gray-800">{user.name}</div>
-              <div className="text-xs text-gray-400">{user.email}</div>
+              <div className="font-bold text-[hsl(var(--foreground))]">{user.name}</div>
+              <div className="text-xs text-gray-400 dark:text-gray-500">{user.email}</div>
             </td>
-            <td className="px-4 py-3 text-sm text-gray-600">{user.role}</td>
+            <td className="px-4 py-3 text-sm text-gray-600 dark:text-gray-400">{user.role}</td>
             <td className="px-4 py-3 rounded-r-lg">
-              <span className={`text-xs font-bold px-2 py-1 rounded ${user.status === 'Active' ? 'bg-indigo-50 text-indigo-600' : 'bg-gray-100 text-gray-500'}`}>
+              <span className={`text-xs font-bold px-2 py-1 rounded ${user.status === 'Active' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400'}`}>
                 {user.status}
               </span>
             </td>
@@ -153,29 +153,29 @@ export const TableCyberpunk = () => (
 
 // --- 6. The Avatar List (Social) ---
 export const TableAvatar = () => (
-  <div className="overflow-x-auto rounded-xl bg-white border border-gray-100 shadow-sm">
+  <div className="overflow-x-auto rounded-xl bg-[hsl(var(--card))] border border-[hsl(var(--border))] shadow-sm">
     <table className="w-full text-left text-sm">
-      <thead className="bg-gray-50/50">
+      <thead className="bg-gray-50/50 dark:bg-gray-800/50">
         <tr>
-          <th className="px-6 py-4 font-medium text-gray-500">Team Member</th>
-          <th className="px-6 py-4 font-medium text-gray-500">Role</th>
-          <th className="px-6 py-4 font-medium text-gray-500">Last Active</th>
+          <th className="px-6 py-4 font-medium text-gray-500 dark:text-gray-400">Team Member</th>
+          <th className="px-6 py-4 font-medium text-gray-500 dark:text-gray-400">Role</th>
+          <th className="px-6 py-4 font-medium text-gray-500 dark:text-gray-400">Last Active</th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-100">
+      <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
         {users.map((user, i) => (
-          <tr key={user.id} className="hover:bg-gray-50/50 transition-colors">
+          <tr key={user.id} className="hover:bg-gray-50/50 dark:hover:bg-gray-800/50 transition-colors">
             <td className="px-6 py-3">
               <div className="flex items-center gap-3">
-                <img className="h-9 w-9 rounded-full object-cover border border-gray-200" src={`https://i.pravatar.cc/150?img=${i + 10}`} alt="" />
+                <img className="h-9 w-9 rounded-full object-cover border border-gray-200 dark:border-gray-700" src={`https://i.pravatar.cc/150?img=${i + 10}`} alt="" />
                 <div>
-                  <div className="font-semibold text-gray-900">{user.name}</div>
-                  <div className="text-xs text-gray-400">{user.email}</div>
+                  <div className="font-semibold text-[hsl(var(--foreground))]">{user.name}</div>
+                  <div className="text-xs text-gray-400 dark:text-gray-500">{user.email}</div>
                 </div>
               </div>
             </td>
-            <td className="px-6 py-3 text-gray-600">{user.role}</td>
-            <td className="px-6 py-3 text-gray-400 text-xs">2 hours ago</td>
+            <td className="px-6 py-3 text-gray-600 dark:text-gray-400">{user.role}</td>
+            <td className="px-6 py-3 text-gray-400 dark:text-gray-500 text-xs">2 hours ago</td>
           </tr>
         ))}
       </tbody>
@@ -209,19 +209,19 @@ export const TableBrutalist = () => (
 
 // --- 8. The Sticky Header (Scrollable) ---
 export const TableSticky = () => (
-  <div className="h-48 overflow-y-auto rounded-lg border border-slate-200 shadow-sm relative">
-    <table className="w-full text-left text-sm text-slate-600">
-      <thead className="sticky top-0 z-10 bg-slate-100 text-slate-700 shadow-sm">
+  <div className="h-48 overflow-y-auto rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm relative">
+    <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+      <thead className="sticky top-0 z-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 shadow-sm">
         <tr>
           <th className="px-4 py-3 font-semibold">User</th>
           <th className="px-4 py-3 font-semibold">Role</th>
           <th className="px-4 py-3 font-semibold">Status</th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-slate-200 bg-white">
+      <tbody className="divide-y divide-slate-200 dark:divide-slate-700 bg-[hsl(var(--card))]">
         {/* Repeating data to show scroll effect */}
         {[...users, ...users, ...users].map((user, i) => (
-          <tr key={i} className="hover:bg-slate-50 transition-colors">
+          <tr key={i} className="hover:bg-slate-50 dark:hover:bg-gray-800 transition-colors">
             <td className="px-4 py-3 font-medium">{user.name}</td>
             <td className="px-4 py-3">{user.role}</td>
             <td className="px-4 py-3">{user.status}</td>
@@ -234,13 +234,13 @@ export const TableSticky = () => (
 
 // --- 9. The Neumorphic (Soft UI) ---
 export const TableNeumorphic = () => (
-  <div className="rounded-xl bg-[#e0e5ec] p-4 shadow-[9px_9px_16px_rgb(163,177,198),-9px_-9px_16px_rgba(255,255,255,0.5)]">
+  <div className="rounded-xl bg-[hsl(var(--secondary))] p-4 shadow-lg dark:shadow-black/40 border border-[hsl(var(--border))]">
     <table className="w-full text-left text-sm text-gray-600">
-      <thead>
+      <thead className="bg-[hsl(var(--secondary))] text-xs uppercase text-[hsl(var(--foreground))] opacity-80">
         <tr>
-          <th className="p-3 font-bold text-gray-500">Name</th>
-          <th className="p-3 font-bold text-gray-500">Role</th>
-          <th className="p-3 font-bold text-gray-500 text-right">Action</th>
+          <th className="p-3 font-bold text-left">Name</th>
+          <th className="p-3 font-bold text-left">Role</th>
+          <th className="p-3 font-bold text-right">Action</th>
         </tr>
       </thead>
       <tbody className="space-y-4">
@@ -249,7 +249,7 @@ export const TableNeumorphic = () => (
             <td className="p-3 font-semibold">{user.name}</td>
             <td className="p-3">{user.role}</td>
             <td className="p-3 text-right">
-              <button className="h-8 w-8 rounded-full bg-[#e0e5ec] text-gray-500 shadow-[3px_3px_6px_#bebebe,-3px_-3px_6px_#ffffff] hover:shadow-[inset_2px_2px_5px_#bebebe,inset_-2px_-2px_5px_#ffffff] active:scale-95 transition-all flex items-center justify-center ml-auto">
+              <button className="h-8 w-8 rounded-full bg-[hsl(var(--background))] text-[hsl(var(--foreground))] shadow-md hover:bg-[hsl(var(--secondary))] active:scale-95 transition-all flex items-center justify-center ml-auto border border-[hsl(var(--border))]">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
               </button>
             </td>
@@ -262,24 +262,24 @@ export const TableNeumorphic = () => (
 
 // --- 10. The Compact (High Density) ---
 export const TableCompact = () => (
-  <div className="overflow-x-auto rounded border border-gray-300">
-    <table className="w-full text-left text-xs text-gray-700">
-      <thead className="bg-gray-100 font-semibold border-b border-gray-300">
+  <div className="overflow-x-auto rounded border border-gray-300 dark:border-gray-700">
+    <table className="w-full text-left text-xs text-gray-700 dark:text-gray-400">
+      <thead className="bg-gray-100 dark:bg-gray-800 font-semibold border-b border-gray-300 dark:border-gray-700">
         <tr>
-          <th className="px-2 py-1.5 border-r border-gray-200">#</th>
-          <th className="px-2 py-1.5 border-r border-gray-200">Name</th>
-          <th className="px-2 py-1.5 border-r border-gray-200">Email</th>
+          <th className="px-2 py-1.5 border-r border-gray-200 dark:border-gray-700">#</th>
+          <th className="px-2 py-1.5 border-r border-gray-200 dark:border-gray-700">Name</th>
+          <th className="px-2 py-1.5 border-r border-gray-200 dark:border-gray-700">Email</th>
           <th className="px-2 py-1.5 text-center">Active</th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-200">
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
         {users.map((user) => (
-          <tr key={user.id} className="hover:bg-blue-50 cursor-default">
-            <td className="px-2 py-1.5 border-r border-gray-100 text-gray-500">{user.id}</td>
-            <td className="px-2 py-1.5 border-r border-gray-100 font-medium">{user.name}</td>
-            <td className="px-2 py-1.5 border-r border-gray-100">{user.email}</td>
+          <tr key={user.id} className="hover:bg-blue-50 dark:hover:bg-blue-900/20 cursor-default bg-[hsl(var(--card))]">
+            <td className="px-2 py-1.5 border-r border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400">{user.id}</td>
+            <td className="px-2 py-1.5 border-r border-gray-100 dark:border-gray-800 font-medium text-[hsl(var(--foreground))]">{user.name}</td>
+            <td className="px-2 py-1.5 border-r border-gray-100 dark:border-gray-800">{user.email}</td>
             <td className="px-2 py-1.5 text-center">
-              <div className={`w-2 h-2 rounded-full mx-auto ${user.status === 'Active' ? 'bg-blue-500' : 'bg-gray-300'}`}></div>
+              <div className={`w-2 h-2 rounded-full mx-auto ${user.status === 'Active' ? 'bg-blue-500' : 'bg-gray-300 dark:bg-gray-600'}`}></div>
             </td>
           </tr>
         ))}
@@ -291,14 +291,14 @@ export const TableCompact = () => (
 // --- Main Gallery ---
 const Tables = () => {
   return (
-    <div className="container box-shadow bg-slate-50 p-6 md:p-12 font-sans pb-40 overflow-y-auto">
-      <h1 className="text-4xl font-bold text-center text-slate-800 mb-4">Modern Tables</h1>
-      <p className="text-center text-slate-500 mb-16 max-w-2xl mx-auto">Responsive data grids with varying densities and styles.</p>
+    <div className="container bg-transparent p-6 md:p-12 font-sans pb-40 overflow-y-auto">
+      <h1 className="text-4xl font-bold text-center text-[hsl(var(--foreground))] mb-4">Modern Tables</h1>
+      <p className="text-center text-[hsl(var(--foreground))] opacity-60 mb-16 max-w-2xl mx-auto">Responsive data grids with varying densities and styles.</p>
       
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-16 max-w-7xl mx-auto items-start">
         
         {/* 1. Standard */}
-        <div className="w-full flex flex-col gap-4 box-shadow p-6 rounded-xl relative group/table bg-white">
+        <div className="w-full flex flex-col gap-4 glass-card p-6 rounded-xl relative group/table">
           <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/table:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`export const TableStandard = () => (\n  <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">\n    <table className="w-full text-sm text-left text-gray-500">\n      <thead className="bg-gray-50 text-xs uppercase text-gray-700">\n        <tr>\n          <th className="px-6 py-3">Name</th>\n          <th className="px-6 py-3">Role</th>\n          <th className="px-6 py-3">Status</th>\n          <th className="px-6 py-3">Action</th>\n        </tr>\n      </thead>\n      <tbody className="divide-y divide-gray-200">\n        {users.map(user => (\n          <tr key={user.id} className="bg-white hover:bg-gray-50">\n            <td className="px-6 py-4 font-medium text-gray-900">{user.name}</td>\n            <td className="px-6 py-4">{user.role}</td>\n            <td className="px-6 py-4"><span className="px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">{user.status}</span></td>\n            <td className="px-6 py-4 text-blue-600 cursor-pointer">Edit</td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  </div>\n);`}
@@ -329,7 +329,7 @@ const Tables = () => {
         </div>
 
         {/* 2. Minimal */}
-        <div className="w-full flex flex-col gap-4 box-shadow p-6 rounded-xl relative group/table bg-white">
+        <div className="w-full flex flex-col gap-4 glass-card p-6 rounded-xl relative group/table">
           <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/table:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`export const TableMinimal = () => (\n  <div className="overflow-x-auto">\n    <table className="w-full text-left text-sm text-slate-600">\n      <thead className="border-b border-slate-200 text-slate-800">\n        <tr><th className="py-3 font-semibold">User</th><th className="py-3 font-semibold">Designation</th><th className="py-3 font-semibold text-right">Contact</th></tr>\n      </thead>\n      <tbody>\n        {users.map(user => (\n          <tr key={user.id} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50">\n            <td className="py-3 font-medium text-slate-900">{user.name}</td>\n            <td className="py-3">{user.role}</td>\n            <td className="py-3 text-right text-slate-400">{user.email}</td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  </div>\n);`}
@@ -382,7 +382,7 @@ const Tables = () => {
         </div>
 
         {/* 4. Cards */}
-        <div className="w-full flex flex-col gap-4 bg-gray-100 p-6 rounded-xl relative group/table box-shadow">
+        <div className="w-full flex flex-col gap-4 bg-[hsl(var(--secondary))] p-6 rounded-xl relative group/table box-shadow">
           <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/table:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`export const TableCards = () => (\n  <div className="overflow-x-auto">\n    <table className="w-full border-separate border-spacing-y-3">\n      <thead>\n        <tr>\n          <th className="px-4 py-2 text-left text-xs font-bold text-gray-400 uppercase">Employee</th>\n          <th className="px-4 py-2 text-left text-xs font-bold text-gray-400 uppercase">Title</th>\n          <th className="px-4 py-2 text-left text-xs font-bold text-gray-400 uppercase">Status</th>\n        </tr>\n      </thead>\n      <tbody>\n        {users.map(user => (\n          <tr key={user.id} className="bg-white shadow-sm rounded-lg hover:shadow-md group">\n            <td className="px-4 py-3 rounded-l-lg border-l-4 border-transparent group-hover:border-indigo-500">\n              <div className="font-bold text-gray-800">{user.name}</div>\n              <div className="text-xs text-gray-400">{user.email}</div>\n            </td>\n            <td className="px-4 py-3 text-sm text-gray-600">{user.role}</td>\n            <td className="px-4 py-3 rounded-r-lg"><span className="text-xs font-bold px-2 py-1 rounded bg-indigo-50 text-indigo-600">{user.status}</span></td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  </div>\n);`}
@@ -441,7 +441,7 @@ const Tables = () => {
         </div>
 
         {/* 6. Avatar */}
-        <div className="w-full flex flex-col gap-4 box-shadow p-6 rounded-xl relative group/table bg-white">
+        <div className="w-full flex flex-col gap-4 glass-card p-6 rounded-xl relative group/table">
           <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/table:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`export const TableAvatar = () => (\n  <div className="overflow-x-auto rounded-xl bg-white border border-gray-100 shadow-sm">\n    <table className="w-full text-left text-sm">\n      <thead className="bg-gray-50/50">\n        <tr><th className="px-6 py-4 font-medium text-gray-500">Team Member</th><th className="px-6 py-4 font-medium text-gray-500">Role</th><th className="px-6 py-4 font-medium text-gray-500">Last Active</th></tr>\n      </thead>\n      <tbody className="divide-y divide-gray-100">\n        {users.map((user, i) => (\n          <tr key={user.id} className="hover:bg-gray-50/50">\n            <td className="px-6 py-3">\n              <div className="flex items-center gap-3">\n                <img className="h-9 w-9 rounded-full" src={\`avatar\${i}.jpg\`} />\n                <div><div className="font-semibold text-gray-900">{user.name}</div><div className="text-xs text-gray-400">{user.email}</div></div>\n              </div>\n            </td>\n            <td className="px-6 py-3 text-gray-600">{user.role}</td>\n            <td className="px-6 py-3 text-gray-400 text-xs">2 hours ago</td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  </div>\n);`}
@@ -473,7 +473,7 @@ const Tables = () => {
         </div>
 
         {/* 7. Brutalist */}
-        <div className="w-full flex flex-col gap-4 box-shadow p-6 rounded-xl relative group/table bg-white">
+        <div className="w-full flex flex-col gap-4 glass-card p-6 rounded-xl relative group/table">
           <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/table:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`export const TableBrutalist = () => (\n  <div className="border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">\n    <table className="w-full text-left">\n      <thead className="border-b-2 border-black bg-yellow-400 font-black uppercase">\n        <tr><th className="px-4 py-3 border-r-2 border-black">Name</th><th className="px-4 py-3 border-r-2 border-black">Role</th><th className="px-4 py-3">Status</th></tr>\n      </thead>\n      <tbody className="divide-y-2 divide-black">\n        {users.map(user => (\n          <tr key={user.id} className="hover:bg-pink-100">\n            <td className="px-4 py-3 border-r-2 border-black font-bold">{user.name}</td>\n            <td className="px-4 py-3 border-r-2 border-black">{user.role}</td>\n            <td className="px-4 py-3 font-mono text-sm">{user.status.toUpperCase()}</td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  </div>\n);`}
@@ -502,7 +502,7 @@ const Tables = () => {
         </div>
 
         {/* 8. Sticky */}
-        <div className="w-full flex flex-col gap-4 box-shadow p-6 rounded-xl relative group/table bg-white">
+        <div className="w-full flex flex-col gap-4 glass-card p-6 rounded-xl relative group/table">
           <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/table:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`export const TableSticky = () => (\n  <div className="h-48 overflow-y-auto rounded-lg border border-slate-200 shadow-sm relative">\n    <table className="w-full text-left text-sm text-slate-600">\n      <thead className="sticky top-0 z-10 bg-slate-100 text-slate-700 shadow-sm">\n        <tr><th className="px-4 py-3 font-semibold">User</th><th className="px-4 py-3 font-semibold">Role</th><th className="px-4 py-3 font-semibold">Status</th></tr>\n      </thead>\n      <tbody className="divide-y divide-slate-200 bg-white">\n        {data.map((user, i) => (\n          <tr key={i} className="hover:bg-slate-50">\n            <td className="px-4 py-3 font-medium">{user.name}</td>\n            <td className="px-4 py-3">{user.role}</td>\n            <td className="px-4 py-3">{user.status}</td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  </div>\n);`}
@@ -531,7 +531,7 @@ const Tables = () => {
         </div>
 
         {/* 9. Neumorphic */}
-        <div className="w-full flex flex-col gap-4 bg-[#e0e5ec] p-8 rounded-2xl relative group/table box-shadow">
+        <div className="w-full flex flex-col gap-4 bg-[hsl(var(--secondary))] p-8 rounded-2xl relative group/table box-shadow border border-[hsl(var(--border))]">
           <div className="absolute top-4 right-4 z-40 opacity-0 group-hover/table:opacity-100 transition-opacity text-gray-500">
             <CopyButton 
               jsxCode={`export const TableNeumorphic = () => (\n  <div className="rounded-xl bg-[#e0e5ec] p-4 shadow-[9px_9px_16px_rgb(163,177,198),-9px_-9px_16px_rgba(255,255,255,0.5)]">\n    <table className="w-full text-left text-sm text-gray-600">\n      <thead>\n        <tr><th className="p-3 font-bold text-gray-500">Name</th><th className="p-3 font-bold text-gray-500">Role</th><th className="p-3 font-bold text-gray-500 text-right">Action</th></tr>\n      </thead>\n      <tbody>\n        {users.map(user => (\n          <tr key={user.id}>\n            <td className="p-3 font-semibold">{user.name}</td>\n            <td className="p-3">{user.role}</td>\n            <td className="p-3 text-right">\n              <button className="h-8 w-8 rounded-full bg-[#e0e5ec] shadow-[3px_3px_6px_#bebebe,-3px_-3px_6px_#ffffff] hover:shadow-[inset_2px_2px_5px_#bebebe,inset_-2px_-2px_5px_#ffffff]">✏</button>\n            </td>\n          </tr>\n        ))}\n      </tbody>\n    </table>\n  </div>\n);`}

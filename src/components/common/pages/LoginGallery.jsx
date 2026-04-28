@@ -19,7 +19,7 @@ const EyeIcon = ({ visible, onClick }) => (
 // --- 1. The Standard Split (SaaS) ---
 export const LoginSplit = () => {
   return (
-    <div className="flex h-[600px] w-full bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xl">
+    <div className="flex min-h-[600px] w-full bg-white rounded-xl overflow-hidden border border-gray-100 shadow-xl">
       <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Welcome back</h1>
@@ -56,7 +56,7 @@ export const LoginSplit = () => {
 // --- 2. The Centered Card (Simple) ---
 export const LoginCard = () => {
   return (
-    <div className="flex items-center justify-center h-[600px] w-full bg-gray-50 rounded-xl">
+    <div className="flex items-center justify-center min-h-[600px] w-full bg-gray-50 rounded-xl">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
         <div className="text-center mb-8">
           <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -83,7 +83,7 @@ export const LoginCard = () => {
 // --- 3. The Glassmorphism (Vibrant) ---
 export const LoginGlass = () => {
   return (
-    <div className="relative flex items-center justify-center h-[600px] w-full rounded-xl overflow-hidden bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500">
+    <div className="relative flex items-center justify-center min-h-[600px] w-full rounded-xl overflow-hidden bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500">
       <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-300 rounded-full mix-blend-overlay filter blur-xl opacity-70 animate-pulse"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-300 rounded-full mix-blend-overlay filter blur-xl opacity-70 animate-pulse"></div>
       <div className="relative bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl shadow-2xl w-full max-w-sm">
@@ -101,7 +101,7 @@ export const LoginGlass = () => {
 // --- 4. The Cyberpunk (Tech) ---
 export const LoginCyberpunk = () => {
   return (
-    <div className="flex items-center justify-center h-[600px] w-full bg-black relative rounded-xl overflow-hidden border border-gray-800 font-mono">
+    <div className="flex items-center justify-center min-h-[600px] w-full bg-black relative rounded-xl overflow-hidden border border-gray-800 font-mono">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
       <div className="relative z-10 w-full max-w-md p-1 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-sm">
         <div className="bg-gray-900 p-8">
@@ -120,7 +120,7 @@ export const LoginCyberpunk = () => {
 // --- 5. The Social First (Modern App) ---
 export const LoginSocial = () => {
   return (
-    <div className="flex items-center justify-center h-[600px] w-full bg-white rounded-xl">
+    <div className="flex items-center justify-center min-h-[600px] w-full bg-white rounded-xl">
       <div className="w-full max-w-sm">
         <h1 className="text-3xl font-bold text-center mb-2 text-slate-900">Get Started</h1>
         <p className="text-center text-slate-500 mb-8">Log in or sign up to continue.</p>
@@ -141,7 +141,7 @@ export const LoginSocial = () => {
 // --- 6. The Minimalist (Typography) ---
 export const LoginMinimal = () => {
   return (
-    <div className="flex flex-col justify-center h-[600px] w-full bg-white px-8 md:px-24 rounded-xl border border-gray-100">
+    <div className="flex flex-col justify-center min-h-[600px] w-full bg-white px-8 md:px-24 rounded-xl border border-gray-100">
       <h1 className="text-5xl font-light text-gray-900 mb-12 tracking-tight">Login.</h1>
       <form className="max-w-md w-full space-y-8">
         <input type="email" placeholder="Email Address" className="w-full py-4 bg-transparent border-b border-gray-300 text-xl focus:border-black outline-none placeholder-gray-400 transition-colors" />
@@ -158,7 +158,7 @@ export const LoginMinimal = () => {
 // --- 7. The Neumorphic (Soft UI) ---
 export const LoginNeumorphic = () => {
   return (
-    <div className="flex items-center justify-center h-[600px] w-full bg-[#e0e5ec] rounded-xl">
+    <div className="flex items-center justify-center min-h-[600px] w-full bg-[#e0e5ec] rounded-xl">
       <div className="w-full max-w-sm p-8 rounded-[30px] bg-[#e0e5ec] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff]">
         <h2 className="text-2xl font-bold text-gray-600 text-center mb-8">Welcome</h2>
         <form className="space-y-6">
@@ -178,7 +178,7 @@ export const LoginNeumorphic = () => {
 // --- 8. The Floating Labels (Material) ---
 export const LoginMaterial = () => {
   return (
-    <div className="flex items-center justify-center h-[600px] w-full bg-white rounded-xl border border-gray-100">
+    <div className="flex items-center justify-center min-h-[600px] w-full bg-white rounded-xl border border-gray-100">
       <div className="w-full max-w-sm p-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-8">Sign In</h2>
         <form className="space-y-6">
@@ -200,7 +200,7 @@ export const LoginMaterial = () => {
 // --- 9. The Brutalist (Retro Bold) ---
 export const LoginBrutalist = () => {
   return (
-    <div className="flex items-center justify-center h-[600px] w-full bg-yellow-400 rounded-xl border-4 border-black">
+    <div className="flex items-center justify-center min-h-[600px] w-full bg-yellow-400 rounded-xl border-4 border-black">
       <div className="w-full max-w-md bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
         <h2 className="text-4xl font-black uppercase mb-8 transform -rotate-2">Login Now</h2>
         <form className="space-y-6">
@@ -216,7 +216,7 @@ export const LoginBrutalist = () => {
 // --- 10. The Background Overlay ---
 export const LoginOverlay = () => {
   return (
-    <div className="relative flex h-[600px] w-full rounded-xl overflow-hidden">
+    <div className="relative flex min-h-[600px] w-full rounded-xl overflow-hidden">
       <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1000&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover" alt="Office" />
       <div className="relative z-10 w-full md:w-[400px] bg-white/90 backdrop-blur-sm h-full flex flex-col justify-center p-10 border-r border-white/50">
         <h2 className="text-2xl font-bold text-gray-900 mb-8">Brand Workspace</h2>

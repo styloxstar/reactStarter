@@ -3,7 +3,7 @@ import CopyButton from '../CopyButton';
 
 // --- Shared Components ---
 const Navbar = ({ dark = false }) => (
-  <nav className={`flex justify-between items-center py-6 ${dark ? 'text-white' : 'text-slate-900'}`}>
+  <nav className={`flex justify-between items-center py-6 ${dark ? 'text-white' : 'text-[hsl(var(--foreground))]'}`}>
     <div className="font-bold text-xl tracking-tight">Brand.</div>
     <div className="hidden md:flex gap-8 text-sm font-medium">
       <a href="#" className="hover:opacity-70">Product</a>
@@ -1583,7 +1583,7 @@ p { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing
         </section>
 
         {/* 10. Neumorphic */}
-        <section className="bg-white p-4 rounded-[40px] border border-slate-100 relative group shadow-sm transition-all hover:shadow-2xl hover:border-slate-200/50">
+        <section className="glass-card p-4 rounded-[40px] border border-[hsl(var(--border))] relative group shadow-sm transition-all hover:shadow-2xl">
           <div className="absolute top-10 right-10 opacity-0 group-hover:opacity-100 transition-opacity z-50">
             <CopyButton 
               jsxCode={`const LandingNeumorphic = () => (

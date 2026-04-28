@@ -43,7 +43,7 @@ const RTKComponent1 = () => {
          <div>
           <div className='flex flex-col justify-center items-center p-2 text-white '>
               <div>
-                    <p className='text-2xl font-bold text-black my-6 box-shadow-inner rounded-md px-6 py-2'> {count} </p>
+                    <p className='text-2xl font-bold text-[hsl(var(--foreground))] my-6 glass-card rounded-md px-6 py-2'> {count} </p>
               </div>
               <div>
                   
@@ -55,7 +55,7 @@ const RTKComponent1 = () => {
                   </div>
                 <hr/>
                   <div className='box-shadow my-4 rounded-md'>
-                      <input type="text" value={localCount == 0 ? "" : localCount} placeholder={"Enter value to increment"} className='px-2 py-3 my-1 rounded-md mx-2 text-black' onChange={handleAmount}/>
+                      <input type="text" value={localCount == 0 ? "" : localCount} placeholder={"Enter value to increment"} className='px-4 py-3 my-1 rounded-xl mx-2 bg-[hsl(var(--background))] text-[hsl(var(--foreground))] border border-[hsl(var(--border))] box-shadow outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] transition-all' onChange={handleAmount}/>
                       <button className='bg-blue-950 py-2 px-3 rounded-md mx-2' onClick={() => dispatch(incrementByAmount(localCount))}>increment by amount</button>
                   </div>
 
@@ -73,9 +73,9 @@ const RTKComponent1 = () => {
                           
                                 {
                                     enableStatusState && users?.length > 0 ? (
-                                        <div className='h-80 overflow-y-scroll border box-shadow-inner rounded-md border-gray-300 p-2 mt-4 text-black'>
+                                        <div className='h-80 overflow-y-scroll border glass-card rounded-md border-[hsl(var(--border))] p-2 mt-4 text-[hsl(var(--foreground))]'>
                                             {users.map((user) => (
-                                                <div key={user.id} className='mb-2 p-2  border-gray-200'>
+                                                <div key={user.id} className='mb-2 p-2 border-b border-[hsl(var(--border))] opacity-80'>
                                                     <p><b>User ID:</b> {user.id}</p>
                                                     <p><b>Name:</b> {user.name}</p>
                                                 </div>

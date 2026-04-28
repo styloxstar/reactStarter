@@ -20,7 +20,7 @@ const RadioClassic = () => {
             {/* The white dot inside */}
             <div className="absolute inset-0 m-auto w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 transform scale-0 peer-checked:scale-100 transition-all duration-300" />
           </div>
-          <span className="text-slate-700 font-medium group-hover:text-blue-600 transition-colors">{opt}</span>
+          <span className="text-[hsl(var(--foreground))] font-medium group-hover:text-blue-600 transition-colors">{opt}</span>
         </label>
       ))}
     </div>
@@ -45,9 +45,9 @@ const RadioCard = () => {
             onChange={(e) => setSelected(e.target.value)}
             className="peer sr-only"
           />
-          <div className="p-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 peer-checked:bg-blue-50 transition-all duration-200 flex justify-between items-center">
+          <div className="p-4 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-sm hover:shadow-md peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 peer-checked:bg-blue-50/10 transition-all duration-200 flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-700">{plan.title}</p>
+              <p className="font-bold text-[hsl(var(--foreground))]">{plan.title}</p>
               <p className="text-sm text-gray-500">Essential features</p>
             </div>
             <span className="font-bold text-blue-600">{plan.price}</span>
@@ -182,7 +182,7 @@ const RadioGradient = () => {
                 <div className="w-full h-full rounded-full bg-transparent peer-checked:bg-gradient-to-r peer-checked:from-pink-500 peer-checked:to-orange-500 scale-0 peer-checked:scale-75 transition-transform duration-300"></div>
              </div>
           </div>
-          <span className="text-gray-700 font-medium">{label}</span>
+          <span className="text-[hsl(var(--foreground))] opacity-80 font-medium">{label}</span>
         </label>
       ))}
     </div>
@@ -250,7 +250,7 @@ const RadioSegmented = () => {
   return (
     <div className="inline-flex bg-gray-100 p-1 rounded-full relative">
       <div 
-        className={`absolute top-1 bottom-1 w-1/2 bg-white rounded-full shadow-sm transition-all duration-300 ease-out ${selected === 'monthly' ? 'left-1' : 'left-[48%]'}`}
+        className={`absolute top-1 bottom-1 w-1/2 bg-[hsl(var(--card))] rounded-full shadow-sm transition-all duration-300 ease-out ${selected === 'monthly' ? 'left-1' : 'left-[48%]'}`}
       ></div>
       
       {['Monthly', 'Yearly'].map((label, i) => (
@@ -263,7 +263,7 @@ const RadioSegmented = () => {
             onChange={(e) => setSelected(e.target.value)}
             className="sr-only"
           />
-          <span className={`block py-2 text-sm font-semibold transition-colors duration-300 ${selected === label.toLowerCase() ? 'text-gray-900' : 'text-gray-500'}`}>
+          <span className={`block py-2 text-sm font-semibold transition-colors duration-300 ${selected === label.toLowerCase() ? 'text-[hsl(var(--foreground))]' : 'text-[hsl(var(--foreground))] opacity-40'}`}>
             {label}
           </span>
         </label>
@@ -276,13 +276,13 @@ const RadioSegmented = () => {
 // --- Gallery Layout ---
 const RadioButtons = () => {
   return (
-    <div className="container box-shadow bg-slate-50 p-10 font-sans">
-      <h1 className="text-3xl font-bold text-center text-slate-800 mb-12">Modern Radio Buttons</h1>
+    <div className="container bg-transparent p-10 font-sans">
+      <h1 className="text-3xl font-bold text-center text-[hsl(var(--foreground))] mb-12">Modern Radio Buttons</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 max-w-7xl mx-auto justify-items-center items-start">
 
         {/* 1. Classic */}
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/radio">
+        <div className="w-full flex flex-col items-center glass-card p-6 rounded-xl relative group/radio">
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/radio:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`const RadioClassic = () => {\n  const [selected, setSelected] = useState('option1');\n  return (\n    <div className="flex flex-col gap-3">\n      {['Option 1', 'Option 2'].map((opt, i) => (\n        <label key={i} className="flex items-center cursor-pointer gap-3 group">\n          <input type="radio" name="classic" value={\`option\${i+1}\`} checked={selected === \`option\${i+1}\`} onChange={e => setSelected(e.target.value)} className="peer sr-only" />\n          <div className="w-6 h-6 rounded-full border-2 border-slate-300 peer-checked:border-blue-600 peer-checked:bg-blue-600 transition-all" />\n          <span className="text-slate-700 font-medium">{opt}</span>\n        </label>\n      ))}\n    </div>\n  );\n};`}
@@ -297,12 +297,12 @@ const RadioButtons = () => {
 .radio-label input:checked + .radio-dot { border-color: #2563eb; background: #2563eb; box-shadow: inset 0 0 0 3px #fff; }`}
             />
           </div>
-          <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">01. Ring Animation</h3>
+          <h3 className="mb-4 text-xs font-semibold text-[hsl(var(--foreground))] opacity-40 uppercase tracking-widest">01. Ring Animation</h3>
           <RadioClassic />
         </div>
 
         {/* 2. Card Selection */}
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/radio">
+        <div className="w-full flex flex-col items-center glass-card p-6 rounded-xl relative group/radio">
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/radio:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`const RadioCard = () => {\n  const [selected, setSelected] = useState('starter');\n  return (\n    <div className="flex flex-col gap-4 w-full max-w-xs">\n      {[{ id: 'starter', title: 'Starter', price: '$0' }, { id: 'pro', title: 'Pro', price: '$19' }].map(plan => (\n        <label key={plan.id} className="relative cursor-pointer">\n          <input type="radio" name="plan" value={plan.id} checked={selected === plan.id} onChange={e => setSelected(e.target.value)} className="peer sr-only" />\n          <div className="p-4 rounded-xl border border-gray-200 bg-white shadow-sm peer-checked:border-blue-500 peer-checked:bg-blue-50 flex justify-between items-center">\n            <div><p className="font-bold">{plan.title}</p><p className="text-sm text-gray-500">Essential features</p></div>\n            <span className="font-bold text-blue-600">{plan.price}</span>\n          </div>\n        </label>\n      ))}\n    </div>\n  );\n};`}
@@ -318,7 +318,7 @@ const RadioButtons = () => {
 .card-option span { font-weight: 700; color: #2563eb; }`}
             />
           </div>
-          <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">02. Card Select</h3>
+          <h3 className="mb-4 text-xs font-semibold text-[hsl(var(--foreground))] opacity-40 uppercase tracking-widest">02. Card Select</h3>
           <RadioCard />
         </div>
 
@@ -366,7 +366,7 @@ const RadioButtons = () => {
         </div>
 
         {/* 5. Tick Box */}
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/radio">
+        <div className="w-full flex flex-col items-center glass-card p-6 rounded-xl relative group/radio">
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/radio:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`const RadioTick = () => {\n  const [selected, setSelected] = useState('tick1');\n  return (\n    <div className="flex gap-4">\n      {['Yes', 'No'].map((label, i) => (\n        <label key={i} className="cursor-pointer">\n          <input type="radio" name="tick" value={\`tick\${i+1}\`} checked={selected === \`tick\${i+1}\`} onChange={e => setSelected(e.target.value)} className="peer sr-only" />\n          <div className="px-6 py-2 rounded-full border-2 border-gray-200 peer-checked:border-emerald-500 peer-checked:text-emerald-600 peer-checked:bg-emerald-50 flex items-center gap-2 transition-all">\n            <span className="font-semibold">{label}</span>\n          </div>\n        </label>\n      ))}\n    </div>\n  );\n};`}
@@ -380,7 +380,7 @@ const RadioButtons = () => {
 .tick-label.selected, .tick-label:has(input:checked) { border-color: #10b981; color: #059669; background: #ecfdf5; }`}
             />
           </div>
-          <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">05. Pill Tick</h3>
+          <h3 className="mb-4 text-xs font-semibold text-[hsl(var(--foreground))] opacity-40 uppercase tracking-widest">05. Pill Tick</h3>
           <RadioTick />
         </div>
 
@@ -404,7 +404,7 @@ const RadioButtons = () => {
         </div>
 
         {/* 7. Gradient Ring */}
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/radio">
+        <div className="w-full flex flex-col items-center glass-card p-6 rounded-xl relative group/radio">
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/radio:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`const RadioGradient = () => {\n  const [selected, setSelected] = useState('grad1');\n  return (\n    <div className="flex flex-col gap-3">\n      {['Personal', 'Business'].map((label, i) => (\n        <label key={i} className="flex items-center cursor-pointer gap-3">\n          <input type="radio" name="grad" value={\`grad\${i+1}\`} checked={selected === \`grad\${i+1}\`} onChange={e => setSelected(e.target.value)} className="peer sr-only" />\n          <div className="w-6 h-6 rounded-full bg-gray-200 peer-checked:bg-gradient-to-r peer-checked:from-pink-500 peer-checked:to-orange-500 p-[2px] transition-all">\n            <div className="w-full h-full bg-white rounded-full" />\n          </div>\n          <span className="text-gray-700 font-medium">{label}</span>\n        </label>\n      ))}\n    </div>\n  );\n};`}
@@ -420,12 +420,12 @@ const RadioButtons = () => {
 .grad-radios input:checked + .grad-dot { background: linear-gradient(90deg, #ec4899, #f97316); }`}
             />
           </div>
-          <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">07. Gradient Ring</h3>
+          <h3 className="mb-4 text-xs font-semibold text-[hsl(var(--foreground))] opacity-40 uppercase tracking-widest">07. Gradient Ring</h3>
           <RadioGradient />
         </div>
 
         {/* 8. Brutalist */}
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/radio">
+        <div className="w-full flex flex-col items-center glass-card p-6 rounded-xl relative group/radio">
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/radio:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`const RadioBrutalist = () => {\n  const [selected, setSelected] = useState('brut1');\n  return (\n    <div className="flex flex-col gap-3">\n      {['Daily', 'Weekly'].map((label, i) => (\n        <label key={i} className="cursor-pointer">\n          <input type="radio" name="brut" value={\`brut\${i+1}\`} checked={selected === \`brut\${i+1}\`} onChange={e => setSelected(e.target.value)} className="peer sr-only" />\n          <div className="px-6 py-2 bg-white border-2 border-black font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] peer-checked:bg-yellow-400 peer-checked:shadow-none peer-checked:translate-x-1 peer-checked:translate-y-1 transition-all">{label}</div>\n        </label>\n      ))}\n    </div>\n  );\n};`}
@@ -439,12 +439,12 @@ const RadioButtons = () => {
 .brutal-option.selected, .brutal-option:has(input:checked) { background: #facc15; box-shadow: none; transform: translate(4px, 4px); }`}
             />
           </div>
-          <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">08. Brutalist</h3>
+          <h3 className="mb-4 text-xs font-semibold text-[hsl(var(--foreground))] opacity-40 uppercase tracking-widest">08. Brutalist</h3>
           <RadioBrutalist />
         </div>
 
         {/* 9. Color Swatch */}
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/radio">
+        <div className="w-full flex flex-col items-center glass-card p-6 rounded-xl relative group/radio">
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/radio:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`const RadioColor = () => {\n  const [selected, setSelected] = useState('red');\n  const colors = [\n    { id: 'red', bg: 'bg-red-500', ring: 'peer-checked:ring-red-500' },\n    { id: 'blue', bg: 'bg-blue-500', ring: 'peer-checked:ring-blue-500' },\n    { id: 'green', bg: 'bg-green-500', ring: 'peer-checked:ring-green-500' },\n  ];\n  return (\n    <div className="flex gap-3">\n      {colors.map(c => (\n        <label key={c.id} className="cursor-pointer">\n          <input type="radio" name="color" value={c.id} checked={selected === c.id} onChange={e => setSelected(e.target.value)} className="peer sr-only" />\n          <div className={\`w-8 h-8 rounded-full \${c.bg} ring-2 ring-transparent ring-offset-2 \${c.ring} transition-all hover:scale-110\`} />\n        </label>\n      ))}\n    </div>\n  );\n};`}
@@ -463,12 +463,12 @@ const RadioButtons = () => {
 .color-swatches input:checked + .swatch.green { outline-color: #22c55e; }`}
             />
           </div>
-          <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">09. Color Swatch</h3>
+          <h3 className="mb-4 text-xs font-semibold text-[hsl(var(--foreground))] opacity-40 uppercase tracking-widest">09. Color Swatch</h3>
           <RadioColor />
         </div>
 
         {/* 10. Segmented */}
-        <div className="w-full flex flex-col items-center box-shadow p-4 rounded-lg relative group/radio">
+        <div className="w-full flex flex-col items-center glass-card p-6 rounded-xl relative group/radio">
           <div className="absolute top-2 right-2 z-40 opacity-0 group-hover/radio:opacity-100 transition-opacity">
             <CopyButton 
               jsxCode={`const RadioSegmented = () => {\n  const [selected, setSelected] = useState('monthly');\n  return (\n    <div className="inline-flex bg-gray-100 p-1 rounded-full relative">\n      <div className={\`absolute top-1 bottom-1 w-1/2 bg-white rounded-full shadow-sm transition-all \${selected === 'monthly' ? 'left-1' : 'left-[48%]'}\`} />\n      {['Monthly', 'Yearly'].map((label, i) => (\n        <label key={i} className="relative z-10 w-24 text-center cursor-pointer">\n          <input type="radio" name="segment" value={label.toLowerCase()} checked={selected === label.toLowerCase()} onChange={e => setSelected(e.target.value)} className="sr-only" />\n          <span className={\`block py-2 text-sm font-semibold \${selected === label.toLowerCase() ? 'text-gray-900' : 'text-gray-500'}\`}>{label}</span>\n        </label>\n      ))}\n    </div>\n  );\n};`}
@@ -484,7 +484,7 @@ const RadioButtons = () => {
 .seg-slider { position: absolute; top: 0.25rem; bottom: 0.25rem; width: 50%; background: #fff; border-radius: 9999px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); transition: left 0.3s; left: 0.25rem; }`}
             />
           </div>
-          <h3 className="mb-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">10. Segmented</h3>
+          <h3 className="mb-4 text-xs font-semibold text-[hsl(var(--foreground))] opacity-40 uppercase tracking-widest">10. Segmented</h3>
           <RadioSegmented />
         </div>
 

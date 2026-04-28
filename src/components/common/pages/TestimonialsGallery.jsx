@@ -118,7 +118,7 @@ export const TestimonialSlider = () => {
     { name: "Emily_Davis", role: "Product_Architect", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop", text: "Support is lightning fast. Resolved our sync node issue in 5 minutes." }
   ];
   return (
-    <div className="max-w-4xl mx-auto p-16 rounded-[4rem] bg-white border border-slate-100 shadow-2xl font-sans italic font-bold text-center">
+    <div className="max-w-4xl mx-auto p-8 md:p-16 rounded-[3rem] md:rounded-[4rem] bg-white border border-slate-100 shadow-2xl font-sans italic font-bold text-center">
       <div className="flex flex-col items-center">
         <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-blue-50 shadow-xl mb-10 transition-all transform hover:scale-110">
           <img src={data[active].img} className="w-full h-full object-cover" alt="" />
@@ -178,8 +178,8 @@ export const TestimonialGlass = () => (
           <div><div className="font-black uppercase tracking-tighter">Sarah_Jensen</div><div className="text-[10px] text-white/60 uppercase tracking-widest">CTO_TechFlow</div></div>
         </div>
       </div>
-      <div className="bg-white/10 backdrop-blur-2xl border border-white/20 p-10 rounded-[3rem] text-left text-white shadow-2xl translate-y-8 hover:bg-white/20 transition-all">
-        <div className="text-5xl opacity-30 mb-4 font-black">❝</div>
+      <div className="bg-white/10 backdrop-blur-2xl border border-white/20 p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] text-left text-white shadow-2xl translate-y-0 md:translate-y-8 hover:bg-white/20 transition-all">
+        <div className="text-4xl md:text-5xl opacity-30 mb-4 font-black">❝</div>
         <p className="text-xl mb-10 leading-relaxed font-bold">"Exceptional sync speed. This protocol has redefined how our nodes communicate globally."</p>
         <div className="flex items-center gap-4 border-t border-white/10 pt-8">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" className="w-12 h-12 rounded-full border-2 border-white/20" alt="" />
@@ -242,8 +242,8 @@ export const TestimonialBrutalist = () => (
           <div><div className="text-xl">Sarah_J</div><div className="text-sm">CTO_FLOW</div></div>
         </div>
       </div>
-      <div className="bg-rose-500 p-10 border-[8px] border-black shadow-[16px_16px_0_0_#000] hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all translate-y-8">
-        <div className="text-6xl mb-8">★</div>
+      <div className="bg-rose-500 p-8 md:p-10 border-[8px] border-black shadow-[8px_8px_0_0_#000] md:shadow-[16px_16px_0_0_#000] hover:translate-x-1 hover:translate-y-1 md:hover:translate-x-2 md:hover:translate-y-2 hover:shadow-none transition-all translate-y-0 md:translate-y-8">
+        <div className="text-5xl md:text-6xl mb-8">★</div>
         <p className="text-2xl mb-12 leading-none border-b-[8px] border-black pb-8">"UNMATCHED_NODE_SYNC. NEURAL_UI_IS_AHEAD_OF_THE_CURVE."</p>
         <div className="flex items-center gap-6">
           <div className="w-16 h-16 border-[6px] border-black bg-white overflow-hidden grayscale contrast-150">
@@ -260,7 +260,7 @@ export const TestimonialBrutalist = () => (
 export const TestimonialMinimal = () => (
   <div className="max-w-4xl mx-auto px-4 font-sans italic font-bold">
     <div className="divide-y divide-slate-100 border-t border-slate-100">
-      <div className="py-16 flex flex-col md:flex-row gap-12 items-start group">
+      <div className="py-10 md:py-16 flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
         <div className="md:w-1/4">
           <div className="flex items-center gap-4">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" className="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all" alt="" />
@@ -271,7 +271,7 @@ export const TestimonialMinimal = () => (
           <p className="text-2xl text-slate-600 leading-relaxed font-medium italic">"The logic sync is flawless. We reduced deployment latency by 40% in just one week. A remarkable achievement in node orchestration."</p>
         </div>
       </div>
-      <div className="py-16 flex flex-col md:flex-row gap-12 items-start group">
+      <div className="py-10 md:py-16 flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
         <div className="md:w-1/4">
           <div className="flex items-center gap-4">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" className="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all" alt="" />

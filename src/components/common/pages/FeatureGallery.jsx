@@ -81,7 +81,7 @@ export const FeatureBento = () => (
     
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {/* Big Card */}
-      <div className="md:col-span-2 bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden h-[400px]">
+      <div className="md:col-span-2 bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden min-h-[400px]">
         <div className="relative z-10 text-left">
           <h3 className="text-2xl font-bold mb-3 text-gray-900">Advanced Analytics</h3>
           <p className="text-gray-500 max-w-sm">Deep dive into your data with our comprehensive analytics suite.</p>
@@ -520,7 +520,7 @@ export const FeatureBento = () => (
       <p className="text-gray-500 text-lg">Everything you need to scale your application globally.</p>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div className="md:col-span-2 bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden h-[400px]">
+      <div className="md:col-span-2 bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden min-h-[400px]">
         <div className="relative z-10 text-left">
           <h3 className="text-2xl font-bold mb-3 text-gray-900">Advanced Analytics</h3>
           <p className="text-gray-500 max-w-sm">Deep dive into your data with our comprehensive analytics suite.</p>

@@ -137,11 +137,11 @@ export const BlobButton = () => (
 
 const Buttons = () => {
   return (
-    <div className="container box-shadow bg-slate-50 p-6 md:p-12 font-sans pb-40 overflow-y-auto">
-      <h1 className="text-4xl font-bold text-center text-slate-800 mb-4">
+    <div className="container bg-transparent p-6 md:p-12 font-sans pb-40 overflow-y-auto">
+      <h1 className="text-4xl font-bold text-center text-[hsl(var(--foreground))] mb-4">
         Modern Buttons
           </h1>
-      <p className="text-center text-slate-500 mb-16 max-w-2xl mx-auto">
+      <p className="text-center text-[hsl(var(--foreground))] opacity-60 mb-16 max-w-2xl mx-auto">
         Responsive button components with multiple code export options.
       </p>
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 max-w-7xl mx-auto items-start">

@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import CopyButton from '../CopyButton';
 
 // --- Shared Icon Component ---
@@ -80,7 +80,7 @@ export const MaintenanceTerminal = () => (
         <div className="absolute -top-4 -left-4 bg-blue-600 text-white px-4 py-1 text-[10px] font-black uppercase tracking-widest">Protocol_Status</div>
         
         <div className="text-blue-500 text-[10px] mb-12 flex justify-between uppercase tracking-widest opacity-50 font-mono">
-          <span>> SYSTEM_UPGRADE.SH</span>
+          <span>&gt; SYSTEM_UPGRADE.SH</span>
           <span>SECURE_SHELL</span>
         </div>
         
@@ -89,9 +89,9 @@ export const MaintenanceTerminal = () => (
         </h1>
         
         <div className="space-y-4 mb-12 text-blue-500/60 text-xs uppercase leading-relaxed font-mono">
-          <p>> INITIATING_DATABASE_SCHEMA_SYNC...</p>
-          <p>> FLUSHING_GLOBAL_CDN_CACHE...</p>
-          <p>> REBOOTING_WORKER_NODES: <span className="text-blue-500 font-black">75%_COMPLETE</span></p>
+          <p>&gt; INITIATING_DATABASE_SCHEMA_SYNC...</p>
+          <p>&gt; FLUSHING_GLOBAL_CDN_CACHE...</p>
+          <p>&gt; REBOOTING_WORKER_NODES: <span className="text-blue-500 font-black">75%_COMPLETE</span></p>
         </div>
 
         <div className="flex justify-between items-center text-[10px] text-white/40 uppercase tracking-[0.3em] font-mono">
@@ -199,9 +199,9 @@ export const MaintenanceCyber = () => (
       </h1>
       
       <p className="text-red-500 font-black max-w-xl mx-auto mb-16 text-sm uppercase leading-relaxed tracking-widest">
-        > SERVER_REBOOT_INITIATED.<br/>
-        > ESTABLISHING_SECURE_NODES.<br/>
-        > PLEASE_STAND_BY_FOR_SYNC...
+        &gt; SERVER_REBOOT_INITIATED.<br/>
+        &gt; ESTABLISHING_SECURE_NODES.<br/>
+        &gt; PLEASE_STAND_BY_FOR_SYNC...
       </p>
       
       <div className="flex justify-center gap-6">
@@ -430,14 +430,14 @@ const MaintenanceGallery = () => {
       <div className="bg-black border-2 border-blue-600 p-12 shadow-[0_0_50px_rgba(37,99,235,0.1)] relative">
         <div className="absolute -top-4 -left-4 bg-blue-600 text-white px-4 py-1 text-[10px] font-black uppercase tracking-widest">Protocol_Status</div>
         <div className="text-blue-500 text-[10px] mb-12 flex justify-between uppercase tracking-widest opacity-50 font-mono">
-          <span>> SYSTEM_UPGRADE.SH</span>
+          <span>&gt; SYSTEM_UPGRADE.SH</span>
           <span>SECURE_SHELL</span>
         </div>
         <h1 className="text-5xl font-black text-white mb-10 uppercase tracking-tighter leading-none">CORE_ <br/> <span className="text-blue-500">OPTIMIZING</span><span className="animate-pulse text-blue-500">_</span></h1>
         <div className="space-y-4 mb-12 text-blue-500/60 text-xs uppercase leading-relaxed font-mono">
-          <p>> INITIATING_DATABASE_SCHEMA_SYNC...</p>
-          <p>> FLUSHING_GLOBAL_CDN_CACHE...</p>
-          <p>> REBOOTING_WORKER_NODES: <span className="text-blue-500 font-black">75%_COMPLETE</span></p>
+          <p>&gt; INITIATING_DATABASE_SCHEMA_SYNC...</p>
+          <p>&gt; FLUSHING_GLOBAL_CDN_CACHE...</p>
+          <p>&gt; REBOOTING_WORKER_NODES: <span className="text-blue-500 font-black">75%_COMPLETE</span></p>
         </div>
         <div className="flex justify-between items-center text-[10px] text-white/40 uppercase tracking-[0.3em] font-mono">
           <span>EST_TIME: 15_MINS</span>
@@ -459,9 +459,9 @@ const MaintenanceGallery = () => {
       </div>
       <h1 style="font-size: 48px; font-weight: 900; color: white; margin-bottom: 40px; text-transform: uppercase; letter-spacing: -0.05em; line-height: 1;">CORE_ <br/> <span style="color: #2563eb;">OPTIMIZING</span><span style="color: #2563eb;">_</span></h1>
       <div style="margin-bottom: 48px; color: rgba(37,99,235,0.6); font-size: 12px; text-transform: uppercase; line-height: 1.6;">
-        <p>> INITIATING_DATABASE_SCHEMA_SYNC...</p>
-        <p>> FLUSHING_GLOBAL_CDN_CACHE...</p>
-        <p>> REBOOTING_WORKER_NODES: <span style="color: #2563eb; font-weight: 900;">75%_COMPLETE</span></p>
+        <p>&gt; INITIATING_DATABASE_SCHEMA_SYNC...</p>
+        <p>&gt; FLUSHING_GLOBAL_CDN_CACHE...</p>
+        <p>&gt; REBOOTING_WORKER_NODES: <span style="color: #2563eb; font-weight: 900;">75%_COMPLETE</span></p>
       </div>
       <div style="display: flex; justify-content: space-between; font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.3em;">
         <span>EST_TIME: 15_MINS</span>
@@ -694,7 +694,7 @@ const MaintenanceGallery = () => {
     <div className="relative z-10 text-center p-8">
       <div className="inline-block border-2 border-red-600 text-red-600 px-6 py-2 font-black text-xs mb-10 animate-pulse tracking-[0.5em] uppercase text-center">System_Offline</div>
       <h1 className="text-7xl md:text-9xl font-black text-white relative mb-10 tracking-tighter uppercase leading-none drop-shadow-[0_0_30px_rgba(220,38,38,0.5)] text-center">MAINT_ <br/> <span className="text-red-600">PROTOCOL</span></h1>
-      <p className="text-red-500 font-black max-w-xl mx-auto mb-16 text-sm uppercase leading-relaxed tracking-widest text-center">> SERVER_REBOOT_INITIATED.<br/>> ESTABLISHING_SECURE_NODES.<br/>> PLEASE_STAND_BY_FOR_SYNC...</p>
+      <p className="text-red-500 font-black max-w-xl mx-auto mb-16 text-sm uppercase leading-relaxed tracking-widest text-center">&gt; SERVER_REBOOT_INITIATED.<br/>&gt; ESTABLISHING_SECURE_NODES.<br/>&gt; PLEASE_STAND_BY_FOR_SYNC...</p>
       <div className="flex justify-center gap-6">
         <div className="w-4 h-4 bg-red-600 animate-ping"></div>
         <div className="w-4 h-4 bg-red-600 animate-ping delay-150"></div>
@@ -710,9 +710,9 @@ const MaintenanceGallery = () => {
     <div style="display: inline-block; border: 2px solid #dc2626; color: #dc2626; padding: 8px 24px; font-weight: 900; font-size: 12px; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 0.5em;">System_Offline</div>
     <h1 style="font-size: 72px; font-weight: 900; color: white; margin-bottom: 40px; letter-spacing: -0.05em; text-transform: uppercase; line-height: 1; text-shadow: 0 0 30px rgba(220,38,38,0.5);">MAINT_ <br/> <span style="color: #dc2626;">PROTOCOL</span></h1>
     <p style="color: #ef4444; font-weight: 900; max-width: 512px; margin: 0 auto 64px auto; font-size: 14px; text-transform: uppercase; line-height: 1.6; letter-spacing: 0.1em;">
-      > SERVER_REBOOT_INITIATED.<br/>
-      > ESTABLISHING_SECURE_NODES.<br/>
-      > PLEASE_STAND_BY_FOR_SYNC...
+      &gt; SERVER_REBOOT_INITIATED.<br/>
+      &gt; ESTABLISHING_SECURE_NODES.<br/>
+      &gt; PLEASE_STAND_BY_FOR_SYNC...
     </p>
     <div style="display: flex; justify-content: center; gap: 24px;">
       <div style="width: 16px; height: 16px; background: #dc2626; border-radius: 50%; opacity: 0.8;"></div>

@@ -33,16 +33,16 @@ export const HeroMinimal = () => (
 
 // 2. Split Screen Video/Image
 export const HeroSplit = () => (
-  <section className="flex flex-col md:flex-row h-[500px] bg-slate-900 text-white overflow-hidden">
-    <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
-      <h1 className="text-4xl font-bold mb-6">Services that <br/> define the future.</h1>
-      <p className="text-slate-400 mb-8 text-lg">We help brands navigate the digital landscape with precision engineering and creative design.</p>
+  <section className="flex flex-col md:flex-row min-h-[500px] bg-slate-900 text-white overflow-hidden">
+    <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+      <h1 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Services that <br/> define the future.</h1>
+      <p className="text-slate-400 mb-8 text-base md:text-lg">We help brands navigate the digital landscape with precision engineering and creative design.</p>
       <button className="bg-white text-black px-6 py-3 rounded-full font-bold w-fit hover:bg-gray-200 transition-colors">Explore Solutions</button>
     </div>
-    <div className="w-full md:w-1/2 bg-blue-600 relative">
+    <div className="w-full md:w-1/2 min-h-[300px] md:min-h-0 bg-blue-600 relative">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-900 opacity-80"></div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-32 h-32 border-4 border-white/20 rounded-full animate-ping"></div>
+        <div className="w-24 h-24 md:w-32 md:h-32 border-4 border-white/20 rounded-full animate-ping"></div>
       </div>
     </div>
   </section>
@@ -52,11 +52,11 @@ export const HeroSplit = () => (
 export const HeroBento = () => (
   <section className="bg-gray-50 py-20 px-6">
     <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div className="md:col-span-2 bg-white p-12 rounded-3xl border border-gray-200 flex flex-col justify-center">
-        <h1 className="text-4xl font-bold text-slate-900 mb-4">Everything you need to grow.</h1>
+      <div className="md:col-span-2 bg-white p-8 md:p-12 rounded-3xl border border-gray-200 flex flex-col justify-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Everything you need to grow.</h1>
         <p className="text-slate-500">Comprehensive services for modern startups.</p>
       </div>
-      <div className="bg-black text-white p-8 rounded-3xl flex flex-col justify-between">
+      <div className="bg-black text-white p-8 rounded-3xl flex flex-col justify-between min-h-[200px]">
         <Icons.Sparkle />
         <div className="font-bold text-xl">Rated #1 in 2024</div>
       </div>
@@ -79,13 +79,13 @@ export const HeroGlow = () => (
 export const HeroBrutalist = () => (
   <section className="bg-yellow-400 py-24 px-6 border-b-4 border-black">
     <div className="max-w-7xl mx-auto">
-      <h1 className="text-6xl md:text-9xl font-black uppercase leading-none mb-8">
+      <h1 className="text-5xl md:text-9xl font-black uppercase leading-none mb-8">
         We Make<br/>It Happen.
       </h1>
-      <div className="flex gap-4">
-        <div className="bg-white border-4 border-black px-6 py-3 font-bold uppercase">Design</div>
-        <div className="bg-white border-4 border-black px-6 py-3 font-bold uppercase">Code</div>
-        <div className="bg-black text-white border-4 border-black px-6 py-3 font-bold uppercase">Ship</div>
+      <div className="flex flex-wrap gap-4">
+        <div className="bg-white border-4 border-black px-4 md:px-6 py-2 md:py-3 font-bold uppercase text-sm md:text-base">Design</div>
+        <div className="bg-white border-4 border-black px-4 md:px-6 py-2 md:py-3 font-bold uppercase text-sm md:text-base">Code</div>
+        <div className="bg-black text-white border-4 border-black px-4 md:px-6 py-2 md:py-3 font-bold uppercase text-sm md:text-base">Ship</div>
       </div>
     </div>
   </section>
@@ -344,21 +344,23 @@ export const PricingCards = () => (
 // 2. Comparison Table
 export const PricingTable = () => (
   <section className="py-20 px-6 bg-white">
-    <div className="max-w-4xl mx-auto border border-gray-200 rounded-2xl overflow-hidden">
-      <div className="grid grid-cols-4 bg-gray-50 p-4 font-bold border-b border-gray-200">
-        <div className="col-span-1">Feature</div>
-        <div className="text-center">Basic</div>
-        <div className="text-center">Pro</div>
-        <div className="text-center">Max</div>
-      </div>
-      {['Users', 'Storage', 'Support', 'Analytics'].map((feat, i) => (
-        <div key={i} className="grid grid-cols-4 p-4 border-b border-gray-100 last:border-0 hover:bg-gray-50">
-          <div className="col-span-1 font-medium text-gray-700">{feat}</div>
-          <div className="text-center text-gray-500">Limited</div>
-          <div className="text-center font-bold text-blue-600">✓</div>
-          <div className="text-center font-bold text-blue-600">✓</div>
+    <div className="max-w-4xl mx-auto overflow-x-auto pb-4">
+      <div className="min-w-[600px] border border-gray-200 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-4 bg-gray-50 p-4 font-bold border-b border-gray-200 text-sm md:text-base">
+          <div className="col-span-1">Feature</div>
+          <div className="text-center">Basic</div>
+          <div className="text-center">Pro</div>
+          <div className="text-center">Max</div>
         </div>
-      ))}
+        {['Users', 'Storage', 'Support', 'Analytics'].map((feat, i) => (
+          <div key={i} className="grid grid-cols-4 p-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 text-sm md:text-base">
+            <div className="col-span-1 font-medium text-gray-700">{feat}</div>
+            <div className="text-center text-gray-500">Limited</div>
+            <div className="text-center font-bold text-blue-600">✓</div>
+            <div className="text-center font-bold text-blue-600">✓</div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 );
@@ -367,10 +369,10 @@ export const PricingTable = () => (
 export const PricingSimple = () => (
   <section className="py-24 px-6 bg-blue-600 text-white text-center">
     <h2 className="text-4xl md:text-6xl font-bold mb-8">Ready to launch?</h2>
-    <p className="text-blue-100 text-xl mb-10 max-w-2xl mx-auto">Stop waiting. Start building. We are ready to help you scale.</p>
-    <div className="flex justify-center gap-4">
-      <button className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors">Start Project</button>
-      <button className="px-8 py-4 bg-blue-700 text-white border border-blue-500 rounded-full font-bold hover:bg-blue-800 transition-colors">Contact Us</button>
+    <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">Stop waiting. Start building. We are ready to help you scale.</p>
+    <div className="flex flex-wrap justify-center gap-4">
+      <button className="px-6 md:px-8 py-3 md:py-4 bg-white text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors">Start Project</button>
+      <button className="px-6 md:px-8 py-3 md:py-4 bg-blue-700 text-white border border-blue-500 rounded-full font-bold hover:bg-blue-800 transition-colors">Contact Us</button>
     </div>
   </section>
 );
@@ -1942,12 +1944,12 @@ export default ServicesPage;`,
 
   // Helper for UI controls
   const ControlGroup = ({ label, options, current, set }) => (
-    <div>
-      <label className="block text-xs font-bold  uppercase tracking-widest mb-2">{label}</label>
-      <div className="flex flex-wrap gap-2 bg-white box-shadow p-2 rounded-xl">
+    <div className="flex flex-col items-center">
+      <label className="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1.5 drop-shadow-sm">{label}</label>
+      <div className="flex flex-wrap justify-center gap-1.5 bg-white/95 backdrop-blur-md shadow-xl p-1.5 rounded-3xl md:rounded-full border border-gray-200">
         {options.map((_, i) => (
           <button key={i} onClick={() => set(i)}
-            className={`w-8 h-8 rounded-full text-xs font-bold border transition-all ${current === i ? 'bg-black text-white border-black' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400'}`}>
+            className={`w-7 h-7 flex items-center justify-center rounded-full text-[10px] font-bold border transition-all ${current === i ? 'bg-blue-600 text-white border-blue-600 shadow-md transform scale-110' : 'bg-white text-slate-600 border-transparent hover:bg-slate-100'}`}>
             {i + 1}
           </button>
         ))}
@@ -1956,17 +1958,9 @@ export default ServicesPage;`,
   );
 
   return (
-    <div className="container box-shadow overflow-y-auto bg-gray-100 font-sans">
-      {/* BUILDER CONTROLS */}
-      <div className="fixed left-[12rem] bottom-2 flex flex-row justify-center items-center gap-4 z-50 w-full ">
-        <ControlGroup label="Hero" options={Heroes} current={hero} set={setHero} />
-        <ControlGroup label="Services" options={Grids} current={grid} set={setGrid} />
-        <ControlGroup label="Process" options={Processes} current={process} set={setProcess} />
-        <ControlGroup label="Pricing" options={Pricings} current={pricing} set={setPricing} />
-      </div>
-
+    <div className="container box-shadow bg-gray-100 font-sans relative flex flex-col min-h-full">
       {/* RENDERED PAGE */}
-      <div className="pb-32 bg-white shadow-xl max-w-[1600px] mx-auto min-h-screen relative group/svc">
+      <div className="pb-16 bg-white shadow-xl max-w-[1600px] mx-auto min-h-screen relative group/svc w-full flex-1">
         {/* Master Copy Button (Entire Page) */}
         <div className="absolute top-4 right-4 z-50 opacity-0 group-hover/svc:opacity-100 transition-opacity">
           <CopyButton 
@@ -2032,6 +2026,16 @@ export default ServicesPage;`,
             />
           </div>
           {React.createElement(Pricings[pricing])}
+        </div>
+      </div>
+
+      {/* BUILDER CONTROLS */}
+      <div className="sticky bottom-0 left-0 w-full flex justify-center z-[100] px-4 pb-1 pointer-events-none">
+        <div className="flex flex-wrap justify-center items-end gap-3 md:gap-6 w-full max-w-4xl pointer-events-auto">
+          <ControlGroup label="Hero" options={Heroes} current={hero} set={setHero} />
+          <ControlGroup label="Services" options={Grids} current={grid} set={setGrid} />
+          <ControlGroup label="Process" options={Processes} current={process} set={setProcess} />
+          <ControlGroup label="Pricing" options={Pricings} current={pricing} set={setPricing} />
         </div>
       </div>
     </div>

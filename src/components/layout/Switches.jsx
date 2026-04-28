@@ -194,16 +194,16 @@ const Switches = () => {
   };
 
   return (
-    <div className="container box-shadow bg-slate-50 p-6 md:p-12 font-sans pb-40 overflow-y-auto">
-      <h1 className="text-4xl font-bold text-center text-slate-800 mb-4">
-        Modern Buttons
+    <div className="container bg-transparent p-6 md:p-12 font-sans pb-40 overflow-y-auto">
+      <h1 className="text-4xl font-bold text-center text-[hsl(var(--foreground))] mb-4">
+        Modern Switches
       </h1>
-      <p className="text-center text-slate-500 mb-16 max-w-2xl mx-auto">
-        Responsive data grids with varying densities and styles.
+      <p className="text-center text-[hsl(var(--foreground))] opacity-60 mb-16 max-w-2xl mx-auto">
+        Responsive interactive toggles with varying styles.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 max-w-6xl w-full">
         {/* Helper Wrapper to Label Styles */}
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchStandard = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-14 h-8 rounded-full transition-colors duration-300 \${isOn ? 'bg-blue-600' : 'bg-gray-300'}\`}>\n    <span className={\`absolute top-1 left-1 bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 \${isOn ? 'translate-x-6' : 'translate-x-0'}\`} />\n  </button>\n);`}
@@ -226,7 +226,7 @@ input:checked + .slider::before { transform: translateX(1.5rem); }`}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchGlow = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-14 h-8 rounded-full transition-all duration-300 \${isOn ? 'bg-purple-600 shadow-[0_0_15px_rgba(147,51,234,0.6)]' : 'bg-gray-800'}\`}>\n    <span className={\`absolute top-1 left-1 bg-white w-6 h-6 rounded-full shadow-sm transform transition-transform duration-300 \${isOn ? 'translate-x-6' : 'translate-x-0'}\`} />\n  </button>\n);`}
@@ -249,7 +249,7 @@ input:checked + .slider-glow::before { transform: translateX(1.5rem); }`}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchThin = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className="relative w-14 h-8 flex items-center">\n    <div className={\`w-full h-2 rounded-full transition-colors \${isOn ? 'bg-teal-400' : 'bg-gray-300'}\`} />\n    <div className={\`absolute left-0 w-8 h-8 rounded-full shadow-lg border bg-white transform transition-transform \${isOn ? 'translate-x-6 border-green-400' : 'translate-x-0'}\`} />\n  </button>\n);`}
@@ -273,7 +273,7 @@ input:checked ~ .knob-thin { transform: translateX(1.5rem); border-color: #34d39
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchSquare = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-16 h-8 border-2 border-black transition-colors \${isOn ? 'bg-yellow-400' : 'bg-white'}\`}>\n    <span className={\`absolute top-1 left-1 w-5 h-5 bg-black shadow-[2px_2px_0px_rgba(0,0,0,1)] transform transition-transform \${isOn ? 'translate-x-8' : 'translate-x-0'}\`} />\n  </button>\n);`}
@@ -297,7 +297,7 @@ input:checked ~ .knob-square { transform: translateX(2rem); }`}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchIcon = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-16 h-8 rounded-full p-1 transition-colors duration-500 \${isOn ? 'bg-indigo-900' : 'bg-cyan-400'}\`}>\n    <div className={\`w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-500 flex items-center justify-center \${isOn ? 'translate-x-8' : 'translate-x-0'}\`}>\n      {isOn ? <MoonIcon /> : <SunIcon />}\n    </div>\n  </button>\n);`}
@@ -321,7 +321,7 @@ input:checked ~ .knob-icon { transform: translateX(2rem); }`}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchSkeuo = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-16 h-8 rounded-full transition-colors shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)] \${isOn ? 'bg-blue-500' : 'bg-gray-200'}\`}>\n    <span className={\`absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.2)] transform transition-all \${isOn ? 'translate-x-8' : 'translate-x-0'}\`} />\n  </button>\n);`}
@@ -338,7 +338,7 @@ input:checked ~ .track-skeuo { background: #3b82f6; }
 input:checked ~ .knob-skeuo { transform: translateX(2rem); }`}
             />
           </div>
-          <span className="text-gray-500 text-sm font-medium">
+          <span className="text-[hsl(var(--foreground))] opacity-60 text-sm font-medium">
             Skeuomorphic
           </span>
           <SwitchSkeuo
@@ -347,7 +347,7 @@ input:checked ~ .knob-skeuo { transform: translateX(2rem); }`}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchText = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-20 h-8 rounded-full overflow-hidden transition-colors \${isOn ? 'bg-teal-500' : 'bg-red-500'}\`}>\n    <span className="absolute left-2 top-1.5 text-xs font-bold text-white uppercase">ON</span>\n    <span className="absolute right-2 top-1.5 text-xs font-bold text-white uppercase">OFF</span>\n    <div className={\`absolute top-1 left-1 w-8 h-6 bg-white rounded-full shadow-md transform transition-transform z-10 \${isOn ? 'translate-x-10' : 'translate-x-0'}\`} />\n  </button>\n);`}
@@ -373,7 +373,7 @@ input:checked ~ .knob-text { transform: translateX(2.5rem); }`}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchGradient = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-14 h-8 rounded-full p-1 transition-all \${isOn ? 'bg-gradient-to-r from-blue-500 to-teal-500' : 'bg-gray-300'}\`}>\n    <span className={\`block w-6 h-6 bg-white rounded-full shadow-md transform transition-transform \${isOn ? 'translate-x-6' : 'translate-x-0'}\`} />\n  </button>\n);`}
@@ -397,7 +397,7 @@ input:checked ~ .knob-grad { transform: translateX(1.5rem); }`}
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchOutline = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-14 h-8 rounded-full border-2 transition-all \${isOn ? 'border-teal-600 bg-teal-600' : 'border-gray-400 bg-transparent'}\`}>\n    <span className={\`absolute top-0.5 left-0.5 w-6 h-6 rounded-full transform transition-all \${isOn ? 'bg-white translate-x-6' : 'bg-gray-400 translate-x-0'}\`} />\n  </button>\n);`}
@@ -421,7 +421,7 @@ input:checked ~ .knob-outline { background: #fff; transform: translateX(1.5rem);
           />
         </div>
 
-        <div className="flex flex-col items-center gap-4 box-shadow p-4 rounded-lg relative group/switch">
+        <div className="flex flex-col items-center gap-4 glass-card p-6 rounded-xl relative group/switch">
           <div className="absolute -top-2 -right-2 z-40 opacity-0 group-hover/switch:opacity-100 transition-opacity scale-75">
             <CopyButton 
               jsxCode={`const SwitchElastic = ({ isOn, onToggle }) => (\n  <button onClick={onToggle} className={\`relative w-16 h-8 rounded-full flex items-center transition-colors \${isOn ? 'bg-rose-500 justify-end' : 'bg-gray-200 justify-start'}\`}>\n    <span className="w-10 h-6 bg-white rounded-full shadow-sm mx-1" />\n  </button>\n);`}
