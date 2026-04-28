@@ -415,7 +415,7 @@ const AdminPanelGallery = () => {
   }
 
   return (
-    <div className="font-sans">
+    <div className="container box-shadow overflow-y-auto bg-slate-200 font-sans p-4 md:p-8">
       
       {/* --- CONTROLS --- */}
       <div className="bg-white p-6 rounded-2xl shadow-sm mb-8">

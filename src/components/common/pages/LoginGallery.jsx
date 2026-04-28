@@ -322,123 +322,67 @@ export const LoginOverlay = () => {
 // --- Main Gallery ---
 const LoginGallery = () => {
   return (
-    <div className="pb-20 md:pb-40">
-      <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16 pt-4 md:pt-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[hsl(var(--foreground))] mb-4 md:mb-6 tracking-tight leading-tight">
-          Login Page <span className="text-[hsl(var(--primary))]">Designs</span>
-        </h1>
-        <p className="text-[hsl(var(--muted-foreground))] text-base md:text-lg max-w-2xl mx-auto px-4">
-          A collection of high-fidelity, responsive authentication interfaces designed for modern SaaS and mobile applications.
-        </p>
+    <div className="container box-shadow overflow-y-auto bg-slate-50 p-6 md:p-12 font-sans pb-40">
+      <div className="max-w-4xl mx-auto text-center mb-16">
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">Login Page Designs</h1>
+        <p className="text-slate-500">Responsive authentication interfaces for every brand personality.</p>
       </div>
       
-      <div className="space-y-20 md:space-y-32 max-w-6xl mx-auto px-2 md:px-4">
+      <div className="space-y-24 max-w-6xl mx-auto">
         
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">01</span>
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Standard Split SaaS</h2>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginSplit />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">01. Standard Split SaaS</span>
+          <LoginSplit />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8 text-right justify-end">
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Simple Card</h2>
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">02</span>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginCard />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">02. Simple Card</span>
+          <LoginCard />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">03</span>
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Glassmorphism</h2>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginGlass />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">03. Glassmorphism</span>
+          <LoginGlass />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8 text-right justify-end">
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Cyberpunk</h2>
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">04</span>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginCyberpunk />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">04. Cyberpunk</span>
+          <LoginCyberpunk />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">05</span>
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Social First</h2>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginSocial />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">05. Social First</span>
+          <LoginSocial />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8 text-right justify-end">
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Minimalist Typography</h2>
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">06</span>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginMinimal />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">06. Minimalist Typography</span>
+          <LoginMinimal />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">07</span>
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Neumorphic</h2>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginNeumorphic />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">07. Neumorphic</span>
+          <LoginNeumorphic />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8 text-right justify-end">
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Material Floating Labels</h2>
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">08</span>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginMaterial />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">08. Material Floating Labels</span>
+          <LoginMaterial />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">09</span>
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Brutalist</h2>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginBrutalist />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">09. Brutalist</span>
+          <LoginBrutalist />
         </section>
 
-        <section className='relative'>
-          <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8 text-right justify-end">
-            <h2 className="text-lg md:text-xl font-bold text-[hsl(var(--foreground))] uppercase tracking-widest">Image Overlay</h2>
-            <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-[hsl(var(--primary))] text-white font-bold text-sm md:text-base">10</span>
-          </div>
-          <div className="glass-card p-1 md:p-2 rounded-2xl md:rounded-[2rem] shadow-2xl overflow-hidden">
-            <LoginOverlay />
-          </div>
+        <section className='box-shadow p-4 rounded-lg'>
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block text-center mb-6">10. Image Overlay</span>
+          <LoginOverlay />
         </section>
 
       </div>
     </div>
   );
 };
-
-
 
 export default LoginGallery;
